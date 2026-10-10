@@ -1,0 +1,46 @@
+{
+  "checkpoint": {
+    "authenticated_checkpoints": 2,
+    "script_rejections": 16,
+    "code_hash": "0x3e9faaf6e62593e756a28f5c5bc2f1f30e4932d3f99e076583ee9979c3416218",
+    "capacity_shannons_each": 57400000000,
+    "historical_checkpoint_rechecked": true
+  },
+  "commits": 13,
+  "script_rejections": 68,
+  "authenticated_publications": 2,
+  "deposited_shannons": 25000000000,
+  "local_circulating_shannons": 16000000000,
+  "local_burned_shannons": 9000000000,
+  "vault_capacity_shannons": 64000000000,
+  "anchor_capacity_shannons": 59800000000,
+  "publications": [
+    {
+      "cycles": 2069660,
+      "wire_bytes": 2649,
+      "deposit_amount_shannons": 10000000000
+    },
+    {
+      "cycles": 2091330,
+      "wire_bytes": 2649,
+      "deposit_amount_shannons": 15000000000
+    }
+  ],
+  "proof_settled": false,
+  "withdrawal_executed": false,
+  "production_ready": false,
+  "settlement": {
+    "type_hash": "0x50084bc56b145efe1048fc8d2fa3e8dd7ac4e9844975826210450ebe42626854",
+    "code_hash": "0xd15995a26033333a67ba1a6aa12312382ce302b3ce4ae9d57de22b69e82a65bb",
+    "tip_capacity_shannons": 52200000000,
+    "script_rejections": 25,
+    "guest_key": "0x00d159402000943b66d0df65c2c154592efbc8490b1ee44dfce8a181cd5e77e5",
+    "guest_execution_checked": true,
+    "journal_sha256": [
+      "f2cac8d04532a31073278c8acfd1edaabb2686529b991ed404e4b7f85a7c8f89",
+      "4817cf0ec3088f3e155965545b8159453463042a44d655b8fa82d53f5c2c0709"
+    ],
+    "proof_generated": false,
+    "tip_initialized": false
+  }
+}

@@ -66,6 +66,7 @@ jobs:
             proofs/ckb-native-vault
             proofs/ckb-native-anchor
             proofs/ckb-native-checkpoint
+            proofs/ckb-native-settlement
             services/native-vault-lab
       - run: bash scripts/build-native-anchor-script.sh
       - run: cargo fmt --manifest-path proofs/ckb-native-anchor/Cargo.toml -- --check
@@ -77,6 +78,13 @@ jobs:
       - run: cargo clippy --locked --manifest-path proofs/ckb-native-checkpoint/Cargo.toml --target riscv64imac-unknown-none-elf --lib -- -D warnings
       - run: cargo test --locked --manifest-path proofs/ckb-native-checkpoint/Cargo.toml
       - run: bash scripts/build-native-checkpoint-script.sh
+      - run: cargo fmt --manifest-path proofs/ckb-native-settlement/Cargo.toml -- --check
+      - run: cargo clippy --locked --manifest-path proofs/ckb-native-settlement/Cargo.toml --all-targets -- -D warnings
+      - run: cargo test --locked --manifest-path proofs/ckb-native-settlement/Cargo.toml
+      - run: bash scripts/build-native-settlement-script.sh
+      - run: cargo clippy --locked --manifest-path proofs/ckb-native-settlement/Cargo.toml --target riscv64imac-unknown-none-elf --lib -- -D warnings
+        env:
+          RUSTFLAGS: --cfg tactus_ckb_single_thread --check-cfg=cfg(tactus_ckb_single_thread)
       - run: cargo fmt --manifest-path proofs/ckb-native-vault/Cargo.toml -- --check
       - run: cargo fmt --manifest-path services/native-vault-lab/Cargo.toml -- --check
       - run: cargo clippy --locked --manifest-path proofs/ckb-native-vault/Cargo.toml --all-targets -- -D warnings
@@ -94,6 +102,8 @@ jobs:
           python3 -B scripts/test-native-publication.py
           (cd specs/evidence/native-checkpoint && sha256sum --check SHA256SUMS)
           python3 -B scripts/test-native-checkpoint.py
+          (cd specs/evidence/native-settlement && sha256sum --check SHA256SUMS)
+          python3 -B scripts/test-native-settlement.py
           python3 -B scripts/check-settled-state-proof.py specs/evidence/native-vault/state-proof-regression/evidence.json.gz
 
   settled-state-proof:
@@ -295,6 +305,17 @@ jobs:
             (cd services/bridge-checker && TACTUS_NATIVE_PUBLICATION_VECTOR="$GITHUB_WORKSPACE/$publication_run/execution.json" TACTUS_NATIVE_PUBLICATION_GETH_EXPORT="$GITHUB_WORKSPACE/$publication_run/geth.json" go test -count=1 -mod=readonly -run TestPublishedNativeExecutionAgainstGeth .)
             python3 -B scripts/check-native-publication.py "$publication_run" > "$publication_run/check.json"
           done
+      - name: Bind actual native settlement and reject unproved transitions
+        env:
+          TACTUS_CKB_VERSION: ${{ matrix.ckb }}
+          TACTUS_DEVNET_SUITE: replay-native-settlement
+        run: |
+          CKB_BIN="$RUNNER_TEMP/ckb/ckb" scripts/run-devnet-experiments.sh
+          for native_evidence in artifacts/native-settlement-*/evidence.json; do
+            native_run="${native_evidence%/evidence.json}"
+            (cd services/bridge-checker && TACTUS_NATIVE_PUBLICATION_VECTOR="$GITHUB_WORKSPACE/$native_run/execution.json" TACTUS_NATIVE_PUBLICATION_GETH_EXPORT="$GITHUB_WORKSPACE/$native_run/geth.json" go test -count=1 -mod=readonly -run TestPublishedNativeExecutionAgainstGeth .)
+            python3 -B scripts/check-native-settlement.py "$native_run" --without-guest-execution > "$native_run/check.json"
+          done
       - name: Verify bounded churn against freshly rebuilt seals
         env:
           TACTUS_CKB_VERSION: ${{ matrix.ckb }}
@@ -338,6 +359,17 @@ jobs:
             artifacts/native-checkpoint-*/execution.json
             artifacts/native-checkpoint-*/geth.json
             artifacts/native-checkpoint-*/check.json
+            artifacts/native-settlement-*/evidence.json
+            artifacts/native-settlement-*/summary.json
+            artifacts/native-settlement-*/manifest.json
+            artifacts/native-settlement-*/replay.log
+            artifacts/native-settlement-*/node.log
+            artifacts/native-settlement-*/node/ckb.toml
+            artifacts/native-settlement-*/node/specs/dev.toml
+            artifacts/native-settlement-*/execution.json
+            artifacts/native-settlement-*/geth.json
+            artifacts/native-settlement-*/check.json
+            artifacts/native-settlement-*/proving-input-*.json
             artifacts/load-*/summary.json
             artifacts/load-*/manifest.json
             artifacts/load-*/replay.log

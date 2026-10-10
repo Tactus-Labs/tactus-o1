@@ -6,15 +6,21 @@ rollup deployment or custody of user assets.
 
 ## Implemented and measured
 
+- [Native settlement bootstrap](NATIVE_SETTLEMENT_REPORT.md) now deploys a
+  verifier with fixed native guest/publisher/checkpoint identities and jointly
+  binds the real vault/anchor/Tip without a hash cycle. 13 actual commits, 68
+  rejected controls and two SP1 executions pass; no native proof has yet settled
+  and no custody payout is authorized by this evidence.
 - [Immutable native custody checkpoints](NATIVE_CHECKPOINT_REPORT.md) now retain
   the complete config and deposit cursor only during a real authenticated anchor
   update: two checkpoints, 11 actual commits and 43 rejected controls on CKB
-  0.210.0. The new settlement verifier and actual custody release remain missing.
+  0.210.0. Successful native proof settlement and actual custody release remain
+  missing.
 - [Native custody proof statement v2](NATIVE_PROOF_STATEMENT_V2.md) now binds
   complete custody config, both deposit cursors and state/header roots in a
   separate guest. Two real SP1 CPU executions match the complete 940-byte
-  journals, real publication anchors and independent Geth roots. Cryptographic proof, native settlement and actual
-  custody release remain unqualified; G7 remains OPEN.
+  journals, real publication anchors and independent Geth roots. Cryptographic
+  proof, native settlement and actual custody release remain unqualified; G7 remains OPEN.
 - [Authenticated native publication](NATIVE_PUBLICATION_REPORT.md) binds funded
   receipts at the CKB script boundary: ten commits and 27 exact rejections on
   0.210.0. Two published credit/burn blocks match Geth. A3 integration, new proof
@@ -23,7 +29,8 @@ rollup deployment or custody of user assets.
 - [Candidate native custody execution v2](NATIVE_BRIDGE_EXECUTION_V2.md) processes
   contiguous records and signed token burns atomically. Seven blocks match Geth,
   with six execution tests. Standalone CKB publication is now authenticated;
-  a new proof/settlement domain, observer support and actual payouts remain required.
+  successful new-proof settlement, observer support and actual payouts remain
+  required.
 
 - [Canonical native vault recovery](NATIVE_VAULT_RECOVERY_REPORT.md) reconstructs
   funded deposit records in four fresh processes, without an operator database

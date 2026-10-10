@@ -81,11 +81,12 @@ python3 -B scripts/check-native-publication.py /absolute/RUN
 python3 -B scripts/test-native-checkpoint.py
 ```
 
-The native settlement verifier still needs to authenticate these checkpoints,
-match the 940-byte native public journal, verify the new guest's real proof and
-preserve previous-root/header continuity. A fresh joint deployment must bind an
-actual settlement type; this run still uses the intentionally uninstantiated
-settlement hash of the publication experiment. Real custody payouts, native A3
+The [native settlement verifier](NATIVE_SETTLEMENT_REPORT.md) now authenticates
+these checkpoints, matches the 940-byte native journal and enforces previous
+root/header continuity. Its successful new-proof settlement path remains
+unqualified. Its new joint deployment binds an actual settlement type; this
+earlier checkpoint run retains the intentionally uninstantiated settlement
+hash of the publication experiment. Real custody payouts, native A3
 obligations, full recovery/RPC, reorg qualification and production cost/liveness
 remain required. Checkpoint immutability on this branch is not a finality or
 reorg-recovery claim.

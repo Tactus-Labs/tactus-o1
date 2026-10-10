@@ -1,0 +1,18 @@
+{
+  "schema": 1,
+  "files": {
+    "artifacts/prover-host/target/release/tactus-o1-native-sp1-host": "c467e8f8ce7d285fbb26b83d100addb728a6b69d99a1b4a1090f7fb968dc29a6",
+    "proofs/native-sp1/target/elf-compilation/riscv64im-succinct-zkvm-elf/release/tactus-o1-native-sp1-guest": "dba570acf089f81e396a8daef4b96a5ab1da33cb906a62ed8e3e9854076249a5",
+    "proofs/native-sp1/host/src/main.rs": "522caedf95db6137f7f1021da886973f6edc2dce983a7efce3cded488771e2d5",
+    "proofs/native-sp1/guest/src/main.rs": "31c824a9699845edf710af44fd578caa5c7adb5d7bc7083d69ca324ffcff99d3",
+    "proofs/native-sp1/journal/src/lib.rs": "ce2816cdccc989cbba66a55774eff988326ed8d411fc94f579b10e6bc799cf21",
+    "Cargo.lock": "d1e83ee7925c86276223c5b01a46cc25c9a1c81d811b713381dd9d3a4e835f92",
+    "proofs/native-sp1/Cargo.lock": "2b44cd6602b6a91c7ea3c56c39a8b6b159749bee60fa1f39a379cfe83c33c9fb"
+  },
+  "inputs": {
+    "proving-input-0.json": "16db5db1c258181081a017638dd3aa09839201bbee55d726871c0644812bb5cf",
+    "proving-input-1.json": "e97b5e0be026732d94a51ab986c59b3828f1325b2c91c57f009326d1ac1b273b"
+  },
+  "proof_generated": false,
+  "ckb_settlement": false
+}

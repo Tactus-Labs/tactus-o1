@@ -1,0 +1,13 @@
+{
+  "schema": 1,
+  "files": {
+    "scripts/check-native-publication.py": "1cb3b4d38e292b99bd73e2235aa7f074093934fbd0eb515da69a1287ee00ecb4",
+    "scripts/check-native-settlement.py": "281e6b27865416a6a19d42261d00dddf9212a76a1c180c07f648afcb5c0cd100",
+    "scripts/test-native-settlement.py": "65fb6b66bfc22ec6fbb91841d5bf35092becfd4f4c91ed5e0c1fa18a935abfca",
+    ".github/workflows/ci.yml": "e58ee515e59f73f51115f2d25998e0beaff7bed6132a7fa387c15a7a507ada3b",
+    "specs/NATIVE_SETTLEMENT_REPORT.md": "b6d82bb0158c6e1aa08630086e8a1b76da1dce240729c1ee600ac853ede65663",
+    "specs/PRODUCTION_READINESS.md": "a4eeb3c4aabb1ec9127cb5e7631130f4d71e41f7629953e31c865186edb81be2",
+    "specs/NATIVE_CHECKPOINT_REPORT.md": "32f32475b2027b32a1a8951c74357653e23759bca8965b54bbdc4e729199c6b1",
+    "specs/NATIVE_PROOF_STATEMENT_V2.md": "74c2c8fc4c1ca901b3e98d33118f7549ecd312fc9ea344f73003cad3d66d0aa6"
+  }
+}

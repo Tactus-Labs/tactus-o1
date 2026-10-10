@@ -20,6 +20,9 @@ use tactus_o1_protocol::{
     genesis,
     native_bridge::{Batch, Config, Record},
 };
+#[path = "support/settlement.rs"]
+mod settlement;
+use tactus_o1_native_settlement_script as native_settlement;
 fn n(v: &Value) -> u64 {
     u64::from_str_radix(v.as_str().unwrap().trim_start_matches("0x"), 16).unwrap()
 }
@@ -317,11 +320,16 @@ fn run() -> Result<(), String> {
     let path = std::env::var("TACTUS_EVIDENCE_PATH").map_err(|_| "isolated launcher required")?;
     let mut lab = Lab::connect_with_script("artifacts/tactus_o1_native_anchor_script.elf")?;
     let mut result = json!({"suite":"native-publication-v2","complete":false,"error":null,"production_ready":false,"proof_settled":false,"withdrawal_executed":false,"publications":[]});
-    let checkpoint_mode =
-        std::env::var("TACTUS_DEVNET_SUITE").as_deref() == Ok("replay-native-checkpoint");
+    let settlement_mode =
+        std::env::var("TACTUS_DEVNET_SUITE").as_deref() == Ok("replay-native-settlement");
+    let checkpoint_mode = settlement_mode
+        || std::env::var("TACTUS_DEVNET_SUITE").as_deref() == Ok("replay-native-checkpoint");
     if checkpoint_mode {
         result["suite"] = json!("native-checkpoint-v2");
         result["checkpoints"] = json!([]);
+    }
+    if settlement_mode {
+        result["suite"] = json!("native-settlement-bootstrap-v2");
     }
     let outcome = (|| {
         let elf = std::fs::read("artifacts/tactus_o1_native_vault_script.elf")
@@ -348,6 +356,31 @@ fn run() -> Result<(), String> {
         } else {
             None
         };
+        let settlement_code = if settlement_mode {
+            if checkpoint_code != Some(native_settlement::CHECKPOINT_CODE) {
+                return Err("checkpoint program mismatch".into());
+            }
+            let elf = std::fs::read("artifacts/tactus_o1_native_settlement_script.elf")
+                .map_err(|e| e.to_string())?;
+            let code = batch::hash(b"", &elf);
+            let tx = build(
+                &lab,
+                0,
+                &[],
+                vec![untyped(
+                    molecule::script(&batch::hash(b"", &lab.lock_elf), 2, &[]),
+                    elf,
+                )],
+                &[],
+                &[],
+                None,
+            )?;
+            let h = commit(&mut lab, 0, "settlement/deploy program", &tx)?;
+            lab.deps.push(lab::point(&h, 0)?);
+            Some(code)
+        } else {
+            None
+        };
         let fund = lab.wallets[0].point;
         let input = molecule::cell_input(0, &molecule::out_point(&fund.tx_hash, fund.index));
         let ckb: [u8; 32] = rpc::decode_hex(
@@ -357,7 +390,7 @@ fn run() -> Result<(), String> {
         )?
         .try_into()
         .map_err(|_| "genesis hash")?;
-        let c = Config {
+        let mut c = Config {
             identity: batch::hash(b"", &[input.as_slice(), &1u64.to_le_bytes()].concat()),
             ckb_genesis: ckb,
             rollup: batch::hash(b"", &[input.as_slice(), &0u64.to_le_bytes()].concat()),
@@ -365,13 +398,21 @@ fn run() -> Result<(), String> {
             contract: [4; 20],
             settlement: [5; 32],
         };
+        let settlement = settlement_code
+            .map(|code| settlement::Settlement::new(&lab, &mut c, code))
+            .transpose()?;
         let mut state = State::genesis(c.clone()).map_err(|e| format!("state {e}"))?;
         let g = allocation(&c);
         let GenesisOutputs {
-            outputs: outs,
+            outputs: mut outs,
             script,
             lock,
         } = genesis_outputs(&lab, &state, &g)?;
+        let initial_tip = native_settlement::Tip::initial(state.anchor.ordering.encode())
+            .map_err(|e| format!("tip {e}"))?;
+        if let Some(s) = &settlement {
+            outs.push(s.output(&initial_tip));
+        }
         let checkpoint = checkpoint_code.map(|code| {
             let checkpoint_script = molecule::script(
                 &code,
@@ -456,8 +497,12 @@ fn run() -> Result<(), String> {
             let tx = build(&lab, 0, &[], o, &[], &headers, None)?;
             reject(&mut lab, &format!("native/{label}"), &tx, code)?;
         }
+        if let Some(s) = &settlement {
+            s.genesis_controls(&mut lab, &outs, ckb)?;
+        }
         let tx = build(&lab, 0, &[], outs.clone(), &[], &[ckb], None)?;
         let h = commit(&mut lab, 0, "native/joint genesis", &tx)?;
+        let tip_point = lab::point(&h, 3)?;
         let mut anchor_point = lab::point(&h, 0)?;
         let mut vault_point = lab::point(&h, 1)?;
         let mut custody = vault::State::decode(&outs[1].data).unwrap();
@@ -879,6 +924,19 @@ fn run() -> Result<(), String> {
             return Err("cold custody differs".into());
         }
         result["cold_vault_recovery"] = recovered;
+        if let Some(s) = &settlement {
+            s.qualify(
+                &mut lab,
+                &mut result,
+                &g,
+                &c,
+                tip_point,
+                &initial_tip,
+                anchor_point,
+                &oracle_steps,
+                &path,
+            )?;
+        }
         let oracle = json!({"config":hx(&c.encode()),"authenticated_publication":false,"proof_settled":false,"custody_release":false,"production_ready":false,
             "scope":"EVM oracle input from accepted CKB publications; oracle does not verify CKB consensus",
             "cases":[{"name":"actual-native-publication-v2","genesis":g,"genesis_header":genesis_header,"steps":oracle_steps}]});

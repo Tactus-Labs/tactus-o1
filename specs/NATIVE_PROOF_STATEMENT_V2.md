@@ -95,9 +95,9 @@ CKB 0.210.0 evidence and does not connect to an existing node.
 ## Remaining work
 
 Native checkpoints now have [actual transition qualification](NATIVE_CHECKPOINT_REPORT.md).
-Generate and independently verify a new cryptographic proof, implement native
-settlement authority, bind the actual settlement type in a fresh
-joint deployment, and execute real CKB withdrawals against proven nonzero burn
-commitments. Native A3 obligations, recovery, observer RPC and reorg qualification
-also remain required. The v1 proof cannot authorize native custody, and the new
+[Native settlement bootstrap](NATIVE_SETTLEMENT_REPORT.md) now binds a real
+settlement type in a fresh joint deployment. Generate and independently verify
+a new cryptographic proof, positively qualify native settlement, and execute
+real CKB withdrawals against proven nonzero burn commitments. Native A3
+obligations, recovery, observer RPC and reorg qualification also remain required. The v1 proof cannot authorize native custody, and the new
 execution evidence does not close those production gates.

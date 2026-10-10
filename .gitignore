@@ -19,3 +19,5 @@ artifacts/
 /proofs/native-sp1/target/
 
 /proofs/ckb-native-checkpoint/target/
+
+/proofs/ckb-native-settlement/target/

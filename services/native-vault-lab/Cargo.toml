@@ -15,3 +15,8 @@ alloy-primitives = "=1.6.0"
 alloy-consensus = "=2.1.1"
 alloy-eips = "=2.1.1"
 k256 = { version = "0.13", features = ["ecdsa"] }
+
+tactus-o1-native-settlement-script = { path = "../../proofs/ckb-native-settlement", default-features = false }
+tactus-o1-native-proof-journal = { path = "../../proofs/native-sp1/journal" }
+[patch.crates-io]
+lazy_static = { path = "../../proofs/vendor/lazy_static-1.5.1" }
