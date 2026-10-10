@@ -52,6 +52,26 @@ jobs:
           (cd specs/evidence/native-guest && sha256sum --check SHA256SUMS)
           python3 -B scripts/test-native-guest.py
 
+  native-proof-tools:
+    runs-on: ubuntu-latest
+    env:
+      CARGO_BUILD_JOBS: 2
+      GOMAXPROCS: 2
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@1.97.1
+        with:
+          components: rustfmt, clippy
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.26.8'
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: proofs/native-prover
+      - run: cargo fmt --manifest-path proofs/native-prover/Cargo.toml --all -- --check
+      - run: cargo clippy --locked --manifest-path proofs/native-prover/Cargo.toml --all-targets --features native-gnark -- -D warnings
+      - run: python3 -B scripts/test-chain-proof-staging.py
+
   native-vault:
     runs-on: ubuntu-latest
     steps:

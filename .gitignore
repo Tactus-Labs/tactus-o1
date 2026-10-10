@@ -21,3 +21,5 @@ artifacts/
 /proofs/ckb-native-checkpoint/target/
 
 /proofs/ckb-native-settlement/target/
+
+/proofs/native-prover/target/

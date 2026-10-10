@@ -2330,6 +2330,7 @@ dependencies = [
  "alloy-primitives",
  "k256",
  "serde_json",
+ "sp1-verifier",
  "tactus-o1-devnet-driver",
  "tactus-o1-execution",
  "tactus-o1-native-anchor-script",

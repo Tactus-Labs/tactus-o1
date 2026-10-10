@@ -18,5 +18,6 @@ k256 = { version = "0.13", features = ["ecdsa"] }
 
 tactus-o1-native-settlement-script = { path = "../../proofs/ckb-native-settlement", default-features = false }
 tactus-o1-native-proof-journal = { path = "../../proofs/native-sp1/journal" }
+sp1-verifier = { version = "=6.8.1", default-features = false }
 [patch.crates-io]
 lazy_static = { path = "../../proofs/vendor/lazy_static-1.5.1" }

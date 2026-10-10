@@ -36,7 +36,7 @@ def retained_witness(directory, expected_key):
     return None
 
 
-def run(host, guest, root, circuit):
+def run(host, guest, root, circuit, wrapper=None):
     source = json.loads((root / 'proving-input.json').read_bytes())
     expected = bytes.fromhex(source['expected_journal_hex'][2:])
     key = source['guest_verifying_key']
@@ -99,7 +99,7 @@ def run(host, guest, root, circuit):
     else:
         selected = root / 'resumed-proof'
         with (root / 'resume-wrap.txt').open('w') as log:
-            subprocess.run(['/usr/bin/time', '-v', str(host.with_name('wrap-witness')),
+            subprocess.run(['/usr/bin/time', '-v', str(wrapper or host.with_name('wrap-witness')),
                             str(circuit / 'v6.1.0'), str(root / 'retained-wrapped-witness.json'),
                             str(root / 'proof/public-values.bin'), key, str(selected)],
                            stdout=log, stderr=subprocess.STDOUT, check=True)
@@ -108,6 +108,6 @@ def run(host, guest, root, circuit):
 
 
 if __name__ == '__main__':
-    if len(sys.argv) != 5:
-        raise SystemExit('usage: finish-chain-proof-staged.py HOST GUEST RUN_DIR CIRCUIT_PARENT')
+    if len(sys.argv) not in (5, 6):
+        raise SystemExit('usage: finish-chain-proof-staged.py HOST GUEST RUN_DIR CIRCUIT_PARENT [WRAPPER]')
     run(*(pathlib.Path(arg).resolve() for arg in sys.argv[1:]))

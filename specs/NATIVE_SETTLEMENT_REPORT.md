@@ -118,3 +118,7 @@ real CKB payouts. Negative/replay/redirected exits, reorg recovery, native A3
 obligations, full observer/recovery, archival economics, operational durability
 and the other production gates remain open. This implementation must not be
 presented as production custody before those positive paths are qualified.
+
+The [native proving/resume workflow](NATIVE_PROVING_WORKFLOW.md) now supplies
+separate real proof host tools, contiguous interval preparation and an owned-node
+resume driver. Its positive settlement path remains pending the new proof.
