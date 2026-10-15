@@ -124,3 +124,31 @@ fn framing_and_tip_are_strict_without_mock_verification() {
     )
     .is_err());
 }
+
+#[test]
+fn sparse_execution_profile_cannot_be_relabelled_as_native_custody() {
+    let (config, own, before, after, native) = fixture(true);
+    let sparse_profile = tactus_o1_protocol::batch::hash(
+        b"tactus/o1/sparse-proof-profile/v1",
+        b"TO1SPF01;genesis-allocation-or-authenticated-nonzero-boundary;ethereum-mpt-sparse-account-storage-code;missing-witness-fatal;linked-256-header-window;nonempty-contiguous-interval;no-withdrawal-authorization",
+    );
+    // Even an otherwise structurally valid native journal cannot use either
+    // the execution-only magic or profile, independently or together.
+    for change in 0..3 {
+        let mut wrong = native;
+        if change != 1 {
+            wrong[..8].copy_from_slice(b"TO1SPF01");
+        }
+        if change != 0 {
+            wrong[8..40].copy_from_slice(&sparse_profile);
+        }
+        assert!(transition(&config, &own, &before, &after, &wrong).is_err());
+    }
+    // Sparse public values have a different length as well. Padding a sparse
+    // frame does not create the vault config and authenticated deposit cursors.
+    let mut frame = b"TO1SETW1".to_vec();
+    frame.extend_from_slice(&[0; 768]);
+    frame.extend_from_slice(&1u32.to_le_bytes());
+    frame.push(1);
+    assert!(witness(&frame).is_err());
+}

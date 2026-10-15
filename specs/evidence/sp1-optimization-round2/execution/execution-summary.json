@@ -1,0 +1,13 @@
+{
+  "crypto_batch_ablation_cases": 8,
+  "ablation_executions": 32,
+  "formal_geth_cases": 17,
+  "formal_geth_blocks": 40,
+  "formal_chain_cases": 1,
+  "all_public_values_equal": true,
+  "crypto_backend_change_only_ecrecover_8_instruction_reduction_percent": 74.25435578670073,
+  "full_512_transfers_instruction_reduction_percent": 10.517032617060462,
+  "retained_chain_instruction_reduction_percent": 93.82664203753508,
+  "ci_run": false,
+  "proof_generated_by_execution_benchmark": false
+}

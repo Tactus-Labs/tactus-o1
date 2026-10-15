@@ -1,0 +1,1 @@
+chain export differs from independently replayed journal

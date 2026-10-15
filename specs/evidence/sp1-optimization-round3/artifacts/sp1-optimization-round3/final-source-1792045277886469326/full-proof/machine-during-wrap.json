@@ -1,0 +1,12 @@
+{
+  "captured_unix": 1792046807.6763444,
+  "cpu_count": 20,
+  "loadavg": "5.14 6.97 6.89 5/3226 361793",
+  "memory": {
+    "MemTotal": "32566844 kB",
+    "MemAvailable": "6924944 kB",
+    "SwapTotal": "16283132 kB",
+    "SwapFree": "10930740 kB"
+  },
+  "process": "    PID     ELAPSED %CPU   RSS STAT COMMAND\n"
+}

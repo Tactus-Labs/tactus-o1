@@ -59,7 +59,30 @@ fn bootstrap_tx(
         ],
     )
 }
+fn continuation_fixture(sparse: bool) -> Result<Value, String> {
+    let text = if let Some(path) = std::env::var_os("TACTUS_SETTLEMENT_CONTINUATION_JSON") {
+        if !sparse {
+            return Err("custom continuation is limited to the sparse laboratory mode".into());
+        }
+        std::fs::read_to_string(path).map_err(|e| e.to_string())?
+    } else {
+        include_str!("../../../../specs/test-vectors/proof-v1/settlement-continuation.json")
+            .to_owned()
+    };
+    serde_json::from_str(&text).map_err(|e| e.to_string())
+}
 fn run() -> Result<(), String> {
+    let sparse = match std::env::var("TACTUS_SPARSE_SETTLEMENT") {
+        Ok(value) if value == "1" => true,
+        Err(std::env::VarError::NotPresent) => false,
+        _ => return Err("TACTUS_SPARSE_SETTLEMENT must be 1 when supplied".into()),
+    };
+    if !sparse
+        && (std::env::var_os("TACTUS_SPARSE_GUEST_KEY").is_some()
+            || std::env::var_os("TACTUS_SETTLEMENT_CONTINUATION_JSON").is_some())
+    {
+        return Err("sparse inputs require explicit sparse laboratory mode".into());
+    }
     let reorg_mode = std::env::var_os("TACTUS_SETTLEMENT_REORG").is_some();
     if reorg_mode
         && (std::env::var_os("TACTUS_SETTLEMENT_PROOF_DIR").is_none()
@@ -84,8 +107,12 @@ fn run() -> Result<(), String> {
     let mut lab = Lab::connect_with_script("artifacts/tactus_o1_anchor_script.elf")?;
     let mut results = json!({"suite":"settlement-bootstrap-v1","complete":false,"settled":false,"production_ready":false,"G3":"OPEN","scope":"real atomic initialization, structural rejections, malformed-proof rejection and canonical proving input export; no accepted execution proof yet"});
     let outcome = (|| {
-        let settlement_elf = std::fs::read("artifacts/tactus_o1_settlement_script.elf")
-            .map_err(|e| e.to_string())?;
+        let settlement_elf = std::fs::read(if sparse {
+            "artifacts/tactus_o1_sparse_settlement_script.elf"
+        } else {
+            "artifacts/tactus_o1_settlement_script.elf"
+        })
+        .map_err(|e| e.to_string())?;
         let checkpoint_elf = std::fs::read("artifacts/tactus_o1_history_checkpoint_script.elf")
             .map_err(|e| e.to_string())?;
         let code = ckb_blake2b(&settlement_elf);
@@ -151,10 +178,21 @@ fn run() -> Result<(), String> {
                 .as_str()
                 .ok_or("chain")?,
         )?;
-        let core: Value = serde_json::from_str(include_str!(
-            "../../../../specs/evidence/execution-core-proof/result.json"
-        ))
-        .map_err(|e| e.to_string())?;
+        let core: Value = if sparse {
+            let key = rpc::decode_hex(
+                &std::env::var("TACTUS_SPARSE_GUEST_KEY")
+                    .map_err(|_| "missing sparse guest key")?,
+            )?;
+            if key.len() != 32 || key == [0; 32] {
+                return Err("invalid sparse guest key".into());
+            }
+            json!({"guest_verifying_key":rpc::bytes_to_hex(&key)})
+        } else {
+            serde_json::from_str(include_str!(
+                "../../../../specs/evidence/execution-core-proof/result.json"
+            ))
+            .map_err(|e| e.to_string())?
+        };
         let guest_key = rpc::decode_hex(core["guest_verifying_key"].as_str().ok_or("guest key")?)?;
         let mut config = b"TO1CFG01".to_vec();
         for field in [
@@ -287,8 +325,17 @@ fn run() -> Result<(), String> {
         let fixed = rpc::decode_hex(
             include_str!("../../../../specs/test-vectors/proof-v1/transfers-journal.hex").trim(),
         )?;
-        let mut journal = b"TO1PRF01".to_vec();
-        journal.extend_from_slice(&fixed[8..40]);
+        let mut journal = if sparse {
+            b"TO1SPF01".to_vec()
+        } else {
+            b"TO1PRF01".to_vec()
+        };
+        if sparse {
+            journal.extend_from_slice(&batch::hash(b"tactus/o1/sparse-proof-profile/v1",
+                b"TO1SPF01;genesis-allocation-or-authenticated-nonzero-boundary;ethereum-mpt-sparse-account-storage-code;missing-witness-fatal;linked-256-header-window;nonempty-contiguous-interval;no-withdrawal-authorization"));
+        } else {
+            journal.extend_from_slice(&fixed[8..40]);
+        }
         journal.extend_from_slice(&domain);
         journal.extend_from_slice(&allocation_hash);
         journal.extend_from_slice(&before.encode());
@@ -445,12 +492,10 @@ fn run() -> Result<(), String> {
         results["cold_recovery_controls"] = json!(cold_controls);
 
         results["proving_input"] = exported;
+        results["proof_profile"] = if sparse { "TO1SPF01" } else { "TO1PRF01" }.into();
         results["settlement_code_hash"] = rpc::bytes_to_hex(&code).into();
         let prepared_second = if let Some(directory) = second_directory {
-            let continuation: Value = serde_json::from_str(include_str!(
-                "../../../../specs/test-vectors/proof-v1/settlement-continuation.json"
-            ))
-            .map_err(|e| e.to_string())?;
+            let continuation = continuation_fixture(sparse)?;
             let next = tactus_o1_devnet_driver::settlement_inputs::prepare_next_input(
                 &mut lab,
                 &mut anchor,
@@ -683,10 +728,7 @@ fn run() -> Result<(), String> {
                         .into(),
                 );
             }
-            let continuation: Value = serde_json::from_str(include_str!(
-                "../../../../specs/test-vectors/proof-v1/settlement-continuation.json"
-            ))
-            .map_err(|e| e.to_string())?;
+            let continuation = continuation_fixture(sparse)?;
             let next = tactus_o1_devnet_driver::settlement_inputs::prepare_next_input(
                 &mut lab,
                 &mut anchor,

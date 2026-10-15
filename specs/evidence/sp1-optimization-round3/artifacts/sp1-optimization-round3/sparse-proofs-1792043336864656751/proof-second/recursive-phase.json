@@ -1,0 +1,14 @@
+{
+  "elapsed_seconds": 745.7880848000059,
+  "user_seconds": 5185.424992,
+  "system_seconds": 81.003547,
+  "max_rss_kib": 19403772,
+  "handoff": {
+    "reason": "deliberate fresh-process final wrapping after complete recursive witness",
+    "original_process_returncode": -15,
+    "witness_source": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/sparse-proofs-1792043336864656751/proof-second/tmp/.tmpS2FqUV",
+    "witness_sha256": "9a6786fd124b1e937a735b7d3331a82dcc92b8c34fd3ba443f74a867f45bde74",
+    "witness_bytes": 2803348,
+    "continuous_full_proof_success": false
+  }
+}

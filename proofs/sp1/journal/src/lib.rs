@@ -1,5 +1,6 @@
 //! Execution statement shared by the real zkVM guest and local verifier.
 //! This is not a CKB settlement verifier or a custody authorization.
+pub mod checkpoint;
 use tactus_o1_execution::{Executor, Genesis};
 use tactus_o1_protocol::{
     batch::{self, AnchorState},
@@ -178,7 +179,7 @@ pub fn execute(
     }
     let before = *engine.anchor();
     let previous_state_root = engine.state_root().0;
-    let previous_header_hash = engine.head().hash_slow().0;
+    let previous_header_hash = engine.head_hash().0;
     let mut interval_digest = batch::hash(
         b"tactus/o1/proof-interval/v1",
         &interval_batches.to_le_bytes(),
@@ -199,7 +200,7 @@ pub fn execute(
         previous_state_root,
         next_state_root: engine.state_root().0,
         previous_header_hash,
-        next_header_hash: engine.head().hash_slow().0,
+        next_header_hash: engine.head_hash().0,
         interval_digest,
     };
     // Keep construction and strict decoding in agreement.

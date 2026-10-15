@@ -15,6 +15,19 @@ if [[ "$($CKB_BIN --version)" != "ckb $required_version "* ]]; then
 fi
 suite="${TACTUS_DEVNET_SUITE:-replay-a123}"
 case "$suite" in replay-a123|replay-batch|replay-evm|replay-priority|replay-sealed|replay-admission|replay-network|replay-load|replay-seal-contention|replay-proof-verifier|replay-history-checkpoint|replay-checkpoint-reorg|replay-settlement-bootstrap|replay-sealed-settlement|replay-native-vault|replay-native-publication|replay-native-checkpoint|replay-native-settlement) ;; *) echo 'Unknown devnet suite' >&2; exit 1 ;; esac
+if [[ -v TACTUS_SPARSE_SETTLEMENT ]]; then
+  if [[ "$TACTUS_SPARSE_SETTLEMENT" != 1 || "$suite" != replay-settlement-bootstrap || ! "${TACTUS_SPARSE_GUEST_KEY:-}" =~ ^0x[[:xdigit:]]{64}$ ]]; then
+    echo 'Sparse settlement requires explicit mode 1, bootstrap suite and the compiled sparse guest key.' >&2
+    exit 1
+  fi
+elif [[ -v TACTUS_SPARSE_GUEST_KEY || -v TACTUS_SETTLEMENT_CONTINUATION_JSON ]]; then
+  echo 'Sparse guest/continuation inputs require explicit sparse settlement mode.' >&2
+  exit 1
+fi
+if [[ -v TACTUS_SETTLEMENT_CONTINUATION_JSON && ! -f "$TACTUS_SETTLEMENT_CONTINUATION_JSON" ]]; then
+  echo 'Missing sparse continuation input.' >&2
+  exit 1
+fi
 if [[ -v TACTUS_SETTLEMENT_REORG ]]; then
   if [[ "$TACTUS_SETTLEMENT_REORG" != 1 || "$suite" != replay-settlement-bootstrap || -z "${TACTUS_SETTLEMENT_PROOF_DIR:-}" || -v TACTUS_SECOND_SETTLEMENT_PROOF_DIR || -v TACTUS_PREPARE_SECOND_PROOF ]]; then
     echo 'Settlement reorg requires TACTUS_SETTLEMENT_REORG=1 and only a first real proof directory in the settlement suite.' >&2
@@ -77,7 +90,11 @@ if [[ "$suite" == replay-history-checkpoint || "$suite" == replay-checkpoint-reo
   bash scripts/build-history-checkpoint-script.sh
 fi
 if [[ "$suite" == replay-settlement-bootstrap || "$suite" == replay-sealed-settlement ]]; then
-  bash scripts/build-settlement-script.sh
+  if [[ "${TACTUS_SPARSE_SETTLEMENT:-}" == 1 ]]; then
+    bash scripts/build-sparse-settlement-script.sh
+  else
+    bash scripts/build-settlement-script.sh
+  fi
   cargo build --locked --bin recover-settlement
 fi
 mkdir -p artifacts
@@ -117,7 +134,15 @@ lock.code_hash = "0x9bd7e06f3ecf4be0f2fcd2188b23f1b9fcc88e5d4b65a8637b17723bbda3
 lock.args = "0xc155c0113355a061173d1ff21075ec37754ec1ca"
 lock.hash_type = "type"
 
-'''+s[i:];p.write_text(s)
+'''+s[i:]
+# Optional local resource envelope; never raises the laboratory's default limit.
+if 'TACTUS_DEVNET_MAX_BLOCK_CYCLES' in os.environ:
+ import re
+ budget=int(os.environ['TACTUS_DEVNET_MAX_BLOCK_CYCLES'])
+ assert 0 < budget <= 10_000_000_000, 'Invalid devnet cycle budget'
+ s,count=re.subn(r'(?m)^max_block_cycles\s*=.*$', 'max_block_cycles = '+str(budget), s)
+ assert count==1, 'Missing/ambiguous devnet cycle budget'
+p.write_text(s)
 if os.environ['TACTUS_DEVNET_SUITE'] in ('replay-network','replay-checkpoint-reorg') or os.getenv('TACTUS_SETTLEMENT_REORG') or os.getenv('TACTUS_OBLIGATION_REORG') or os.getenv('TACTUS_SEALED_PROOF_REORG'):
  shutil.copytree(root/'node',root/'peer')
  peer=root/'peer/ckb.toml'
@@ -144,7 +169,12 @@ if os.environ['TACTUS_DEVNET_SUITE']=='replay-proof-verifier':
 if os.environ['TACTUS_DEVNET_SUITE'] in ('replay-history-checkpoint','replay-checkpoint-reorg','replay-settlement-bootstrap','replay-sealed-settlement'):
  binaries.append('artifacts/tactus_o1_history_checkpoint_script.elf')
 if os.environ['TACTUS_DEVNET_SUITE'] in ('replay-settlement-bootstrap','replay-sealed-settlement'):
- binaries.extend(['artifacts/tactus_o1_settlement_script.elf','specs/evidence/execution-core-proof/result.json','target/debug/recover-settlement'])
+ binaries.append('target/debug/recover-settlement')
+ if os.getenv('TACTUS_SPARSE_SETTLEMENT')=='1':
+  binaries.append('artifacts/tactus_o1_sparse_settlement_script.elf')
+  manifest['sparse_settlement']={'guest_key':os.environ['TACTUS_SPARSE_GUEST_KEY'],'profile':'TO1SPF01','local_experiment_only':True}
+  if os.getenv('TACTUS_SETTLEMENT_CONTINUATION_JSON'):binaries.append(os.environ['TACTUS_SETTLEMENT_CONTINUATION_JSON'])
+ else:binaries.extend(['artifacts/tactus_o1_settlement_script.elf','specs/evidence/execution-core-proof/result.json'])
  for key in ['TACTUS_SETTLEMENT_PROOF_DIR','TACTUS_SECOND_SETTLEMENT_PROOF_DIR','TACTUS_SEALED_PROOF_DIR']:
   if key in os.environ:
    proof_dir=pathlib.Path(os.environ[key])

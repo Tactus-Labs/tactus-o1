@@ -30,7 +30,7 @@ def check(path, first_dir, second_dir):
             **check_document(json.loads(source), first_dir, second_dir)}
 
 
-def check_document(document, first_dir, second_dir):
+def check_document(document, first_dir, second_dir, **profile):
     results = document['results']
     require(results['suite'] == 'settlement-two-proofs-v1' and results['complete']
             and results['error'] is None and results['settled'] is True,
@@ -49,13 +49,13 @@ def check_document(document, first_dir, second_dir):
     published['evidence'] = published['evidence'][:25]
     published['results']['suite'] = 'settlement-next-input-v1'
     published['results']['settled'] = False
-    next_check.check_document(published)
+    next_check.check_document(published, **profile)
     require(results['settlement_fee_input'] == next_input['fee_input'], 'wrong first-proof funding source')
     initial = copy.deepcopy(document)
     initial['evidence'] = initial['evidence'][:24] + initial['evidence'][26:47]
     initial['results']['suite'] = 'settlement-first-proof-v1'
     initial['results']['proving_input']['fee_input'] = results['settlement_fee_input']
-    first_check.check_document(initial, first_dir)
+    first_check.check_document(initial, first_dir, **profile)
     require(results['cold_settlement_recovery']['published_batches'] == 2,
             'first proof did not settle while Anchor was already advanced')
     first_journal = (first_dir / 'public-values.bin').read_bytes()

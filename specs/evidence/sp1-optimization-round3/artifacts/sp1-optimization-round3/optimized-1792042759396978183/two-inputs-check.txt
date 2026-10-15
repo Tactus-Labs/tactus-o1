@@ -1,0 +1,15 @@
+{
+  "journal_sha256": "d6d173e91764ea81f9d4961aff59e3fe69ca2043a38ec7a57b0fc859c7b36f64",
+  "published_batches": 2,
+  "prefix_batches": 1,
+  "settled_batches": 0,
+  "negative_controls": 20,
+  "proof_generated": false,
+  "settled": false,
+  "production_ready": false,
+  "profile": "TO1SPF01",
+  "pinned_guest_key": "0x0017cf9eee019ac2f5933907aa0cf7cc50746d7a50d82504e31dede2fc1681a4",
+  "settlement_elf_sha256": "c8d0afe795225a0edebc969256f5e43920ac2b047f2159f636530fd6f22a0b36",
+  "cryptographic_verification_performed_by_checker": false,
+  "evidence_sha256": "d7f698047c6e6e535262d0cc54f4b1c774e978e7c83916b34cfdedd42ec6613d"
+}

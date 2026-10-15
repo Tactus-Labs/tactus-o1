@@ -1,0 +1,20 @@
+tactus-o1/native-custody-execution/v2
+inherits=serial-execution-v1-signed-user-transactions,Shanghai,gas-accounting,trie-construction
+rules-commitment=ckbhash(tactus/o1/native-execution-rules/v2, this-file || rules-v1.txt || root-Cargo.lock || contracts/bridge/NativeCKB.json)
+profile=distinct-from-v1;guest-and-settlement-authority=not-yet-qualified
+vault-config=TO1VAU01-164-bytes;vault-type=Molecule-Script-Data1-pinned-code-hash-and-config
+zero-address=no-genesis-account,no-code-or-nonce-or-storage-at-any-boundary,never-signed-sender;fees-and-transfers-may-fund-its-native-balance
+native-token-genesis=exact-pinned-compiled-runtime-with-vault-DOMAIN,nonce1,balance0,no-storage;contract-not-Shanghai-precompile
+genesis-extra-data=ckbhash(tactus/o1/native-genesis/v2,base-anchor200||vault-script217)
+anchor=base-anchor200||deposit-count-u64le||cumulative-u128le||accumulator32
+batch=TO1BRG02||parent-deposit-cursor56||deposit-count-u16le||records124*count||user-envelope-length-u32le||TO1BAT01-envelope
+limits=total-wrapper-at-most262144,deposits-at-most32,existing-user-limits
+batch-commitment=ckbhash(tactus/o1/native-batch/v2,complete-wrapper)
+records=exact-native-vault-TO1DPR01,contiguous-from-empty-config-bound-accumulator,positive-amount,nonzero-noncontract-recipient,checked-u64-count-and-u128-cumulative
+record-authority=publication-must-resolve-live-immutable-receipts-of-trusted-vault;transcript-hash-alone-is-not-authentication
+credits=serial-before-first-user-block,zero-caller,creditDeposit(config-bound-sequence-id,recipient,amount),zero-native-value,no-user-fees
+credit-vm=revm-SystemCallEvm-system_call_with_caller;fixed-handler-gas-limit30000000;successful-credit-gas-at-most200000;fixed-runtime-no-external-calls
+credit-results=separate-deposit-outcomes-with-logs;not-Ethereum-user-transactions-or-receipts;user-gas-and-roots-exclude-system-calls
+block-extra-data=ckbhash(tactus/o1/native-block/v2,slot-outcomes-v1-hash32||next-deposit-cursor56||vault-script217)
+postcondition=contract-runtime-and-nonce-unchanged,cumulativeDeposited-equals-cursor,totalSupply+cumulativeWithdrawn-equals-cumulativeDeposited,totalSupply-at-most-u64max
+atomicity=all-deposits-and-user-blocks-commit-together;invalid-wrapper,invalid-transcript,credit-failure,fatal-engine-error-or-postcondition-failure-abort

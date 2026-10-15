@@ -1,0 +1,11 @@
+{
+  "workload": "exact-key canonical first sparse interval; distinct from historical nine-batch workload",
+  "recursive_seconds": 799.846708276993,
+  "wrapping_and_verification_seconds": 76.757383696,
+  "comparable_seconds": 876.604091972993,
+  "including_fresh_verification_seconds": 907.1297746670025,
+  "recursive_max_rss_kib": 20930436,
+  "fresh_verification": true,
+  "negative_controls": 15,
+  "ckb_acceptance_pending": true
+}

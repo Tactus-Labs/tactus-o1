@@ -1,0 +1,34 @@
+Retained witness matches the exact public journal, guest key and release VK root
+Setting environment variables took 10.343µs
+Reading R1CS took 13.44322312s
+Reading proving key took 3.710180409s
+Reading witness file took 1.672221ms
+Deserializing JSON data took 17.64405ms
+Generating witness took 219.775043ms
+00:16:09 DBG constraint system solver done nbConstraints=15972262 took=5082.757416
+00:17:40 DBG prover done acceleration=none backend=groth16 curve=bn254 nbConstraints=15972262 took=91465.359484
+Generating proof took 1m36.550795261s
+Real Groth16 proof verified with 15 negative controls
+	Command being timed: "/home/arthur/RustRoverProjects/tactus-o1/artifacts/prover-host/target/release/wrap-witness /home/arthur/RustRoverProjects/tactus-o1/artifacts/prover-tools/circuits/groth16/v6.1.0 /home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-patched-full-proof/retained-wrapped-witness.json /home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-patched-full-proof/proof/public-values.bin 0x009af0b301570b9ccd54ee580352b3ec73d45eee3cadf93d61c365117c3ff42c /home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-patched-full-proof/resumed-proof"
+	User time (seconds): 211.12
+	System time (seconds): 7.78
+	Percent of CPU this job got: 179%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 2:01.69
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 17539916
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 17
+	Minor (reclaiming a frame) page faults: 5169910
+	Voluntary context switches: 138546
+	Involuntary context switches: 4140
+	Swaps: 0
+	File system inputs: 11989664
+	File system outputs: 56
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

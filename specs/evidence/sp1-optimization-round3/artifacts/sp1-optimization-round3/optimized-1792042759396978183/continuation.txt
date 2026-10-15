@@ -1,0 +1,3 @@
+   Compiling tactus-o1-execution v0.1.0 (/home/arthur/RustRoverProjects/tactus-o1/crates/tactus-o1-execution)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 1.90s
+     Running `target/debug/examples/settlement-continuation /home/arthur/RustRoverProjects/tactus-o1/artifacts/settlement-bootstrap-uAUCwSMo/proving-input.json /home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/optimized-1792042759396978183/continuation`

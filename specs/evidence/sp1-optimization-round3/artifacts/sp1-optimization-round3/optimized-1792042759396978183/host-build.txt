@@ -1,0 +1,38 @@
+warning: eliding a lifetime that's named elsewhere is confusing
+  --> /home/arthur/RustRoverProjects/tactus-o1/proofs/vendor/lazy_static-1.5.1/src/inline_lazy.rs:26:43
+   |
+26 |     pub fn get<F>(&'static self, f: F) -> &T
+   |                    -------                ^^ the same lifetime is elided here
+   |                    |
+   |                    the lifetime is named here
+   |
+   = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+   = note: `#[warn(mismatched_lifetime_syntaxes)]` on by default
+help: consistently use `'static`
+   |
+26 |     pub fn get<F>(&'static self, f: F) -> &'static T
+   |                                            +++++++
+
+warning: `lazy_static` (lib) generated 1 warning (run `cargo fix --lib -p lazy_static` to apply 1 suggestion)
+warning: eliding a lifetime that's named elsewhere is confusing
+  --> /home/arthur/RustRoverProjects/tactus-o1/proofs/vendor/lazy_static-1.5.1/src/core_lazy.rs:18:49
+   |
+18 |     pub fn get<F>(&'static self, builder: F) -> &T
+   |                    -------                      ^^ the same lifetime is elided here
+   |                    |
+   |                    the lifetime is named here
+   |
+   = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+   = note: `#[warn(mismatched_lifetime_syntaxes)]` on by default
+help: consistently use `'static`
+   |
+18 |     pub fn get<F>(&'static self, builder: F) -> &'static T
+   |                                                  +++++++
+
+warning: `lazy_static` (lib) generated 1 warning (run `cargo fix --lib -p lazy_static` to apply 1 suggestion)
+   Compiling tactus-o1-sparse-state v0.1.0 (/home/arthur/RustRoverProjects/tactus-o1/proofs/incremental-sp1/state)
+   Compiling tactus-o1-sparse-journal v0.1.0 (/home/arthur/RustRoverProjects/tactus-o1/proofs/incremental-sp1/journal)
+   Compiling tactus-o1-sparse-sp1-host v0.1.0 (/home/arthur/RustRoverProjects/tactus-o1/proofs/incremental-sp1/host)
+    Finished `release` profile [optimized] target(s) in 2m 41s
+warning: the following packages contain code that will be rejected by a future version of Rust: proc-macro-error2 v2.0.1
+note: to see what the problems were, use the option `--future-incompat-report`, or run `cargo report future-incompatibilities --id 1`

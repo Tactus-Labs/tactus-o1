@@ -1,0 +1,47 @@
+cargo:warning=rustc +succinct --version: "rustc 1.96.0-dev\n"
+[sp1]     Compiling hkdf v0.12.4
+[sp1]     Compiling sha2 v0.10.9 (https://github.com/sp1-patches/RustCrypto-hashes?rev=e48b656ebc806117554bb33c2f8687e4637e37ff#e48b656e)
+[sp1]     Compiling rfc6979 v0.4.0 (https://github.com/sp1-patches/signatures?tag=sp1-skip-verify-on-recovery#1880299a)
+[sp1]     Compiling sha3 v0.11.0 (https://github.com/sp1-patches/RustCrypto-hashes?rev=540d99e46fbe7aab00caf83c4144cb4eaaf62a17#540d99e4)
+[sp1]     Compiling elliptic-curve v0.13.8
+[sp1]     Compiling sha2 v0.11.0 (https://github.com/sp1-patches/RustCrypto-hashes?rev=8993e08b9f7c47cd4a056decbf85d2d7ab3fe77c#8993e08b)
+[sp1]     Compiling sp1-primitives v6.8.1
+[sp1]     Compiling ecdsa v0.16.9 (https://github.com/sp1-patches/signatures?tag=sp1-skip-verify-on-recovery#1880299a)
+[sp1]     Compiling sp1-lib v6.8.1
+[sp1]     Compiling k256 v0.13.4 (https://github.com/sp1-patches/elliptic-curves?rev=476243d31d3ffd9d882d0e5da1f6adaa2a204b62#476243d3)
+[sp1]     Compiling primeorder v0.13.6
+[sp1]     Compiling ecdsa v0.16.9
+[sp1]     Compiling blake2b-ref v0.3.1
+[sp1]     Compiling getrandom v0.3.4
+[sp1]     Compiling alloy-primitives v1.6.0
+[sp1]     Compiling p256 v0.13.2
+[sp1]     Compiling tactus-o1-protocol v0.1.0 (/home/arthur/RustRoverProjects/tactus-o1/crates/tactus-o1-protocol)
+[sp1]     Compiling tactus-o1-execution v0.1.0 (/home/arthur/RustRoverProjects/tactus-o1/crates/tactus-o1-execution)
+[sp1]     Compiling sp1-zkvm v6.8.1
+[sp1]     Compiling alloy-eip7928 v0.4.11
+[sp1]     Compiling revm-primitives v43.0.0
+[sp1]     Compiling alloy-eip7702 v0.6.3
+[sp1]     Compiling revm-bytecode v43.0.0
+[sp1]     Compiling revm-state v43.0.1
+[sp1]     Compiling alloy-eip2930 v0.2.4
+[sp1]     Compiling revm-database-interface v43.0.1
+[sp1]     Compiling alloy-eip2124 v0.2.0
+[sp1]     Compiling revm-context-interface v43.0.2
+[sp1]     Compiling alloy-serde v2.1.1
+[sp1]     Compiling revm-context v43.0.3
+[sp1]     Compiling revm-precompile v43.0.3
+[sp1]     Compiling revm-interpreter v43.0.2
+[sp1]     Compiling alloy-eips v2.1.1
+[sp1]     Compiling revm-database v43.0.1
+[sp1]     Compiling alloy-trie v0.9.8
+[sp1]     Compiling revm-handler v43.0.3
+[sp1]     Compiling revm-inspector v43.0.3
+[sp1]     Compiling revm v43.0.3
+[sp1]     Compiling alloy-consensus v2.1.1
+[sp1]     Compiling tactus-o1-wrong-guest v0.1.0 (/home/arthur/RustRoverProjects/tactus-o1/proofs/sp1/wrong-guest)
+[sp1]     Compiling tactus-o1-proof-journal v0.1.0 (/home/arthur/RustRoverProjects/tactus-o1/proofs/sp1/journal)
+[sp1]     Compiling tactus-o1-sp1-guest v0.1.0 (/home/arthur/RustRoverProjects/tactus-o1/proofs/sp1/guest)
+[sp1]      Finished `release` profile [optimized] target(s) in 17.08s
+cargo:rustc-env=SP1_ELF_tactus-o1-sp1-guest=/home/arthur/RustRoverProjects/tactus-o1/proofs/sp1/target/elf-compilation/riscv64im-succinct-zkvm-elf/release/tactus-o1-sp1-guest
+cargo:rustc-env=SP1_ELF_tactus-o1-wrong-guest=/home/arthur/RustRoverProjects/tactus-o1/proofs/sp1/target/elf-compilation/riscv64im-succinct-zkvm-elf/release/tactus-o1-wrong-guest
+5d3b788da108ff0a4466ea5101ee255e36019d65413d644f6fdadb6c3a675396  /home/arthur/RustRoverProjects/tactus-o1/proofs/sp1/target/elf-compilation/riscv64im-succinct-zkvm-elf/release/tactus-o1-sp1-guest

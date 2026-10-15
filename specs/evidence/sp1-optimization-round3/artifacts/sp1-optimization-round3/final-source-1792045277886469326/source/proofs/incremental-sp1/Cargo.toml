@@ -1,0 +1,12 @@
+[workspace]
+resolver = "2"
+members = ["state", "journal", "guest", "host"]
+[profile.release]
+debug = 0
+
+[patch.crates-io]
+lazy_static = { path = "../vendor/lazy_static-1.5.1" }
+sha3 = { package = "sha3", git = "https://github.com/sp1-patches/RustCrypto-hashes", rev = "540d99e46fbe7aab00caf83c4144cb4eaaf62a17" }
+k256 = { package = "k256", git = "https://github.com/sp1-patches/elliptic-curves", rev = "476243d31d3ffd9d882d0e5da1f6adaa2a204b62" }
+sha2_010 = { package = "sha2", git = "https://github.com/sp1-patches/RustCrypto-hashes", rev = "e48b656ebc806117554bb33c2f8687e4637e37ff" }
+sha2_011 = { package = "sha2", git = "https://github.com/sp1-patches/RustCrypto-hashes", rev = "8993e08b9f7c47cd4a056decbf85d2d7ab3fe77c" }

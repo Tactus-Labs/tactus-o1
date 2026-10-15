@@ -1,0 +1,1 @@
+/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/sparse-proofs-1792043336864656751/proof-second/resumed-proof

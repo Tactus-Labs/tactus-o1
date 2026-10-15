@@ -1,0 +1,66 @@
+warning: eliding a lifetime that's named elsewhere is confusing
+  --> /home/arthur/RustRoverProjects/tactus-o1/proofs/vendor/lazy_static-1.5.1/src/core_lazy.rs:18:49
+   |
+18 |     pub fn get<F>(&'static self, builder: F) -> &T
+   |                    -------                      ^^ the same lifetime is elided here
+   |                    |
+   |                    the lifetime is named here
+   |
+   = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+   = note: `#[warn(mismatched_lifetime_syntaxes)]` on by default
+help: consistently use `'static`
+   |
+18 |     pub fn get<F>(&'static self, builder: F) -> &'static T
+   |                                                  +++++++
+
+warning: `lazy_static` (lib) generated 1 warning (run `cargo fix --lib -p lazy_static` to apply 1 suggestion)
+   Compiling tactus-o1-sparse-state v0.1.0 (/home/arthur/RustRoverProjects/tactus-o1/proofs/incremental-sp1/state)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.79s
+     Running unittests src/lib.rs (proofs/sp1/target/debug/deps/tactus_o1_sparse_journal-ae34b87b8cb1c699)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/continuity.rs (proofs/sp1/target/debug/deps/continuity-e085fca58cc18887)
+
+running 1 test
+test consecutive_sparse_intervals_match_full_replay_and_bind_settlement ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s
+
+     Running unittests src/lib.rs (proofs/sp1/target/debug/deps/tactus_o1_sparse_state-cd62158aa7fe48fb)
+
+running 3 tests
+test trie::tests::absent_keys_and_missing_witnesses_are_distinct_and_deletion_needs_sibling ... ok
+test trie::tests::root_leaf_and_inline_paths_roundtrip_through_witness ... ok
+test trie::tests::sparse_insert_update_delete_matches_independent_full_hash_builder ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 2.01s
+
+     Running tests/execution.rs (proofs/sp1/target/debug/deps/execution-b547895369639823)
+
+running 8 tests
+test binary_witness_rejects_truncation_trailing_data_noncanonical_headers_and_limits ... ok
+test verified_absence_is_distinct_from_missing_witness_and_bad_headers ... ok
+test failed_sparse_commit_rolls_back_prior_successful_writes ... ok
+test pending_zeroes_and_recreated_accounts_do_not_expose_old_storage ... ok
+test omitted_deletion_sibling_fails_at_flush_and_allows_rollback ... ok
+test transaction_reads_observe_pending_writes_and_each_block_gets_its_own_root ... ok
+test sparse_execution_and_pruned_witness_match_complete_state_for_consecutive_batches ... ok
+test sparse_blockhash_window_preserves_recent_oldest_and_out_of_range_reads ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.13s
+
+   Doc-tests tactus_o1_sparse_journal
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests tactus_o1_sparse_state
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

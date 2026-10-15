@@ -6,6 +6,8 @@ rust-version = "1.92"
 [workspace]
 [patch.crates-io]
 lazy_static = { path = "../vendor/lazy_static-1.5.1" }
+sp1-verifier = { path = "../vendor/sp1-verifier-6.8.1" }
+substrate-bn-succinct-rs = { path = "../vendor/substrate-bn-succinct-rs-0.6.0" }
 [target.'cfg(target_arch = "riscv64")'.dependencies]
 lazy_static = { version = "=1.5.1", features = ["ckb_single_thread"] }
 [dependencies]
@@ -21,5 +23,7 @@ crate-type = ["rlib"]
 [profile.release]
 debug = false
 panic = "abort"
+lto = true
+codegen-units = 1
 [dev-dependencies]
 serde_json = "=1.0.151"

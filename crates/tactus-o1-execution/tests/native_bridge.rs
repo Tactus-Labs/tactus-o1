@@ -14,6 +14,42 @@ use tactus_o1_protocol::{
 };
 
 #[test]
+fn generated_native_constants_match_original_artifact_expression() {
+    let descriptor = [
+        include_bytes!("../rules-native-v2.txt").as_slice(),
+        include_bytes!("../rules-v1.txt").as_slice(),
+        include_bytes!("../../../Cargo.lock").as_slice(),
+        include_bytes!("../../../contracts/bridge/NativeCKB.json").as_slice(),
+    ]
+    .concat();
+    assert_eq!(
+        native_bridge::rules_hash(),
+        batch::hash(b"tactus/o1/native-execution-rules/v2", &descriptor)
+    );
+    let artifact: serde_json::Value =
+        serde_json::from_slice(include_bytes!("../../../contracts/bridge/NativeCKB.json")).unwrap();
+    let deployed = &artifact["contract"]["evm"]["deployedBytecode"];
+    let (original, _, _, _) = f::actual();
+    for marker in [0, 1, 255] {
+        let mut config = original.clone();
+        config.identity = [marker; 32];
+        let mut expected = hex::decode(deployed["object"].as_str().unwrap()).unwrap();
+        for references in deployed["immutableReferences"]
+            .as_object()
+            .unwrap()
+            .values()
+        {
+            for patch in references.as_array().unwrap() {
+                let start = patch["start"].as_u64().unwrap() as usize;
+                expected[start..start + 32]
+                    .copy_from_slice(native_bridge::domain(&config).as_slice());
+            }
+        }
+        assert_eq!(native_bridge::runtime(&config).as_ref(), expected);
+    }
+}
+
+#[test]
 fn actual_funded_records_preserve_domain_wire_and_credit_exact_balances() {
     let (c, code, records, report) = f::actual();
     let g = f::genesis(&c);

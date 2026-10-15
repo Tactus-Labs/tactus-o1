@@ -1,0 +1,51 @@
+warning: eliding a lifetime that's named elsewhere is confusing
+  --> /home/arthur/RustRoverProjects/tactus-o1/proofs/vendor/lazy_static-1.5.1/src/core_lazy.rs:18:49
+   |
+18 |     pub fn get<F>(&'static self, builder: F) -> &T
+   |                    -------                      ^^ the same lifetime is elided here
+   |                    |
+   |                    the lifetime is named here
+   |
+   = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+   = note: `#[warn(mismatched_lifetime_syntaxes)]` on by default
+help: consistently use `'static`
+   |
+18 |     pub fn get<F>(&'static self, builder: F) -> &'static T
+   |                                                  +++++++
+
+warning: `lazy_static` (lib) generated 1 warning (run `cargo fix --lib -p lazy_static` to apply 1 suggestion)
+warning: hiding a lifetime that's elided elsewhere is confusing
+   --> /home/arthur/RustRoverProjects/tactus-o1/proofs/vendor/substrate-bn-succinct-rs-0.6.0/src/arith.rs:411:17
+    |
+411 |     pub fn bits(&self) -> BitIterator {
+    |                 ^^^^^     ^^^^^^^^^^^ the same lifetime is hidden here
+    |                 |
+    |                 the lifetime is elided here
+    |
+    = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+    = note: `#[warn(mismatched_lifetime_syntaxes)]` on by default
+help: use `'_` for type paths
+    |
+411 |     pub fn bits(&self) -> BitIterator<'_> {
+    |                                      ++++
+
+warning: `substrate-bn-succinct-rs` (lib) generated 1 warning (run `cargo fix --lib -p substrate-bn-succinct-rs` to apply 1 suggestion)
+   Compiling tactus-o1-settlement-script v0.1.0 (/home/arthur/RustRoverProjects/tactus-o1/proofs/ckb-settlement)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.21s
+     Running unittests src/lib.rs (proofs/ckb-settlement/target/debug/deps/tactus_o1_settlement_script-0b0869322c74eda7)
+
+running 5 tests
+test tests::binds_fixture_journal_to_real_state_and_deployment_fields ... ok
+test tests::other_execution_profile_is_not_accepted_by_this_script ... ok
+test tests::later_intervals_require_both_predecessor_roots_and_strict_progress ... ok
+test tests::canonical_encodings_and_proof_framing_are_bounded ... ok
+test tests::retained_a3_groth16_and_every_public_domain_are_cryptographically_checked ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 3.52s
+
+   Doc-tests tactus_o1_settlement_script
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

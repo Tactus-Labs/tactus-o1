@@ -1,0 +1,34 @@
+Retained witness matches the exact public journal, guest key and release VK root
+Setting environment variables took 5.534µs
+Reading R1CS took 11.595691336s
+Reading proving key took 4.378046512s
+Reading witness file took 2.742376ms
+Deserializing JSON data took 17.799829ms
+Generating witness took 177.666359ms
+14:46:11 DBG constraint system solver done nbConstraints=15972262 took=3164.0782
+14:46:57 DBG prover done acceleration=none backend=groth16 curve=bn254 nbConstraints=15972262 took=46513.566535
+Generating proof took 49.68029152s
+Real Groth16 proof verified with 15 negative controls
+	Command being timed: "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/proof-tools/wrap-witness /home/arthur/RustRoverProjects/tactus-o1/artifacts/prover-tools/circuits/groth16/v6.1.0 /home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/final-source-1792045277886469326/full-proof/retained-wrapped-witness.json /home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/final-source-1792045277886469326/full-proof/proof/public-values.bin 0x0080f615f0c5ae00a998ffae474f42d59c3c936f63309fa8b8390c0d0ff934c2 /home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/final-source-1792045277886469326/full-proof/resumed-proof"
+	User time (seconds): 214.33
+	System time (seconds): 8.88
+	Percent of CPU this job got: 306%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:12.85
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 17448124
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 22
+	Minor (reclaiming a frame) page faults: 5320659
+	Voluntary context switches: 150347
+	Involuntary context switches: 2461
+	Swaps: 0
+	File system inputs: 12283728
+	File system outputs: 56
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

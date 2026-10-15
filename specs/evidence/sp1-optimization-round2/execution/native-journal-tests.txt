@@ -1,0 +1,193 @@
+   Compiling proc-macro2 v1.0.107
+   Compiling quote v1.0.47
+   Compiling unicode-ident v1.0.26
+   Compiling cfg-if v1.0.5
+   Compiling typenum v1.20.1
+   Compiling version_check v0.9.5
+   Compiling libc v0.2.190
+   Compiling serde_core v1.0.229
+   Compiling zeroize v1.9.1
+   Compiling generic-array v0.14.9
+   Compiling syn v3.0.6
+   Compiling subtle v2.6.1
+   Compiling const-oid v0.9.6
+   Compiling getrandom v0.2.17
+   Compiling syn v2.0.119
+   Compiling serde v1.0.229
+   Compiling rand_core v0.6.4
+   Compiling crypto-common v0.1.6
+   Compiling block-buffer v0.10.4
+   Compiling digest v0.10.7
+   Compiling der v0.7.10
+   Compiling base16ct v0.2.0
+   Compiling ff v0.13.1
+   Compiling group v0.13.0
+   Compiling hmac v0.12.1
+   Compiling crypto-bigint v0.5.5
+   Compiling spki v0.7.3
+   Compiling pkcs8 v0.10.2
+   Compiling hybrid-array v0.4.15
+   Compiling autocfg v1.5.1
+   Compiling allocator-api2 v0.2.21
+   Compiling foldhash v0.2.0
+   Compiling crypto-common v0.2.2
+   Compiling hashbrown v0.17.1
+   Compiling serde_derive v1.0.229
+   Compiling block-buffer v0.12.1
+   Compiling signature v2.2.0
+   Compiling cpufeatures v0.2.17
+   Compiling alloy-rlp-derive v0.3.16
+   Compiling digest v0.11.3
+   Compiling arrayvec v0.7.8
+   Compiling unicode-segmentation v1.13.3
+   Compiling sha2 v0.10.9 (https://github.com/sp1-patches/RustCrypto-hashes?rev=e48b656ebc806117554bb33c2f8687e4637e37ff#e48b656e)
+   Compiling convert_case v0.10.0
+   Compiling rfc6979 v0.4.0 (https://github.com/sp1-patches/signatures?tag=sp1-skip-verify-on-recovery#1880299a)
+   Compiling once_cell v1.21.4
+   Compiling ruint-macro v1.2.1
+   Compiling unicode-xid v0.2.6
+   Compiling paste v1.0.15
+   Compiling derive_more-impl v2.1.1
+   Compiling keccak v0.2.2
+   Compiling itoa v1.0.18
+   Compiling equivalent v1.0.2
+   Compiling indexmap v2.14.2
+   Compiling sha3 v0.11.0 (https://github.com/sp1-patches/RustCrypto-hashes?rev=540d99e46fbe7aab00caf83c4144cb4eaaf62a17#540d99e4)
+   Compiling const-hex v1.19.3
+   Compiling rustc-hash v2.1.3
+   Compiling num-traits v0.2.19
+   Compiling zerocopy v0.8.62
+   Compiling thiserror v2.0.21
+   Compiling thiserror-impl v2.0.21
+   Compiling serdect v0.2.0
+   Compiling sec1 v0.7.3
+   Compiling elliptic-curve v0.13.8
+   Compiling bytes v1.12.1
+   Compiling ecdsa v0.16.9 (https://github.com/sp1-patches/signatures?tag=sp1-skip-verify-on-recovery#1880299a)
+   Compiling k256 v0.13.4 (https://github.com/sp1-patches/elliptic-curves?rev=476243d31d3ffd9d882d0e5da1f6adaa2a204b62#476243d3)
+   Compiling alloy-rlp v0.3.16
+   Compiling derive_more v2.1.1
+   Compiling ruint v1.20.1
+   Compiling either v1.19.0
+   Compiling num-integer v0.1.47
+   Compiling ppv-lite86 v0.2.21
+   Compiling radium v0.7.0
+   Compiling num-bigint v0.4.8
+   Compiling tap v1.0.1
+   Compiling wyz v0.5.1
+   Compiling alloy-primitives v1.6.0
+   Compiling rand_chacha v0.3.1
+   Compiling funty v2.0.0
+   Compiling rand v0.8.8
+   Compiling alloy-eip7928 v0.4.11
+   Compiling revm-primitives v43.0.0
+   Compiling bitvec v1.1.1
+   Compiling auto_impl v1.4.0
+   Compiling enum-ordinalize-derive v4.4.2
+   Compiling ident_case v1.0.1
+   Compiling strsim v0.11.1
+   Compiling enum-ordinalize v4.4.2
+   Compiling ark-std v0.6.0
+   Compiling ark-serialize-derive v0.6.0
+   Compiling ahash v0.8.12
+   Compiling getrandom v0.3.4
+   Compiling bitflags v2.13.2
+   Compiling nonmax v0.5.5
+   Compiling ark-serialize v0.6.0
+   Compiling educe v0.6.0
+   Compiling alloy-eip7702 v0.6.3
+   Compiling revm-bytecode v43.0.0
+   Compiling ark-ff-macros v0.6.0
+   Compiling alloy-eip2930 v0.2.4
+   Compiling revm-state v43.0.1
+   Compiling ark-ff-asm v0.6.0
+   Compiling find-msvc-tools v0.1.14
+   Compiling shlex v2.0.1
+   Compiling revm-database-interface v43.0.1
+   Compiling cc v1.6.0
+   Compiling ark-ff v0.6.0
+   Compiling rand_core v0.9.5
+   Compiling itertools v0.14.0
+   Compiling rand_chacha v0.9.0
+   Compiling revm-context-interface v43.0.2
+   Compiling secp256k1-sys v0.11.0
+   Compiling darling_core v0.24.1
+   Compiling num-rational v0.4.2
+   Compiling ark-poly v0.6.0
+   Compiling num-iter v0.1.46
+   Compiling num-complex v0.4.6
+   Compiling rfc6979 v0.4.0
+   Compiling zmij v1.0.23
+   Compiling num v0.4.3
+   Compiling ecdsa v0.16.9
+   Compiling ark-ec v0.6.0
+   Compiling rand v0.9.5
+   Compiling darling_macro v0.24.1
+   Compiling primeorder v0.13.6
+   Compiling hex v0.4.3
+   Compiling cpufeatures v0.3.1
+   Compiling serde_json v1.0.151
+   Compiling sha2 v0.11.0 (https://github.com/sp1-patches/RustCrypto-hashes?rev=8993e08b9f7c47cd4a056decbf85d2d7ab3fe77c#8993e08b)
+   Compiling aurora-engine-modexp v1.3.0
+   Compiling darling v0.24.1
+   Compiling p256 v0.13.2
+   Compiling secp256k1 v0.31.1
+   Compiling darling_core v0.23.0
+   Compiling ripemd v0.2.0
+   Compiling derive-where v1.7.0
+   Compiling ark-bls12-381 v0.6.0
+   Compiling ark-bn254 v0.6.0
+   Compiling arrayref v0.3.9
+   Compiling memchr v2.8.3
+   Compiling crc-catalog v2.5.0
+   Compiling crc v3.4.0
+   Compiling revm-precompile v43.0.3
+   Compiling revm-context v43.0.3
+   Compiling darling_macro v0.23.0
+   Compiling serde_with_macros v3.24.0
+   Compiling revm-interpreter v43.0.2
+   Compiling smallvec v1.16.2
+   Compiling tracing-core v0.1.36
+   Compiling blake2b-ref v0.3.1
+   Compiling pin-project-lite v0.2.17
+   Compiling serde_with v3.24.0
+   Compiling tactus-o1-protocol v0.1.0 (/home/arthur/RustRoverProjects/tactus-o1/crates/tactus-o1-protocol)
+   Compiling tracing v0.1.44
+   Compiling revm-handler v43.0.3
+   Compiling nybbles v0.4.8
+   Compiling alloy-serde v2.1.1
+   Compiling darling v0.23.0
+   Compiling alloy-eip2124 v0.2.0
+   Compiling alloy-tx-macros v2.1.1
+   Compiling alloy-eips v2.1.1
+   Compiling tactus-o1-execution v0.1.0 (/home/arthur/RustRoverProjects/tactus-o1/crates/tactus-o1-execution)
+   Compiling alloy-trie v0.9.8
+   Compiling revm-inspector v43.0.3
+   Compiling revm-database v43.0.1
+   Compiling alloy-consensus v2.1.1
+   Compiling revm v43.0.3
+   Compiling tactus-o1-native-proof-journal v0.1.0 (/home/arthur/RustRoverProjects/tactus-o1/proofs/native-sp1/journal)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 21.61s
+     Running unittests src/lib.rs (proofs/native-sp1/target/debug/deps/tactus_o1_native_proof_journal-414c48e914087fec)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/statement.rs (proofs/native-sp1/target/debug/deps/statement-357e5ba896e6d52a)
+
+running 5 tests
+test rejects_empty_and_overflowed_interval_before_requesting_input ... ok
+test strict_decoding_and_cursor_continuity ... ok
+test binds_every_custody_domain_field_and_allocation ... ok
+test rejects_missing_reordered_repeated_and_tampered_deposit_batches ... ok
+test real_publications_match_independent_geth_roots_and_chain_anchors ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.13s
+
+   Doc-tests tactus_o1_native_proof_journal
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

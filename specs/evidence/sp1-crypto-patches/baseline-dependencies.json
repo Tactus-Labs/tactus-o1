@@ -1,0 +1,92 @@
+{
+  "sp1": {
+    "patches": {},
+    "packages": [
+      {
+        "name": "k256",
+        "version": "0.13.4",
+        "source": "registry+https://github.com/rust-lang/crates.io-index"
+      },
+      {
+        "name": "secp256k1",
+        "version": "0.30.0",
+        "source": "registry+https://github.com/rust-lang/crates.io-index"
+      },
+      {
+        "name": "secp256k1",
+        "version": "0.31.1",
+        "source": "registry+https://github.com/rust-lang/crates.io-index"
+      },
+      {
+        "name": "sha2",
+        "version": "0.10.9",
+        "source": "registry+https://github.com/rust-lang/crates.io-index"
+      },
+      {
+        "name": "sha2",
+        "version": "0.11.0",
+        "source": "registry+https://github.com/rust-lang/crates.io-index"
+      },
+      {
+        "name": "sha3",
+        "version": "0.11.0",
+        "source": "registry+https://github.com/rust-lang/crates.io-index"
+      },
+      {
+        "name": "sp1-zkvm",
+        "version": "6.8.1",
+        "source": "registry+https://github.com/rust-lang/crates.io-index"
+      },
+      {
+        "name": "tiny-keccak",
+        "version": "2.0.2",
+        "source": "registry+https://github.com/rust-lang/crates.io-index"
+      }
+    ]
+  },
+  "native-sp1": {
+    "patches": {},
+    "packages": [
+      {
+        "name": "k256",
+        "version": "0.13.4",
+        "source": "registry+https://github.com/rust-lang/crates.io-index"
+      },
+      {
+        "name": "secp256k1",
+        "version": "0.30.0",
+        "source": "registry+https://github.com/rust-lang/crates.io-index"
+      },
+      {
+        "name": "secp256k1",
+        "version": "0.31.1",
+        "source": "registry+https://github.com/rust-lang/crates.io-index"
+      },
+      {
+        "name": "sha2",
+        "version": "0.10.9",
+        "source": "registry+https://github.com/rust-lang/crates.io-index"
+      },
+      {
+        "name": "sha2",
+        "version": "0.11.0",
+        "source": "registry+https://github.com/rust-lang/crates.io-index"
+      },
+      {
+        "name": "sha3",
+        "version": "0.11.0",
+        "source": "registry+https://github.com/rust-lang/crates.io-index"
+      },
+      {
+        "name": "sp1-zkvm",
+        "version": "6.8.1",
+        "source": "registry+https://github.com/rust-lang/crates.io-index"
+      },
+      {
+        "name": "tiny-keccak",
+        "version": "2.0.2",
+        "source": "registry+https://github.com/rust-lang/crates.io-index"
+      }
+    ]
+  }
+}

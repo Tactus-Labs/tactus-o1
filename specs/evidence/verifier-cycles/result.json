@@ -1,0 +1,37 @@
+{
+  "scope": "selected CKB type script; retained real proof; binary replacement",
+  "debugger_sha256": "24641357274ca464ecd86fd63b715ad96b5490d27b5ca029df37511e435d96f0",
+  "cases": [
+    {
+      "case": "receipt",
+      "tx_sha256": "1da036cdf3c2d4868726cd75a68d185ff0a186b863b144a0890704231c8f256d",
+      "baseline": {
+        "cycles": 3974969445,
+        "elf_sha256": "ea7def2e1d98a8f8098eec8755e85d36e1a90b9c51738b77ccdc47d455ae8e3a",
+        "limit": 10000000000
+      },
+      "optimized": {
+        "cycles": 332484740,
+        "elf_sha256": "96eade7072ee2a2107f3eff915ab0e220c608a5b7a2ebc19b563d27254fb64e5",
+        "limit": 3500000000
+      },
+      "reduction_percent": 91.63553972928715
+    },
+    {
+      "case": "settlement",
+      "tx_sha256": "859eca94430aa6ef353d81f6aa446027bb68d600628badce121c84da1bdca39a",
+      "baseline": {
+        "cycles": 3983164412,
+        "elf_sha256": "58e5d7f4c3cd8665a9870760267b837f60ef7b04cc92599ff35e5f02abdd1f93",
+        "limit": 10000000000
+      },
+      "optimized": {
+        "cycles": 333144448,
+        "elf_sha256": "93bfd29d828238c0ad9397264a522b96296706f1d709f65580aa2ec1241aa0a5",
+        "limit": 3500000000
+      },
+      "reduction_percent": 91.63618636990373
+    }
+  ],
+  "ci_run": false
+}

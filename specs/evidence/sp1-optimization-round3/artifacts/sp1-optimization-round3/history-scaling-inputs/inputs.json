@@ -1,0 +1,44 @@
+[
+  {
+    "input": "artifacts/sp1-optimization-round3/history-scaling-inputs/prefix-1.json",
+    "interval_batches": 1,
+    "interval_blocks": 1,
+    "prefix": 1,
+    "slots": 32
+  },
+  {
+    "input": "artifacts/sp1-optimization-round3/history-scaling-inputs/prefix-8.json",
+    "interval_batches": 1,
+    "interval_blocks": 1,
+    "prefix": 8,
+    "slots": 32
+  },
+  {
+    "input": "artifacts/sp1-optimization-round3/history-scaling-inputs/prefix-64.json",
+    "interval_batches": 1,
+    "interval_blocks": 1,
+    "prefix": 64,
+    "slots": 32
+  },
+  {
+    "input": "artifacts/sp1-optimization-round3/history-scaling-inputs/prefix-256.json",
+    "interval_batches": 1,
+    "interval_blocks": 1,
+    "prefix": 256,
+    "slots": 32
+  },
+  {
+    "input": "artifacts/sp1-optimization-round3/history-scaling-inputs/prefix-512.json",
+    "interval_batches": 1,
+    "interval_blocks": 1,
+    "prefix": 512,
+    "slots": 32
+  },
+  {
+    "input": "artifacts/sp1-optimization-round3/history-scaling-inputs/prefix-1024.json",
+    "interval_batches": 1,
+    "interval_blocks": 1,
+    "prefix": 1024,
+    "slots": 32
+  }
+]

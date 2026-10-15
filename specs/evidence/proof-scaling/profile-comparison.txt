@@ -1,0 +1,12 @@
+baseline/first-1: 6196245 instructions; exact native journal match
+profiled/first-1: 6300879 instructions; exact native journal match
+memoized/first-1: 2262658 instructions; exact native journal match
+baseline/first-3: 10347816 instructions; exact native journal match
+profiled/first-3: 10521516 instructions; exact native journal match
+memoized/first-3: 2480468 instructions; exact native journal match
+baseline/all-9: 23257553 instructions; exact native journal match
+profiled/all-9: 23641682 instructions; exact native journal match
+memoized/all-9: 3588795 instructions; exact native journal match
+baseline/prefix-8-new-1: 23159433 instructions; exact native journal match
+profiled/prefix-8-new-1: 23543562 instructions; exact native journal match
+memoized/prefix-8-new-1: 3490675 instructions; exact native journal match

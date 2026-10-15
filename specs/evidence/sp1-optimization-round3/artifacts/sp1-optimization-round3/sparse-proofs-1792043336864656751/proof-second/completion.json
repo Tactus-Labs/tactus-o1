@@ -1,0 +1,31 @@
+{
+  "proof_generated": true,
+  "proof_directory": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/sparse-proofs-1792043336864656751/proof-second/resumed-proof",
+  "pipeline_seconds": 817.9825310110027,
+  "fresh_verification_seconds": 28.258263891999377,
+  "total_seconds_including_fresh_verification": 846.2411304109992,
+  "preparation_and_build_excluded": true,
+  "fresh_verification": true,
+  "negative_controls": [
+    "profile",
+    "ckb-network",
+    "ordering-script",
+    "settlement-script",
+    "rollup",
+    "chain",
+    "allocation",
+    "predecessor",
+    "end-history",
+    "previous-state",
+    "next-state",
+    "previous-header",
+    "next-header",
+    "interval-data",
+    "wrong-guest-key"
+  ],
+  "public_values_unchanged": true,
+  "staged": true,
+  "ckb_settlement": false,
+  "deployment_authorized": false,
+  "production_ready": false
+}

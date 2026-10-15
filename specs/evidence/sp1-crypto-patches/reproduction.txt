@@ -1,0 +1,6 @@
+baseline-build.txt: ['bash', 'scripts/build-proof-guest.sh']
+sha3-only-build.txt: ['/home/arthur/RustRoverProjects/tactus-o1/artifacts/prover-tools/cargo-prove', 'prove', 'build', '--locked', '-p', 'tactus-o1-sp1-guest']
+combined-build.txt: ['/home/arthur/RustRoverProjects/tactus-o1/artifacts/prover-tools/cargo-prove', 'prove', 'build', '--locked', '-p', 'tactus-o1-sp1-guest']
+bench-build.txt: ['cargo', '+1.97.1', 'build', '--release', '--locked', '--manifest-path', 'proofs/sp1/Cargo.toml', '-p', 'tactus-o1-sp1-host', '--bin', 'crypto-patch-bench']
+comparison.txt: ['/home/arthur/RustRoverProjects/tactus-o1/artifacts/prover-host/target/release/crypto-patch-bench', '/home/arthur/RustRoverProjects/tactus-o1/specs/test-vectors/execution-v1/geth-1.17.8.json', '/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-patches-reproduced/comparison', '/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-patches-reproduced/baseline.elf', '/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-patches-reproduced/sha3-only.elf', '/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-patches-reproduced/combined.elf']
+Completed execution comparison: /home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-patches-reproduced/comparison/results.json

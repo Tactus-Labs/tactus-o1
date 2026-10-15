@@ -1,0 +1,54 @@
+   Compiling sha2 v0.10.9 (https://github.com/sp1-patches/RustCrypto-hashes?rev=e48b656ebc806117554bb33c2f8687e4637e37ff#e48b656e)
+   Compiling rfc6979 v0.4.0 (https://github.com/sp1-patches/signatures?tag=sp1-skip-verify-on-recovery#1880299a)
+   Compiling sha3 v0.11.0 (https://github.com/sp1-patches/RustCrypto-hashes?rev=540d99e46fbe7aab00caf83c4144cb4eaaf62a17#540d99e4)
+   Compiling ecdsa v0.16.9
+   Compiling ecdsa v0.16.9 (https://github.com/sp1-patches/signatures?tag=sp1-skip-verify-on-recovery#1880299a)
+   Compiling sha2 v0.11.0 (https://github.com/sp1-patches/RustCrypto-hashes?rev=8993e08b9f7c47cd4a056decbf85d2d7ab3fe77c#8993e08b)
+   Compiling p256 v0.13.2
+   Compiling tactus-o1-protocol v0.1.0 (/home/arthur/RustRoverProjects/tactus-o1/crates/tactus-o1-protocol)
+   Compiling k256 v0.13.4 (https://github.com/sp1-patches/elliptic-curves?rev=476243d31d3ffd9d882d0e5da1f6adaa2a204b62#476243d3)
+   Compiling tactus-o1-execution v0.1.0 (/home/arthur/RustRoverProjects/tactus-o1/crates/tactus-o1-execution)
+   Compiling alloy-primitives v1.6.0
+   Compiling alloy-eip7928 v0.4.11
+   Compiling revm-primitives v43.0.0
+   Compiling alloy-eip2930 v0.2.4
+   Compiling revm-bytecode v43.0.0
+   Compiling alloy-eip7702 v0.6.3
+   Compiling revm-state v43.0.1
+   Compiling alloy-eip2124 v0.2.0
+   Compiling alloy-serde v2.1.1
+   Compiling alloy-eips v2.1.1
+   Compiling alloy-trie v0.9.8
+   Compiling revm-database-interface v43.0.1
+   Compiling revm-context-interface v43.0.2
+   Compiling revm-database v43.0.1
+   Compiling revm-precompile v43.0.3
+   Compiling revm-context v43.0.3
+   Compiling revm-interpreter v43.0.2
+   Compiling alloy-consensus v2.1.1
+   Compiling revm-handler v43.0.3
+   Compiling revm-inspector v43.0.3
+   Compiling revm v43.0.3
+   Compiling tactus-o1-proof-journal v0.1.0 (/home/arthur/RustRoverProjects/tactus-o1/proofs/sp1/journal)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 5.25s
+     Running unittests src/lib.rs (proofs/sp1/target/debug/deps/tactus_o1_proof_journal-ccedc08f6a98b863)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/statement.rs (proofs/sp1/target/debug/deps/statement-4fcf2d34dc4fe0ef)
+
+running 3 tests
+test rejects_empty_overflow_wrong_domain_and_noncanonical_journal ... ok
+test prefix_is_executed_and_order_and_allocation_cannot_be_substituted ... ok
+test real_signed_fixtures_commit_exact_host_and_geth_results ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.11s
+
+   Doc-tests tactus_o1_proof_journal
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

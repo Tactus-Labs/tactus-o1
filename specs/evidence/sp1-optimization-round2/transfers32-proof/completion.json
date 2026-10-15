@@ -1,0 +1,31 @@
+{
+  "proof_generated": true,
+  "proof_directory": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimized-transfers32-proof/resumed-proof",
+  "pipeline_seconds": 1608.2258745679937,
+  "fresh_verification_seconds": 38.466662926002755,
+  "total_seconds_including_fresh_verification": 1646.6928965240004,
+  "preparation_and_build_excluded": true,
+  "fresh_verification": true,
+  "negative_controls": [
+    "profile",
+    "ckb-network",
+    "ordering-script",
+    "settlement-script",
+    "rollup",
+    "chain",
+    "allocation",
+    "predecessor",
+    "end-history",
+    "previous-state",
+    "next-state",
+    "previous-header",
+    "next-header",
+    "interval-data",
+    "wrong-guest-key"
+  ],
+  "public_values_unchanged": true,
+  "staged": true,
+  "ckb_settlement": false,
+  "deployment_authorized": false,
+  "production_ready": false
+}

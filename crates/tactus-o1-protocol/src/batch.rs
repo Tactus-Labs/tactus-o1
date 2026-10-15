@@ -167,34 +167,82 @@ pub struct BatchInput {
     pub blocks: Vec<BlockInput>,
 }
 
+/// Fully validated view. Raw transactions borrow the immutable envelope;
+/// allocations contain only bounded block metadata and slice references.
+#[derive(Clone, Debug, PartialEq, Eq)]
+pub struct BatchView<'a> {
+    pub blocks: Vec<BlockView<'a>>,
+}
+
+#[derive(Clone, Debug, PartialEq, Eq)]
+pub struct BlockView<'a> {
+    pub timestamp: u64,
+    pub fee_recipient: [u8; 20],
+    pub transactions: Vec<&'a [u8]>,
+}
+
+impl<'a> BatchView<'a> {
+    pub fn decode_with_summary(
+        bytes: &'a [u8],
+        parent: &AnchorState,
+    ) -> Result<(Self, BatchSummary), Error> {
+        let mut blocks: Vec<BlockView<'a>> = Vec::new();
+        // The collector is private: nothing is returned or executed until the
+        // complete envelope, including its suffix and successor, is valid.
+        let summary = scan_events(bytes, parent, |event| match event {
+            ScanEvent::Block {
+                timestamp,
+                recipient,
+                count,
+            } => blocks.push(BlockView {
+                timestamp,
+                fee_recipient: recipient,
+                transactions: Vec::with_capacity(usize::from(count)),
+            }),
+            ScanEvent::Transaction { bytes, .. } => {
+                blocks
+                    .last_mut()
+                    .expect("validated block header")
+                    .transactions
+                    .push(bytes);
+            }
+        })?;
+        Ok((Self { blocks }, summary))
+    }
+}
+
 impl BatchInput {
     /// Decode only after validating the entire envelope. Unlike the transaction
     /// visitor, this preserves empty blocks, which still advance execution time,
     /// block hashes and the base-fee schedule.
     pub fn decode(bytes: &[u8], parent: &AnchorState) -> Result<Self, Error> {
-        let summary = validate_batch(bytes, parent)?;
-        let mut reader = Reader::new(&bytes[194..]);
-        let mut blocks = Vec::with_capacity(usize::from(summary.blocks));
-        for _ in 0..summary.blocks {
-            let timestamp = reader.u64()?;
-            let fee_recipient = reader.array()?;
-            let count = reader.u16()?;
-            let mut transactions = Vec::with_capacity(usize::from(count));
-            for _ in 0..count {
-                let length = reader.u32()? as usize;
-                transactions.push(reader.take(length)?.to_vec());
-            }
-            blocks.push(BlockInput {
-                timestamp,
-                fee_recipient,
-                transactions,
-            });
-        }
-        reader.finish()?;
-        Ok(Self {
-            parent: *parent,
-            blocks,
-        })
+        Self::decode_with_summary(bytes, parent).map(|(input, _)| input)
+    }
+
+    /// Decode and return the summary from the same complete validation. This
+    /// avoids callers hashing and validating the envelope a second time.
+    /// No partially validated input escapes if any suffix or boundary is invalid.
+    pub fn decode_with_summary(
+        bytes: &[u8],
+        parent: &AnchorState,
+    ) -> Result<(Self, BatchSummary), Error> {
+        let (view, summary) = BatchView::decode_with_summary(bytes, parent)?;
+        let blocks = view
+            .blocks
+            .into_iter()
+            .map(|block| BlockInput {
+                timestamp: block.timestamp,
+                fee_recipient: block.fee_recipient,
+                transactions: block.transactions.into_iter().map(<[u8]>::to_vec).collect(),
+            })
+            .collect();
+        Ok((
+            Self {
+                parent: *parent,
+                blocks,
+            },
+            summary,
+        ))
     }
 
     pub fn encode(&self) -> Result<Vec<u8>, Error> {
@@ -278,6 +326,40 @@ fn scan_batch(
     parent: &AnchorState,
     mut visitor: impl FnMut(u64, u64, [u8; 20], usize, &[u8]),
 ) -> Result<BatchSummary, Error> {
+    scan_events(bytes, parent, |event| {
+        if let ScanEvent::Transaction {
+            number,
+            timestamp,
+            recipient,
+            index,
+            bytes,
+        } = event
+        {
+            visitor(number, timestamp, recipient, index, bytes);
+        }
+    })
+}
+
+enum ScanEvent<'a> {
+    Block {
+        timestamp: u64,
+        recipient: [u8; 20],
+        count: u16,
+    },
+    Transaction {
+        number: u64,
+        timestamp: u64,
+        recipient: [u8; 20],
+        index: usize,
+        bytes: &'a [u8],
+    },
+}
+
+fn scan_events<'a>(
+    bytes: &'a [u8],
+    parent: &AnchorState,
+    mut visitor: impl FnMut(ScanEvent<'a>),
+) -> Result<BatchSummary, Error> {
     if bytes.len() > MAX_BATCH_BYTES {
         return Err(Error::Limit);
     }
@@ -331,13 +413,24 @@ fn scan_batch(
             return Err(Error::Limit);
         }
         let number = first.checked_add(u64::from(index)).ok_or(Error::Overflow)?;
+        visitor(ScanEvent::Block {
+            timestamp,
+            recipient,
+            count,
+        });
         for tx_index in 0..count {
             let length = r.u32()? as usize;
             if length == 0 || length > MAX_TRANSACTION_BYTES {
                 return Err(Error::Limit);
             }
             let tx = r.take(length)?;
-            visitor(number, timestamp, recipient, usize::from(tx_index), tx);
+            visitor(ScanEvent::Transaction {
+                number,
+                timestamp,
+                recipient,
+                index: usize::from(tx_index),
+                bytes: tx,
+            });
         }
     }
     r.finish()?;

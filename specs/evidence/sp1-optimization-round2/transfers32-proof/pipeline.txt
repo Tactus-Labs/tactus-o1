@@ -1,0 +1,24 @@
+Real proof phase completed; fresh canonical verification still required: /home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimized-transfers32-proof/resumed-proof
+	Command being timed: "python3 -B scripts/finish-chain-proof-staged.py /home/arthur/RustRoverProjects/tactus-o1/artifacts/prover-host/target/release/chain-proof /home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimized-transfers32-proof/guest.elf /home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimized-transfers32-proof /home/arthur/RustRoverProjects/tactus-o1/artifacts/prover-tools/circuits/groth16"
+	User time (seconds): 5659.57
+	System time (seconds): 114.81
+	Percent of CPU this job got: 359%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 26:48.22
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 21102752
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 72
+	Minor (reclaiming a frame) page faults: 101507807
+	Voluntary context switches: 1386938
+	Involuntary context switches: 67015
+	Swaps: 0
+	File system inputs: 12557840
+	File system outputs: 17488
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

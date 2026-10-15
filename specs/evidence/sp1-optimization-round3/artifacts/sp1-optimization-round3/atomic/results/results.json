@@ -1,0 +1,308 @@
+[
+  {
+    "case": "three-envelope-types",
+    "case_index": 0,
+    "crypto_syscalls": {
+      "KECCAK_PERMUTE": 49,
+      "SECP256K1_ADD": 771,
+      "SECP256K1_DOUBLE": 1536,
+      "SHA_COMPRESS": 13,
+      "SHA_EXTEND": 13
+    },
+    "execution_seconds": 0.265152752,
+    "geth_checked": true,
+    "instructions": 642894,
+    "native_match": true,
+    "prover_gas": 811861,
+    "variant": "base"
+  },
+  {
+    "case": "invalid-slots-then-valid",
+    "case_index": 1,
+    "crypto_syscalls": {
+      "KECCAK_PERMUTE": 56,
+      "SECP256K1_ADD": 1726,
+      "SECP256K1_DOUBLE": 3584,
+      "SHA_COMPRESS": 13,
+      "SHA_EXTEND": 13
+    },
+    "execution_seconds": 0.299938153,
+    "geth_checked": true,
+    "instructions": 925029,
+    "native_match": true,
+    "prover_gas": 1153683,
+    "variant": "base"
+  },
+  {
+    "case": "deploy-write-clear",
+    "case_index": 2,
+    "crypto_syscalls": {
+      "KECCAK_PERMUTE": 65,
+      "SECP256K1_ADD": 757,
+      "SECP256K1_DOUBLE": 1536,
+      "SHA_COMPRESS": 13,
+      "SHA_EXTEND": 13
+    },
+    "execution_seconds": 0.269180148,
+    "geth_checked": true,
+    "instructions": 726931,
+    "native_match": true,
+    "prover_gas": 902325,
+    "variant": "base"
+  },
+  {
+    "case": "revert-after-store-log",
+    "case_index": 3,
+    "crypto_syscalls": {
+      "KECCAK_PERMUTE": 41,
+      "SECP256K1_ADD": 513,
+      "SECP256K1_DOUBLE": 1024,
+      "SHA_COMPRESS": 13,
+      "SHA_EXTEND": 13
+    },
+    "execution_seconds": 0.264765253,
+    "geth_checked": true,
+    "instructions": 531471,
+    "native_match": true,
+    "prover_gas": 680283,
+    "variant": "base"
+  },
+  {
+    "case": "halt-after-store-log",
+    "case_index": 4,
+    "crypto_syscalls": {
+      "KECCAK_PERMUTE": 41,
+      "SECP256K1_ADD": 513,
+      "SECP256K1_DOUBLE": 1024,
+      "SHA_COMPRESS": 13,
+      "SHA_EXTEND": 13
+    },
+    "execution_seconds": 0.237111131,
+    "geth_checked": true,
+    "instructions": 531062,
+    "native_match": true,
+    "prover_gas": 679971,
+    "variant": "base"
+  },
+  {
+    "case": "shanghai-selfdestruct",
+    "case_index": 5,
+    "crypto_syscalls": {
+      "KECCAK_PERMUTE": 53,
+      "SECP256K1_ADD": 534,
+      "SECP256K1_DOUBLE": 1024,
+      "SHA_COMPRESS": 13,
+      "SHA_EXTEND": 13
+    },
+    "execution_seconds": 0.278151487,
+    "geth_checked": true,
+    "instructions": 615780,
+    "native_match": true,
+    "prover_gas": 772443,
+    "variant": "base"
+  },
+  {
+    "case": "context-and-empty-block",
+    "case_index": 6,
+    "crypto_syscalls": {
+      "KECCAK_PERMUTE": 111,
+      "SECP256K1_ADD": 534,
+      "SECP256K1_DOUBLE": 1024,
+      "SHA_COMPRESS": 13,
+      "SHA_EXTEND": 13
+    },
+    "execution_seconds": 0.281147394,
+    "geth_checked": true,
+    "instructions": 813389,
+    "native_match": true,
+    "prover_gas": 1026521,
+    "variant": "base"
+  },
+  {
+    "case": "sha256-identity-precompiles",
+    "case_index": 7,
+    "crypto_syscalls": {
+      "KECCAK_PERMUTE": 35,
+      "SECP256K1_ADD": 506,
+      "SECP256K1_DOUBLE": 1024,
+      "SHA_COMPRESS": 14,
+      "SHA_EXTEND": 14
+    },
+    "execution_seconds": 0.290925073,
+    "geth_checked": true,
+    "instructions": 505675,
+    "native_match": true,
+    "prover_gas": 644830,
+    "variant": "base"
+  },
+  {
+    "case": "block-gas-exhaustion",
+    "case_index": 8,
+    "crypto_syscalls": {
+      "KECCAK_PERMUTE": 55,
+      "SECP256K1_ADD": 776,
+      "SECP256K1_DOUBLE": 1536,
+      "SHA_COMPRESS": 13,
+      "SHA_EXTEND": 13
+    },
+    "execution_seconds": 0.274410935,
+    "geth_checked": true,
+    "instructions": 649472,
+    "native_match": true,
+    "prover_gas": 825743,
+    "variant": "base"
+  },
+  {
+    "case": "transfers-1",
+    "case_index": 9,
+    "crypto_syscalls": {
+      "KECCAK_PERMUTE": 27,
+      "SECP256K1_ADD": 257,
+      "SECP256K1_DOUBLE": 512,
+      "SHA_COMPRESS": 13,
+      "SHA_EXTEND": 13
+    },
+    "execution_seconds": 0.37116033,
+    "geth_checked": true,
+    "instructions": 384102,
+    "native_match": true,
+    "prover_gas": 499310,
+    "variant": "base"
+  },
+  {
+    "case": "transfers-8",
+    "case_index": 10,
+    "crypto_syscalls": {
+      "KECCAK_PERMUTE": 89,
+      "SECP256K1_ADD": 2063,
+      "SECP256K1_DOUBLE": 4096,
+      "SHA_COMPRESS": 13,
+      "SHA_EXTEND": 13
+    },
+    "execution_seconds": 0.308525172,
+    "geth_checked": true,
+    "instructions": 1217579,
+    "native_match": true,
+    "prover_gas": 1482315,
+    "variant": "base"
+  },
+  {
+    "case": "transfers-32",
+    "case_index": 11,
+    "crypto_syscalls": {
+      "KECCAK_PERMUTE": 293,
+      "SECP256K1_ADD": 8215,
+      "SECP256K1_DOUBLE": 16384,
+      "SHA_COMPRESS": 13,
+      "SHA_EXTEND": 13
+    },
+    "execution_seconds": 0.469143285,
+    "geth_checked": true,
+    "instructions": 4022140,
+    "native_match": true,
+    "prover_gas": 4748796,
+    "variant": "base"
+  },
+  {
+    "case": "transfers-128",
+    "case_index": 12,
+    "crypto_syscalls": {
+      "KECCAK_PERMUTE": 1151,
+      "SECP256K1_ADD": 32653,
+      "SECP256K1_DOUBLE": 65536,
+      "SHA_COMPRESS": 13,
+      "SHA_EXTEND": 13
+    },
+    "execution_seconds": 0.919585109,
+    "geth_checked": true,
+    "instructions": 15537006,
+    "native_match": true,
+    "prover_gas": 18147861,
+    "variant": "base"
+  },
+  {
+    "case": "transfers-512",
+    "case_index": 13,
+    "crypto_syscalls": {
+      "KECCAK_PERMUTE": 4583,
+      "SECP256K1_ADD": 130688,
+      "SECP256K1_DOUBLE": 262144,
+      "SHA_COMPRESS": 13,
+      "SHA_EXTEND": 13
+    },
+    "execution_seconds": 3.000383326,
+    "geth_checked": true,
+    "instructions": 61467141,
+    "native_match": true,
+    "prover_gas": 71624880,
+    "variant": "base"
+  },
+  {
+    "case": "ecrecover-1",
+    "case_index": 14,
+    "crypto_syscalls": {
+      "KECCAK_PERMUTE": 29,
+      "SECP256K1_ADD": 494,
+      "SECP256K1_DOUBLE": 1024,
+      "SHA_COMPRESS": 13,
+      "SHA_EXTEND": 13
+    },
+    "execution_seconds": 0.232810518,
+    "geth_checked": true,
+    "instructions": 423024,
+    "native_match": true,
+    "prover_gas": 559707,
+    "variant": "base"
+  },
+  {
+    "case": "ecrecover-8",
+    "case_index": 15,
+    "crypto_syscalls": {
+      "KECCAK_PERMUTE": 119,
+      "SECP256K1_ADD": 3804,
+      "SECP256K1_DOUBLE": 8192,
+      "SHA_COMPRESS": 13,
+      "SHA_EXTEND": 13
+    },
+    "execution_seconds": 0.279226938,
+    "geth_checked": true,
+    "instructions": 1563127,
+    "native_match": true,
+    "prover_gas": 2013421,
+    "variant": "base"
+  },
+  {
+    "case": "ecrecover-edge-cases",
+    "case_index": 16,
+    "crypto_syscalls": {
+      "KECCAK_PERMUTE": 124,
+      "SECP256K1_ADD": 3039,
+      "SECP256K1_DOUBLE": 6144,
+      "SHA_COMPRESS": 13,
+      "SHA_EXTEND": 13
+    },
+    "execution_seconds": 0.272675326,
+    "geth_checked": true,
+    "instructions": 1517129,
+    "native_match": true,
+    "prover_gas": 1889714,
+    "variant": "base"
+  },
+  {
+    "case": "retained-sealed-chain",
+    "case_index": 17,
+    "crypto_syscalls": {
+      "KECCAK_PERMUTE": 108,
+      "SECP256K1_ADD": 771,
+      "SECP256K1_DOUBLE": 1536,
+      "SHA_COMPRESS": 13,
+      "SHA_EXTEND": 13
+    },
+    "execution_seconds": 0.255707688,
+    "geth_checked": false,
+    "instructions": 1266058,
+    "native_match": true,
+    "prover_gas": 1444278,
+    "variant": "base"
+  }
+]

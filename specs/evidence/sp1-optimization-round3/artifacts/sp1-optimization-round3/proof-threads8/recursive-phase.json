@@ -1,0 +1,14 @@
+{
+  "elapsed_seconds": 1084.9025159169978,
+  "user_seconds": 7369.310708,
+  "system_seconds": 147.24399,
+  "max_rss_kib": 20640392,
+  "handoff": {
+    "reason": "deliberate fresh-process final wrapping after complete recursive witness",
+    "original_process_returncode": -15,
+    "witness_source": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/proof-threads8/tmp/.tmpoTWmY3",
+    "witness_sha256": "6ff2880444ca5b990cdf66405b0d66e56639db440c1564d6111a479e64348062",
+    "witness_bytes": 2802740,
+    "continuous_full_proof_success": false
+  }
+}

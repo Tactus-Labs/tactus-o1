@@ -1,0 +1,155 @@
+2026-10-15T05:49:35.752333Z  INFO initializing cpu prover
+Local CPU prover initialized after 27.040100635s
+2026-10-15T05:50:05.623184Z  INFO public_value_stream: [84, 79, 49, 83, 80, 70, 48, 49, 146, 161, 67, 81, 181, 83, 124, 123, 100, 103, 153, 94, 93, 163, 128, 51, 164, 241, 237, 233, 157, 246, 184, 116, 228, 119, 91, 208, 13, 77, 242, 216, 221, 214, 174, 162, 41, 17, 128, 89, 104, 202, 63, 137, 189, 160, 138, 169, 216, 2, 79, 192, 11, 44, 159, 251, 7, 177, 188, 209, 112, 103, 60, 106, 233, 8, 149, 210, 111, 169, 7, 55, 71, 183, 113, 142, 163, 53, 194, 108, 174, 110, 62, 8, 48, 216, 179, 183, 70, 0, 109, 151, 175, 75, 149, 114, 75, 50, 95, 39, 245, 166, 92, 158, 27, 184, 37, 224, 52, 1, 190, 47, 148, 58, 247, 24, 192, 87, 144, 132, 139, 186, 90, 63, 89, 127, 29, 47, 144, 114, 199, 190, 103, 20, 231, 103, 74, 92, 244, 117, 199, 47, 53, 221, 58, 25, 188, 90, 230, 231, 84, 247, 198, 106, 52, 183, 137, 5, 225, 171, 105, 122, 0, 0, 0, 0, 0, 0, 216, 153, 61, 162, 245, 134, 118, 131, 30, 68, 91, 1, 201, 192, 18, 193, 137, 210, 26, 3, 254, 96, 240, 169, 14, 121, 176, 168, 142, 6, 181, 241, 84, 79, 49, 65, 78, 67, 48, 49, 144, 114, 199, 190, 103, 20, 231, 103, 74, 92, 244, 117, 199, 47, 53, 221, 58, 25, 188, 90, 230, 231, 84, 247, 198, 106, 52, 183, 137, 5, 225, 171, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 73, 246, 209, 143, 113, 61, 132, 53, 245, 239, 174, 150, 109, 84, 156, 147, 106, 161, 7, 230, 41, 129, 163, 19, 6, 1, 44, 25, 119, 188, 197, 48, 203, 173, 227, 195, 142, 89, 240, 148, 40, 75, 162, 25, 33, 110, 154, 215, 102, 6, 128, 69, 239, 109, 115, 126, 73, 182, 88, 27, 197, 160, 129, 204, 170, 217, 145, 13, 174, 142, 33, 96, 250, 12, 3, 196, 125, 92, 190, 188, 201, 165, 169, 55, 122, 80, 71, 139, 61, 170, 191, 59, 227, 19, 164, 179, 105, 122, 0, 0, 0, 0, 0, 0, 84, 79, 49, 65, 78, 67, 48, 49, 144, 114, 199, 190, 103, 20, 231, 103, 74, 92, 244, 117, 199, 47, 53, 221, 58, 25, 188, 90, 230, 231, 84, 247, 198, 106, 52, 183, 137, 5, 225, 171, 1, 0, 0, 0, 0, 0, 0, 0, 125, 0, 41, 130, 135, 124, 94, 187, 92, 173, 26, 134, 33, 109, 14, 214, 126, 171, 232, 174, 215, 68, 105, 27, 169, 103, 93, 60, 26, 66, 42, 107, 1, 0, 0, 0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 73, 246, 209, 143, 113, 61, 132, 53, 245, 239, 174, 150, 109, 84, 156, 147, 106, 161, 7, 230, 41, 129, 163, 19, 6, 1, 44, 25, 119, 188, 197, 48, 203, 173, 227, 195, 142, 89, 240, 148, 40, 75, 162, 25, 33, 110, 154, 215, 102, 6, 128, 69, 239, 109, 115, 126, 73, 182, 88, 27, 197, 160, 129, 204, 170, 217, 145, 13, 174, 142, 33, 96, 250, 12, 3, 196, 125, 92, 190, 188, 201, 165, 169, 55, 122, 80, 71, 139, 61, 170, 191, 59, 227, 19, 164, 179, 105, 122, 0, 0, 0, 0, 0, 0, 167, 186, 249, 73, 199, 146, 184, 130, 252, 94, 114, 253, 113, 193, 123, 98, 104, 191, 246, 200, 19, 0, 16, 36, 161, 64, 123, 168, 43, 128, 129, 85, 57, 215, 93, 36, 15, 152, 232, 100, 160, 136, 182, 0, 62, 47, 148, 19, 75, 174, 197, 166, 59, 208, 189, 234, 156, 149, 94, 20, 66, 117, 39, 231, 216, 26, 241, 219, 238, 54, 128, 40, 67, 40, 42, 141, 35, 51, 118, 77, 2, 31, 36, 142, 121, 67, 165, 55, 70, 144, 49, 68, 35, 210, 220, 25, 53, 199, 208, 40, 54, 115, 6, 147, 95, 170, 136, 253, 138, 18, 24, 187, 19, 104, 118, 118, 13, 207, 150, 40, 92, 50, 18, 197, 87, 129, 144, 27, 128, 151, 40, 14, 212, 117, 76, 51, 68, 205, 75, 76, 226, 73, 6, 43, 200, 63, 165, 105, 32, 188, 175, 249, 81, 191, 216, 141, 144, 229, 29, 240]
+2026-10-15T05:50:05.637136Z  INFO execute_program: close time.busy=19.2ms time.idle=168ms
+Guest matched independently replayed chain export after 30.253s
+2026-10-15T05:50:05.637249Z  INFO starting proof generation mode=Groth16
+2026-10-15T05:55:28.379262Z  INFO generate Keccak trace: close time.busy=208µs time.idle=6.59µs
+2026-10-15T05:55:28.379269Z  INFO generate Keccak trace: close time.busy=171µs time.idle=1.58µs
+2026-10-15T05:55:28.379376Z  INFO generate Keccak trace: close time.busy=165µs time.idle=1.41µs
+2026-10-15T05:55:28.379437Z  INFO generate Keccak trace:generate Keccak trace: close time.busy=199µs time.idle=762ns
+2026-10-15T05:55:28.379518Z  INFO generate Keccak trace: close time.busy=183µs time.idle=229ns
+2026-10-15T05:55:28.379531Z  INFO generate Keccak trace: close time.busy=187µs time.idle=300ns
+2026-10-15T05:55:28.379565Z  INFO generate Keccak trace: close time.busy=284µs time.idle=1.31µs
+2026-10-15T05:55:28.379596Z  INFO generate Keccak trace:generate Keccak trace: close time.busy=200µs time.idle=625ns
+2026-10-15T05:55:28.379600Z  INFO generate Keccak trace: close time.busy=201µs time.idle=241ns
+2026-10-15T05:55:28.379642Z  INFO generate Keccak trace:generate Keccak trace: close time.busy=174µs time.idle=265ns
+2026-10-15T05:55:28.379712Z  INFO generate Keccak trace: close time.busy=183µs time.idle=175ns
+2026-10-15T05:55:28.379725Z  INFO generate Keccak trace: close time.busy=186µs time.idle=186ns
+2026-10-15T05:55:28.379790Z  INFO generate Keccak trace:generate Keccak trace: close time.busy=170µs time.idle=267ns
+2026-10-15T05:55:28.379798Z  INFO generate Keccak trace: close time.busy=587µs time.idle=956ns
+2026-10-15T05:55:28.379802Z  INFO generate Keccak trace: close time.busy=182µs time.idle=219ns
+2026-10-15T05:55:28.379844Z  INFO generate Keccak trace:generate Keccak trace: close time.busy=191µs time.idle=238ns
+2026-10-15T05:55:28.379855Z  INFO generate Keccak trace: close time.busy=263µs time.idle=312ns
+2026-10-15T05:55:28.379858Z  INFO generate Keccak trace: close time.busy=139µs time.idle=192ns
+2026-10-15T05:55:28.379918Z  INFO generate Keccak trace: close time.busy=186µs time.idle=230ns
+2026-10-15T05:55:28.379955Z  INFO generate Keccak trace: close time.busy=139µs time.idle=237ns
+2026-10-15T05:55:28.379991Z  INFO generate Keccak trace: close time.busy=182µs time.idle=198ns
+2026-10-15T05:55:28.380037Z  INFO generate Keccak trace:generate Keccak trace: close time.busy=186µs time.idle=207ns
+2026-10-15T05:55:28.380056Z  INFO generate Keccak trace: close time.busy=190µs time.idle=222ns
+2026-10-15T05:55:28.380103Z  INFO generate Keccak trace: close time.busy=178µs time.idle=193ns
+2026-10-15T05:55:28.380144Z  INFO generate Keccak trace: close time.busy=269µs time.idle=348ns
+2026-10-15T05:55:28.380151Z  INFO generate Keccak trace: close time.busy=189µs time.idle=235ns
+2026-10-15T05:55:28.380181Z  INFO generate Keccak trace:generate Keccak trace: close time.busy=137µs time.idle=200ns
+2026-10-15T05:55:28.380195Z  INFO generate Keccak trace: close time.busy=198µs time.idle=212ns
+2026-10-15T05:55:28.380246Z  INFO generate Keccak trace: close time.busy=182µs time.idle=189ns
+2026-10-15T05:55:28.380277Z  INFO generate Keccak trace: close time.busy=167µs time.idle=221ns
+2026-10-15T05:55:28.380294Z  INFO generate Keccak trace: close time.busy=356µs time.idle=1.77µs
+2026-10-15T05:55:28.380340Z  INFO generate Keccak trace: close time.busy=182µs time.idle=214ns
+2026-10-15T05:55:28.380371Z  INFO generate Keccak trace:generate Keccak trace: close time.busy=183µs time.idle=220ns
+2026-10-15T05:55:28.380385Z  INFO generate Keccak trace: close time.busy=182µs time.idle=185ns
+2026-10-15T05:55:28.380395Z  INFO generate Keccak trace: close time.busy=143µs time.idle=174ns
+2026-10-15T05:55:28.380451Z  INFO generate Keccak trace: close time.busy=158µs time.idle=241ns
+2026-10-15T05:55:28.380512Z  INFO generate Keccak trace: close time.busy=349µs time.idle=344ns
+2026-10-15T05:55:28.380528Z  INFO generate Keccak trace: close time.busy=181µs time.idle=226ns
+2026-10-15T05:55:28.380559Z  INFO generate Keccak trace:generate Keccak trace: close time.busy=182µs time.idle=229ns
+2026-10-15T05:55:28.380573Z  INFO generate Keccak trace: close time.busy=182µs time.idle=250ns
+2026-10-15T05:55:28.380585Z  INFO generate Keccak trace: close time.busy=182µs time.idle=181ns
+2026-10-15T05:55:28.380624Z  INFO generate Keccak trace: close time.busy=158µs time.idle=195ns
+2026-10-15T05:55:28.380680Z  INFO generate Keccak trace: close time.busy=354µs time.idle=299ns
+2026-10-15T05:55:28.380683Z  INFO generate Keccak trace: close time.busy=149µs time.idle=207ns
+2026-10-15T05:55:28.380706Z  INFO generate Keccak trace:generate Keccak trace: close time.busy=139µs time.idle=181ns
+2026-10-15T05:55:28.380716Z  INFO generate Keccak trace: close time.busy=1.66ms time.idle=5.74µs
+2026-10-15T05:55:28.380718Z  INFO generate Keccak trace: close time.busy=138µs time.idle=192ns
+2026-10-15T05:55:28.380790Z  INFO generate Keccak trace: close time.busy=259µs time.idle=286ns
+2026-10-15T05:55:28.380832Z  INFO generate Keccak trace: close time.busy=139µs time.idle=263ns
+2026-10-15T05:55:28.380886Z  INFO generate Keccak trace: close time.busy=142µs time.idle=266ns
+2026-10-15T05:55:28.380928Z  INFO generate Keccak trace: close time.busy=226µs time.idle=266ns
+2026-10-15T05:55:28.380979Z  INFO generate Keccak trace: close time.busy=140µs time.idle=224ns
+2026-10-15T05:55:28.381071Z  INFO generate Keccak trace: close time.busy=261µs time.idle=305ns
+2026-10-15T05:55:28.381093Z  INFO generate Keccak trace: close time.busy=155µs time.idle=397ns
+2026-10-15T05:55:28.381156Z  INFO generate Keccak trace: close time.busy=261µs time.idle=547ns
+2026-10-15T05:55:28.381291Z  INFO generate Keccak trace: close time.busy=184µs time.idle=353ns
+2026-10-15T05:55:28.381316Z  INFO generate Keccak trace: close time.busy=141µs time.idle=491ns
+2026-10-15T05:55:28.381350Z  INFO generate Keccak trace: close time.busy=257µs time.idle=265ns
+2026-10-15T05:55:28.381440Z  INFO generate Keccak trace: close time.busy=142µs time.idle=193ns
+2026-10-15T05:55:28.381465Z  INFO generate Keccak trace: close time.busy=140µs time.idle=194ns
+2026-10-15T05:55:28.381586Z  INFO generate Keccak trace: close time.busy=140µs time.idle=208ns
+2026-10-15T05:55:28.381611Z  INFO generate Keccak trace: close time.busy=139µs time.idle=262ns
+2026-10-15T05:55:28.381636Z  INFO generate Keccak trace: close time.busy=264µs time.idle=300ns
+2026-10-15T05:55:28.381756Z  INFO generate Keccak trace: close time.busy=138µs time.idle=205ns
+2026-10-15T05:55:28.381757Z  INFO generate Keccak trace: close time.busy=164µs time.idle=378ns
+2026-10-15T05:55:28.381900Z  INFO generate Keccak trace: close time.busy=138µs time.idle=195ns
+2026-10-15T05:55:28.398469Z  INFO generate Keccak trace: close time.busy=438µs time.idle=3.53µs
+2026-10-15T05:55:28.398996Z  INFO generate Keccak trace: close time.busy=415µs time.idle=1.21µs
+2026-10-15T05:55:28.399441Z  INFO generate Keccak trace: close time.busy=385µs time.idle=704ns
+2026-10-15T05:55:28.399873Z  INFO generate Keccak trace: close time.busy=381µs time.idle=456ns
+2026-10-15T05:55:28.400311Z  INFO generate Keccak trace: close time.busy=391µs time.idle=939ns
+2026-10-15T05:55:28.400736Z  INFO generate Keccak trace: close time.busy=378µs time.idle=523ns
+2026-10-15T05:55:28.401152Z  INFO generate Keccak trace: close time.busy=375µs time.idle=628ns
+2026-10-15T05:55:28.401568Z  INFO generate Keccak trace: close time.busy=375µs time.idle=440ns
+2026-10-15T05:55:28.402015Z  INFO generate Keccak trace: close time.busy=402µs time.idle=571ns
+2026-10-15T05:55:28.402193Z  INFO generate Keccak trace: close time.busy=242µs time.idle=1.17µs
+2026-10-15T05:55:28.402240Z  INFO generate Keccak trace: close time.busy=258µs time.idle=1.55µs
+2026-10-15T05:55:28.402466Z  INFO generate Keccak trace: close time.busy=405µs time.idle=512ns
+2026-10-15T05:55:28.402488Z  INFO generate Keccak trace: close time.busy=209µs time.idle=357ns
+2026-10-15T05:55:28.402492Z  INFO generate Keccak trace: close time.busy=257µs time.idle=424ns
+2026-10-15T05:55:28.402721Z  INFO generate Keccak trace: close time.busy=208µs time.idle=255ns
+2026-10-15T05:55:28.402726Z  INFO generate Keccak trace: close time.busy=207µs time.idle=245ns
+2026-10-15T05:55:28.402916Z  INFO generate Keccak trace: close time.busy=402µs time.idle=538ns
+2026-10-15T05:55:28.402953Z  INFO generate Keccak trace: close time.busy=207µs time.idle=248ns
+2026-10-15T05:55:28.402960Z  INFO generate Keccak trace: close time.busy=208µs time.idle=264ns
+2026-10-15T05:55:28.403179Z  INFO generate Keccak trace: close time.busy=239µs time.idle=1.07µs
+2026-10-15T05:55:28.403191Z  INFO generate Keccak trace: close time.busy=212µs time.idle=267ns
+2026-10-15T05:55:28.403199Z  INFO generate Keccak trace: close time.busy=211µs time.idle=241ns
+2026-10-15T05:55:28.403366Z  INFO generate Keccak trace: close time.busy=406µs time.idle=644ns
+2026-10-15T05:55:28.403430Z  INFO generate Keccak trace: close time.busy=217µs time.idle=273ns
+2026-10-15T05:55:28.403432Z  INFO generate Keccak trace: close time.busy=208µs time.idle=282ns
+2026-10-15T05:55:28.403448Z  INFO generate Keccak trace: close time.busy=208µs time.idle=249ns
+2026-10-15T05:55:28.403665Z  INFO generate Keccak trace: close time.busy=209µs time.idle=237ns
+2026-10-15T05:55:28.403668Z  INFO generate Keccak trace: close time.busy=209µs time.idle=426ns
+2026-10-15T05:55:28.403684Z  INFO generate Keccak trace: close time.busy=209µs time.idle=238ns
+2026-10-15T05:55:28.403812Z  INFO generate Keccak trace: close time.busy=403µs time.idle=416ns
+2026-10-15T05:55:28.403898Z  INFO generate Keccak trace: close time.busy=207µs time.idle=261ns
+2026-10-15T05:55:28.403903Z  INFO generate Keccak trace: close time.busy=208µs time.idle=254ns
+2026-10-15T05:55:28.403918Z  INFO generate Keccak trace: close time.busy=208µs time.idle=236ns
+2026-10-15T05:55:28.404136Z  INFO generate Keccak trace: close time.busy=212µs time.idle=250ns
+2026-10-15T05:55:28.404156Z  INFO generate Keccak trace: close time.busy=211µs time.idle=243ns
+2026-10-15T05:55:28.404264Z  INFO generate Keccak trace: close time.busy=407µs time.idle=559ns
+2026-10-15T05:55:28.404368Z  INFO generate Keccak trace: close time.busy=208µs time.idle=259ns
+2026-10-15T05:55:28.404374Z  INFO generate Keccak trace: close time.busy=421µs time.idle=1.10µs
+2026-10-15T05:55:28.404387Z  INFO generate Keccak trace: close time.busy=208µs time.idle=239ns
+2026-10-15T05:55:28.404605Z  INFO generate Keccak trace: close time.busy=213µs time.idle=303ns
+2026-10-15T05:55:28.404626Z  INFO generate Keccak trace: close time.busy=212µs time.idle=247ns
+2026-10-15T05:55:28.404712Z  INFO generate Keccak trace: close time.busy=411µs time.idle=332ns
+2026-10-15T05:55:28.404836Z  INFO generate Keccak trace: close time.busy=412µs time.idle=469ns
+2026-10-15T05:55:28.404841Z  INFO generate Keccak trace: close time.busy=212µs time.idle=255ns
+2026-10-15T05:55:28.404861Z  INFO generate Keccak trace: close time.busy=211µs time.idle=247ns
+2026-10-15T05:55:28.405045Z  INFO generate Keccak trace: close time.busy=246µs time.idle=984ns
+2026-10-15T05:55:28.405066Z  INFO generate Keccak trace: close time.busy=317µs time.idle=471ns
+2026-10-15T05:55:28.405087Z  INFO generate Keccak trace: close time.busy=236µs time.idle=897ns
+2026-10-15T05:55:28.405201Z  INFO generate Keccak trace: close time.busy=317µs time.idle=473ns
+2026-10-15T05:55:28.405304Z  INFO generate Keccak trace: close time.busy=183µs time.idle=457ns
+2026-10-15T05:55:28.405350Z  INFO generate Keccak trace: close time.busy=162µs time.idle=448ns
+2026-10-15T05:55:28.405422Z  INFO generate Keccak trace: close time.busy=314µs time.idle=429ns
+2026-10-15T05:55:28.405553Z  INFO generate Keccak trace: close time.busy=313µs time.idle=327ns
+2026-10-15T05:55:28.405558Z  INFO generate Keccak trace: close time.busy=163µs time.idle=252ns
+2026-10-15T05:55:28.405643Z  INFO generate Keccak trace: close time.busy=758µs time.idle=693ns
+2026-10-15T05:55:28.405811Z  INFO generate Keccak trace: close time.busy=161µs time.idle=322ns
+2026-10-15T05:55:28.405850Z  INFO generate Keccak trace: close time.busy=167µs time.idle=521ns
+2026-10-15T05:55:28.405901Z  INFO generate Keccak trace: close time.busy=311µs time.idle=360ns
+2026-10-15T05:55:28.406049Z  INFO generate Keccak trace: close time.busy=172µs time.idle=496ns
+2026-10-15T05:55:28.406074Z  INFO generate Keccak trace: close time.busy=167µs time.idle=329ns
+2026-10-15T05:55:28.406257Z  INFO generate Keccak trace: close time.busy=320µs time.idle=484ns
+2026-10-15T05:55:28.406287Z  INFO generate Keccak trace: close time.busy=213µs time.idle=263ns
+2026-10-15T05:55:28.406368Z  INFO generate Keccak trace: close time.busy=213µs time.idle=254ns
+2026-10-15T05:55:28.406610Z  INFO generate Keccak trace: close time.busy=314µs time.idle=412ns
+2026-10-15T05:55:28.406651Z  INFO generate Keccak trace: close time.busy=166µs time.idle=261ns
+2026-10-15T05:55:28.406906Z  INFO generate Keccak trace: close time.busy=166µs time.idle=232ns
+2026-10-15T05:55:28.406975Z  INFO generate Keccak trace: close time.busy=315µs time.idle=530ns
+2026-10-15T05:56:44.654628Z  INFO prove shrink: close time.busy=2.03s time.idle=6.63s
+2026-10-15T06:00:45.386679Z  WARN Memory usage is high: 80.31%, we recommend using the prover network
+2026-10-15T06:01:05.387164Z  WARN Memory usage is high: 80.29%, we recommend using the prover network
+2026-10-15T06:01:15.387397Z  WARN Memory usage is high: 80.36%, we recommend using the prover network
+2026-10-15T06:01:25.387588Z  WARN Memory usage is high: 88.05%, we recommend using the prover network
+2026-10-15T06:01:35.390141Z  WARN Memory usage is high: 83.68%, we recommend using the prover network
+2026-10-15T06:01:45.390325Z  WARN Memory usage is high: 83.44%, we recommend using the prover network
+2026-10-15T06:01:55.390539Z  WARN Memory usage is high: 83.35%, we recommend using the prover network
+2026-10-15T06:02:05.390698Z  WARN Memory usage is high: 84.04%, we recommend using the prover network
+2026-10-15T06:02:15.390924Z  WARN Memory usage is high: 84.07%, we recommend using the prover network
+2026-10-15T06:02:25.391207Z  WARN Memory usage is high: 84.24%, we recommend using the prover network
+2026-10-15T06:02:35.391435Z  WARN Memory usage is high: 83.93%, we recommend using the prover network
+2026-10-15T06:02:45.391618Z  WARN Memory usage is high: 83.74%, we recommend using the prover network
+2026-10-15T06:02:53.251990Z  INFO prove wrap: close time.busy=76.6s time.idle=214s
+2026-10-15T06:02:53.672532Z  INFO [sp1] groth16 circuit artifacts are already installed at /home/arthur/RustRoverProjects/tactus-o1/artifacts/prover-tools/circuits/groth16/v6.1.0. if you want to re-download them, delete the directory
+Setting environment variables took 20.611µs

@@ -1,0 +1,1 @@
+Prepared 1 new batches with 713 witness bytes; 0 historical batches used only by host oracle

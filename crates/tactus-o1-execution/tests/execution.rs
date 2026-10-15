@@ -12,6 +12,16 @@ use tactus_o1_protocol::batch::{BatchInput, BlockInput, BLOCK_GAS_LIMIT};
 const RECIPIENT: Address = address!("1111111111111111111111111111111111111111");
 const BUILDER: Address = address!("2222222222222222222222222222222222222222");
 const CONTRACT: Address = address!("3333333333333333333333333333333333333333");
+
+#[test]
+fn generated_rules_digest_matches_runtime_reference() {
+    let mut descriptor = include_bytes!("../rules-v1.txt").to_vec();
+    descriptor.extend_from_slice(include_bytes!("../../../Cargo.lock"));
+    assert_eq!(
+        tactus_o1_execution::rules_hash(),
+        tactus_o1_protocol::batch::hash(b"tactus/o1/execution-rules/v1", &descriptor)
+    );
+}
 fn key() -> SigningKey {
     SigningKey::from_bytes((&[0x21; 32]).into()).unwrap()
 }

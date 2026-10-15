@@ -1,0 +1,35 @@
+[
+  {
+    "prefix_batches": 1,
+    "replay_instructions": 4034783,
+    "initial_sparse_instructions": 7567180,
+    "optimized_sparse_instructions": 4407616,
+    "frozen_replay_guest_transition_match": true,
+    "guest_prefix_batches": 0,
+    "witness_bytes": 1286,
+    "proof_generated": false,
+    "adjusted_environment_geth_checked": false
+  },
+  {
+    "prefix_batches": 256,
+    "replay_instructions": 19836071,
+    "initial_sparse_instructions": 19310116,
+    "optimized_sparse_instructions": 10913185,
+    "frozen_replay_guest_transition_match": true,
+    "guest_prefix_batches": 0,
+    "witness_bytes": 146398,
+    "proof_generated": false,
+    "adjusted_environment_geth_checked": false
+  },
+  {
+    "prefix_batches": 1024,
+    "replay_instructions": 75831975,
+    "initial_sparse_instructions": 19351431,
+    "optimized_sparse_instructions": 10975222,
+    "frozen_replay_guest_transition_match": true,
+    "guest_prefix_batches": 0,
+    "witness_bytes": 146828,
+    "proof_generated": false,
+    "adjusted_environment_geth_checked": false
+  }
+]

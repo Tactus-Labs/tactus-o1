@@ -1,0 +1,6 @@
+Initialized CKB directory in /home/arthur/RustRoverProjects/tactus-o1/artifacts/settlement-bootstrap-0MxRLtlS/node
+Create specs/dev.toml
+Create ckb.toml
+Create ckb-miner.toml
+Create default.db-options
+Genesis Hash: 0xaec36da8807e1d5d6889c7204d9d08bee446541e564125edc148a20092842425

@@ -1,0 +1,17 @@
+{
+  "settlement_transactions": [
+    "0xa8f39e3bfbb714fb323d23b0739de044c666e682ffdca49b5e54f3845a5ce2f2",
+    "0x242b5ebde54c2e514196ddb8b0654347e1855b9cdd1a644bbfbbd9f6bb3439ad"
+  ],
+  "negative_controls": 62,
+  "settled_batches": 2,
+  "cryptographic_verification_performed_by_this_checker": false,
+  "settled": true,
+  "withdrawal_authority": false,
+  "production_ready": false,
+  "profile": "TO1SPF01",
+  "pinned_guest_key": "0x0017cf9eee019ac2f5933907aa0cf7cc50746d7a50d82504e31dede2fc1681a4",
+  "settlement_elf_sha256": "c8d0afe795225a0edebc969256f5e43920ac2b047f2159f636530fd6f22a0b36",
+  "cryptographic_verification_performed_by_checker": false,
+  "evidence_sha256": "e4c20c62b31d4b0628697184b4a8bdbed911e1a7d2d4a9bb75f1392c5fb2683a"
+}

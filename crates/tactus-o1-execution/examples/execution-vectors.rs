@@ -13,10 +13,10 @@ use tactus_o1_protocol::batch::{BatchInput, BlockInput};
 const TO: Address = address!("1111111111111111111111111111111111111111");
 const BUILDER: Address = address!("2222222222222222222222222222222222222222");
 const CONTRACT: Address = address!("3333333333333333333333333333333333333333");
-fn key() -> SigningKey {
+pub(crate) fn key() -> SigningKey {
     SigningKey::from_bytes((&[0x21; 32]).into()).unwrap()
 }
-fn sender() -> Address {
+pub(crate) fn sender() -> Address {
     Address::from_public_key(key().verifying_key())
 }
 fn sig(tx: &impl SignableTransaction<Signature>) -> Signature {
@@ -25,7 +25,7 @@ fn sig(tx: &impl SignableTransaction<Signature>) -> Signature {
         .unwrap()
         .into()
 }
-fn tx(nonce: u64) -> TxEip1559 {
+pub(crate) fn tx(nonce: u64) -> TxEip1559 {
     TxEip1559 {
         chain_id: 31337,
         nonce,
@@ -37,11 +37,11 @@ fn tx(nonce: u64) -> TxEip1559 {
         ..Default::default()
     }
 }
-fn sign(tx: TxEip1559) -> Vec<u8> {
+pub(crate) fn sign(tx: TxEip1559) -> Vec<u8> {
     let s = sig(&tx);
     TxEnvelope::from(tx.into_signed(s)).encoded_2718()
 }
-fn genesis() -> Genesis {
+pub(crate) fn genesis() -> Genesis {
     Genesis {
         rollup_id: B256::repeat_byte(7),
         chain_id: 31337,
@@ -71,7 +71,7 @@ fn call(n: u64) -> TxEip1559 {
     t.to = TxKind::Call(CONTRACT);
     t
 }
-fn case(name: &str, genesis: Genesis, inputs: Vec<Vec<Vec<u8>>>) -> Value {
+pub(crate) fn case(name: &str, genesis: Genesis, inputs: Vec<Vec<Vec<u8>>>) -> Value {
     let mut engine = Executor::new(&genesis).unwrap();
     let mut hashes = BTreeMap::from([("0x0".to_owned(), engine.head().hash_slow())]);
     let input = BatchInput {

@@ -1,0 +1,32 @@
+Proof benchmark directory: /home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/proof-threads4
+{
+  "proof_generated": true,
+  "proof_directory": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/proof-threads4/resumed-proof",
+  "pipeline_seconds": 1601.043537685,
+  "fresh_verification_seconds": 39.26092145599978,
+  "total_seconds_including_fresh_verification": 1640.3048034130043,
+  "preparation_and_build_excluded": true,
+  "fresh_verification": true,
+  "negative_controls": [
+    "profile",
+    "ckb-network",
+    "ordering-script",
+    "settlement-script",
+    "rollup",
+    "chain",
+    "allocation",
+    "predecessor",
+    "end-history",
+    "previous-state",
+    "next-state",
+    "previous-header",
+    "next-header",
+    "interval-data",
+    "wrong-guest-key"
+  ],
+  "public_values_unchanged": true,
+  "staged": true,
+  "ckb_settlement": false,
+  "deployment_authorized": false,
+  "production_ready": false
+}

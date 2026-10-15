@@ -1,0 +1,13 @@
+{
+  "journal_sha256": "ee0bef56856b3b575c462e949eb01bc068c1573cc7347f55ad6851b8466e3f20",
+  "negative_controls": 20,
+  "initialization_cycles": 1809955,
+  "accepted_execution_proof": false,
+  "settled": false,
+  "production_ready": false,
+  "profile": "TO1SPF01",
+  "pinned_guest_key": "0x0017cf9eee019ac2f5933907aa0cf7cc50746d7a50d82504e31dede2fc1681a4",
+  "settlement_elf_sha256": "c8d0afe795225a0edebc969256f5e43920ac2b047f2159f636530fd6f22a0b36",
+  "cryptographic_verification_performed_by_checker": false,
+  "evidence_sha256": "29564560d03d538e7087d17c6b3d51662c12fd63666a45d89735e72030e12c72"
+}

@@ -1,0 +1,26 @@
+2026-10-15T05:36:19.972830Z  INFO initializing cpu prover
+Local CPU prover initialized after 26.255290159s
+Fresh process verified real proof and exact expected journal; key 0x006d292b31e50ed73254f54a433b0b8b1fcadcc5c16f46de9df663037985a468
+	Command being timed: "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/proof-tools/chain-proof verify /home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/proof-threads8-shard19/guest.elf /home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/proof-threads8-shard19/proving-input.json /home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/proof-threads8-shard19/resumed-proof"
+	User time (seconds): 182.76
+	System time (seconds): 3.07
+	Percent of CPU this job got: 623%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:29.81
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 7519804
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 47
+	Minor (reclaiming a frame) page faults: 2642962
+	Voluntary context switches: 3254
+	Involuntary context switches: 3121
+	Swaps: 0
+	File system inputs: 88904
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

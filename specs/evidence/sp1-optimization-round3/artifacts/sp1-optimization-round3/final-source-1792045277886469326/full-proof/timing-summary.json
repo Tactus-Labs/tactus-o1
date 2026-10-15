@@ -1,0 +1,10 @@
+{
+  "workload": "32 signed transfers; final full guest; lab guest-key replacement only",
+  "comparable_seconds": 1223.0168988209941,
+  "total_seconds_including_fresh_verification": 1251.7195805800002,
+  "recursive_max_rss_kib": 20356240,
+  "change_vs_frozen_adaptive_8thread_percent": 5.74202774440391,
+  "reduction_vs_round2_4thread_percent": 23.9177784272267,
+  "samples_per_configuration": 1,
+  "attribution_to_code_change_alone_supported": false
+}

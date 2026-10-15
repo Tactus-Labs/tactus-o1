@@ -1,0 +1,10 @@
+memoized/0: 2710715 instructions, gas Some(3024245); exact native journal match; Geth checked=true
+memoized/1: 2998567 instructions, gas Some(3371647); exact native journal match; Geth checked=true
+memoized/2: 2799856 instructions, gas Some(3124667); exact native journal match; Geth checked=true
+memoized/3: 2602851 instructions, gas Some(2897850); exact native journal match; Geth checked=true
+memoized/4: 2602468 instructions, gas Some(2897554); exact native journal match; Geth checked=true
+memoized/5: 2702465 instructions, gas Some(3007296); exact native journal match; Geth checked=true
+memoized/6: 2949156 instructions, gas Some(3324991); exact native journal match; Geth checked=true
+memoized/7: 2558240 instructions, gas Some(2845075); exact native journal match; Geth checked=true
+memoized/8: 2731014 instructions, gas Some(3059637); exact native journal match; Geth checked=true
+memoized/9: 3588795 instructions, gas Some(3933768); exact native journal match; Geth checked=false

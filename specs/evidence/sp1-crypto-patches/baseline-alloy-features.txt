@@ -1,0 +1,239 @@
+alloy-primitives v1.6.0
+├── alloy-primitives feature "default"
+│   └── tactus-o1-execution v0.1.0 (/home/arthur/RustRoverProjects/tactus-o1/crates/tactus-o1-execution)
+│       └── tactus-o1-execution feature "default"
+│           └── tactus-o1-proof-journal v0.1.0 (/home/arthur/RustRoverProjects/tactus-o1/proofs/sp1/journal)
+│               └── tactus-o1-proof-journal feature "default"
+│                   └── tactus-o1-sp1-guest v0.1.0 (/home/arthur/RustRoverProjects/tactus-o1/proofs/sp1/guest)
+│                       └── tactus-o1-sp1-guest feature "default" (command-line)
+│   └── alloy-trie feature "default"
+│       └── tactus-o1-execution v0.1.0 (/home/arthur/RustRoverProjects/tactus-o1/crates/tactus-o1-execution) (*)
+├── alloy-primitives feature "k256"
+│   └── tactus-o1-execution v0.1.0 (/home/arthur/RustRoverProjects/tactus-o1/crates/tactus-o1-execution) (*)
+│   ├── alloy-consensus feature "k256"
+│   │   └── tactus-o1-execution v0.1.0 (/home/arthur/RustRoverProjects/tactus-o1/crates/tactus-o1-execution) (*)
+│   ├── alloy-eips feature "k256"
+│   │   └── alloy-consensus feature "k256" (*)
+│   └── alloy-eip7702 feature "k256"
+│       └── revm-context-interface v43.0.2
+│           ├── revm v43.0.3
+│           │   ├── revm feature "portable"
+│           │   │   └── tactus-o1-execution v0.1.0 (/home/arthur/RustRoverProjects/tactus-o1/crates/tactus-o1-execution) (*)
+│           │   ├── revm feature "secp256k1"
+│           │   │   └── tactus-o1-execution v0.1.0 (/home/arthur/RustRoverProjects/tactus-o1/crates/tactus-o1-execution) (*)
+│           │   └── revm feature "std"
+│           │       └── tactus-o1-execution v0.1.0 (/home/arthur/RustRoverProjects/tactus-o1/crates/tactus-o1-execution) (*)
+│           ├── revm-context v43.0.3
+│           │   ├── revm v43.0.3 (*)
+│           │   ├── revm-handler v43.0.3
+│           │   │   ├── revm v43.0.3 (*)
+│           │   │   └── revm-inspector v43.0.3
+│           │   │       └── revm v43.0.3 (*)
+│           │   │       └── revm-inspector feature "std"
+│           │   │           └── revm feature "std" (*)
+│           │   │   └── revm-handler feature "std"
+│           │   │       ├── revm feature "std" (*)
+│           │   │       └── revm-inspector feature "std" (*)
+│           │   └── revm-inspector v43.0.3 (*)
+│           │   └── revm-context feature "std"
+│           │       ├── revm feature "std" (*)
+│           │       ├── revm-handler feature "std" (*)
+│           │       └── revm-inspector feature "std" (*)
+│           ├── revm-handler v43.0.3 (*)
+│           ├── revm-interpreter v43.0.2
+│           │   ├── revm v43.0.3 (*)
+│           │   ├── revm-handler v43.0.3 (*)
+│           │   └── revm-inspector v43.0.3 (*)
+│           │   └── revm-interpreter feature "std"
+│           │       ├── revm feature "std" (*)
+│           │       ├── revm-handler feature "std" (*)
+│           │       └── revm-inspector feature "std" (*)
+│           └── revm-precompile v43.0.3
+│               ├── revm v43.0.3 (*)
+│               └── revm-handler v43.0.3 (*)
+│               ├── revm-precompile feature "portable"
+│               │   └── revm feature "portable" (*)
+│               ├── revm-precompile feature "secp256k1"
+│               │   └── revm feature "secp256k1" (*)
+│               └── revm-precompile feature "std"
+│                   ├── revm feature "std" (*)
+│                   └── revm-handler feature "std" (*)
+│           └── revm-context-interface feature "std"
+│               ├── revm feature "std" (*)
+│               ├── revm-context feature "std" (*)
+│               ├── revm-handler feature "std" (*)
+│               ├── revm-interpreter feature "std" (*)
+│               └── revm-precompile feature "std" (*)
+│       └── alloy-eips feature "k256" (*)
+├── alloy-primitives feature "map"
+│   ├── alloy-eip7928 v0.4.11
+│   │   └── revm-state v43.0.1
+│   │       ├── revm v43.0.3 (*)
+│   │       ├── revm-context v43.0.3 (*)
+│   │       ├── revm-context-interface v43.0.2 (*)
+│   │       ├── revm-database v43.0.1
+│   │       │   └── revm v43.0.3 (*)
+│   │       │   └── revm-database feature "std"
+│   │       │       └── revm feature "std" (*)
+│   │       ├── revm-database-interface v43.0.1
+│   │       │   ├── revm v43.0.3 (*)
+│   │       │   ├── revm-context v43.0.3 (*)
+│   │       │   ├── revm-context-interface v43.0.2 (*)
+│   │       │   ├── revm-database v43.0.1 (*)
+│   │       │   ├── revm-handler v43.0.3 (*)
+│   │       │   └── revm-inspector v43.0.3 (*)
+│   │       │   └── revm-database-interface feature "std"
+│   │       │       ├── revm feature "std" (*)
+│   │       │       ├── revm-context feature "std" (*)
+│   │       │       ├── revm-context-interface feature "std" (*)
+│   │       │       ├── revm-database feature "std" (*)
+│   │       │       ├── revm-handler feature "std" (*)
+│   │       │       └── revm-inspector feature "std" (*)
+│   │       ├── revm-handler v43.0.3 (*)
+│   │       ├── revm-inspector v43.0.3 (*)
+│   │       └── revm-interpreter v43.0.2 (*)
+│   │       └── revm-state feature "std"
+│   │           ├── revm feature "std" (*)
+│   │           ├── revm-context feature "std" (*)
+│   │           ├── revm-context-interface feature "std" (*)
+│   │           ├── revm-database-interface feature "std" (*)
+│   │           ├── revm-database feature "std" (*)
+│   │           ├── revm-handler feature "std" (*)
+│   │           ├── revm-interpreter feature "std" (*)
+│   │           └── revm-inspector feature "std" (*)
+│   │   ├── alloy-eip7928 feature "rlp"
+│   │   │   └── alloy-eips v2.1.1
+│   │   │       ├── alloy-eips feature "default"
+│   │   │       │   └── tactus-o1-execution v0.1.0 (/home/arthur/RustRoverProjects/tactus-o1/crates/tactus-o1-execution) (*)
+│   │   │       ├── alloy-eips feature "k256" (*)
+│   │   │       ├── alloy-eips feature "kzg-sidecar"
+│   │   │       │   └── alloy-consensus v2.1.1
+│   │   │       │       ├── alloy-consensus feature "default"
+│   │   │       │       │   └── tactus-o1-execution v0.1.0 (/home/arthur/RustRoverProjects/tactus-o1/crates/tactus-o1-execution) (*)
+│   │   │       │       ├── alloy-consensus feature "k256" (*)
+│   │   │       │       ├── alloy-consensus feature "serde"
+│   │   │       │       │   └── tactus-o1-execution v0.1.0 (/home/arthur/RustRoverProjects/tactus-o1/crates/tactus-o1-execution) (*)
+│   │   │       │       └── alloy-consensus feature "std"
+│   │   │       │           └── alloy-consensus feature "default" (*)
+│   │   │       │   └── alloy-eips feature "default" (*)
+│   │   │       ├── alloy-eips feature "serde"
+│   │   │       │   └── alloy-consensus feature "serde" (*)
+│   │   │       ├── alloy-eips feature "sha2"
+│   │   │       │   └── alloy-eips feature "kzg-sidecar" (*)
+│   │   │       └── alloy-eips feature "std"
+│   │   │           ├── alloy-consensus feature "std" (*)
+│   │   │           └── alloy-eips feature "default" (*)
+│   │   ├── alloy-eip7928 feature "serde"
+│   │   │   └── alloy-eips feature "serde" (*)
+│   │   └── alloy-eip7928 feature "std"
+│   │       ├── alloy-eips feature "std" (*)
+│   │       └── revm-state feature "std" (*)
+│   ├── alloy-serde v2.1.1
+│   │   ├── alloy-consensus v2.1.1 (*)
+│   │   └── alloy-eips v2.1.1 (*)
+│   │   └── alloy-serde feature "std"
+│   │       ├── alloy-consensus feature "std" (*)
+│   │       └── alloy-eips feature "std" (*)
+│   ├── alloy-trie v0.9.8
+│   │   ├── alloy-trie feature "default" (*)
+│   │   ├── alloy-trie feature "ethereum"
+│   │   │   ├── alloy-consensus v2.1.1 (*)
+│   │   │   └── tactus-o1-execution v0.1.0 (/home/arthur/RustRoverProjects/tactus-o1/crates/tactus-o1-execution) (*)
+│   │   ├── alloy-trie feature "serde"
+│   │   │   └── alloy-consensus feature "serde" (*)
+│   │   └── alloy-trie feature "std"
+│   │       ├── alloy-consensus feature "std" (*)
+│   │       └── alloy-trie feature "default" (*)
+│   └── revm-primitives v43.0.0
+│       ├── revm v43.0.3 (*)
+│       ├── revm-bytecode v43.0.0
+│       │   ├── revm v43.0.3 (*)
+│       │   ├── revm-context v43.0.3 (*)
+│       │   ├── revm-database v43.0.1 (*)
+│       │   ├── revm-handler v43.0.3 (*)
+│       │   ├── revm-interpreter v43.0.2 (*)
+│       │   └── revm-state v43.0.1 (*)
+│       │   └── revm-bytecode feature "std"
+│       │       ├── revm feature "std" (*)
+│       │       ├── revm-context feature "std" (*)
+│       │       ├── revm-state feature "std" (*)
+│       │       ├── revm-database feature "std" (*)
+│       │       ├── revm-handler feature "std" (*)
+│       │       └── revm-interpreter feature "std" (*)
+│       ├── revm-context v43.0.3 (*)
+│       ├── revm-context-interface v43.0.2 (*)
+│       ├── revm-database v43.0.1 (*)
+│       ├── revm-database-interface v43.0.1 (*)
+│       ├── revm-handler v43.0.3 (*)
+│       ├── revm-inspector v43.0.3 (*)
+│       ├── revm-interpreter v43.0.2 (*)
+│       ├── revm-precompile v43.0.3 (*)
+│       └── revm-state v43.0.1 (*)
+│       └── revm-primitives feature "std"
+│           ├── revm feature "std" (*)
+│           ├── revm-bytecode feature "std" (*)
+│           ├── revm-context feature "std" (*)
+│           ├── revm-context-interface feature "std" (*)
+│           ├── revm-database-interface feature "std" (*)
+│           ├── revm-state feature "std" (*)
+│           ├── revm-database feature "std" (*)
+│           ├── revm-handler feature "std" (*)
+│           ├── revm-interpreter feature "std" (*)
+│           ├── revm-precompile feature "std" (*)
+│           └── revm-inspector feature "std" (*)
+│   ├── alloy-primitives feature "default" (*)
+│   ├── alloy-primitives feature "map-foldhash"
+│   │   └── alloy-primitives feature "default" (*)
+│   └── alloy-primitives feature "map-indexmap"
+│       └── revm-primitives v43.0.0 (*)
+├── alloy-primitives feature "map-foldhash" (*)
+├── alloy-primitives feature "map-indexmap" (*)
+├── alloy-primitives feature "rlp"
+│   ├── alloy-consensus v2.1.1 (*)
+│   ├── alloy-eip2124 v0.2.0
+│   │   └── alloy-eips v2.1.1 (*)
+│   │   ├── alloy-eip2124 feature "serde"
+│   │   │   └── alloy-eips feature "serde" (*)
+│   │   └── alloy-eip2124 feature "std"
+│   │       └── alloy-eips feature "std" (*)
+│   ├── alloy-eip2930 v0.2.4
+│   │   ├── alloy-eips v2.1.1 (*)
+│   │   └── revm-context-interface v43.0.2 (*)
+│   │   ├── alloy-eip2930 feature "serde"
+│   │   │   └── alloy-eips feature "serde" (*)
+│   │   └── alloy-eip2930 feature "std"
+│   │       ├── alloy-eips feature "std" (*)
+│   │       └── revm-context-interface feature "std" (*)
+│   ├── alloy-eip7702 v0.6.3
+│   │   └── alloy-eips v2.1.1 (*)
+│   │   ├── alloy-eip7702 feature "k256" (*)
+│   │   ├── alloy-eip7702 feature "serde"
+│   │   │   └── alloy-eips feature "serde" (*)
+│   │   └── alloy-eip7702 feature "std"
+│   │       ├── alloy-eips feature "std" (*)
+│   │       └── revm-context-interface feature "std" (*)
+│   ├── alloy-eips v2.1.1 (*)
+│   ├── alloy-trie v0.9.8 (*)
+│   └── revm-primitives v43.0.0 (*)
+│   └── alloy-eip7928 feature "rlp" (*)
+├── alloy-primitives feature "serde"
+│   ├── alloy-serde v2.1.1 (*)
+│   └── tactus-o1-execution v0.1.0 (/home/arthur/RustRoverProjects/tactus-o1/crates/tactus-o1-execution) (*)
+│   ├── alloy-consensus feature "serde" (*)
+│   ├── alloy-eips feature "serde" (*)
+│   ├── alloy-eip2124 feature "serde" (*)
+│   ├── alloy-eip2930 feature "serde" (*)
+│   ├── alloy-eip7702 feature "serde" (*)
+│   ├── alloy-eip7928 feature "serde" (*)
+│   └── alloy-trie feature "serde" (*)
+└── alloy-primitives feature "std"
+    ├── alloy-consensus feature "std" (*)
+    ├── alloy-eips feature "std" (*)
+    ├── alloy-eip2124 feature "std" (*)
+    ├── alloy-primitives feature "default" (*)
+    ├── alloy-eip2930 feature "std" (*)
+    ├── alloy-eip7702 feature "std" (*)
+    ├── alloy-eip7928 feature "std" (*)
+    ├── alloy-serde feature "std" (*)
+    ├── alloy-trie feature "std" (*)
+    └── revm-primitives feature "std" (*)

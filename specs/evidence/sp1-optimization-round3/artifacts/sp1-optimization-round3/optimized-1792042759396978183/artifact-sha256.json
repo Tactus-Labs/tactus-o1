@@ -1,0 +1,9 @@
+{
+  "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/optimized-1792042759396978183/guest.elf": "a6875afe00c43d5358beb5c77b2545241938f41dce869a384e605d6620e13bd5",
+  "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/optimized-1792042759396978183/host/prepare-sparse": "e95009fb9c26b734d8140c3967f7062ffe698b6eaea92f19e7aa518c4272e7ed",
+  "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/optimized-1792042759396978183/host/history-inputs": "3d815b888f90f94583c020bcee7e3fc3a52c9364aac475445eda093b93914d10",
+  "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/optimized-1792042759396978183/host/qualify-sparse": "919448e50a2641e09392893c11f3948f5ec1c300bebebce0550afa9550ca33b8",
+  "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/optimized-1792042759396978183/host/sparse-chain-proof": "a56e4fb1af66dcc61347b63e946d0606a6f4f03abc50aab116098fed5accc346",
+  "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/optimized-1792042759396978183/host/wrap-witness": "61a67608dd7dc6e6c7112eefb6bc1224b0bb0f8f9c2c7f78a5457817cfa4b805",
+  "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/qualification-fixtures.json": "fba98368d3708b347d36f0f1d5dc4b14c57d3263ba47d128546e31c2da1b4f51"
+}

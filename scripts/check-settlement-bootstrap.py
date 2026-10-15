@@ -28,7 +28,10 @@ def packed(script):
             + len(args).to_bytes(4, 'little') + args)
 
 
-def check_document(evidence):
+REPLAY_PROFILE = digest(b'tactus/o1/proof-profile/v1' + b'TO1PRF01;replay-canonical-genesis-prefix;nonempty-contiguous-interval;ethereum-state-and-header;no-withdrawal-authorization')
+
+
+def check_document(evidence, *, journal_magic=b'TO1PRF01', journal_profile=REPLAY_PROFILE):
     result = evidence['results']
     require(result['suite'] == 'settlement-bootstrap-v1' and result['complete']
             and result['error'] is None, 'incomplete bootstrap')
@@ -77,7 +80,8 @@ def check_document(evidence):
             'wrong checkpoint outpoint')
     journal = raw(export['expected_journal_hex'])
     domain = raw(export['domain_hex'])
-    require(len(domain) == 136 and len(journal) == 768 and journal[:8] == b'TO1PRF01', 'journal encoding')
+    require(len(domain) == 136 and len(journal) == 768 and journal[:8] == journal_magic
+            and journal[8:40] == journal_profile, 'journal encoding/profile')
     require(domain[:32] == config[8:40] and domain[32:64] == digest(anchor)
             and domain[64:96] == digest(settlement) and domain[96:128] == initial[24:56]
             and domain[128:] == initial[208:216], 'deployment domain differs')

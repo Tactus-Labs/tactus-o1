@@ -1,0 +1,109 @@
+    Checking sha2 v0.10.9 (https://github.com/sp1-patches/RustCrypto-hashes?rev=e48b656ebc806117554bb33c2f8687e4637e37ff#e48b656e)
+    Checking rfc6979 v0.4.0 (https://github.com/sp1-patches/signatures?tag=sp1-skip-verify-on-recovery#1880299a)
+    Checking ecdsa v0.16.9 (https://github.com/sp1-patches/signatures?tag=sp1-skip-verify-on-recovery#1880299a)
+   Compiling lazy_static v1.5.1 (/home/arthur/RustRoverProjects/tactus-o1/proofs/vendor/lazy_static-1.5.1)
+warning: eliding a lifetime that's named elsewhere is confusing
+  --> /home/arthur/RustRoverProjects/tactus-o1/proofs/vendor/lazy_static-1.5.1/src/inline_lazy.rs:26:43
+   |
+26 |     pub fn get<F>(&'static self, f: F) -> &T
+   |                    -------                ^^ the same lifetime is elided here
+   |                    |
+   |                    the lifetime is named here
+   |
+   = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+   = note: `#[warn(mismatched_lifetime_syntaxes)]` on by default
+help: consistently use `'static`
+   |
+26 |     pub fn get<F>(&'static self, f: F) -> &'static T
+   |                                            +++++++
+
+warning: `lazy_static` (lib) generated 1 warning (run `cargo fix --lib -p lazy_static` to apply 1 suggestion)
+warning: eliding a lifetime that's named elsewhere is confusing
+  --> /home/arthur/RustRoverProjects/tactus-o1/proofs/vendor/lazy_static-1.5.1/src/core_lazy.rs:18:49
+   |
+18 |     pub fn get<F>(&'static self, builder: F) -> &T
+   |                    -------                      ^^ the same lifetime is elided here
+   |                    |
+   |                    the lifetime is named here
+   |
+   = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+   = note: `#[warn(mismatched_lifetime_syntaxes)]` on by default
+help: consistently use `'static`
+   |
+18 |     pub fn get<F>(&'static self, builder: F) -> &'static T
+   |                                                  +++++++
+
+warning: `lazy_static` (lib) generated 1 warning (run `cargo fix --lib -p lazy_static` to apply 1 suggestion)
+    Checking alloy-rlp v0.3.16
+    Checking k256 v0.13.4 (https://github.com/sp1-patches/elliptic-curves?rev=476243d31d3ffd9d882d0e5da1f6adaa2a204b62#476243d3)
+    Checking ruint v1.20.1
+    Checking sha3 v0.11.0 (https://github.com/sp1-patches/RustCrypto-hashes?rev=540d99e46fbe7aab00caf83c4144cb4eaaf62a17#540d99e4)
+   Compiling slop-koala-bear v6.8.1
+   Compiling sharded-slab v0.1.7
+    Checking alloy-primitives v1.6.0
+   Compiling tracing-subscriber v0.3.23
+   Compiling slop-baby-bear v6.8.1
+   Compiling tracing-forest v0.1.6
+   Compiling slop-utils v6.8.1
+   Compiling slop-merkle-tree v6.8.1
+    Checking ecdsa v0.16.9
+   Compiling slop-basefold v6.8.1
+   Compiling dynasm v3.2.1
+    Checking p256 v0.13.2
+   Compiling slop-basefold-prover v6.8.1
+   Compiling sp1-primitives v6.8.1
+   Compiling slop-stacked v6.8.1
+   Compiling slop-sumcheck v6.8.1
+   Compiling slop-jagged v6.8.1
+   Compiling slop-whir v6.8.1
+    Checking alloy-eip7928 v0.4.11
+   Compiling sp1-hypercube v6.8.1
+   Compiling dynasmrt v3.2.1
+   Compiling sp1-jit v6.8.1
+   Compiling sp1-curves v6.8.1
+    Checking revm-primitives v43.0.0
+   Compiling sp1-core-executor v6.8.1
+    Checking revm-bytecode v43.0.0
+    Checking revm-state v43.0.1
+    Checking alloy-eip7702 v0.6.3
+    Checking alloy-eip2930 v0.2.4
+    Checking revm-database-interface v43.0.1
+    Checking revm-context-interface v43.0.2
+   Compiling sp1-core-executor-runner-binary v6.8.1
+   Compiling sp1-core-executor-runner v6.8.1
+    Checking sha2 v0.11.0 (https://github.com/sp1-patches/RustCrypto-hashes?rev=8993e08b9f7c47cd4a056decbf85d2d7ab3fe77c#8993e08b)
+    Checking revm-precompile v43.0.3
+    Checking sp1-recursion-executor v6.8.1
+    Checking revm-context v43.0.3
+    Checking revm-interpreter v43.0.2
+   Compiling blake2b-ref v0.3.1
+   Compiling tactus-o1-protocol v0.1.0 (/home/arthur/RustRoverProjects/tactus-o1/crates/tactus-o1-protocol)
+    Checking sp1-core-machine v6.8.1
+    Checking revm-handler v43.0.3
+    Checking alloy-eip2124 v0.2.0
+    Checking alloy-serde v2.1.1
+    Checking nybbles v0.4.8
+    Checking alloy-trie v0.9.8
+    Checking alloy-eips v2.1.1
+    Checking revm-inspector v43.0.3
+   Compiling tactus-o1-execution v0.1.0 (/home/arthur/RustRoverProjects/tactus-o1/crates/tactus-o1-execution)
+    Checking sp1-recursion-machine v6.8.1
+    Checking revm-database v43.0.1
+    Checking substrate-bn-succinct-rs v0.6.0
+    Checking revm v43.0.3
+    Checking alloy-consensus v2.1.1
+   Compiling sp1-prover-types v6.8.1
+    Checking sp1-recursion-compiler v6.8.1
+    Checking sp1-verifier v6.8.1
+    Checking sp1-recursion-circuit v6.8.1
+    Checking sp1-recursion-gnark-ffi v6.8.1
+    Checking sp1-build v6.8.1
+    Checking tactus-o1-sparse-state v0.1.0 (/home/arthur/RustRoverProjects/tactus-o1/proofs/incremental-sp1/state)
+    Checking tactus-o1-proof-journal v0.1.0 (/home/arthur/RustRoverProjects/tactus-o1/proofs/sp1/journal)
+    Checking tactus-o1-sparse-journal v0.1.0 (/home/arthur/RustRoverProjects/tactus-o1/proofs/incremental-sp1/journal)
+    Checking sp1-prover v6.8.1
+    Checking sp1-sdk v6.8.1
+    Checking tactus-o1-sparse-sp1-host v0.1.0 (/home/arthur/RustRoverProjects/tactus-o1/proofs/incremental-sp1/host)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 25.00s
+warning: the following packages contain code that will be rejected by a future version of Rust: proc-macro-error2 v2.0.1
+note: to see what the problems were, use the option `--future-incompat-report`, or run `cargo report future-incompatibilities --id 1`

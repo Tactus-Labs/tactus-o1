@@ -1,0 +1,181 @@
+{
+  "status": "complete",
+  "mode": "between_runs",
+  "matrix_pid": 278412,
+  "matrix_starttime": "16011753",
+  "checks": [
+    {
+      "name": "execution-native",
+      "command": [
+        "cargo",
+        "+1.97.1",
+        "test",
+        "--locked",
+        "--offline",
+        "-p",
+        "tactus-o1-execution",
+        "--features",
+        "native-bridge"
+      ],
+      "status": "passed",
+      "started_unix": 1792027834.715255,
+      "log": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/qualifications/1792027834673227171/execution-native.txt",
+      "exit_code": 0,
+      "elapsed_seconds": 7.685887813568115
+    },
+    {
+      "name": "checkpoint-journal",
+      "command": [
+        "cargo",
+        "+1.97.1",
+        "test",
+        "--locked",
+        "--offline",
+        "--manifest-path",
+        "proofs/sp1/Cargo.toml",
+        "-p",
+        "tactus-o1-proof-journal"
+      ],
+      "status": "passed",
+      "started_unix": 1792027842.401361,
+      "log": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/qualifications/1792027834673227171/checkpoint-journal.txt",
+      "exit_code": 0,
+      "elapsed_seconds": 3.071831464767456
+    },
+    {
+      "name": "sparse-state-journal",
+      "command": [
+        "cargo",
+        "+1.97.1",
+        "test",
+        "--locked",
+        "--offline",
+        "--manifest-path",
+        "proofs/incremental-sp1/Cargo.toml",
+        "-p",
+        "tactus-o1-sparse-state",
+        "-p",
+        "tactus-o1-sparse-journal"
+      ],
+      "status": "passed",
+      "started_unix": 1792027845.4734402,
+      "log": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/qualifications/1792027834673227171/sparse-state-journal.txt",
+      "exit_code": 0,
+      "elapsed_seconds": 12.797079086303711
+    },
+    {
+      "name": "replay-settlement",
+      "command": [
+        "cargo",
+        "+1.97.1",
+        "test",
+        "--locked",
+        "--offline",
+        "--manifest-path",
+        "proofs/ckb-settlement/Cargo.toml"
+      ],
+      "status": "passed",
+      "started_unix": 1792027858.2707644,
+      "log": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/qualifications/1792027834673227171/replay-settlement.txt",
+      "exit_code": 0,
+      "elapsed_seconds": 13.707070350646973
+    },
+    {
+      "name": "sparse-settlement",
+      "command": [
+        "cargo",
+        "+1.97.1",
+        "test",
+        "--locked",
+        "--offline",
+        "--manifest-path",
+        "proofs/ckb-settlement/Cargo.toml",
+        "--features",
+        "sparse-proof"
+      ],
+      "status": "passed",
+      "started_unix": 1792027871.9780169,
+      "log": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/qualifications/1792027834673227171/sparse-settlement.txt",
+      "exit_code": 0,
+      "elapsed_seconds": 3.77168345451355
+    },
+    {
+      "name": "native-settlement",
+      "command": [
+        "cargo",
+        "+1.97.1",
+        "test",
+        "--locked",
+        "--offline",
+        "--manifest-path",
+        "proofs/ckb-native-settlement/Cargo.toml"
+      ],
+      "status": "passed",
+      "started_unix": 1792027875.749876,
+      "log": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/qualifications/1792027834673227171/native-settlement.txt",
+      "exit_code": 0,
+      "elapsed_seconds": 13.921653270721436
+    },
+    {
+      "name": "devnet-driver",
+      "command": [
+        "cargo",
+        "+1.97.1",
+        "test",
+        "--locked",
+        "--offline",
+        "-p",
+        "tactus-o1-devnet-driver"
+      ],
+      "status": "passed",
+      "started_unix": 1792027889.6717162,
+      "log": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/qualifications/1792027834673227171/devnet-driver.txt",
+      "exit_code": 0,
+      "elapsed_seconds": 11.4792640209198
+    },
+    {
+      "name": "devnet-bins",
+      "command": [
+        "cargo",
+        "+1.97.1",
+        "build",
+        "--locked",
+        "--offline",
+        "--bin",
+        "replay-settlement-bootstrap",
+        "--bin",
+        "recover-settlement"
+      ],
+      "status": "passed",
+      "started_unix": 1792027901.1512117,
+      "log": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/qualifications/1792027834673227171/devnet-bins.txt",
+      "exit_code": 0,
+      "elapsed_seconds": 0.6513488292694092
+    },
+    {
+      "name": "sparse-host-check",
+      "command": [
+        "cargo",
+        "+1.97.1",
+        "check",
+        "--locked",
+        "--offline",
+        "--manifest-path",
+        "proofs/incremental-sp1/Cargo.toml",
+        "-p",
+        "tactus-o1-sparse-sp1-host",
+        "--bins"
+      ],
+      "status": "passed",
+      "started_unix": 1792027901.8027813,
+      "log": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/qualifications/1792027834673227171/sparse-host-check.txt",
+      "exit_code": 0,
+      "elapsed_seconds": 25.042802572250366
+    }
+  ],
+  "ci_run": false,
+  "started_unix": 1792027834.6732812,
+  "attempt": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/qualifications/1792027834673227171",
+  "source_unchanged": true,
+  "finished_unix": 1792027926.8523145
+}

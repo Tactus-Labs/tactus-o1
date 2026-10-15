@@ -1,0 +1,4 @@
+   Compiling tactus-o1-protocol v0.1.0 (/home/arthur/RustRoverProjects/tactus-o1/crates/tactus-o1-protocol)
+   Compiling tactus-o1-execution v0.1.0 (/home/arthur/RustRoverProjects/tactus-o1/crates/tactus-o1-execution)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 1.59s
+     Running `target/debug/examples/state-scaling-vectors artifacts/sp1-optimization-round3/state-workloads`

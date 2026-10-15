@@ -1,10 +1,46 @@
 # Production readiness
 
-Status: **NOT READY**, 10 October 2026. G1–G9 remain OPEN. Passing the mechanism
+- [Execution, incremental proving and resource optimization round three](SP1_OPTIMIZATION_ROUND3_REPORT.md)
+  qualifies the final full/native guests and an explicit sparse execution profile.
+  On the exact original nine-batch input, final full proving measures 830.397 s
+  by the comparable phase sum (76.52% below the earlier patched ~59-minute run),
+  or 858.996 s including independent fresh verification. This combines code
+  changes with eight CPU/four Go threads versus four/two. Two real sparse proofs
+  settle consecutively on isolated CKB; 62 rejection controls and a separate
+  P2P reorg/reapplication experiment pass. Long-history instruction savings are
+  measured separately from proving time. The sparse profile remains optional;
+  no production deployment or native custody authority changes. G1–G9 remain OPEN.
+
+- [Crypto, batching and proving optimization round two](SP1_OPTIMIZATION_ROUND2_REPORT.md)
+  integrates pinned guest crypto patches, build-time rules hashing and reuse of
+  batch validation. The formal guest matches 17 Geth cases / 40 blocks and the
+  retained chain journal. ECRECOVER-specific and filled-batch ablations are
+  measured. The retained input's complete proof passes fresh verification in
+  1,189.921 s by the comparable phase sum (66.36% less than the previous patched
+  run). A separate 32-transfer full proof also passes fresh verification: phase
+  sum 1,607.494 s, or 1,646.693 s including the unified pipeline and independent
+  verification. Both proofs reject all 15 negative controls. Existing deployments
+  and all production gates remain unchanged.
+
+- [SP1 crypto patches full proving measurement](SP1_PATCHED_PROVING_REPORT.md)
+  now produces and independently verifies a real proof of the retained sealed-chain
+  workload with a candidate patched guest. Comparable phase time falls from
+  4,674.679 s to 3,536.863 s (24.34%). This is a benchmark with a new guest key,
+  not a newly authorized settlement deployment; production gates remain open.
+
+
+Status: **NOT READY**, 15 October 2026. G1–G9 remain OPEN. Passing the mechanism
 suite is necessary implementation evidence; it does not authorize a production
 rollup deployment or custody of user assets.
 
 ## Implemented and measured
+
+- [CKB verifier cycle optimization](VERIFIER_CYCLE_OPTIMIZATION_REPORT.md) reduces
+  the retained A3 settlement type-script replay from 3,983,164,412 to 333,144,448
+  cycles. Fresh complete proof-receipt transactions also commit under an explicit
+  3.5-billion-cycle devnet limit, with 28 rejected controls. This does not measure
+  L2 proving acceleration or qualify a new settlement/custody deployment; G1–G9
+  remain OPEN.
 
 - [Native settlement bootstrap](NATIVE_SETTLEMENT_REPORT.md) now deploys a
   verifier with fixed native guest/publisher/checkpoint identities and jointly
@@ -63,7 +99,8 @@ rollup deployment or custody of user assets.
   settles all four duties, including a proved malformed-input rejection, across
   nine canonical batches. Real P2P rollback restores them as pending; the same
   proof with fresh funding settles them again on both observers. Costs remain
-  roughly 78 minutes proving and 3.985 billion CKB verification cycles.
+  roughly 78 minutes proving and 3.985 billion CKB verification cycles for that
+  historical binary; the optimized verifier replay is measured separately above.
 
 - [Read-only Ethereum RPC observer](OBSERVER_RPC_REPORT.md) now serves canonical
   blocks, transactions, receipts and current/genesis state over local HTTP.
@@ -198,8 +235,11 @@ See [devnet results](EXPERIMENT_A_DEVNET_REPORT.md) and the
   on both versions. The [first proof-consuming Tip and planned P2P rollback](FIRST_SETTLEMENT_REPORT.md)
   now pass; unplanned-fault qualification remains open. The [Groth16 receipt experiment](EXECUTION_GROTH16_PROOF_REPORT.md) now
   commits two real verified receipts and rejects 28 controls on each version.
-  Final wrapping recovered from an OOM in a fresh process; approximately 3.977
-  billion CKB cycles per verification remains a material throughput cost.
+  Final wrapping recovered from an OOM in a fresh process. That original verifier
+  cost approximately 3.977 billion CKB cycles; the later
+  [verifier optimization](VERIFIER_CYCLE_OPTIMIZATION_REPORT.md) reduces complete
+  receipt transactions to approximately 334 million cycles on CKB 0.210.0.
+  Throughput qualification remains open.
 
 - [SettlementTip atomic genesis](SETTLEMENT_TIP_V1.md) and 20 rejection controls
   pass on both CKB versions. Canonical chain data exports replay to the exact guest

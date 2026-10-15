@@ -1,0 +1,12 @@
+{
+  "crate": "substrate-bn-succinct-rs",
+  "version": "0.6.0",
+  "crate_sha256": "a241fd7c1016fb8ad30fcf5a20986c0c4538e8f15a1b41a1761516299e377ec1",
+  "modified_upstream_files": [
+    "Cargo.toml",
+    "src/arith.rs"
+  ],
+  "added_runtime_files": [
+    "src/arith/ckb_mul.rs"
+  ]
+}

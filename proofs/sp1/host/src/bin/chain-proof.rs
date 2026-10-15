@@ -18,9 +18,11 @@ async fn main() {
 }
 async fn run() -> Result<(), String> {
     let args: Vec<String> = std::env::args().collect();
-    if args.len() != 5 || !["execute", "prove-groth16", "verify"].contains(&args[1].as_str()) {
+    if args.len() != 5
+        || !["execute", "prove-groth16", "verify", "verify-pinned"].contains(&args[1].as_str())
+    {
         return Err(
-            "usage: chain-proof execute|prove-groth16|verify GUEST_ELF CHAIN_INPUT_JSON OUTPUT_DIR"
+            "usage: chain-proof execute|prove-groth16|verify GUEST_ELF CHAIN_INPUT_JSON OUTPUT_DIR; or chain-proof verify-pinned TRUSTED_GUEST_KEY CHAIN_INPUT_JSON PROOF_DIR"
                 .into(),
         );
     }
@@ -86,6 +88,33 @@ async fn run() -> Result<(), String> {
         .ok_or("missing guest key")?;
     if decode(&input["guest_verifying_key"])?.len() != 32 {
         return Err("guest key length".into());
+    }
+    if args[1] == "verify-pinned" {
+        // The caller must obtain this key from authenticated deployment config,
+        // independently of the prover/export. Keep the SDK/ELF check in `verify`
+        // as a separate qualification oracle, rather than weakening that mode.
+        if args[2] != expected_key {
+            return Err("export key differs from independently pinned guest key".into());
+        }
+        let started = Instant::now();
+        let mut wire = Vec::new();
+        fs::File::open(Path::new(&args[4]).join("groth16-proof.bin"))
+            .map_err(err)?
+            .take(4097)
+            .read_to_end(&mut wire)
+            .map_err(err)?;
+        if wire.len() > 4096 {
+            return Err("Groth16 wire proof exceeds limit".into());
+        }
+        sp1_verifier::Groth16Verifier::verify(
+            &wire,
+            &expected.encode(),
+            &args[2],
+            &sp1_verifier::GROTH16_VK_BYTES,
+        )
+        .map_err(err)?;
+        println!("Pinned-key Groth16 wire proof verified against independently replayed journal; key {}; cryptographic verification {:?}", args[2], started.elapsed());
+        return Ok(());
     }
     let elf = Elf::from(fs::read(&args[2]).map_err(err)?);
     let mut stdin = SP1Stdin::new();

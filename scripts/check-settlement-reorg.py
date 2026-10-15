@@ -13,7 +13,7 @@ spec.loader.exec_module(first)
 require, raw = first.require, first.raw
 
 
-def check_document(evidence, proof_dir):
+def check_document(evidence, proof_dir, **profile):
     result = evidence['results']
     require(result['suite'] == 'settlement-proof-p2p-reorg-v1' and result['complete']
             and result['error'] is None, 'incomplete settlement reorg')
@@ -24,7 +24,7 @@ def check_document(evidence, proof_dir):
     projected = copy.deepcopy(evidence)
     projected['evidence'] = projected['evidence'][:45]
     projected['results']['suite'] = 'settlement-first-proof-v1'
-    first.check_document(projected, proof_dir)
+    first.check_document(projected, proof_dir, **profile)
     reorg = result['reorg']
     require(reorg['truncate_used'] is False and reorg['submit_block_used'] is False
             and reorg['production_ready'] is False, 'unsupported reorg mode')

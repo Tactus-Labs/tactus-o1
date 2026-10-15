@@ -1920,7 +1920,20 @@ dependencies = [
  "der",
  "digest 0.10.7",
  "elliptic-curve",
- "rfc6979",
+ "rfc6979 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "signature",
+ "spki",
+]
+
+[[package]]
+name = "ecdsa"
+version = "0.16.9"
+source = "git+https://github.com/sp1-patches/signatures?tag=sp1-skip-verify-on-recovery#1880299a48fe7ef249edaa616fd411239fb5daf1"
+dependencies = [
+ "der",
+ "digest 0.10.7",
+ "elliptic-curve",
+ "rfc6979 0.4.0 (git+https://github.com/sp1-patches/signatures?tag=sp1-skip-verify-on-recovery)",
  "serdect",
  "signature",
  "spki",
@@ -1965,6 +1978,7 @@ dependencies = [
  "ff",
  "generic-array 0.14.9",
  "group",
+ "hkdf",
  "pem-rfc7468",
  "pkcs8",
  "rand_core 0.6.4",
@@ -2491,6 +2505,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "hkdf"
+version = "0.12.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "7b5f8eb2ad728638ea2c7d47a21db23b7b58a72ed6a38256b8a1849f15fbbdf7"
+dependencies = [
+ "hmac",
+]
+
+[[package]]
 name = "hmac"
 version = "0.12.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2946,16 +2969,17 @@ dependencies = [
 [[package]]
 name = "k256"
 version = "0.13.4"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f6e3919bbaa2945715f0bb6d3934a173d1e9a59ac23767fbaaef277265a7411b"
+source = "git+https://github.com/sp1-patches/elliptic-curves?rev=476243d31d3ffd9d882d0e5da1f6adaa2a204b62#476243d31d3ffd9d882d0e5da1f6adaa2a204b62"
 dependencies = [
  "cfg-if",
- "ecdsa",
+ "ecdsa 0.16.9 (git+https://github.com/sp1-patches/signatures?tag=sp1-skip-verify-on-recovery)",
  "elliptic-curve",
+ "hex",
  "once_cell",
  "serdect",
  "sha2 0.10.9",
  "signature",
+ "sp1-lib",
 ]
 
 [[package]]
@@ -3440,7 +3464,7 @@ version = "0.13.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "c9863ad85fa8f4460f9c48cb909d38a0d689dba1f6f6988a5e3e0d31071bcd4b"
 dependencies = [
- "ecdsa",
+ "ecdsa 0.16.9 (registry+https://github.com/rust-lang/crates.io-index)",
  "elliptic-curve",
  "primeorder",
  "sha2 0.10.9",
@@ -4644,6 +4668,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "rfc6979"
+version = "0.4.0"
+source = "git+https://github.com/sp1-patches/signatures?tag=sp1-skip-verify-on-recovery#1880299a48fe7ef249edaa616fd411239fb5daf1"
+dependencies = [
+ "hmac",
+ "subtle",
+]
+
+[[package]]
 name = "ring"
 version = "0.17.14"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -5147,8 +5180,7 @@ checksum = "bbfa15b3dddfee50a0fff136974b3e1bde555604ba463834a7eb7deb6417705d"
 [[package]]
 name = "sha2"
 version = "0.10.9"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a7507d819769d01a365ab707794a4084392c824f54a7a6a7862f8c3d0892b283"
+source = "git+https://github.com/sp1-patches/RustCrypto-hashes?rev=e48b656ebc806117554bb33c2f8687e4637e37ff#e48b656ebc806117554bb33c2f8687e4637e37ff"
 dependencies = [
  "cfg-if",
  "cpufeatures 0.2.17",
@@ -5158,8 +5190,7 @@ dependencies = [
 [[package]]
 name = "sha2"
 version = "0.11.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "446ba717509524cb3f22f17ecc096f10f4822d76ab5c0b9822c5f9c284e825f4"
+source = "git+https://github.com/sp1-patches/RustCrypto-hashes?rev=8993e08b9f7c47cd4a056decbf85d2d7ab3fe77c#8993e08b9f7c47cd4a056decbf85d2d7ab3fe77c"
 dependencies = [
  "cfg-if",
  "cpufeatures 0.3.1",
@@ -5169,8 +5200,7 @@ dependencies = [
 [[package]]
 name = "sha3"
 version = "0.11.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "be176f1a57ce4e3d31c1a166222d9768de5954f811601fb7ca06fc8203905ce1"
+source = "git+https://github.com/sp1-patches/RustCrypto-hashes?rev=540d99e46fbe7aab00caf83c4144cb4eaaf62a17#540d99e46fbe7aab00caf83c4144cb4eaaf62a17"
 dependencies = [
  "digest 0.11.3",
  "keccak",
@@ -5937,6 +5967,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "1d4bc4b2a4b6e5fd3105912c722f51de9d66e2440a44e4ddffaad04bfba42bdf"
 dependencies = [
  "bincode",
+ "elliptic-curve",
  "serde",
  "sp1-primitives",
 ]

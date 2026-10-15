@@ -1,0 +1,28 @@
+usage: run-sparse-proof-benchmark.py [-h] --elf ELF [--output OUTPUT]
+                                     [--host HOST]
+                                     [--threads {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20}]
+                                     [--go-threads {1,2,3,4,5,6,7,8}]
+                                     [--shard-size {524288,1048576}]
+                                     [--workers {1,2}] [--buffer-size {1,2}]
+                                     --input INPUT
+                                     [--circuit-parent CIRCUIT_PARENT]
+
+Prove an exact sparse-profile deployment export with the compiled guest key.
+Uses the measured staged memory handoff, then independent SDK verification.
+The source key MUST already equal the guest key; no domain/key rewriting
+occurs. No CI, remote proving or production deployment.
+
+options:
+  -h, --help            show this help message and exit
+  --elf ELF
+  --output OUTPUT
+  --host HOST           Pinned host binary; wrap-witness must be in the same
+                        directory
+  --threads {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20}
+  --go-threads {1,2,3,4,5,6,7,8}
+  --shard-size {524288,1048576}
+  --workers {1,2}
+  --buffer-size {1,2}
+  --input INPUT         Exact canonical sparse input prepared for this
+                        compiled guest key
+  --circuit-parent CIRCUIT_PARENT

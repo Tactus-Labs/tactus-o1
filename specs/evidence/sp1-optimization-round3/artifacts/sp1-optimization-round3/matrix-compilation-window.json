@@ -1,0 +1,13 @@
+{
+  "coordinator_pid": 278412,
+  "starttime": "16011753",
+  "status": "coordinator_resumed",
+  "unix": 1792027649.7284503,
+  "reason": "isolated compilation window between proof runs",
+  "child_runner_continues": true,
+  "proof_interrupted": false,
+  "resume_command": "kill -CONT 278412",
+  "must_wait_for_second_child_completion_before_compiling": true,
+  "resumed_unix": 1792028660.8036833,
+  "qualification": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/history-qualification/progress.json"
+}

@@ -1,0 +1,23 @@
+{
+  "sp1": "6.8.1",
+  "host_rust": "1.97.1",
+  "guest_rust": "succinct 1.96.0-dev",
+  "proof_generated": false,
+  "ci_run": false,
+  "deployment_changed": false,
+  "sha256": {
+    "specs/test-vectors/execution-v1/geth-1.17.8.json": "dbdadec48daf8657b84b16c8d6ca0efd5653912e27939cf44450145cd7858232",
+    "specs/evidence/sealed-chain-proof/proving-input.json": "18256003ea4042beabbb38e9c930550c0d17d64ace36732f5c45de4bd6865d93",
+    "proofs/sp1/Cargo.toml": "21151f1ed02c4495b2a2a0c833f410207cb7455563cfef21f335e5a57fbe220a",
+    "proofs/sp1/Cargo.lock": "2fb50d9bde6021c8963f93cc03c1e26fe366b12ad695611fd93a047938f2108b",
+    "proofs/native-sp1/Cargo.toml": "040d2233b0a92c14e76ecc60577697bfb6b720c31824de691e5766b95d961e95",
+    "proofs/native-sp1/Cargo.lock": "2b44cd6602b6a91c7ea3c56c39a8b6b159749bee60fa1f39a379cfe83c33c9fb",
+    "proofs/sp1/host/src/bin/crypto-patch-bench.rs": "5d000316197994bb76d78eb6e3b65096997deb3378f12b1256a64bcb7ed9ca21",
+    "scripts/bench-sp1-crypto-patches.py": "4ba086cce54dd76ed7a5c2fb65336c5bb56c031b3a6df4ceba91f1a8dd0fe3fc",
+    "artifacts/prover-tools/cargo-prove": "974539436113c1ac3b472ff892a5eadec73972bc3966c527398b3c9ce8688472",
+    "artifacts/prover-host/target/release/crypto-patch-bench": "7689f68a076bb5b36eb27154006d1877b1c74c56a9d02d315b467d554e60389e",
+    "artifacts/sp1-patches-reproduced/baseline.elf": "63e7879070038b22cab411bd025b0b876511734cb7ef78a6c849c491aa909a3c",
+    "artifacts/sp1-patches-reproduced/sha3-only.elf": "3ab7af549b794e901c0ead60ff1ef77a0babb58689965a94b4cdb3a94a2956fc",
+    "artifacts/sp1-patches-reproduced/combined.elf": "7ffaa9eb909684c15fee884aeccf815a856fff0feffb8108662041f926acd018"
+  }
+}

@@ -1,0 +1,10 @@
+[package]
+name = "tactus-o1-native-proof-journal"
+version = "0.1.0"
+edition = "2021"
+[dependencies]
+tactus-o1-protocol = { path = "../../../crates/tactus-o1-protocol", features = ["native-bridge"] }
+tactus-o1-execution = { path = "../../../crates/tactus-o1-execution", features = ["native-bridge"] }
+[dev-dependencies]
+serde_json = "1"
+hex = "0.4"

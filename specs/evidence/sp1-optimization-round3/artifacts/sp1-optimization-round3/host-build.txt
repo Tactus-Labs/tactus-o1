@@ -1,0 +1,55 @@
+   Compiling sha2 v0.10.9 (https://github.com/sp1-patches/RustCrypto-hashes?rev=e48b656ebc806117554bb33c2f8687e4637e37ff#e48b656e)
+   Compiling rfc6979 v0.4.0 (https://github.com/sp1-patches/signatures?tag=sp1-skip-verify-on-recovery#1880299a)
+   Compiling sha3 v0.11.0 (https://github.com/sp1-patches/RustCrypto-hashes?rev=540d99e46fbe7aab00caf83c4144cb4eaaf62a17#540d99e4)
+   Compiling ecdsa v0.16.9 (https://github.com/sp1-patches/signatures?tag=sp1-skip-verify-on-recovery#1880299a)
+   Compiling sp1-primitives v6.8.1
+   Compiling ecdsa v0.16.9
+   Compiling k256 v0.13.4 (https://github.com/sp1-patches/elliptic-curves?rev=476243d31d3ffd9d882d0e5da1f6adaa2a204b62#476243d3)
+   Compiling p256 v0.13.2
+   Compiling alloy-primitives v1.6.0
+   Compiling sp1-hypercube v6.8.1
+   Compiling sp1-curves v6.8.1
+   Compiling sp1-jit v6.8.1
+   Compiling alloy-eip7928 v0.4.11
+   Compiling revm-primitives v43.0.0
+   Compiling revm-bytecode v43.0.0
+   Compiling sp1-core-executor v6.8.1
+   Compiling revm-state v43.0.1
+   Compiling alloy-eip7702 v0.6.3
+   Compiling alloy-eip2930 v0.2.4
+   Compiling revm-database-interface v43.0.1
+   Compiling revm-context-interface v43.0.2
+   Compiling sp1-recursion-executor v6.8.1
+   Compiling sha2 v0.11.0 (https://github.com/sp1-patches/RustCrypto-hashes?rev=8993e08b9f7c47cd4a056decbf85d2d7ab3fe77c#8993e08b)
+   Compiling sp1-core-executor-runner-binary v6.8.1
+   Compiling sp1-core-executor-runner v6.8.1
+   Compiling revm-precompile v43.0.3
+   Compiling sp1-recursion-machine v6.8.1
+   Compiling revm-interpreter v43.0.2
+   Compiling revm-context v43.0.3
+   Compiling blake2b-ref v0.3.1
+   Compiling tactus-o1-protocol v0.1.0 (/home/arthur/RustRoverProjects/tactus-o1/crates/tactus-o1-protocol)
+   Compiling revm-handler v43.0.3
+   Compiling sp1-core-machine v6.8.1
+   Compiling alloy-eip2124 v0.2.0
+   Compiling sp1-recursion-compiler v6.8.1
+   Compiling alloy-serde v2.1.1
+   Compiling alloy-trie v0.9.8
+   Compiling alloy-eips v2.1.1
+   Compiling revm-inspector v43.0.3
+   Compiling sp1-verifier v6.8.1
+   Compiling tactus-o1-execution v0.1.0 (/home/arthur/RustRoverProjects/tactus-o1/crates/tactus-o1-execution)
+   Compiling revm-database v43.0.1
+   Compiling sp1-prover-types v6.8.1
+   Compiling revm v43.0.3
+   Compiling sp1-recursion-gnark-ffi v6.8.1
+   Compiling alloy-consensus v2.1.1
+   Compiling sp1-recursion-circuit v6.8.1
+   Compiling sp1-build v6.8.1
+   Compiling tactus-o1-proof-journal v0.1.0 (/home/arthur/RustRoverProjects/tactus-o1/proofs/sp1/journal)
+   Compiling sp1-prover v6.8.1
+   Compiling sp1-sdk v6.8.1
+   Compiling tactus-o1-sp1-host v0.1.0 (/home/arthur/RustRoverProjects/tactus-o1/proofs/sp1/host)
+    Finished `release` profile [optimized] target(s) in 2m 40s
+warning: the following packages contain code that will be rejected by a future version of Rust: proc-macro-error2 v2.0.1
+note: to see what the problems were, use the option `--future-incompat-report`, or run `cargo report future-incompatibilities --id 1`

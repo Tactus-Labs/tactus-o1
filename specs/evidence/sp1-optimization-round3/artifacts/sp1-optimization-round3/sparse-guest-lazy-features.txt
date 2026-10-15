@@ -1,0 +1,17 @@
+lazy_static v1.5.1 (/home/arthur/RustRoverProjects/tactus-o1/proofs/vendor/lazy_static-1.5.1)
+└── lazy_static feature "default"
+    ├── slop-koala-bear v6.8.1
+    │   └── slop-koala-bear feature "default"
+    │       └── sp1-primitives v6.8.1
+    │           └── sp1-primitives feature "default"
+    │               ├── sp1-lib v6.8.1
+    │               │   └── sp1-zkvm v6.8.1
+    │               │       ├── sp1-zkvm feature "default"
+    │               │       │   └── tactus-o1-sparse-sp1-guest v0.1.0 (/home/arthur/RustRoverProjects/tactus-o1/proofs/incremental-sp1/guest)
+    │               │       │       └── tactus-o1-sparse-sp1-guest feature "default" (command-line)
+    │               │       ├── sp1-zkvm feature "lib"
+    │               │       │   └── sp1-zkvm feature "default" (*)
+    │               │       └── sp1-zkvm feature "libm"
+    │               │           └── sp1-zkvm feature "default" (*)
+    │               └── sp1-zkvm v6.8.1 (*)
+    └── sp1-primitives v6.8.1 (*)

@@ -1,7 +1,7 @@
 //! Candidate v2 execution. CKB publication/settlement must authenticate the
 //! deposit transcript; executing caller-provided records is not custody authority.
 use super::*;
-use revm::SystemCallEvm;
+use revm::{DatabaseCommit, SystemCallEvm};
 use tactus_o1_protocol::native_bridge::{self as wire, Anchor, Batch, Config, Cursor, Record};
 
 /// Bound checked on successful pinned-contract calls, outside user block gas.
@@ -32,16 +32,7 @@ impl std::fmt::Display for BridgeError {
 impl std::error::Error for BridgeError {}
 
 pub fn rules_hash() -> [u8; 32] {
-    batch::hash(
-        b"tactus/o1/native-execution-rules/v2",
-        &[
-            include_bytes!("../rules-native-v2.txt").as_slice(),
-            include_bytes!("../rules-v1.txt").as_slice(),
-            include_bytes!("../../../Cargo.lock").as_slice(),
-            include_bytes!("../../../contracts/bridge/NativeCKB.json").as_slice(),
-        ]
-        .concat(),
-    )
+    NATIVE_EXECUTION_RULES_HASH
 }
 /// Exact immutable DOMAIN used by the funded CKB vault program.
 pub fn domain(c: &Config) -> B256 {
@@ -65,18 +56,10 @@ pub fn domain(c: &Config) -> B256 {
     )
 }
 pub fn runtime(c: &Config) -> Bytes {
-    let artifact: serde_json::Value =
-        serde_json::from_slice(include_bytes!("../../../contracts/bridge/NativeCKB.json"))
-            .expect("pinned artifact");
-    let deployed = &artifact["contract"]["evm"]["deployedBytecode"];
-    let mut code = alloy_primitives::hex::decode(deployed["object"].as_str().unwrap()).unwrap();
-    let refs = deployed["immutableReferences"].as_object().unwrap();
-    assert_eq!(refs.len(), 1);
-    for patch in refs.values().next().unwrap().as_array().unwrap() {
-        assert_eq!(patch["length"], 32);
-        let start = patch["start"].as_u64().unwrap() as usize;
-        assert_eq!(&code[start..start + 32], &[0; 32]);
-        code[start..start + 32].copy_from_slice(domain(c).as_slice());
+    let mut code = NATIVE_RUNTIME.to_vec();
+    let domain = domain(c);
+    for &start in NATIVE_DOMAIN_OFFSETS {
+        code[start..start + 32].copy_from_slice(domain.as_slice());
     }
     code.into()
 }
@@ -167,6 +150,9 @@ impl NativeExecutor {
     pub fn head(&self) -> &Header {
         self.inner.head()
     }
+    pub fn head_hash(&self) -> B256 {
+        self.inner.head_hash()
+    }
     pub fn state_root(&self) -> B256 {
         self.inner.state_root()
     }
@@ -180,16 +166,23 @@ impl NativeExecutor {
         &self.config
     }
     fn invariant(&self) -> Result<(), BridgeError> {
-        let a = self
-            .account(Address::from(self.config.contract))
+        Self::check_invariant(&self.inner, &self.config, self.cursor)
+    }
+    fn check_invariant(
+        inner: &Executor,
+        config: &Config,
+        cursor: Cursor,
+    ) -> Result<(), BridgeError> {
+        let a = inner
+            .account(Address::from(config.contract))
             .ok_or(BridgeError::Invariant)?;
         let slot = |i: u64| a.storage.get(&U256::from(i)).copied().unwrap_or_default();
-        if a.code != runtime(&self.config)
+        if a.code != runtime(config)
             || a.nonce != 1
-            || slot(1) != U256::from(self.cursor.cumulative)
+            || slot(1) != U256::from(cursor.cumulative)
             || slot(0).checked_add(slot(2)) != Some(slot(1))
             || slot(0) > U256::from(u64::MAX)
-            || self
+            || inner
                 .account(Address::ZERO)
                 .is_some_and(|a| a.nonce != 0 || !a.code.is_empty() || !a.storage.is_empty())
         {
@@ -205,13 +198,14 @@ impl NativeExecutor {
             return Err(BridgeError::Invariant);
         }
         let (input, next) = Batch::decode(bytes, &self.config, &self.anchor())?;
-        let mut candidate = self.clone();
+        let config = &self.config;
+        let vault_code_hash = self.vault_code_hash;
+        let mut candidate = ExecutionTransaction::new(&mut self.inner);
         let mut deposits = Vec::with_capacity(input.deposits.len());
         let first = &input.users.blocks[0];
         let env = BlockEnv {
             number: U256::from(
                 candidate
-                    .inner
                     .head
                     .number
                     .checked_add(1)
@@ -221,8 +215,8 @@ impl NativeExecutor {
             timestamp: U256::from(first.timestamp),
             gas_limit: BLOCK_GAS_LIMIT,
             basefee: next_base_fee(
-                candidate.inner.head.base_fee_per_gas.ok_or(Error::Rules)?,
-                candidate.inner.head.gas_used,
+                candidate.head.base_fee_per_gas.ok_or(Error::Rules)?,
+                candidate.head.gas_used,
             )?,
             difficulty: U256::ZERO,
             prevrandao: Some(B256::ZERO),
@@ -233,34 +227,34 @@ impl NativeExecutor {
             let result = Context::mainnet()
                 .modify_cfg_chained(|cfg| {
                     cfg.set_spec_and_mainnet_gas_params(SpecId::SHANGHAI);
-                    cfg.chain_id = candidate.config.chain;
+                    cfg.chain_id = config.chain;
                 })
-                .with_db(&mut candidate.inner.db)
+                .with_db(&mut candidate.db)
                 .with_block(env.clone())
                 .build_mainnet()
                 .system_call_with_caller(
                     Address::ZERO,
-                    Address::from(candidate.config.contract),
-                    credit_calldata(&candidate.config, &record),
+                    Address::from(config.contract),
+                    credit_calldata(&config, &record),
                 )
                 .map_err(|e| BridgeError::Execution(Error::Engine(e.to_string())))?;
             if !result.result.is_success() || result.result.tx_gas_used() > MAX_CREDIT_GAS {
                 return Err(BridgeError::Credit);
             }
             deposits.push(DepositOutcome {
-                deposit_id: candidate.config.deposit_id(record.sequence),
+                deposit_id: config.deposit_id(record.sequence),
                 record,
                 gas_used: result.result.tx_gas_used(),
                 logs: result.result.logs().to_vec(),
             });
-            candidate.inner.db.commit(result.state);
+            candidate.db.commit(result.state);
         }
-        candidate.cursor = next.deposits;
         // v2 deliberately has its own block driver; changing it must not silently
         // change the already-proved v1 executable. Transaction decoding, fee
         // arithmetic and trie construction use the pinned common primitives.
-        let working = &mut candidate.inner;
+        let working = &mut *candidate;
         let mut blocks = Vec::with_capacity(input.users.blocks.len());
+        let mut deposited_state = !deposits.is_empty();
         for block in input.users.blocks {
             let number = working
                 .head
@@ -372,9 +366,13 @@ impl NativeExecutor {
                 &outcomes,
             );
             let header = Header {
-                parent_hash: working.head.hash_slow(),
+                parent_hash: working.head_hash(),
                 beneficiary: env.beneficiary,
-                state_root: state_root(&working.db),
+                state_root: if !deposited_state && transactions.is_empty() {
+                    working.head.state_root
+                } else {
+                    state_root(&working.db)
+                },
                 transactions_root: ordered_trie_root_encoded(&transactions),
                 receipts_root: ordered_trie_root_encoded(
                     &receipts
@@ -394,10 +392,7 @@ impl NativeExecutor {
                     &[
                         outcome_root.as_slice(),
                         next.deposits.encode().as_slice(),
-                        candidate
-                            .config
-                            .vault_script(candidate.vault_code_hash)
-                            .as_slice(),
+                        config.vault_script(vault_code_hash).as_slice(),
                     ]
                     .concat(),
                 )
@@ -417,6 +412,7 @@ impl NativeExecutor {
                 .block_hashes
                 .retain(|n, _| *n >= U256::from(number.saturating_sub(255)));
             working.head = header.clone();
+            deposited_state = false;
             blocks.push(ExecutedBlock {
                 header,
                 hash,
@@ -426,8 +422,9 @@ impl NativeExecutor {
             });
         }
         working.anchor = next.ordering;
-        candidate.invariant()?;
-        *self = candidate;
+        Self::check_invariant(&candidate, config, next.deposits)?;
+        candidate.accept();
+        self.cursor = next.deposits;
         Ok(ExecutedBatch { deposits, blocks })
     }
 }

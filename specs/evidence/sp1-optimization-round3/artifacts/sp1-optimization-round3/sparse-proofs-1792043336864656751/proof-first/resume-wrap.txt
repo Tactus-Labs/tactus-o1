@@ -1,0 +1,34 @@
+Retained witness matches the exact public journal, guest key and release VK root
+Setting environment variables took 5.2µs
+Reading R1CS took 12.414891471s
+Reading proving key took 3.315569027s
+Reading witness file took 1.977233ms
+Deserializing JSON data took 16.505021ms
+Generating witness took 246.126739ms
+14:03:14 DBG constraint system solver done nbConstraints=15972262 took=3310.014317
+14:04:04 DBG prover done acceleration=none backend=groth16 curve=bn254 nbConstraints=15972262 took=50310.041689
+Generating proof took 53.620795724s
+Real Groth16 proof verified with 15 negative controls
+	Command being timed: "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/optimized-1792042759396978183/host/wrap-witness /home/arthur/RustRoverProjects/tactus-o1/artifacts/prover-tools/circuits/groth16/v6.1.0 /home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/sparse-proofs-1792043336864656751/proof-first/retained-wrapped-witness.json /home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/sparse-proofs-1792043336864656751/proof-first/proof/public-values.bin 0x0017cf9eee019ac2f5933907aa0cf7cc50746d7a50d82504e31dede2fc1681a4 /home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/sparse-proofs-1792043336864656751/proof-first/resumed-proof"
+	User time (seconds): 229.00
+	System time (seconds): 7.89
+	Percent of CPU this job got: 305%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:17.46
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 17470140
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 24
+	Minor (reclaiming a frame) page faults: 5317751
+	Voluntary context switches: 158122
+	Involuntary context switches: 3441
+	Swaps: 0
+	File system inputs: 11722448
+	File system outputs: 216
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

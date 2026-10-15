@@ -1,0 +1,2 @@
+   Compiling tactus-o1-devnet-driver v0.1.0 (/home/arthur/RustRoverProjects/tactus-o1/crates/tactus-o1-devnet-driver)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.62s

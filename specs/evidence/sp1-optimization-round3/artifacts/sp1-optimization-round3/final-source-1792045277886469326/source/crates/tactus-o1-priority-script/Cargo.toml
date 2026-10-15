@@ -1,0 +1,12 @@
+[package]
+name = "tactus-o1-priority-script"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+ckb-std = { version = "0.15", default-features = false, features = ["ckb-types", "allocator"] }
+tactus-o1-protocol = { path = "../tactus-o1-protocol" }
+
+[lib]
+crate-type = ["staticlib", "rlib"]

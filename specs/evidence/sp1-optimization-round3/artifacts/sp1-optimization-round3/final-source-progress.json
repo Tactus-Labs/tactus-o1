@@ -1,0 +1,177 @@
+{
+  "status": "complete",
+  "pipeline_output": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/sparse-proofs-1792043336864656751",
+  "checks": [
+    {
+      "name": "full-guest-build",
+      "command": [
+        "bash",
+        "scripts/build-proof-guest.sh"
+      ],
+      "status": "passed",
+      "log": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/final-source-1792045277886469326/full-guest-build.txt",
+      "started_unix": 1792045278.0502872,
+      "exit_code": 0,
+      "elapsed_seconds": 67.85722661018372
+    },
+    {
+      "name": "native-guest-build",
+      "command": [
+        "bash",
+        "scripts/build-native-proof-guest.sh"
+      ],
+      "status": "passed",
+      "log": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/final-source-1792045277886469326/native-guest-build.txt",
+      "started_unix": 1792045345.9077637,
+      "exit_code": 0,
+      "elapsed_seconds": 65.66897654533386
+    },
+    {
+      "name": "full-vkey",
+      "command": [
+        "/home/arthur/RustRoverProjects/tactus-o1/artifacts/prover-tools/cargo-prove",
+        "prove",
+        "vkey",
+        "--elf",
+        "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/final-source-1792045277886469326/full.elf"
+      ],
+      "status": "passed",
+      "log": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/final-source-1792045277886469326/full-vkey.txt",
+      "started_unix": 1792045411.5771513,
+      "exit_code": 0,
+      "elapsed_seconds": 30.99827790260315
+    },
+    {
+      "name": "native-vkey",
+      "command": [
+        "/home/arthur/RustRoverProjects/tactus-o1/artifacts/prover-tools/cargo-prove",
+        "prove",
+        "vkey",
+        "--elf",
+        "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/final-source-1792045277886469326/native.elf"
+      ],
+      "status": "passed",
+      "log": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/final-source-1792045277886469326/native-vkey.txt",
+      "started_unix": 1792045442.5812452,
+      "exit_code": 0,
+      "elapsed_seconds": 31.386350870132446
+    },
+    {
+      "name": "full-qualification",
+      "command": [
+        "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/final-source-1792045277886469326/oracle/crypto-patch-bench",
+        "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/qualification-fixtures.json",
+        "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/final-source-1792045277886469326/full-qualification",
+        "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/final-source-1792045277886469326/full.elf"
+      ],
+      "status": "passed",
+      "log": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/final-source-1792045277886469326/full-qualification.txt",
+      "started_unix": 1792045473.9701877,
+      "exit_code": 0,
+      "elapsed_seconds": 33.890212535858154
+    },
+    {
+      "name": "native-full",
+      "command": [
+        "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/final-source-1792045277886469326/oracle/tactus-o1-native-sp1-host",
+        "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/final-source-1792045277886469326/native.elf",
+        "/home/arthur/RustRoverProjects/tactus-o1/artifacts/native-guest-qXKMQ1qa/input-0.json",
+        "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/final-source-1792045277886469326/native-full"
+      ],
+      "status": "passed",
+      "log": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/final-source-1792045277886469326/native-full.txt",
+      "started_unix": 1792045507.8607965,
+      "exit_code": 0,
+      "elapsed_seconds": 28.211541414260864
+    },
+    {
+      "name": "native-prefix",
+      "command": [
+        "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/final-source-1792045277886469326/oracle/tactus-o1-native-sp1-host",
+        "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/final-source-1792045277886469326/native.elf",
+        "/home/arthur/RustRoverProjects/tactus-o1/artifacts/native-guest-qXKMQ1qa/input-1.json",
+        "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/final-source-1792045277886469326/native-prefix"
+      ],
+      "status": "passed",
+      "log": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/final-source-1792045277886469326/native-prefix.txt",
+      "started_unix": 1792045536.074914,
+      "exit_code": 0,
+      "elapsed_seconds": 28.899113655090332
+    },
+    {
+      "name": "full-real-proof",
+      "command": [
+        "python3",
+        "-B",
+        "scripts/run-patched-proof-benchmark.py",
+        "--elf",
+        "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/final-source-1792045277886469326/full.elf",
+        "--host",
+        "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/proof-tools/chain-proof",
+        "--input",
+        "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round2/transfers-32-proof-input.json",
+        "--output",
+        "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/final-source-1792045277886469326/full-proof",
+        "--threads",
+        "8",
+        "--go-threads",
+        "4",
+        "--shard-size",
+        "1048576"
+      ],
+      "status": "passed",
+      "log": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/final-source-1792045277886469326/full-real-proof.txt",
+      "started_unix": 1792045564.9991636,
+      "exit_code": 0,
+      "elapsed_seconds": 1287.9025011062622
+    }
+  ],
+  "ci_run": false,
+  "production_ready": false,
+  "output": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/final-source-1792045277886469326",
+  "guests": {
+    "full": {
+      "sha256": "d9f53f93e115557591b57a44699594973040001fef885921088b14f6f0e5fbeb",
+      "guest_key": "0x0080f615f0c5ae00a998ffae474f42d59c3c936f63309fa8b8390c0d0ff934c2"
+    },
+    "native": {
+      "sha256": "8def06725fb45f4554dfc1dd9dd7b75ad9900d9476e05eef6d73f811fca5dd6f",
+      "guest_key": "0x00ad5da8b3dcc308cc8e36d42f28c0c093e3874949eb59531143119eb345e2cd"
+    }
+  },
+  "source_unchanged": true,
+  "full_identical_to_proved_adaptive": false,
+  "full_real_proof": {
+    "proof_generated": true,
+    "proof_directory": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/final-source-1792045277886469326/full-proof/resumed-proof",
+    "pipeline_seconds": 1223.7773230599996,
+    "fresh_verification_seconds": 27.94118610100122,
+    "total_seconds_including_fresh_verification": 1251.7195805800002,
+    "preparation_and_build_excluded": true,
+    "fresh_verification": true,
+    "negative_controls": [
+      "profile",
+      "ckb-network",
+      "ordering-script",
+      "settlement-script",
+      "rollup",
+      "chain",
+      "allocation",
+      "predecessor",
+      "end-history",
+      "previous-state",
+      "next-state",
+      "previous-header",
+      "next-header",
+      "interval-data",
+      "wrong-guest-key"
+    ],
+    "public_values_unchanged": true,
+    "staged": true,
+    "ckb_settlement": false,
+    "deployment_authorized": false,
+    "production_ready": false
+  },
+  "finished_unix": 1792046852.9700985,
+  "native_qualification": "execution-only; no new custody proof or deployment"
+}

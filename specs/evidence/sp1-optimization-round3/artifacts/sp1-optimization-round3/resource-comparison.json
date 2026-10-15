@@ -1,0 +1,49 @@
+{
+  "status": "complete",
+  "runs": [
+    {
+      "name": "threads4",
+      "comparable_seconds": 1600.402247274002,
+      "pipeline_seconds": 1601.043537685,
+      "fresh_verification_seconds": 39.26092145599978,
+      "total_including_fresh_verification_seconds": 1640.3048034130043,
+      "recursive_max_rss_kib": 20488400,
+      "negative_controls": 15,
+      "fresh_verification": true,
+      "sample_count": 1
+    },
+    {
+      "name": "threads8",
+      "comparable_seconds": 1156.604355816998,
+      "pipeline_seconds": 1157.2547682400036,
+      "fresh_verification_seconds": 28.36482621399773,
+      "total_including_fresh_verification_seconds": 1185.6198938190064,
+      "recursive_max_rss_kib": 20640392,
+      "negative_controls": 15,
+      "fresh_verification": true,
+      "sample_count": 1
+    },
+    {
+      "name": "threads8-shard19",
+      "comparable_seconds": 1146.8843527319987,
+      "pipeline_seconds": 1147.644017572995,
+      "fresh_verification_seconds": 29.81936458799464,
+      "total_including_fresh_verification_seconds": 1177.4644735659967,
+      "recursive_max_rss_kib": 21250924,
+      "negative_controls": 15,
+      "fresh_verification": true,
+      "sample_count": 1
+    }
+  ],
+  "same_frozen_elf": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/adaptive.elf",
+  "same_input": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round2/transfers-32-proof-input.json",
+  "single_samples": true,
+  "eight_threads_reduction_percent": 27.730396668271005,
+  "smaller_shard_reduction_percent": 0.840391360806636,
+  "preferred_followup_configuration": {
+    "threads": 8,
+    "go_threads": 4,
+    "shard_size": 1048576,
+    "reason": "Substantial observed gain over4threads; smaller-shard difference0.84% is weak evidence and had higher peakRSS."
+  }
+}

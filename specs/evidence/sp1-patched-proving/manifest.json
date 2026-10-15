@@ -1,0 +1,47 @@
+{
+  "environment": {
+    "RAYON_NUM_THREADS": "4",
+    "TOKIO_WORKER_THREADS": "4",
+    "GOMAXPROCS": "2",
+    "GOMEMLIMIT": "16GiB",
+    "GOGC": "25",
+    "SP1_CIRCUIT_MODE": "release",
+    "SP1_GROTH16_CIRCUIT_PATH": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/prover-tools/circuits/groth16",
+    "ELEMENT_THRESHOLD": "50331648",
+    "HEIGHT_THRESHOLD": "524288",
+    "SHARD_SIZE": "1048576",
+    "TMPDIR": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-patched-full-proof/tmp",
+    "TACTUS_PROOF_MODE": "staged",
+    "SP1_WORKER_CORE_BUFFER_SIZE": "1",
+    "SP1_WORKER_NUM_CORE_WORKERS": "1",
+    "SP1_WORKER_NUM_PREPARE_REDUCE_WORKERS": "1",
+    "SP1_WORKER_NUM_RECURSION_EXECUTOR_WORKERS": "1",
+    "SP1_WORKER_NUM_RECURSION_PROVER_WORKERS": "1",
+    "SP1_WORKER_NUM_SETUP_WORKERS": "1",
+    "SP1_WORKER_PREPARE_REDUCE_BUFFER_SIZE": "1",
+    "SP1_WORKER_RECURSION_EXECUTOR_BUFFER_SIZE": "1",
+    "SP1_WORKER_RECURSION_PROVER_BUFFER_SIZE": "1",
+    "SP1_WORKER_SETUP_BUFFER_SIZE": "1"
+  },
+  "sha256": {
+    "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-patched-full-proof/guest.elf": "7ffaa9eb909684c15fee884aeccf815a856fff0feffb8108662041f926acd018",
+    "/home/arthur/RustRoverProjects/tactus-o1/artifacts/prover-host/target/release/chain-proof": "f8d2ae5a2819e4b6bbaaad2bc8a228cc2d41c920274e327ad6c9bbec073b30ab",
+    "/home/arthur/RustRoverProjects/tactus-o1/artifacts/prover-host/target/release/wrap-witness": "cec4c533346f9dc1e5d6c22cdfac3635bf992bb17aca5f4b504567015398eae8",
+    "/home/arthur/RustRoverProjects/tactus-o1/specs/evidence/sealed-chain-proof/proving-input.json": "18256003ea4042beabbb38e9c930550c0d17d64ace36732f5c45de4bd6865d93",
+    "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-patched-full-proof/proving-input.json": "5a272c3e3db6fa413eeadcf79aab7616260eb3eec84ee5be4d3fea04f375d48f",
+    "/home/arthur/RustRoverProjects/tactus-o1/scripts/run-patched-proof-benchmark.py": "fafe4a72ba7c8ed3319144543770a7e2e37fe41a304699176ba3b82c964592a6",
+    "/home/arthur/RustRoverProjects/tactus-o1/scripts/finish-chain-proof-staged.py": "5ae0339fe653bd3534ca88cf6022030d07f539dd1399a087885652c3174e34b2",
+    "/home/arthur/RustRoverProjects/tactus-o1/proofs/sp1/Cargo.lock": "2fb50d9bde6021c8963f93cc03c1e26fe366b12ad695611fd93a047938f2108b",
+    "/home/arthur/RustRoverProjects/tactus-o1/artifacts/prover-tools/circuits/groth16/v6.1.0/groth16_vk.bin": "4388a21c687fdd5f218d7e3d13190cac4c5355818d3605fd5fb811df468ee696",
+    "/home/arthur/RustRoverProjects/tactus-o1/artifacts/prover-tools/circuits/groth16/v6.1.0/groth16_pk.bin": "c3760e0e3b58487f8704680d5b3ad32a9fbca9f3cb0749d69055c4f1271ca167",
+    "/home/arthur/RustRoverProjects/tactus-o1/artifacts/prover-tools/circuits/groth16/v6.1.0/groth16_circuit.bin": "d6a66be2702206e2b1a20bebf7096142864feac9e399a309e5e6e00353264cbc"
+  },
+  "original_guest_key": "0x00eb2677694b390a31db8883db49c1a828d73618173ce6f3e5790b7678958b14",
+  "candidate_guest_key": "0x009af0b301570b9ccd54ee580352b3ec73d45eee3cadf93d61c365117c3ff42c",
+  "changed_input_fields": [
+    "guest_verifying_key"
+  ],
+  "ckb_settlement": false,
+  "deployment_authorized": false,
+  "ci_run": false
+}

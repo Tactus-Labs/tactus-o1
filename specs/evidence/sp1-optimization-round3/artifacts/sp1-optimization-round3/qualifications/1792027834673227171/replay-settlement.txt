@@ -1,0 +1,111 @@
+   Compiling proc-macro2 v1.0.107
+   Compiling unicode-ident v1.0.26
+   Compiling quote v1.0.47
+   Compiling autocfg v1.5.1
+   Compiling version_check v0.9.5
+   Compiling generic-array v0.14.7
+   Compiling syn v3.0.6
+   Compiling num-traits v0.2.19
+   Compiling zerocopy v0.8.62
+   Compiling typenum v1.20.1
+   Compiling syn v2.0.119
+   Compiling find-msvc-tools v0.1.14
+   Compiling shlex v2.0.1
+   Compiling cc v1.6.0
+   Compiling ppv-lite86 v0.2.21
+   Compiling rand_core v0.6.4
+   Compiling cfg-if v1.0.5
+   Compiling rand_chacha v0.3.1
+   Compiling num-integer v0.1.47
+   Compiling block-buffer v0.10.4
+   Compiling crypto-common v0.1.7
+   Compiling digest v0.10.7
+   Compiling num-bigint v0.4.8
+   Compiling rand v0.8.8
+   Compiling enum-ordinalize-derive v4.4.2
+   Compiling paste v1.0.15
+   Compiling arrayvec v0.7.8
+   Compiling enum-ordinalize v4.4.2
+   Compiling ark-std v0.5.0
+   Compiling zeroize_derive v1.5.0
+   Compiling crunchy v0.2.4
+   Compiling either v1.19.0
+   Compiling itertools v0.13.0
+   Compiling zeroize v1.9.1
+   Compiling ark-ff-macros v0.5.0
+   Compiling ark-serialize v0.5.0
+   Compiling educe v0.6.0
+   Compiling blake3 v1.8.7
+   Compiling ark-ff-asm v0.5.0
+   Compiling bytemuck_derive v1.12.1
+   Compiling spin v0.9.9
+   Compiling thiserror v2.0.21
+   Compiling ark-ff v0.5.0
+   Compiling lazy_static v1.5.1 (/home/arthur/RustRoverProjects/tactus-o1/proofs/vendor/lazy_static-1.5.1)
+warning: eliding a lifetime that's named elsewhere is confusing
+  --> /home/arthur/RustRoverProjects/tactus-o1/proofs/vendor/lazy_static-1.5.1/src/core_lazy.rs:18:49
+   |
+18 |     pub fn get<F>(&'static self, builder: F) -> &T
+   |                    -------                      ^^ the same lifetime is elided here
+   |                    |
+   |                    the lifetime is named here
+   |
+   = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+   = note: `#[warn(mismatched_lifetime_syntaxes)]` on by default
+help: consistently use `'static`
+   |
+18 |     pub fn get<F>(&'static self, builder: F) -> &'static T
+   |                                                  +++++++
+
+warning: `lazy_static` (lib) generated 1 warning (run `cargo fix --lib -p lazy_static` to apply 1 suggestion)
+   Compiling bytemuck v1.25.2
+   Compiling ckb-std v0.15.3
+   Compiling molecule v0.7.5
+   Compiling thiserror-impl v2.0.21
+   Compiling cpufeatures v0.3.1
+   Compiling cpufeatures v0.2.17
+   Compiling byteorder v1.5.0
+   Compiling constant_time_eq v0.4.2
+   Compiling rustc-hex v2.1.0
+   Compiling sha2 v0.10.9
+   Compiling ckb-gen-types v0.112.1
+   Compiling substrate-bn-succinct-rs v0.6.0 (/home/arthur/RustRoverProjects/tactus-o1/proofs/vendor/substrate-bn-succinct-rs-0.6.0)
+warning: hiding a lifetime that's elided elsewhere is confusing
+   --> /home/arthur/RustRoverProjects/tactus-o1/proofs/vendor/substrate-bn-succinct-rs-0.6.0/src/arith.rs:411:17
+    |
+411 |     pub fn bits(&self) -> BitIterator {
+    |                 ^^^^^     ^^^^^^^^^^^ the same lifetime is hidden here
+    |                 |
+    |                 the lifetime is elided here
+    |
+    = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+    = note: `#[warn(mismatched_lifetime_syntaxes)]` on by default
+help: use `'_` for type paths
+    |
+411 |     pub fn bits(&self) -> BitIterator<'_> {
+    |                                      ++++
+
+warning: `substrate-bn-succinct-rs` (lib) generated 1 warning (run `cargo fix --lib -p substrate-bn-succinct-rs` to apply 1 suggestion)
+   Compiling hex v0.4.3
+   Compiling gcd v2.3.0
+   Compiling buddy-alloc v0.5.1
+   Compiling sp1-verifier v6.8.1 (/home/arthur/RustRoverProjects/tactus-o1/proofs/vendor/sp1-verifier-6.8.1)
+   Compiling tactus-o1-settlement-script v0.1.0 (/home/arthur/RustRoverProjects/tactus-o1/proofs/ckb-settlement)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 10.19s
+     Running unittests src/lib.rs (proofs/ckb-settlement/target/debug/deps/tactus_o1_settlement_script-625c7a6454359c0b)
+
+running 5 tests
+test tests::binds_fixture_journal_to_real_state_and_deployment_fields ... ok
+test tests::other_execution_profile_is_not_accepted_by_this_script ... ok
+test tests::later_intervals_require_both_predecessor_roots_and_strict_progress ... ok
+test tests::canonical_encodings_and_proof_framing_are_bounded ... ok
+test tests::retained_a3_groth16_and_every_public_domain_are_cryptographically_checked ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 3.48s
+
+   Doc-tests tactus_o1_settlement_script
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

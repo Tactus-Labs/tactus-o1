@@ -1,0 +1,10 @@
+full/0: 713200 instructions, gas Some(897392); exact native journal match; Geth checked=true
+full/1: 991932 instructions, gas Some(1236535); exact native journal match; Geth checked=true
+full/2: 802491 instructions, gas Some(1001854); exact native journal match; Geth checked=true
+full/3: 610948 instructions, gas Some(778089); exact native journal match; Geth checked=true
+full/4: 610560 instructions, gas Some(777789); exact native journal match; Geth checked=true
+full/5: 710522 instructions, gas Some(892279); exact native journal match; Geth checked=true
+full/6: 954504 instructions, gas Some(1212849); exact native journal match; Geth checked=true
+full/7: 566264 instructions, gas Some(723325); exact native journal match; Geth checked=true
+full/8: 736199 instructions, gas Some(936830); exact native journal match; Geth checked=true
+full/9: 1435772 instructions, gas Some(1673927); exact native journal match; Geth checked=false

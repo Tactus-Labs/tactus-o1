@@ -1,0 +1,1 @@
+/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/final-source-1792045277886469326/retained-proof/resumed-proof

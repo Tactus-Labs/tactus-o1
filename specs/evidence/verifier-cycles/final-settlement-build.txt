@@ -1,0 +1,21 @@
+   Compiling substrate-bn-succinct-rs v0.6.0 (/home/arthur/RustRoverProjects/tactus-o1/proofs/vendor/substrate-bn-succinct-rs-0.6.0)
+warning: hiding a lifetime that's elided elsewhere is confusing
+   --> /home/arthur/RustRoverProjects/tactus-o1/proofs/vendor/substrate-bn-succinct-rs-0.6.0/src/arith.rs:411:17
+    |
+411 |     pub fn bits(&self) -> BitIterator {
+    |                 ^^^^^     ^^^^^^^^^^^ the same lifetime is hidden here
+    |                 |
+    |                 the lifetime is elided here
+    |
+    = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+    = note: `#[warn(mismatched_lifetime_syntaxes)]` on by default
+help: use `'_` for type paths
+    |
+411 |     pub fn bits(&self) -> BitIterator<'_> {
+    |                                      ++++
+
+   Compiling sp1-verifier v6.8.1 (/home/arthur/RustRoverProjects/tactus-o1/proofs/vendor/sp1-verifier-6.8.1)
+warning: `substrate-bn-succinct-rs` (lib) generated 1 warning (run `cargo fix --lib -p substrate-bn-succinct-rs` to apply 1 suggestion)
+   Compiling tactus-o1-settlement-script v0.1.0 (/home/arthur/RustRoverProjects/tactus-o1/proofs/ckb-settlement)
+    Finished `release` profile [optimized] target(s) in 1.38s
+93bfd29d828238c0ad9397264a522b96296706f1d709f65580aa2ec1241aa0a5  artifacts/tactus_o1_settlement_script.elf

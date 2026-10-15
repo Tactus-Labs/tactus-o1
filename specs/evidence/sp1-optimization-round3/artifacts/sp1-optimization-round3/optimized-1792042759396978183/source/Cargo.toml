@@ -1,0 +1,25 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/tactus-o1-protocol",
+    "crates/tactus-o1-experiment-a",
+    "crates/tactus-o1-ordering-script",
+    "crates/tactus-o1-devnet-driver",
+    "crates/tactus-o1-head-lock",
+    "crates/tactus-o1-anchor-script",
+    "crates/tactus-o1-priority-script",
+    "crates/tactus-o1-sealed-script",
+    "crates/tactus-o1-execution",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+repository = "https://github.com/Tactus-Labs/tactus-o1"
+
+[workspace.lints.rust]
+missing_docs = "warn"
+
+[profile.release]
+debug = true

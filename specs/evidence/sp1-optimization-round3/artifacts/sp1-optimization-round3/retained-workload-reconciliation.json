@@ -1,0 +1,41 @@
+{
+  "exact_workload_match_except_guest_key": true,
+  "expected_journal_identical": true,
+  "inputs": [
+    {
+      "path": "specs/evidence/sealed-chain-proof/proving-input.json",
+      "sha256": "18256003ea4042beabbb38e9c930550c0d17d64ace36732f5c45de4bd6865d93",
+      "changed_fields_vs_original": [],
+      "prefix_batches": 0,
+      "batch_count": 9
+    },
+    {
+      "path": "specs/evidence/sp1-patched-proving/proving-input.json",
+      "sha256": "5a272c3e3db6fa413eeadcf79aab7616260eb3eec84ee5be4d3fea04f375d48f",
+      "changed_fields_vs_original": [
+        "guest_verifying_key"
+      ],
+      "prefix_batches": 0,
+      "batch_count": 9
+    },
+    {
+      "path": "specs/evidence/sp1-optimization-round2/retained-proof/proving-input.json",
+      "sha256": "7f60bd3454495225bd2a653e243a52b6ec17bd1f77a18f11c302f45193e10b91",
+      "changed_fields_vs_original": [
+        "guest_verifying_key"
+      ],
+      "prefix_batches": 0,
+      "batch_count": 9
+    },
+    {
+      "path": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/final-source-1792045277886469326/retained-proof/proving-input.json",
+      "sha256": "25db9b3bcbe90a51da2a33b808ca762c462cf0388e00fc2ca2f18c82543b0cc4",
+      "changed_fields_vs_original": [
+        "guest_verifying_key"
+      ],
+      "prefix_batches": 0,
+      "batch_count": 9
+    }
+  ],
+  "ci_run": false
+}

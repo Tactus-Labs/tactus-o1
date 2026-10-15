@@ -1,0 +1,195 @@
+   Compiling ecdsa v0.16.9
+   Compiling ckb-std v0.15.3
+   Compiling secp256k1-sys v0.10.1
+   Compiling molecule v0.7.5
+   Compiling k256 v0.13.4
+   Compiling p256 v0.13.2
+   Compiling alloy-primitives v1.6.0
+   Compiling ckb-gen-types v0.112.1
+   Compiling alloy-eip7928 v0.4.11
+   Compiling revm-primitives v43.0.0
+   Compiling revm-bytecode v43.0.0
+   Compiling revm-state v43.0.1
+   Compiling alloy-eip7702 v0.6.3
+   Compiling alloy-eip2930 v0.2.4
+   Compiling revm-database-interface v43.0.1
+   Compiling revm-context-interface v43.0.2
+   Compiling revm-interpreter v43.0.2
+   Compiling revm-context v43.0.3
+   Compiling revm-precompile v43.0.3
+   Compiling alloy-eip2124 v0.2.0
+   Compiling alloy-serde v2.1.1
+   Compiling revm-handler v43.0.3
+   Compiling revm-inspector v43.0.3
+   Compiling alloy-eips v2.1.1
+   Compiling revm-database v43.0.1
+   Compiling alloy-trie v0.9.8
+   Compiling tactus-o1-ordering-script v0.1.0 (/home/arthur/RustRoverProjects/tactus-o1/crates/tactus-o1-ordering-script)
+   Compiling gcd v2.3.0
+   Compiling buddy-alloc v0.5.1
+   Compiling alloy-consensus v2.1.1
+   Compiling revm v43.0.3
+   Compiling tactus-o1-execution v0.1.0 (/home/arthur/RustRoverProjects/tactus-o1/crates/tactus-o1-execution)
+   Compiling secp256k1 v0.29.1
+   Compiling tactus-o1-devnet-driver v0.1.0 (/home/arthur/RustRoverProjects/tactus-o1/crates/tactus-o1-devnet-driver)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 11.36s
+     Running unittests src/lib.rs (target/debug/deps/tactus_o1_devnet_driver-0abf837532095d8e)
+
+running 22 tests
+test molecule::tests::cell_input_layout_is_44_bytes ... ok
+test molecule::tests::script_encoding_matches_ckb_cli_ground_truth ... ok
+test molecule::tests::empty_dynvec_serializes_its_total_size ... ok
+test lab::tests::rejection_evidence_requires_the_exact_type_script_failure ... ok
+test molecule::tests::witness_args_encoding_matches_ckb_cli_ground_truth ... ok
+test molecule::tests::external_scripts_reject_every_truncation_and_noncanonical_offset ... ok
+test rpc::tests::malformed_hex_is_rejected_without_panicking_or_losing_bytes ... ok
+test molecule::tests::single_item_dynvec_has_no_offsets ... ok
+test tx::tests::occupied_capacity_uses_fields_not_molecule_overhead ... ok
+test sealed_recovery::tests::reject_forged_genesis_identity ... ok
+test sealed_recovery::tests::reject_consistent_anchor_that_omits_mandatory_prefix ... ok
+test sealed_recovery::tests::reject_disconnected_lane_and_capacity_or_lock_takeover ... ok
+test sealed_recovery::tests::reject_noop_or_corrupt_lane ... ok
+test sealed_recovery::tests::reject_destroyed_gate_on_an_anchor_advance ... ok
+test sealed_recovery::tests::reject_incomplete_seal_and_replaced_snapshot ... ok
+test sealed_recovery::tests::replay_real_canonical_history_and_ignore_counterfeit_snapshot ... ok
+test settlement_recovery::tests::replayed_state_rejects_forged_roots_and_unproved_initialization ... ok
+test settlement_lab::tests::retained_real_proof_cannot_be_reused_for_a_different_a3_deployment ... ok
+test execution_recovery::tests::reorg_during_pointer_publication_never_returns_stale_success ... ok
+test execution_recovery::tests::chain_type_and_execution_genesis_mismatches_fail_closed ... ok
+test execution_recovery::tests::replay_time_reorg_cannot_publish_new_pointer_and_retry_reuses_checked_journal ... ok
+test sealed_recovery::tests::canonical_prefix_rebuilds_obligation_lifecycle_after_rollback ... ok
+
+test result: ok. 22 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s
+
+     Running unittests src/bin/gen-dev-key.rs (target/debug/deps/gen_dev_key-317a0f8426bf5a4e)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/bin/probe.rs (target/debug/deps/probe-9210c1c695f91a49)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/bin/recover-execution.rs (target/debug/deps/recover_execution-1184a140f1d75fda)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/bin/recover-obligations.rs (target/debug/deps/recover_obligations-7e4a58e85b212802)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/bin/recover-sealed.rs (target/debug/deps/recover_sealed-50c4bb2a797455c7)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/bin/recover-settlement.rs (target/debug/deps/recover_settlement-e5ba94d8f5565aa7)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/bin/replay-a1.rs (target/debug/deps/replay_a1-654ea418e860d236)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/bin/replay-a123.rs (target/debug/deps/replay_a123-0f36100e297acbd6)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/bin/replay-admission.rs (target/debug/deps/replay_admission-74121ccbca881080)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/bin/replay-batch.rs (target/debug/deps/replay_batch-b21aa67e0bb78b2f)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/bin/replay-checkpoint-reorg.rs (target/debug/deps/replay_checkpoint_reorg-7eae9dcb5bb2afc3)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/bin/replay-evm.rs (target/debug/deps/replay_evm-5ce252690f06b0b7)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/bin/replay-history-checkpoint.rs (target/debug/deps/replay_history_checkpoint-678d9da278f3a9b7)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/bin/replay-load.rs (target/debug/deps/replay_load-0ee5d5dc6425bc83)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/bin/replay-network.rs (target/debug/deps/replay_network-51772cff15842e1b)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/bin/replay-priority.rs (target/debug/deps/replay_priority-967eec4d3db0be5f)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/bin/replay-proof-verifier.rs (target/debug/deps/replay_proof_verifier-128c1cd522cdb56b)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/bin/replay-seal-contention.rs (target/debug/deps/replay_seal_contention-e3d9dcee89cc9b02)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/bin/replay-sealed.rs (target/debug/deps/replay_sealed-117cb17218c5c0d2)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/bin/replay-sealed-settlement.rs (target/debug/deps/replay_sealed_settlement-2115e5f848723222)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/bin/replay-settlement-bootstrap.rs (target/debug/deps/replay_settlement_bootstrap-c0d813334954e8b3)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests tactus_o1_devnet_driver
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

@@ -1,0 +1,13 @@
+[package]
+name = "tactus-o1-sparse-journal"
+version = "0.1.0"
+edition = "2021"
+[dependencies]
+tactus-o1-sparse-state = { path = "../state" }
+tactus-o1-proof-journal = { path = "../../sp1/journal" }
+tactus-o1-execution = { path = "../../../crates/tactus-o1-execution" }
+tactus-o1-protocol = { path = "../../../crates/tactus-o1-protocol" }
+[dev-dependencies]
+serde_json = "1"
+hex = "0.4"
+tactus-o1-settlement-script = { path = "../../ckb-settlement", features = ["sparse-proof"] }

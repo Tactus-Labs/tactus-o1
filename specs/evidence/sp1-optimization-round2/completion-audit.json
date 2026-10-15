@@ -1,0 +1,105 @@
+{
+  "scope": "Optimization, experiments and report; not production rollup qualification or deployment",
+  "checked_current_source_files": [
+    "Cargo.toml",
+    "Cargo.lock",
+    "crates/tactus-o1-execution/Cargo.toml",
+    "crates/tactus-o1-execution/build.rs",
+    "crates/tactus-o1-execution/src/lib.rs",
+    "crates/tactus-o1-execution/src/native_bridge.rs",
+    "crates/tactus-o1-execution/rules-v1.txt",
+    "crates/tactus-o1-execution/examples/execution-vectors.rs",
+    "crates/tactus-o1-execution/examples/optimization-vectors.rs",
+    "crates/tactus-o1-execution/tests/execution.rs",
+    "crates/tactus-o1-protocol/src/batch.rs",
+    "crates/tactus-o1-protocol/tests/batch_vectors.rs",
+    "proofs/sp1/Cargo.toml",
+    "proofs/sp1/Cargo.lock",
+    "proofs/native-sp1/Cargo.toml",
+    "proofs/native-sp1/Cargo.lock",
+    "scripts/build-sp1-optimization-candidates.py",
+    "scripts/check-execution-geth.py"
+  ],
+  "requirements": [
+    {
+      "id": "crypto",
+      "status": "verified",
+      "evidence": [
+        "current pinned workspace manifests/locks",
+        "guest-k256-features.txt",
+        "guest-secp256k1-features.txt",
+        "workloads/results.json",
+        "geth/verified.json"
+      ],
+      "coverage": "Actual guest acceleration and signature edge cases; unchanged native C oracle"
+    },
+    {
+      "id": "batching",
+      "status": "verified",
+      "evidence": [
+        "decode_with_summary source and truncation tests",
+        "execution-protocol-tests.txt",
+        "workloads/results.json"
+      ],
+      "coverage": "Validation reuse plus 1/8/32/128/512 signed-transfer ablations and Geth roots"
+    },
+    {
+      "id": "retained-full-proof",
+      "status": "verified",
+      "evidence": [
+        "retained-proof/completion.json",
+        "retained-proof/proof/result.json",
+        "retained-proof/fresh-verification.txt"
+      ],
+      "coverage": "New complete proof, 15 cryptographic controls, exact public journal and fresh process verification"
+    },
+    {
+      "id": "filled-full-proof",
+      "status": "verified",
+      "evidence": [
+        "transfers32-proof/completion.json",
+        "transfers32-proof/proof/result.json",
+        "transfers32-proof/fresh-verification.txt",
+        "transfers32-proof/timing-summary.json"
+      ],
+      "coverage": "New 32-transfer Groth16 proof, 15 negative controls, exact qualified journal and fresh-process verification"
+    },
+    {
+      "id": "formal-integration",
+      "status": "verified",
+      "evidence": [
+        "formal-qualification/results.json",
+        "formal-guest-build.txt",
+        "formal-native-guest-build.txt",
+        "native-full",
+        "native-prefix"
+      ],
+      "coverage": "Exact formal ELF on 40 Geth blocks and old chain; native full/prefix execution"
+    },
+    {
+      "id": "report-and-archive",
+      "status": "verified",
+      "coverage": "Both real proof timings, source/evidence hashes, scope limits and production-readiness links",
+      "evidence": [
+        "specs/SP1_OPTIMIZATION_ROUND2_REPORT.md",
+        "specs/PRODUCTION_READINESS.md",
+        "SHA256SUMS"
+      ]
+    }
+  ],
+  "ci_run": false,
+  "deployment_updated": false,
+  "goal_complete": true,
+  "historical_59_minute_input_has_no_old_prefix": true,
+  "incremental_checkpoint_implemented": false,
+  "sparse_state_witness_implemented": false,
+  "remaining_production_gates": "Unchanged; this completes the optimization/experiment/report goal only.",
+  "report_sha256": {
+    "specs/SP1_OPTIMIZATION_ROUND2_REPORT.md": "40763b3cb6780e54402a5cf392b3186fbcb3ed56379b5edca8d48a13790d66fc",
+    "specs/PRODUCTION_READINESS.md": "dd0ea77e399144d6fa635ca95898a35b04c70ead41d4d326ccb9d44e9fd74844",
+    "specs/PROOF_SCALING_AUDIT.md": "be2b4159df4d20fce09978fee2f2bc03d819524c3412042093560e15989104b6",
+    "specs/SP1_CRYPTO_PATCH_AUDIT.md": "a85a29f03e208b8b027d22d76a76201a4c21cc3dcd33894366c0e6c5db91b969",
+    "specs/SP1_PATCHED_PROVING_REPORT.md": "43d4f4622329fbad28e931f549e0164470d222391c34bd8ec02bd32685982f18"
+  },
+  "final_source_and_evidence_integrity_check": "passed"
+}

@@ -1,0 +1,101 @@
+   Compiling lazy_static v1.5.1 (/home/arthur/RustRoverProjects/tactus-o1/proofs/vendor/lazy_static-1.5.1)
+warning: eliding a lifetime that's named elsewhere is confusing
+  --> /home/arthur/RustRoverProjects/tactus-o1/proofs/vendor/lazy_static-1.5.1/src/core_lazy.rs:18:49
+   |
+18 |     pub fn get<F>(&'static self, builder: F) -> &T
+   |                    -------                      ^^ the same lifetime is elided here
+   |                    |
+   |                    the lifetime is named here
+   |
+   = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+   = note: `#[warn(mismatched_lifetime_syntaxes)]` on by default
+help: consistently use `'static`
+   |
+18 |     pub fn get<F>(&'static self, builder: F) -> &'static T
+   |                                                  +++++++
+
+warning: eliding a lifetime that's named elsewhere is confusing
+  --> /home/arthur/RustRoverProjects/tactus-o1/proofs/vendor/lazy_static-1.5.1/src/inline_lazy.rs:26:43
+   |
+26 |     pub fn get<F>(&'static self, f: F) -> &T
+   |                    -------                ^^ the same lifetime is elided here
+   |                    |
+   |                    the lifetime is named here
+   |
+   = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+   = note: `#[warn(mismatched_lifetime_syntaxes)]` on by default
+help: consistently use `'static`
+   |
+26 |     pub fn get<F>(&'static self, f: F) -> &'static T
+   |                                            +++++++
+
+warning: `lazy_static` (lib) generated 1 warning (run `cargo fix --lib -p lazy_static` to apply 1 suggestion)
+warning: `lazy_static` (lib) generated 1 warning (run `cargo fix --lib -p lazy_static` to apply 1 suggestion)
+   Compiling alloy-rlp v0.3.16
+   Compiling slop-koala-bear v6.8.1
+   Compiling ruint v1.20.1
+   Compiling sharded-slab v0.1.7
+   Compiling tracing-subscriber v0.3.23
+   Compiling alloy-primitives v1.6.0
+   Compiling tracing-forest v0.1.6
+   Compiling slop-baby-bear v6.8.1
+   Compiling slop-utils v6.8.1
+   Compiling slop-merkle-tree v6.8.1
+   Compiling slop-basefold v6.8.1
+   Compiling dynasm v3.2.1
+   Compiling slop-basefold-prover v6.8.1
+   Compiling sp1-primitives v6.8.1
+   Compiling slop-stacked v6.8.1
+   Compiling slop-sumcheck v6.8.1
+   Compiling slop-jagged v6.8.1
+   Compiling dynasmrt v3.2.1
+   Compiling slop-whir v6.8.1
+   Compiling sp1-curves v6.8.1
+   Compiling sp1-hypercube v6.8.1
+   Compiling sp1-jit v6.8.1
+   Compiling alloy-eip7928 v0.4.11
+   Compiling sp1-core-executor v6.8.1
+   Compiling revm-primitives v43.0.0
+   Compiling revm-bytecode v43.0.0
+   Compiling sp1-core-executor-runner-binary v6.8.1
+   Compiling revm-state v43.0.1
+   Compiling alloy-eip7702 v0.6.3
+   Compiling alloy-eip2930 v0.2.4
+   Compiling revm-database-interface v43.0.1
+   Compiling revm-context-interface v43.0.2
+   Compiling sp1-core-executor-runner v6.8.1
+   Compiling revm-precompile v43.0.3
+   Compiling sp1-recursion-executor v6.8.1
+   Compiling revm-interpreter v43.0.2
+   Compiling revm-context v43.0.3
+   Compiling revm-handler v43.0.3
+   Compiling sp1-core-machine v6.8.1
+   Compiling alloy-eip2124 v0.2.0
+   Compiling alloy-serde v2.1.1
+   Compiling nybbles v0.4.8
+   Compiling itertools v0.13.0
+   Compiling bindgen v0.70.1
+   Compiling alloy-trie v0.9.8
+   Compiling alloy-eips v2.1.1
+   Compiling revm-inspector v43.0.3
+   Compiling sp1-recursion-machine v6.8.1
+   Compiling revm-database v43.0.1
+   Compiling substrate-bn-succinct-rs v0.6.0
+   Compiling sp1-recursion-compiler v6.8.1
+   Compiling revm v43.0.3
+   Compiling alloy-consensus v2.1.1
+   Compiling sp1-recursion-gnark-ffi v6.8.1
+   Compiling tactus-o1-execution v0.1.0 (/home/arthur/RustRoverProjects/tactus-o1/crates/tactus-o1-execution)
+   Compiling sp1-verifier v6.8.1
+   Compiling sp1-prover-types v6.8.1
+   Compiling sp1-recursion-circuit v6.8.1
+   Compiling sp1-build v6.8.1
+   Compiling sp1-prover v6.8.1
+   Compiling tactus-o1-sparse-state v0.1.0 (/home/arthur/RustRoverProjects/tactus-o1/proofs/incremental-sp1/state)
+   Compiling tactus-o1-proof-journal v0.1.0 (/home/arthur/RustRoverProjects/tactus-o1/proofs/sp1/journal)
+   Compiling tactus-o1-sparse-journal v0.1.0 (/home/arthur/RustRoverProjects/tactus-o1/proofs/incremental-sp1/journal)
+   Compiling sp1-sdk v6.8.1
+   Compiling tactus-o1-sparse-sp1-host v0.1.0 (/home/arthur/RustRoverProjects/tactus-o1/proofs/incremental-sp1/host)
+    Finished `release` profile [optimized] target(s) in 4m 53s
+warning: the following packages contain code that will be rejected by a future version of Rust: proc-macro-error2 v2.0.1
+note: to see what the problems were, use the option `--future-incompat-report`, or run `cargo report future-incompatibilities --id 1`

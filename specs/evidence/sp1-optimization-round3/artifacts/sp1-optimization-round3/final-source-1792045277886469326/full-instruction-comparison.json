@@ -1,0 +1,210 @@
+[
+  {
+    "case": "three-envelope-types",
+    "adaptive_instructions": 640395,
+    "final_full_instructions": 640342,
+    "change_percent": -0.008276142068563974,
+    "native_match": true,
+    "geth_checked": true
+  },
+  {
+    "case": "invalid-slots-then-valid",
+    "adaptive_instructions": 922702,
+    "final_full_instructions": 923564,
+    "change_percent": 0.09342127794238486,
+    "native_match": true,
+    "geth_checked": true
+  },
+  {
+    "case": "deploy-write-clear",
+    "adaptive_instructions": 716732,
+    "final_full_instructions": 717099,
+    "change_percent": 0.0512046343682071,
+    "native_match": true,
+    "geth_checked": true
+  },
+  {
+    "case": "revert-after-store-log",
+    "adaptive_instructions": 530446,
+    "final_full_instructions": 530183,
+    "change_percent": -0.049580918698599596,
+    "native_match": true,
+    "geth_checked": true
+  },
+  {
+    "case": "halt-after-store-log",
+    "adaptive_instructions": 530037,
+    "final_full_instructions": 529774,
+    "change_percent": -0.04961917752911438,
+    "native_match": true,
+    "geth_checked": true
+  },
+  {
+    "case": "shanghai-selfdestruct",
+    "adaptive_instructions": 610942,
+    "final_full_instructions": 611132,
+    "change_percent": 0.03109951517492604,
+    "native_match": true,
+    "geth_checked": true
+  },
+  {
+    "case": "context-and-empty-block",
+    "adaptive_instructions": 740606,
+    "final_full_instructions": 742169,
+    "change_percent": 0.21104338879243123,
+    "native_match": true,
+    "geth_checked": true
+  },
+  {
+    "case": "sha256-identity-precompiles",
+    "adaptive_instructions": 501015,
+    "final_full_instructions": 500705,
+    "change_percent": -0.061874394978189695,
+    "native_match": true,
+    "geth_checked": true
+  },
+  {
+    "case": "block-gas-exhaustion",
+    "adaptive_instructions": 645347,
+    "final_full_instructions": 645451,
+    "change_percent": 0.01611536119328072,
+    "native_match": true,
+    "geth_checked": true
+  },
+  {
+    "case": "transfers-1",
+    "adaptive_instructions": 384498,
+    "final_full_instructions": 383954,
+    "change_percent": -0.14148318066673493,
+    "native_match": true,
+    "geth_checked": true
+  },
+  {
+    "case": "transfers-8",
+    "adaptive_instructions": 1207073,
+    "final_full_instructions": 1208177,
+    "change_percent": 0.09146091412863822,
+    "native_match": true,
+    "geth_checked": true
+  },
+  {
+    "case": "transfers-32",
+    "adaptive_instructions": 3978052,
+    "final_full_instructions": 3984816,
+    "change_percent": 0.17003297091138236,
+    "native_match": true,
+    "geth_checked": true
+  },
+  {
+    "case": "transfers-128",
+    "adaptive_instructions": 15351645,
+    "final_full_instructions": 15382400,
+    "change_percent": 0.2003368368666658,
+    "native_match": true,
+    "geth_checked": true
+  },
+  {
+    "case": "transfers-512",
+    "adaptive_instructions": 60727888,
+    "final_full_instructions": 60854607,
+    "change_percent": 0.20866689781802172,
+    "native_match": true,
+    "geth_checked": true
+  },
+  {
+    "case": "ecrecover-1",
+    "adaptive_instructions": 423154,
+    "final_full_instructions": 422610,
+    "change_percent": -0.1285583971792792,
+    "native_match": true,
+    "geth_checked": true
+  },
+  {
+    "case": "ecrecover-8",
+    "adaptive_instructions": 1551997,
+    "final_full_instructions": 1553101,
+    "change_percent": 0.07113415812014523,
+    "native_match": true,
+    "geth_checked": true
+  },
+  {
+    "case": "ecrecover-edge-cases",
+    "adaptive_instructions": 1504147,
+    "final_full_instructions": 1505487,
+    "change_percent": 0.08908703737067203,
+    "native_match": true,
+    "geth_checked": true
+  },
+  {
+    "case": "state-8-transfers-32",
+    "adaptive_instructions": 4160955,
+    "final_full_instructions": 4167527,
+    "change_percent": 0.1579445103347732,
+    "native_match": true,
+    "geth_checked": true
+  },
+  {
+    "case": "state-8-empty-16",
+    "adaptive_instructions": 735715,
+    "final_full_instructions": 739699,
+    "change_percent": 0.5415140373650207,
+    "native_match": true,
+    "geth_checked": true
+  },
+  {
+    "case": "state-128-transfers-32",
+    "adaptive_instructions": 7035096,
+    "final_full_instructions": 7038856,
+    "change_percent": 0.05344632113051251,
+    "native_match": true,
+    "geth_checked": true
+  },
+  {
+    "case": "state-128-empty-16",
+    "adaptive_instructions": 2622675,
+    "final_full_instructions": 2623807,
+    "change_percent": 0.04316203875813773,
+    "native_match": true,
+    "geth_checked": true
+  },
+  {
+    "case": "state-512-transfers-32",
+    "adaptive_instructions": 16347042,
+    "final_full_instructions": 16342022,
+    "change_percent": -0.030708919693234193,
+    "native_match": true,
+    "geth_checked": true
+  },
+  {
+    "case": "state-512-empty-16",
+    "adaptive_instructions": 8727408,
+    "final_full_instructions": 8719535,
+    "change_percent": -0.09021006007740029,
+    "native_match": true,
+    "geth_checked": true
+  },
+  {
+    "case": "storage-32-writes-8",
+    "adaptive_instructions": 1832199,
+    "final_full_instructions": 1834679,
+    "change_percent": 0.13535647601596867,
+    "native_match": true,
+    "geth_checked": true
+  },
+  {
+    "case": "storage-1024-writes-8",
+    "adaptive_instructions": 19478638,
+    "final_full_instructions": 19507340,
+    "change_percent": 0.14735116490176559,
+    "native_match": true,
+    "geth_checked": true
+  },
+  {
+    "case": "retained-sealed-chain",
+    "adaptive_instructions": 1167477,
+    "final_full_instructions": 1163410,
+    "change_percent": -0.3483580404581854,
+    "native_match": true,
+    "geth_checked": false
+  }
+]

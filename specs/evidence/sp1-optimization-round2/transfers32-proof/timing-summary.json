@@ -1,0 +1,15 @@
+{
+  "workload": "32 signed transfers in one synthetic block; not canonical CKB publication",
+  "same_workload_as_historical_59_minute_run": false,
+  "instructions": 4074217,
+  "prover_gas": 4822591,
+  "recursive_seconds": 1499.036168957995,
+  "final_wrapping_and_verification_seconds": 108.457504618,
+  "comparable_seconds": 1607.493673575995,
+  "pipeline_seconds": 1608.2258745679937,
+  "fresh_verification_seconds": 38.466662926002755,
+  "including_fresh_verification_seconds": 1646.6928965240004,
+  "recursive_peak_rss_kib": 21102752,
+  "public_matches_formal_qualification": true,
+  "proof_files_and_launch_manifest_verified": true
+}

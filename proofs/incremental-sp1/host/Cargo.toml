@@ -1,0 +1,19 @@
+[package]
+name = "tactus-o1-sparse-sp1-host"
+version = "0.1.0"
+edition = "2021"
+[features]
+native-gnark = ["sp1-sdk/native-gnark", "dep:sp1-recursion-gnark-ffi"]
+[dependencies]
+sp1-sdk = { version = "=6.8.1", default-features = false }
+sp1-recursion-gnark-ffi = { version = "=6.8.1", features = ["native"], optional = true }
+sp1-verifier = { version = "=6.8.1", default-features = false }
+num-bigint = "0.4"
+tactus-o1-proof-journal = { path = "../../sp1/journal" }
+tactus-o1-sparse-journal = { path = "../journal" }
+tactus-o1-sparse-state = { path = "../state" }
+tactus-o1-execution = { path = "../../../crates/tactus-o1-execution" }
+tactus-o1-protocol = { path = "../../../crates/tactus-o1-protocol" }
+serde_json = "1"
+hex = "0.4"
+tokio = { version = "1", features = ["macros", "rt-multi-thread"] }

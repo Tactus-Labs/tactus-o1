@@ -1,0 +1,26 @@
+ Downloading crates ...
+  Downloaded debugid v0.8.0
+  Downloaded gecko_profile v0.4.0
+   Compiling sp1-jit v6.8.1
+   Compiling sp1-core-executor v6.8.1
+   Compiling portable-atomic v1.15.0
+   Compiling unicode-width v0.2.2
+   Compiling debugid v0.8.0
+   Compiling number_prefix v0.4.0
+   Compiling console v0.15.11
+   Compiling gecko_profile v0.4.0
+   Compiling indicatif v0.17.11
+   Compiling rustc-demangle v0.1.28
+   Compiling sp1-core-executor-runner-binary v6.8.1
+   Compiling sp1-core-executor-runner v6.8.1
+   Compiling sp1-core-machine v6.8.1
+   Compiling sp1-recursion-compiler v6.8.1
+   Compiling sp1-prover-types v6.8.1
+   Compiling sp1-recursion-gnark-ffi v6.8.1
+   Compiling sp1-recursion-circuit v6.8.1
+   Compiling sp1-prover v6.8.1
+   Compiling sp1-sdk v6.8.1
+   Compiling tactus-o1-sp1-host v0.1.0 (/home/arthur/RustRoverProjects/tactus-o1/proofs/sp1/host)
+    Finished `release` profile [optimized] target(s) in 2m 53s
+warning: the following packages contain code that will be rejected by a future version of Rust: proc-macro-error2 v2.0.1
+note: to see what the problems were, use the option `--future-incompat-report`, or run `cargo report future-incompatibilities --id 1`

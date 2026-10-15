@@ -1,0 +1,12 @@
+{
+  "evidence_sha256": "09acf56e1c627abfe39b535b1b4bbc510f7e0b82edd185739fc67f52721e9ed2",
+  "proof_sha256": "a4846ba15536441f1d260d34f12f6f59f13dc8b6eb3cc6e6f5d8a9837974ad62",
+  "receipts": [
+    "0xdfe3e756275488dd98ea4171c06371ad74fdceb8ff40390f97fe018c01f165cc",
+    "0x458aa737bc519b49f5b38ec2f091553dd5651b516372f8eb35f37c472c2b887f"
+  ],
+  "rejections": 28,
+  "cryptographic_verification_performed_by_this_checker": false,
+  "settled": false,
+  "production_ready": false
+}

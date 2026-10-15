@@ -1,0 +1,11 @@
+   Compiling tactus-o1-execution v0.1.0 (/home/arthur/RustRoverProjects/tactus-o1/crates/tactus-o1-execution)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.39s
+     Running tests/checkpoint.rs (target/debug/deps/checkpoint-8f1f679beb5e22c4)
+
+running 3 tests
+test forged_omitted_or_mismatched_checkpoint_material_is_rejected ... ok
+test restored_recent_headers_preserve_blockhash_at_both_window_edges ... ok
+test checkpoint_continuation_matches_full_history_across_blockhash_window ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.28s
+

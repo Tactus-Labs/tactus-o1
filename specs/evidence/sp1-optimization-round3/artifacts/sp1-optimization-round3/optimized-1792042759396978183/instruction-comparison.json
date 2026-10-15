@@ -1,0 +1,177 @@
+[
+  {
+    "case": "three-envelope-types",
+    "adaptive_instructions": 640395,
+    "initial_sparse_instructions": 1059375,
+    "optimized_sparse_instructions": 840050,
+    "proof_generated": false
+  },
+  {
+    "case": "invalid-slots-then-valid",
+    "adaptive_instructions": 922702,
+    "initial_sparse_instructions": 1205698,
+    "optimized_sparse_instructions": 1105429,
+    "proof_generated": false
+  },
+  {
+    "case": "deploy-write-clear",
+    "adaptive_instructions": 716732,
+    "initial_sparse_instructions": 1147963,
+    "optimized_sparse_instructions": 1028738,
+    "proof_generated": false
+  },
+  {
+    "case": "revert-after-store-log",
+    "adaptive_instructions": 530446,
+    "initial_sparse_instructions": 857997,
+    "optimized_sparse_instructions": 765345,
+    "proof_generated": false
+  },
+  {
+    "case": "halt-after-store-log",
+    "adaptive_instructions": 530037,
+    "initial_sparse_instructions": 857871,
+    "optimized_sparse_instructions": 764362,
+    "proof_generated": false
+  },
+  {
+    "case": "shanghai-selfdestruct",
+    "adaptive_instructions": 610942,
+    "initial_sparse_instructions": 967772,
+    "optimized_sparse_instructions": 945389,
+    "proof_generated": false
+  },
+  {
+    "case": "context-and-empty-block",
+    "adaptive_instructions": 740606,
+    "initial_sparse_instructions": 1531949,
+    "optimized_sparse_instructions": 1494495,
+    "proof_generated": false
+  },
+  {
+    "case": "sha256-identity-precompiles",
+    "adaptive_instructions": 501015,
+    "initial_sparse_instructions": 802933,
+    "optimized_sparse_instructions": 708367,
+    "proof_generated": false
+  },
+  {
+    "case": "block-gas-exhaustion",
+    "adaptive_instructions": 645347,
+    "initial_sparse_instructions": 938250,
+    "optimized_sparse_instructions": 919069,
+    "proof_generated": false
+  },
+  {
+    "case": "transfers-1",
+    "adaptive_instructions": 384498,
+    "initial_sparse_instructions": 589471,
+    "optimized_sparse_instructions": 568394,
+    "proof_generated": false
+  },
+  {
+    "case": "transfers-8",
+    "adaptive_instructions": 1207073,
+    "initial_sparse_instructions": 2159341,
+    "optimized_sparse_instructions": 1448180,
+    "proof_generated": false
+  },
+  {
+    "case": "transfers-32",
+    "adaptive_instructions": 3978052,
+    "initial_sparse_instructions": 7497638,
+    "optimized_sparse_instructions": 4413468,
+    "proof_generated": false
+  },
+  {
+    "case": "transfers-128",
+    "adaptive_instructions": 15351645,
+    "initial_sparse_instructions": 29112312,
+    "optimized_sparse_instructions": 16760652,
+    "proof_generated": false
+  },
+  {
+    "case": "transfers-512",
+    "adaptive_instructions": 60727888,
+    "initial_sparse_instructions": 116435331,
+    "optimized_sparse_instructions": 65958913,
+    "proof_generated": false
+  },
+  {
+    "case": "ecrecover-1",
+    "adaptive_instructions": 423154,
+    "initial_sparse_instructions": 622912,
+    "optimized_sparse_instructions": 599693,
+    "proof_generated": false
+  },
+  {
+    "case": "ecrecover-8",
+    "adaptive_instructions": 1551997,
+    "initial_sparse_instructions": 2379053,
+    "optimized_sparse_instructions": 1778499,
+    "proof_generated": false
+  },
+  {
+    "case": "ecrecover-edge-cases",
+    "adaptive_instructions": 1504147,
+    "initial_sparse_instructions": 2418699,
+    "optimized_sparse_instructions": 1738256,
+    "proof_generated": false
+  },
+  {
+    "case": "state-8-transfers-32",
+    "adaptive_instructions": 4160955,
+    "initial_sparse_instructions": 8249562,
+    "optimized_sparse_instructions": 4518168,
+    "proof_generated": false
+  },
+  {
+    "case": "state-8-empty-16",
+    "adaptive_instructions": 735715,
+    "initial_sparse_instructions": 832435,
+    "optimized_sparse_instructions": 812331,
+    "proof_generated": false
+  },
+  {
+    "case": "state-128-transfers-32",
+    "adaptive_instructions": 7035096,
+    "initial_sparse_instructions": 12956724,
+    "optimized_sparse_instructions": 6586619,
+    "proof_generated": false
+  },
+  {
+    "case": "state-128-empty-16",
+    "adaptive_instructions": 2622675,
+    "initial_sparse_instructions": 2716866,
+    "optimized_sparse_instructions": 2697384,
+    "proof_generated": false
+  },
+  {
+    "case": "state-512-transfers-32",
+    "adaptive_instructions": 16347042,
+    "initial_sparse_instructions": 21021550,
+    "optimized_sparse_instructions": 12769100,
+    "proof_generated": false
+  },
+  {
+    "case": "state-512-empty-16",
+    "adaptive_instructions": 8727408,
+    "initial_sparse_instructions": 8811985,
+    "optimized_sparse_instructions": 8798679,
+    "proof_generated": false
+  },
+  {
+    "case": "storage-32-writes-8",
+    "adaptive_instructions": 1832199,
+    "initial_sparse_instructions": 2986676,
+    "optimized_sparse_instructions": 2032219,
+    "proof_generated": false
+  },
+  {
+    "case": "storage-1024-writes-8",
+    "adaptive_instructions": 19478638,
+    "initial_sparse_instructions": 15443830,
+    "optimized_sparse_instructions": 14247946,
+    "proof_generated": false
+  }
+]

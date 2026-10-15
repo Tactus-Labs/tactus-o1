@@ -1,0 +1,198 @@
+[
+  {
+    "case": "first-1",
+    "cycle_tracker": {},
+    "instructions": 6196245,
+    "interval_batches": 1,
+    "invocations": {},
+    "native_journal_match": true,
+    "prefix_batches": 0,
+    "proof_generated": false,
+    "prover_gas": 6330147,
+    "variant": "baseline"
+  },
+  {
+    "case": "first-1",
+    "cycle_tracker": {
+      "apply-batch": 2097293,
+      "interval": 2110763,
+      "prefix": 313,
+      "rules-hash": 5999573,
+      "state-root": 59367
+    },
+    "instructions": 6300879,
+    "interval_batches": 1,
+    "invocations": {
+      "apply-batch": 1,
+      "interval": 1,
+      "prefix": 1,
+      "rules-hash": 3,
+      "state-root": 4
+    },
+    "native_journal_match": true,
+    "prefix_batches": 0,
+    "proof_generated": false,
+    "prover_gas": 6458604,
+    "variant": "profiled"
+  },
+  {
+    "case": "first-1",
+    "cycle_tracker": {},
+    "instructions": 2262658,
+    "interval_batches": 1,
+    "invocations": {},
+    "native_journal_match": true,
+    "prefix_batches": 0,
+    "proof_generated": false,
+    "prover_gas": 2479196,
+    "variant": "memoized"
+  },
+  {
+    "case": "first-3",
+    "cycle_tracker": {},
+    "instructions": 10347816,
+    "interval_batches": 3,
+    "invocations": {},
+    "native_journal_match": true,
+    "prefix_batches": 0,
+    "proof_generated": false,
+    "prover_gas": 10402529,
+    "variant": "baseline"
+  },
+  {
+    "case": "first-3",
+    "cycle_tracker": {
+      "apply-batch": 6291548,
+      "interval": 6331406,
+      "prefix": 313,
+      "rules-hash": 9999220,
+      "state-root": 88693
+    },
+    "instructions": 10521516,
+    "interval_batches": 3,
+    "invocations": {
+      "apply-batch": 3,
+      "interval": 1,
+      "prefix": 1,
+      "rules-hash": 5,
+      "state-root": 6
+    },
+    "native_journal_match": true,
+    "prefix_batches": 0,
+    "proof_generated": false,
+    "prover_gas": 10615828,
+    "variant": "profiled"
+  },
+  {
+    "case": "first-3",
+    "cycle_tracker": {},
+    "instructions": 2480468,
+    "interval_batches": 3,
+    "invocations": {},
+    "native_journal_match": true,
+    "prefix_batches": 0,
+    "proof_generated": false,
+    "prover_gas": 2704127,
+    "variant": "memoized"
+  },
+  {
+    "case": "all-9",
+    "cycle_tracker": {},
+    "instructions": 23257553,
+    "interval_batches": 9,
+    "invocations": {},
+    "native_journal_match": true,
+    "prefix_batches": 0,
+    "proof_generated": false,
+    "prover_gas": 23211934,
+    "variant": "baseline"
+  },
+  {
+    "case": "all-9",
+    "cycle_tracker": {
+      "apply-batch": 19304344,
+      "decode-transaction": 148464,
+      "interval": 19432651,
+      "prefix": 313,
+      "rules-hash": 21998253,
+      "state-root": 211463
+    },
+    "instructions": 23641682,
+    "interval_batches": 9,
+    "invocations": {
+      "apply-batch": 9,
+      "decode-transaction": 4,
+      "interval": 1,
+      "prefix": 1,
+      "rules-hash": 11,
+      "state-root": 12
+    },
+    "native_journal_match": true,
+    "prefix_batches": 0,
+    "proof_generated": false,
+    "prover_gas": 23682560,
+    "variant": "profiled"
+  },
+  {
+    "case": "all-9",
+    "cycle_tracker": {},
+    "instructions": 3588795,
+    "interval_batches": 9,
+    "invocations": {},
+    "native_journal_match": true,
+    "prefix_batches": 0,
+    "proof_generated": false,
+    "prover_gas": 3933768,
+    "variant": "memoized"
+  },
+  {
+    "case": "prefix-8-new-1",
+    "cycle_tracker": {},
+    "instructions": 23159433,
+    "interval_batches": 1,
+    "invocations": {},
+    "native_journal_match": true,
+    "prefix_batches": 8,
+    "proof_generated": false,
+    "prover_gas": 23120098,
+    "variant": "baseline"
+  },
+  {
+    "case": "prefix-8-new-1",
+    "cycle_tracker": {
+      "apply-batch": 19304344,
+      "decode-transaction": 148464,
+      "interval": 2551492,
+      "prefix": 16783368,
+      "rules-hash": 21998253,
+      "state-root": 211477
+    },
+    "instructions": 23543562,
+    "interval_batches": 1,
+    "invocations": {
+      "apply-batch": 9,
+      "decode-transaction": 4,
+      "interval": 1,
+      "prefix": 1,
+      "rules-hash": 11,
+      "state-root": 12
+    },
+    "native_journal_match": true,
+    "prefix_batches": 8,
+    "proof_generated": false,
+    "prover_gas": 23590721,
+    "variant": "profiled"
+  },
+  {
+    "case": "prefix-8-new-1",
+    "cycle_tracker": {},
+    "instructions": 3490675,
+    "interval_batches": 1,
+    "invocations": {},
+    "native_journal_match": true,
+    "prefix_batches": 8,
+    "proof_generated": false,
+    "prover_gas": 3841929,
+    "variant": "memoized"
+  }
+]

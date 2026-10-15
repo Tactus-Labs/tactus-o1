@@ -43,6 +43,18 @@ fn independent_python_wire_vectors_match_rust_and_next_state() {
     assert_eq!(AnchorState::decode(&genesis).unwrap(), parent());
     assert_eq!(example().encode().unwrap(), input);
     let summary = validate_batch(&input, &parent()).unwrap();
+    let (decoded, decoded_summary) = BatchInput::decode_with_summary(&input, &parent()).unwrap();
+    assert_eq!(decoded, example());
+    assert_eq!(decoded_summary, summary);
+    let (view, view_summary) = BatchView::decode_with_summary(&input, &parent()).unwrap();
+    assert_eq!(view_summary, summary);
+    assert_eq!(view.blocks.len(), 2);
+    assert_eq!(
+        view.blocks[0].transactions,
+        [example().blocks[0].transactions[0].as_slice()]
+    );
+    assert_eq!(view.blocks[1].fee_recipient, [4; 20]);
+    assert!(view.blocks[1].transactions.is_empty());
     assert_eq!(summary.next.encode().as_slice(), next);
     assert_eq!(
         (
@@ -59,10 +71,26 @@ fn every_truncation_and_trailing_bytes_fail() {
     let input = example().encode().unwrap();
     for end in 0..input.len() {
         assert!(validate_batch(&input[..end], &parent()).is_err(), "{end}");
+        assert!(
+            BatchView::decode_with_summary(&input[..end], &parent()).is_err(),
+            "{end}"
+        );
+        assert!(
+            BatchInput::decode_with_summary(&input[..end], &parent()).is_err(),
+            "{end}"
+        );
     }
     let mut extra = input.clone();
     extra.push(0);
     assert_eq!(validate_batch(&extra, &parent()), Err(Error::Encoding));
+    assert_eq!(
+        BatchView::decode_with_summary(&extra, &parent()),
+        Err(Error::Encoding)
+    );
+    assert_eq!(
+        BatchInput::decode_with_summary(&extra, &parent()),
+        Err(Error::Encoding)
+    );
     let mut state = parent().encode().to_vec();
     state.push(0);
     assert_eq!(AnchorState::decode(&state), Err(Error::Encoding));

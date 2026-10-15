@@ -1,0 +1,85 @@
+{
+  "trusted_key_source": "previous independently qualified formal-manifest, separate from input export",
+  "runs": [
+    {
+      "case": "retained-proof-0",
+      "expected_success": true,
+      "exit_code": 0,
+      "seconds": 0.2022175470046932
+    },
+    {
+      "case": "retained-proof-1",
+      "expected_success": true,
+      "exit_code": 0,
+      "seconds": 0.20831726799951866
+    },
+    {
+      "case": "retained-proof-2",
+      "expected_success": true,
+      "exit_code": 0,
+      "seconds": 0.2083416440000292
+    },
+    {
+      "case": "transfers32-proof-0",
+      "expected_success": true,
+      "exit_code": 0,
+      "seconds": 0.21446592500433326
+    },
+    {
+      "case": "transfers32-proof-1",
+      "expected_success": true,
+      "exit_code": 0,
+      "seconds": 0.205026125004224
+    },
+    {
+      "case": "transfers32-proof-2",
+      "expected_success": true,
+      "exit_code": 0,
+      "seconds": 0.20969378299923846
+    },
+    {
+      "case": "wrong-independent-key",
+      "expected_success": false,
+      "exit_code": 1,
+      "seconds": 0.0026699939990066923
+    },
+    {
+      "case": "wrong-key-in-both",
+      "expected_success": false,
+      "exit_code": 1,
+      "seconds": 0.42696284399426077
+    },
+    {
+      "case": "changed-exported-journal",
+      "expected_success": false,
+      "exit_code": 1,
+      "seconds": 0.003854741000395734
+    },
+    {
+      "case": "different-valid-interval",
+      "expected_success": false,
+      "exit_code": 1,
+      "seconds": 0.4315656469989335
+    },
+    {
+      "case": "tampered-wire",
+      "expected_success": false,
+      "exit_code": 1,
+      "seconds": 0.004101655998965725
+    },
+    {
+      "case": "truncated-wire",
+      "expected_success": false,
+      "exit_code": 1,
+      "seconds": 0.004096972996194381
+    },
+    {
+      "case": "oversize-wire",
+      "expected_success": false,
+      "exit_code": 1,
+      "seconds": 0.003338185000757221
+    }
+  ],
+  "sdk_verification_mode_preserved": true,
+  "proof_generated": false
+}

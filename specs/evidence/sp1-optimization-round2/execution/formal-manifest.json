@@ -1,0 +1,33 @@
+{
+  "schema": 1,
+  "formal_sources_sha256": {
+    "Cargo.toml": "9a9e15a6972264b170dd31b211b19ea73395597f86ef139a815d0918dc8393e1",
+    "Cargo.lock": "d1e83ee7925c86276223c5b01a46cc25c9a1c81d811b713381dd9d3a4e835f92",
+    "crates/tactus-o1-execution/Cargo.toml": "ae2ee7b6ecb7dfdabf3854c5aaa17bca77bcd6369e3a54a3b88db025c8e8fcf6",
+    "crates/tactus-o1-execution/build.rs": "5026a29a9562335b3be6ab8899e095db15e753e245855fa1fc81d7935ab9ad1c",
+    "crates/tactus-o1-execution/src/lib.rs": "31ca27bb1e56cf2701ccbcb4759fd4f19aad3bd02fae3064d43396e2cc7754c3",
+    "crates/tactus-o1-execution/src/native_bridge.rs": "634116c8543759782716fdfffc949bc16717472c2d04ebbffbfa58eacd6dd6de",
+    "crates/tactus-o1-execution/rules-v1.txt": "8c5e0006d544b7604be69ae8165222510f2c4a9683f1a1d6affce6f652c45fc5",
+    "crates/tactus-o1-execution/examples/execution-vectors.rs": "7f05eb1197ec31d54782038f70ffeded5ab9158f015e5cfbae968f1789e057fe",
+    "crates/tactus-o1-execution/examples/optimization-vectors.rs": "e85e74faa2ed9cdf4564656e3852e13ff2029e70f8a25cac44c60cd921b06e36",
+    "crates/tactus-o1-execution/tests/execution.rs": "0f371729e1814d79000f3d3bbf767825080db47390858775d35f2d9cc2284786",
+    "crates/tactus-o1-protocol/src/batch.rs": "604ec72b92e6bd21765625424be1e054adf66ba8ebc3285381b9f60acd9483c9",
+    "crates/tactus-o1-protocol/tests/batch_vectors.rs": "52303823c75ebc9aa5ffe1ffdf3753dbaf2a21adeacf8707e443a8e5b0e02998",
+    "proofs/sp1/Cargo.toml": "58e99b0be9eed0bb8366465700c589eff73987d792af6d4cc41dec9af0a9b1fc",
+    "proofs/sp1/Cargo.lock": "e28b0aecbbcc192a6eaee241ec4e7b734952dfc7fcd58e12e33c7fe6a0659db0",
+    "proofs/native-sp1/Cargo.toml": "e91ad1f34d2a648e28d2e8174a8e0c083b0534c43d99122f8c66f835adfbc070",
+    "proofs/native-sp1/Cargo.lock": "4bb8d24338e85c12db3d8fd7553aebf88f5c3bcd21556ce4a7459f76c1f913e4",
+    "scripts/build-sp1-optimization-candidates.py": "1ff2c1a36633789319b21c9ae5b961b965c77f495f8cfde9575b6416feb132e4",
+    "scripts/run-patched-proof-benchmark.py": "fafe4a72ba7c8ed3319144543770a7e2e37fe41a304699176ba3b82c964592a6",
+    "scripts/check-execution-geth.py": "a4f8fc30858432f4133e5a743a1b28d319e5d121db1bb330146993bbbc72f824"
+  },
+  "guest_sha256": "5d3b788da108ff0a4466ea5101ee255e36019d65413d644f6fdadb6c3a675396",
+  "native_guest_sha256": "3a3c16a4232f25e40592c62ee0de18e48cc9a032d476981531c37d5415016090",
+  "oracle_crypto_host_sha256": "7689f68a076bb5b36eb27154006d1877b1c74c56a9d02d315b467d554e60389e",
+  "oracle_native_host_sha256": "c467e8f8ce7d285fbb26b83d100addb728a6b69d99a1b4a1090f7fb968dc29a6",
+  "root_lock_unchanged": true,
+  "ci_run": false,
+  "deployment_updated": false,
+  "formal_guest_key": "0x00a7ad2963b84eda9c585105ef920ead9051658981cf45f258bbebb9f1c555bb",
+  "native_guest_key": "0x001c6ee4b2c37826cbd378cea670573338da67a2c66704d12769139cfdf6e73f"
+}

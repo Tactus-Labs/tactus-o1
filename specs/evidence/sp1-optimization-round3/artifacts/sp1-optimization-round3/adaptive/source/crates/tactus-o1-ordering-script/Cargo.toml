@@ -1,0 +1,15 @@
+[package]
+name = "tactus-o1-ordering-script"
+description = "On-chain OrderingHead type script (CKB-VM, RISC-V) with host-testable validation core"
+build = "build.rs"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+ckb-std = { version = "0.15", default-features = false, features = ["ckb-types", "allocator"] }
+blake2b-ref = "0.3"
+
+[lib]
+crate-type = ["staticlib", "rlib"]

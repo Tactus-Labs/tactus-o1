@@ -1,0 +1,942 @@
+{
+  "objective": "\u597d\u7684\u5168\u9762\u4f18\u5316",
+  "status": "in_progress",
+  "requirements": [
+    {
+      "id": "redundant-work",
+      "description": "State/header roots, native invariant constants and bytecode preparation; exact semantics preserved",
+      "status": "Frozen adaptive proved with 4 and 8 threads; each passed 15 negatives and fresh SDK verification. Current generic/sparse source: 92 local tests and 25 cases/93 blocks native and actual sparse SP1 guest qualification passed. New sparse real proofs pending."
+    },
+    {
+      "id": "input-memory",
+      "description": "Avoid redundant parsing/copies without relaxing validation",
+      "status": "Frozen adaptive proved with 4 and 8 threads; each passed 15 negatives and fresh SDK verification. Current generic/sparse source: 92 local tests and 25 cases/93 blocks native and actual sparse SP1 guest qualification passed. New sparse real proofs pending."
+    },
+    {
+      "id": "atomic-state",
+      "description": "Replace whole database clone with transactional changes while preserving rollback",
+      "status": "Frozen adaptive proved with 4 and 8 threads; each passed 15 negatives and fresh SDK verification. Current generic/sparse source: 92 local tests and 25 cases/93 blocks native and actual sparse SP1 guest qualification passed. New sparse real proofs pending."
+    },
+    {
+      "id": "verification",
+      "description": "Avoid heavyweight prover initialization on verification-only path; retain journal/key checks and independent SDK verification",
+      "status": "pinned verifier positive and negative controls passed; original SDK mode retained"
+    },
+    {
+      "id": "prover-tuning",
+      "description": "Measure thread/shard/buffer configurations, memory and real proving, not just execution",
+      "status": "Complete3 measured real proofs with15negativecontrols andfreshSDKverification each. 8thread27.73%faster than4; smaller-shard0.84%difference notsignificant andhigherRSS. Following proofs use8CPU4Go,shard1048576."
+    },
+    {
+      "id": "incremental-proof",
+      "description": "Authenticated checkpoint and sparse state transition with bootstrap, boundary continuity and negative tests",
+      "status": "Complete local execution-profile experiment: two real exact-key proofs, both accepted sequentially by CKB,62 rejection controls, actual P2P rollback/reapplication, and history-bounded guest execution. No native custody or production claim."
+    },
+    {
+      "id": "qualification",
+      "description": "Native/Geth equivalence, invalid cases, actual complete proofs, evidence and report",
+      "status": "Three frozen-adaptive real proofs fullyverified; latest optimized sparse actualguestGeth andcanonicalinput tests pass. Real sparse proof/settlement/reorg pipeline active; final full/native formalguest qualification andarchive pending."
+    }
+  ],
+  "ci_run": false,
+  "deployment_updated": false,
+  "last_goal_turn_classification": "progress",
+  "phase": "final-formal-and-same-input-proving",
+  "active_matrix": {
+    "session_id": 28927,
+    "progress_file": "artifacts/sp1-optimization-round3/matrix-progress.json",
+    "must_not_restart_while_live": true,
+    "first_prover_pid": null,
+    "coordinator_pid": null,
+    "current_run": "threads8-shard19",
+    "current_runner_pid": null,
+    "status": "complete"
+  },
+  "current_source_differs_from_frozen_adaptive_candidate": "Latest optimized sparse source (deferred block-root updates and binary/RLP witnesses) passes12 sparse/journal tests and25 Geth cases93 blocks in actual guest. Exact-key canonical local bootstrap/two-input preparation, independent Geth continuation and both actual guest intervals pass. Frozen under /home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/optimized-1792042759396978183. First actual sparse Groth16 proof is running; two-proof settlement and reorg pending.",
+  "next_steps": [
+    "Observe final-source-progress.json/session71559. Final full/native execution qualification passed; fresh final full32-transfer proof running.",
+    "Then final-retained-progress.json/session17112 measures the final guest on the exact original zero-prefix nine-batch input. Do not substitute sparse or32-transfer timings.",
+    "After both complete, render-final-report.py, update production-readiness optimization entry without changing production gates, archive-round3.py and inspect every requirement and verified checksum. No CI."
+  ],
+  "report": "specs/SP1_OPTIMIZATION_ROUND3_REPORT.md",
+  "pending_test_note": "Both exact-key sparse proofs, 15 negative controls each, fresh SDK verification, actual CKB two-settlement acceptance (62 rejection controls), P2P reorg/reapplication and three history comparisons passed. Final full/native formal-source qualification is running; evidence archive remains.",
+  "root_lock_sha256": "d1e83ee7925c86276223c5b01a46cc25c9a1c81d811b713381dd9d3a4e835f92",
+  "completed_matrix_runs": [
+    {
+      "name": "threads4",
+      "status": "complete",
+      "command": [
+        "python3",
+        "-B",
+        "/home/arthur/RustRoverProjects/tactus-o1/scripts/run-patched-proof-benchmark.py",
+        "--elf",
+        "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/adaptive.elf",
+        "--input",
+        "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round2/transfers-32-proof-input.json",
+        "--host",
+        "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/proof-tools/chain-proof",
+        "--output",
+        "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/proof-threads4",
+        "--threads",
+        "4",
+        "--go-threads",
+        "2",
+        "--shard-size",
+        "1048576"
+      ],
+      "started_unix": 1792024764.9857774,
+      "pid": 278413,
+      "exit_code": 0,
+      "completion": {
+        "proof_generated": true,
+        "proof_directory": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/proof-threads4/resumed-proof",
+        "pipeline_seconds": 1601.043537685,
+        "fresh_verification_seconds": 39.26092145599978,
+        "total_seconds_including_fresh_verification": 1640.3048034130043,
+        "preparation_and_build_excluded": true,
+        "fresh_verification": true,
+        "negative_controls": [
+          "profile",
+          "ckb-network",
+          "ordering-script",
+          "settlement-script",
+          "rollup",
+          "chain",
+          "allocation",
+          "predecessor",
+          "end-history",
+          "previous-state",
+          "next-state",
+          "previous-header",
+          "next-header",
+          "interval-data",
+          "wrong-guest-key"
+        ],
+        "public_values_unchanged": true,
+        "staged": true,
+        "ckb_settlement": false,
+        "deployment_authorized": false,
+        "production_ready": false
+      },
+      "comparable_seconds": 1600.402247274002,
+      "recursive_max_rss_kib": 20488400
+    },
+    {
+      "name": "threads8",
+      "status": "complete",
+      "command": [
+        "python3",
+        "-B",
+        "/home/arthur/RustRoverProjects/tactus-o1/scripts/run-patched-proof-benchmark.py",
+        "--elf",
+        "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/adaptive.elf",
+        "--input",
+        "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round2/transfers-32-proof-input.json",
+        "--host",
+        "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/proof-tools/chain-proof",
+        "--output",
+        "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/proof-threads8",
+        "--threads",
+        "8",
+        "--go-threads",
+        "4",
+        "--shard-size",
+        "1048576"
+      ],
+      "started_unix": 1792026455.0629077,
+      "pid": 281379,
+      "exit_code": 0,
+      "completion": {
+        "proof_generated": true,
+        "proof_directory": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/proof-threads8/resumed-proof",
+        "pipeline_seconds": 1157.2547682400036,
+        "fresh_verification_seconds": 28.36482621399773,
+        "total_seconds_including_fresh_verification": 1185.6198938190064,
+        "preparation_and_build_excluded": true,
+        "fresh_verification": true,
+        "negative_controls": [
+          "profile",
+          "ckb-network",
+          "ordering-script",
+          "settlement-script",
+          "rollup",
+          "chain",
+          "allocation",
+          "predecessor",
+          "end-history",
+          "previous-state",
+          "next-state",
+          "previous-header",
+          "next-header",
+          "interval-data",
+          "wrong-guest-key"
+        ],
+        "public_values_unchanged": true,
+        "staged": true,
+        "ckb_settlement": false,
+        "deployment_authorized": false,
+        "production_ready": false
+      },
+      "comparable_seconds": 1156.604355816998,
+      "recursive_max_rss_kib": 20640392
+    },
+    {
+      "name": "threads8-shard19",
+      "status": "complete",
+      "command": [
+        "python3",
+        "-B",
+        "/home/arthur/RustRoverProjects/tactus-o1/scripts/run-patched-proof-benchmark.py",
+        "--elf",
+        "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/adaptive.elf",
+        "--input",
+        "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round2/transfers-32-proof-input.json",
+        "--host",
+        "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/proof-tools/chain-proof",
+        "--output",
+        "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/proof-threads8-shard19",
+        "--threads",
+        "8",
+        "--go-threads",
+        "4",
+        "--shard-size",
+        "524288"
+      ],
+      "started_unix": 1792028660.8042688,
+      "pid": 308752,
+      "exit_code": 0,
+      "completion": {
+        "proof_generated": true,
+        "proof_directory": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/proof-threads8-shard19/resumed-proof",
+        "pipeline_seconds": 1147.644017572995,
+        "fresh_verification_seconds": 29.81936458799464,
+        "total_seconds_including_fresh_verification": 1177.4644735659967,
+        "preparation_and_build_excluded": true,
+        "fresh_verification": true,
+        "negative_controls": [
+          "profile",
+          "ckb-network",
+          "ordering-script",
+          "settlement-script",
+          "rollup",
+          "chain",
+          "allocation",
+          "predecessor",
+          "end-history",
+          "previous-state",
+          "next-state",
+          "previous-header",
+          "next-header",
+          "interval-data",
+          "wrong-guest-key"
+        ],
+        "public_values_unchanged": true,
+        "staged": true,
+        "ckb_settlement": false,
+        "deployment_authorized": false,
+        "production_ready": false
+      },
+      "comparable_seconds": 1146.8843527319987,
+      "recursive_max_rss_kib": 21250924
+    }
+  ],
+  "queued_qualification": {
+    "session_id": 15671,
+    "pid": 281715,
+    "runner": "artifacts/sp1-optimization-round3/after-matrix-checks.py",
+    "status_file": "artifacts/sp1-optimization-round3/qualification-progress.json",
+    "trigger": "Specific observed matrix coordinator exits AND matrix status complete; exclusive proof-resource lock acquired before compilation",
+    "ci_run": false,
+    "extra_manual_checks": "New devnet driver changes and the final native-gnark host/wrapper build are outside the queued basic checks; pending_test_commands and incremental_workflow retain them.",
+    "runtime_script_version": "after-matrix-checks-v1.py (live PID281715); newer script supports --between-runs and devnet checks. Supersede the waiting v1 process only after compilation window confirmed."
+  },
+  "incremental_workflow": [
+    "Poll matrix28927 and queued checks15671; do not overlap timed proving and builds. Fix first compile/test failure and finish every queued check; root Cargo.lock must remain unchanged.",
+    "Build sparse host --features native-gnark --bins using artifacts/prover-host/target; build guest via scripts/build-sparse-proof-guest.sh. New wrapper sparse-wrap-witness must be frozen/copied as wrap-witness next to frozen sparse-chain-proof. Original wrapper rejects sparse profile.",
+    "Run qualify-sparse against all25/93 Geth fixtures, compare full/sparse outputs and new real guest journals. Use history-inputs to create controlled prefix cases, prepare-sparse, compare frozen adaptive replay ELF/oracle with sparse ELF. Do not mark adjusted environments Geth-checked without actually checking.",
+    "Build root replay-settlement-bootstrap and recover-settlement, run default regression checks. Build separate sparse settlement script. First isolated devnet preparation: TACTUS_DEVNET_SUITE=replay-settlement-bootstrap TACTUS_SPARSE_SETTLEMENT=1 TACTUS_SPARSE_GUEST_KEY=<actual sparse ELF key>. New script/key changes domain, so canonical export must come from this mode.",
+    "Generate new continuation.json with existing execution example settlement-continuation using the newly exported canonical first input; independently Geth-check it. Rerun isolated devnet with same sparse key plus TACTUS_SETTLEMENT_CONTINUATION_JSON=<newfile> TACTUS_PREPARE_SECOND_PROOF=1, producing first/next canonical inputs.",
+    "prepare-sparse on first canonical input start0 count1; on next input start1 count1. Source expected journal is checked when selecting its complete advertised interval. Prove both serially with scripts/run-sparse-proof-benchmark.py (exact source key == ELF key, never replacement).",
+    "Rerun isolated sparse devnet with same continuation and TACTUS_SETTLEMENT_PROOF_DIR / TACTUS_SECOND_SETTLEMENT_PROOF_DIR pointing to actual selected proof folders. Must pass real CKB acceptance, canonical predecessor consumption, negative controls and recovery. Qualify reorg mode with first actual sparse proof as appropriate; independently reconcile evidence. Run scripts/check-sparse-settlements.py on each actual evidence set with the compiled sparse settlement ELF and independently derived sparse guest key; its reconciliation supplements, not replaces, node/SDK verification.",
+    "Freeze current formal full/native/sparse sources and guest identities; finalize formal execution/proof qualification and archive requirement-complete evidence/report. Keep goal active until all completed."
+  ],
+  "lightweight_checks": {
+    "checker_regression": "artifacts/sp1-optimization-round3/checker-regression.json",
+    "existing_first_and_two_settlement_tests": 4,
+    "rust_tests_for_new_code": false,
+    "sparse_positive_evidence": false,
+    "ci_run": false
+  },
+  "compilation_window": {
+    "coordinator_pid": 278412,
+    "starttime": "16011753",
+    "status": "coordinator_resumed",
+    "unix": 1792027649.7284503,
+    "reason": "isolated compilation window between proof runs",
+    "child_runner_continues": true,
+    "proof_interrupted": false,
+    "resume_command": "kill -CONT 278412",
+    "must_wait_for_second_child_completion_before_compiling": true,
+    "resumed_unix": 1792028660.8036833,
+    "qualification": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/history-qualification/progress.json"
+  },
+  "local_qualification": {
+    "status": "complete",
+    "mode": "between_runs",
+    "matrix_pid": 278412,
+    "matrix_starttime": "16011753",
+    "checks": [
+      {
+        "name": "execution-native",
+        "command": [
+          "cargo",
+          "+1.97.1",
+          "test",
+          "--locked",
+          "--offline",
+          "-p",
+          "tactus-o1-execution",
+          "--features",
+          "native-bridge"
+        ],
+        "status": "passed",
+        "started_unix": 1792027834.715255,
+        "log": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/qualifications/1792027834673227171/execution-native.txt",
+        "exit_code": 0,
+        "elapsed_seconds": 7.685887813568115
+      },
+      {
+        "name": "checkpoint-journal",
+        "command": [
+          "cargo",
+          "+1.97.1",
+          "test",
+          "--locked",
+          "--offline",
+          "--manifest-path",
+          "proofs/sp1/Cargo.toml",
+          "-p",
+          "tactus-o1-proof-journal"
+        ],
+        "status": "passed",
+        "started_unix": 1792027842.401361,
+        "log": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/qualifications/1792027834673227171/checkpoint-journal.txt",
+        "exit_code": 0,
+        "elapsed_seconds": 3.071831464767456
+      },
+      {
+        "name": "sparse-state-journal",
+        "command": [
+          "cargo",
+          "+1.97.1",
+          "test",
+          "--locked",
+          "--offline",
+          "--manifest-path",
+          "proofs/incremental-sp1/Cargo.toml",
+          "-p",
+          "tactus-o1-sparse-state",
+          "-p",
+          "tactus-o1-sparse-journal"
+        ],
+        "status": "passed",
+        "started_unix": 1792027845.4734402,
+        "log": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/qualifications/1792027834673227171/sparse-state-journal.txt",
+        "exit_code": 0,
+        "elapsed_seconds": 12.797079086303711
+      },
+      {
+        "name": "replay-settlement",
+        "command": [
+          "cargo",
+          "+1.97.1",
+          "test",
+          "--locked",
+          "--offline",
+          "--manifest-path",
+          "proofs/ckb-settlement/Cargo.toml"
+        ],
+        "status": "passed",
+        "started_unix": 1792027858.2707644,
+        "log": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/qualifications/1792027834673227171/replay-settlement.txt",
+        "exit_code": 0,
+        "elapsed_seconds": 13.707070350646973
+      },
+      {
+        "name": "sparse-settlement",
+        "command": [
+          "cargo",
+          "+1.97.1",
+          "test",
+          "--locked",
+          "--offline",
+          "--manifest-path",
+          "proofs/ckb-settlement/Cargo.toml",
+          "--features",
+          "sparse-proof"
+        ],
+        "status": "passed",
+        "started_unix": 1792027871.9780169,
+        "log": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/qualifications/1792027834673227171/sparse-settlement.txt",
+        "exit_code": 0,
+        "elapsed_seconds": 3.77168345451355
+      },
+      {
+        "name": "native-settlement",
+        "command": [
+          "cargo",
+          "+1.97.1",
+          "test",
+          "--locked",
+          "--offline",
+          "--manifest-path",
+          "proofs/ckb-native-settlement/Cargo.toml"
+        ],
+        "status": "passed",
+        "started_unix": 1792027875.749876,
+        "log": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/qualifications/1792027834673227171/native-settlement.txt",
+        "exit_code": 0,
+        "elapsed_seconds": 13.921653270721436
+      },
+      {
+        "name": "devnet-driver",
+        "command": [
+          "cargo",
+          "+1.97.1",
+          "test",
+          "--locked",
+          "--offline",
+          "-p",
+          "tactus-o1-devnet-driver"
+        ],
+        "status": "passed",
+        "started_unix": 1792027889.6717162,
+        "log": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/qualifications/1792027834673227171/devnet-driver.txt",
+        "exit_code": 0,
+        "elapsed_seconds": 11.4792640209198
+      },
+      {
+        "name": "devnet-bins",
+        "command": [
+          "cargo",
+          "+1.97.1",
+          "build",
+          "--locked",
+          "--offline",
+          "--bin",
+          "replay-settlement-bootstrap",
+          "--bin",
+          "recover-settlement"
+        ],
+        "status": "passed",
+        "started_unix": 1792027901.1512117,
+        "log": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/qualifications/1792027834673227171/devnet-bins.txt",
+        "exit_code": 0,
+        "elapsed_seconds": 0.6513488292694092
+      },
+      {
+        "name": "sparse-host-check",
+        "command": [
+          "cargo",
+          "+1.97.1",
+          "check",
+          "--locked",
+          "--offline",
+          "--manifest-path",
+          "proofs/incremental-sp1/Cargo.toml",
+          "-p",
+          "tactus-o1-sparse-sp1-host",
+          "--bins"
+        ],
+        "status": "passed",
+        "started_unix": 1792027901.8027813,
+        "log": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/qualifications/1792027834673227171/sparse-host-check.txt",
+        "exit_code": 0,
+        "elapsed_seconds": 25.042802572250366
+      }
+    ],
+    "ci_run": false,
+    "started_unix": 1792027834.6732812,
+    "attempt": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/qualifications/1792027834673227171",
+    "source_unchanged": true,
+    "finished_unix": 1792027926.8523145
+  },
+  "resource_comparison_partial": {
+    "runs": [
+      {
+        "name": "threads4",
+        "comparable_seconds": 1600.402247274002,
+        "pipeline_seconds": 1601.043537685,
+        "total_including_fresh_verification_seconds": 1640.3048034130043,
+        "fresh_verification": true,
+        "negative_controls_count": 15,
+        "recursive_max_rss_kib": 20488400,
+        "sample_count": 1
+      },
+      {
+        "name": "threads8",
+        "comparable_seconds": 1156.604355816998,
+        "pipeline_seconds": 1157.2547682400036,
+        "total_including_fresh_verification_seconds": 1185.6198938190064,
+        "fresh_verification": true,
+        "negative_controls_count": 15,
+        "recursive_max_rss_kib": 20640392,
+        "sample_count": 1
+      }
+    ],
+    "comparable_reduction_percent": 27.730396668271005,
+    "same_input_and_frozen_elf": true,
+    "incremental_source_tested": false,
+    "single_sample_not_statistical_estimate": true
+  },
+  "sparse_native_qualification": {
+    "cases": 25,
+    "blocks": 93,
+    "full_sparse_and_geth_match": true,
+    "pruned_witness_match": true,
+    "guest_executed": false,
+    "proof_generated": false,
+    "results": "artifacts/sp1-optimization-round3/sparse-native-qualification/results.json"
+  },
+  "sparse_host_build": {
+    "status": "complete",
+    "native_gnark": true,
+    "frozen_binaries": "artifacts/sp1-optimization-round3/sparse-proof-tools/sha256.json"
+  },
+  "sparse_guest_build": {
+    "status": "complete",
+    "elf": "sparse-candidate/guest.elf",
+    "sha256": "d867dfdba7c8300ce0da2bd75050cd02f035294e4a6d7a18c030281294cff590",
+    "guest_key": "0x00adca22e4ba834599c9ff5039f27d1c4e0223e40d9dee46f1af272c0f7c54cb"
+  },
+  "completed_local_test_commands": [
+    "cargo +1.97.1 test --locked --offline -p tactus-o1-execution --features native-bridge",
+    "cargo +1.97.1 test --locked --offline --manifest-path proofs/sp1/Cargo.toml -p tactus-o1-proof-journal",
+    "cargo +1.97.1 test --locked --offline --manifest-path proofs/incremental-sp1/Cargo.toml -p tactus-o1-sparse-state -p tactus-o1-sparse-journal",
+    "cargo +1.97.1 test --locked --offline --manifest-path proofs/ckb-settlement/Cargo.toml",
+    "cargo +1.97.1 test --locked --offline --manifest-path proofs/ckb-settlement/Cargo.toml --features sparse-proof",
+    "cargo +1.97.1 test --locked --offline --manifest-path proofs/ckb-native-settlement/Cargo.toml",
+    "cargo +1.97.1 test --locked --offline -p tactus-o1-devnet-driver",
+    "cargo +1.97.1 build --locked --offline --bin replay-settlement-bootstrap --bin recover-settlement"
+  ],
+  "sparse_guest_qualification": {
+    "cases": 25,
+    "blocks": 93,
+    "all_passed": true,
+    "results": "artifacts/sp1-optimization-round3/sparse-guest-qualification/results.json",
+    "genesis_performance": "artifacts/sp1-optimization-round3/sparse-genesis-comparison.json",
+    "proof_generated": false
+  },
+  "history_qualification": {
+    "status": "complete",
+    "proof_generated": false,
+    "ckb_settlement": false,
+    "adjusted_environment_geth_checked": false,
+    "rows": [
+      {
+        "prefix_batches": 1,
+        "status": "complete",
+        "replay_instructions": 4034783,
+        "sparse_instructions": 7567180,
+        "frozen_replay_guest_transition_match": true,
+        "sparse_guest_prefix_batches": 0,
+        "sparse_instruction_change_percent": 87.54862405239638
+      },
+      {
+        "prefix_batches": 256,
+        "status": "complete",
+        "replay_instructions": 19836071,
+        "sparse_instructions": 19310116,
+        "frozen_replay_guest_transition_match": true,
+        "sparse_guest_prefix_batches": 0,
+        "sparse_instruction_change_percent": -2.6515079523560914
+      },
+      {
+        "prefix_batches": 1024,
+        "status": "complete",
+        "replay_instructions": 75831975,
+        "sparse_instructions": 19351431,
+        "frozen_replay_guest_transition_match": true,
+        "sparse_guest_prefix_batches": 0,
+        "sparse_instruction_change_percent": -74.48117235506527
+      }
+    ],
+    "started_unix": 1792028487.8380325,
+    "resume_coordinator_when_finished": 278412,
+    "finished_unix": 1792028660.8035529,
+    "matrix_resumed_unix": 1792028660.803623
+  },
+  "latest_candidate_changes": {
+    "status": "Qualified:12 affected tests,25 Geth cases93blocks actual guest, exact-key local canonical input preparation and both actual guest intervals. Real sparse proof pipeline running.",
+    "changes": [
+      "Defer sparse trie writes to block boundaries while exposing pending account/storage writes to later transactions",
+      "Bounded binary witness framing with canonical RLP headers instead of guest JSON parsing"
+    ],
+    "new_tests": [
+      "Cross-transaction storage reads and distinct block roots",
+      "Pending zero values and destruction/recreation storage reset",
+      "Missing deletion sibling fails during flush and rolls back",
+      "Binary framing/truncation/noncanonical header/length limits"
+    ],
+    "pre_wire_ablation": "artifacts/sp1-optimization-round3/deferred-json-overrides",
+    "timed_proof_uses_unchanged_frozen_adaptive": true
+  },
+  "queued_optimized_pipeline": {
+    "session": 67314,
+    "status": "complete",
+    "matrix_pid": 278412,
+    "matrix_starttime": "16011753",
+    "progress": "artifacts/sp1-optimization-round3/optimized-pipeline.json",
+    "runner": "artifacts/sp1-optimization-round3/after-matrix-optimized.py",
+    "actions": "local sparse tests; host/guest builds;25case93block guest/Geth qualification; exact-key local bootstrap; fresh continuation/Geth qualification; two canonical sparse inputs and actual guest execution. No real sparse proof yet.",
+    "output": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/optimized-1792042759396978183"
+  },
+  "checker_reorg_regression": {
+    "tests_passed": 2,
+    "log": "artifacts/sp1-optimization-round3/test-reorg-checker.txt",
+    "sparse_reorg_actual_evidence": false
+  },
+  "resource_comparison": {
+    "status": "complete",
+    "runs": [
+      {
+        "name": "threads4",
+        "comparable_seconds": 1600.402247274002,
+        "pipeline_seconds": 1601.043537685,
+        "fresh_verification_seconds": 39.26092145599978,
+        "total_including_fresh_verification_seconds": 1640.3048034130043,
+        "recursive_max_rss_kib": 20488400,
+        "negative_controls": 15,
+        "fresh_verification": true,
+        "sample_count": 1
+      },
+      {
+        "name": "threads8",
+        "comparable_seconds": 1156.604355816998,
+        "pipeline_seconds": 1157.2547682400036,
+        "fresh_verification_seconds": 28.36482621399773,
+        "total_including_fresh_verification_seconds": 1185.6198938190064,
+        "recursive_max_rss_kib": 20640392,
+        "negative_controls": 15,
+        "fresh_verification": true,
+        "sample_count": 1
+      },
+      {
+        "name": "threads8-shard19",
+        "comparable_seconds": 1146.8843527319987,
+        "pipeline_seconds": 1147.644017572995,
+        "fresh_verification_seconds": 29.81936458799464,
+        "total_including_fresh_verification_seconds": 1177.4644735659967,
+        "recursive_max_rss_kib": 21250924,
+        "negative_controls": 15,
+        "fresh_verification": true,
+        "sample_count": 1
+      }
+    ],
+    "same_frozen_elf": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/adaptive.elf",
+    "same_input": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round2/transfers-32-proof-input.json",
+    "single_samples": true,
+    "eight_threads_reduction_percent": 27.730396668271005,
+    "smaller_shard_reduction_percent": 0.840391360806636,
+    "preferred_followup_configuration": {
+      "threads": 8,
+      "go_threads": 4,
+      "shard_size": 1048576,
+      "reason": "Substantial observed gain over4threads; smaller-shard difference0.84% is weak evidence and had higher peakRSS."
+    }
+  },
+  "optimized_qualification": {
+    "status": "complete",
+    "matrix_pid": 278412,
+    "matrix_starttime": "16011753",
+    "ci_run": false,
+    "checks": [
+      {
+        "name": "sparse-tests",
+        "command": [
+          "cargo",
+          "+1.97.1",
+          "test",
+          "--locked",
+          "--offline",
+          "--manifest-path",
+          "proofs/incremental-sp1/Cargo.toml",
+          "-p",
+          "tactus-o1-sparse-state",
+          "-p",
+          "tactus-o1-sparse-journal"
+        ],
+        "status": "passed",
+        "started_unix": 1792042759.4045455,
+        "log": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/optimized-1792042759396978183/sparse-tests.txt",
+        "exit_code": 0,
+        "elapsed_seconds": 3.046917200088501
+      },
+      {
+        "name": "host-build",
+        "command": [
+          "cargo",
+          "+1.97.1",
+          "build",
+          "--locked",
+          "--offline",
+          "--release",
+          "--manifest-path",
+          "proofs/incremental-sp1/Cargo.toml",
+          "-p",
+          "tactus-o1-sparse-sp1-host",
+          "--features",
+          "native-gnark",
+          "--bins"
+        ],
+        "status": "passed",
+        "started_unix": 1792042762.4516447,
+        "log": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/optimized-1792042759396978183/host-build.txt",
+        "exit_code": 0,
+        "elapsed_seconds": 161.6896333694458
+      },
+      {
+        "name": "guest-build",
+        "command": [
+          "bash",
+          "scripts/build-sparse-proof-guest.sh"
+        ],
+        "status": "passed",
+        "started_unix": 1792042924.2083333,
+        "log": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/optimized-1792042759396978183/guest-build.txt",
+        "exit_code": 0,
+        "elapsed_seconds": 71.26614785194397
+      },
+      {
+        "name": "geth-guest-qualification",
+        "command": [
+          "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/optimized-1792042759396978183/host/qualify-sparse",
+          "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/qualification-fixtures.json",
+          "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/optimized-1792042759396978183/qualification",
+          "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/optimized-1792042759396978183/guest.elf"
+        ],
+        "status": "passed",
+        "started_unix": 1792042995.4768362,
+        "log": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/optimized-1792042759396978183/geth-guest-qualification.txt",
+        "exit_code": 0,
+        "elapsed_seconds": 33.845306396484375
+      },
+      {
+        "name": "vkey",
+        "command": [
+          "/home/arthur/RustRoverProjects/tactus-o1/artifacts/prover-tools/cargo-prove",
+          "prove",
+          "vkey",
+          "--elf",
+          "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/optimized-1792042759396978183/guest.elf"
+        ],
+        "status": "passed",
+        "started_unix": 1792043029.3261793,
+        "log": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/optimized-1792042759396978183/vkey.txt",
+        "exit_code": 0,
+        "elapsed_seconds": 31.02553939819336
+      },
+      {
+        "name": "bootstrap",
+        "command": [
+          "bash",
+          "scripts/run-devnet-experiments.sh"
+        ],
+        "status": "passed",
+        "started_unix": 1792043060.6288748,
+        "log": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/optimized-1792042759396978183/bootstrap.txt",
+        "exit_code": 0,
+        "elapsed_seconds": 35.78788471221924
+      },
+      {
+        "name": "bootstrap-check",
+        "command": [
+          "python3",
+          "-B",
+          "scripts/check-sparse-settlements.py",
+          "/home/arthur/RustRoverProjects/tactus-o1/artifacts/settlement-bootstrap-uAUCwSMo/evidence.json",
+          "/home/arthur/RustRoverProjects/tactus-o1/artifacts/tactus_o1_sparse_settlement_script.elf",
+          "0x0017cf9eee019ac2f5933907aa0cf7cc50746d7a50d82504e31dede2fc1681a4"
+        ],
+        "status": "passed",
+        "started_unix": 1792043096.417136,
+        "log": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/optimized-1792042759396978183/bootstrap-check.txt",
+        "exit_code": 0,
+        "elapsed_seconds": 0.02314615249633789
+      },
+      {
+        "name": "continuation",
+        "command": [
+          "cargo",
+          "+1.97.1",
+          "run",
+          "--locked",
+          "--offline",
+          "-p",
+          "tactus-o1-execution",
+          "--example",
+          "settlement-continuation",
+          "--",
+          "/home/arthur/RustRoverProjects/tactus-o1/artifacts/settlement-bootstrap-uAUCwSMo/proving-input.json",
+          "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/optimized-1792042759396978183/continuation"
+        ],
+        "status": "passed",
+        "started_unix": 1792043096.4406395,
+        "log": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/optimized-1792042759396978183/continuation.txt",
+        "exit_code": 0,
+        "elapsed_seconds": 1.938718318939209
+      },
+      {
+        "name": "continuation-geth",
+        "command": [
+          "python3",
+          "-B",
+          "scripts/check-execution-geth.py",
+          "/home/arthur/RustRoverProjects/tactus-o1/artifacts/evm-tools/evm",
+          "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/optimized-1792042759396978183/continuation"
+        ],
+        "status": "passed",
+        "started_unix": 1792043098.3796415,
+        "log": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/optimized-1792042759396978183/continuation-geth.txt",
+        "exit_code": 0,
+        "elapsed_seconds": 0.12171292304992676
+      },
+      {
+        "name": "two-inputs",
+        "command": [
+          "bash",
+          "scripts/run-devnet-experiments.sh"
+        ],
+        "status": "passed",
+        "started_unix": 1792043098.5016,
+        "log": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/optimized-1792042759396978183/two-inputs.txt",
+        "exit_code": 0,
+        "elapsed_seconds": 4.398279190063477
+      },
+      {
+        "name": "two-inputs-check",
+        "command": [
+          "python3",
+          "-B",
+          "scripts/check-sparse-settlements.py",
+          "/home/arthur/RustRoverProjects/tactus-o1/artifacts/settlement-bootstrap-p32KISZW/evidence.json",
+          "/home/arthur/RustRoverProjects/tactus-o1/artifacts/tactus_o1_sparse_settlement_script.elf",
+          "0x0017cf9eee019ac2f5933907aa0cf7cc50746d7a50d82504e31dede2fc1681a4"
+        ],
+        "status": "passed",
+        "started_unix": 1792043102.9002662,
+        "log": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/optimized-1792042759396978183/two-inputs-check.txt",
+        "exit_code": 0,
+        "elapsed_seconds": 0.0283658504486084
+      },
+      {
+        "name": "prepare-first",
+        "command": [
+          "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/optimized-1792042759396978183/host/prepare-sparse",
+          "/home/arthur/RustRoverProjects/tactus-o1/artifacts/settlement-bootstrap-p32KISZW/proving-input.json",
+          "0",
+          "1",
+          "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/optimized-1792042759396978183/first-sparse-input.json"
+        ],
+        "status": "passed",
+        "started_unix": 1792043102.9290993,
+        "log": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/optimized-1792042759396978183/prepare-first.txt",
+        "exit_code": 0,
+        "elapsed_seconds": 0.0026292800903320312
+      },
+      {
+        "name": "prepare-second",
+        "command": [
+          "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/optimized-1792042759396978183/host/prepare-sparse",
+          "/home/arthur/RustRoverProjects/tactus-o1/artifacts/settlement-bootstrap-p32KISZW/proving-input-next.json",
+          "1",
+          "1",
+          "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/optimized-1792042759396978183/second-sparse-input.json"
+        ],
+        "status": "passed",
+        "started_unix": 1792043102.9319751,
+        "log": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/optimized-1792042759396978183/prepare-second.txt",
+        "exit_code": 0,
+        "elapsed_seconds": 0.0041408538818359375
+      },
+      {
+        "name": "first-guest-execute",
+        "command": [
+          "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/optimized-1792042759396978183/host/sparse-chain-proof",
+          "execute",
+          "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/optimized-1792042759396978183/guest.elf",
+          "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/optimized-1792042759396978183/first-sparse-input.json",
+          "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/optimized-1792042759396978183/first-execution"
+        ],
+        "status": "passed",
+        "started_unix": 1792043102.936343,
+        "log": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/optimized-1792042759396978183/first-guest-execute.txt",
+        "exit_code": 0,
+        "elapsed_seconds": 31.57669711112976
+      },
+      {
+        "name": "second-guest-execute",
+        "command": [
+          "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/optimized-1792042759396978183/host/sparse-chain-proof",
+          "execute",
+          "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/optimized-1792042759396978183/guest.elf",
+          "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/optimized-1792042759396978183/second-sparse-input.json",
+          "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/optimized-1792042759396978183/second-execution"
+        ],
+        "status": "passed",
+        "started_unix": 1792043134.5134637,
+        "log": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/optimized-1792042759396978183/second-guest-execute.txt",
+        "exit_code": 0,
+        "elapsed_seconds": 29.344642639160156
+      }
+    ],
+    "output": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/optimized-1792042759396978183",
+    "started_unix": 1792042759.3970132,
+    "guest_key": "0x0017cf9eee019ac2f5933907aa0cf7cc50746d7a50d82504e31dede2fc1681a4",
+    "bootstrap_directory": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/settlement-bootstrap-uAUCwSMo",
+    "two-inputs_directory": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/settlement-bootstrap-p32KISZW",
+    "proofs_generated": false,
+    "actual_sparse_proof_acceptance": false,
+    "source_unchanged": true,
+    "finished_unix": 1792043163.8655188
+  },
+  "active_sparse_proof_pipeline": {
+    "session": 27749,
+    "coordinator_pid": 331412,
+    "current_prover_pid": 331529,
+    "progress": "artifacts/sp1-optimization-round3/optimized-proof-pipeline.json",
+    "output": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/sparse-proofs-1792043336864656751",
+    "source_output": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/optimized-1792042759396978183",
+    "must_not_restart_while_live": true,
+    "stages": "first real proof+15negatives+freshSDK; second same; local two settlements; local P2P reorg; optimized history comparison"
+  },
+  "active_sparse_pipeline": {
+    "status_file": "artifacts/sp1-optimization-round3/optimized-proof-pipeline.json",
+    "output": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/sparse-proofs-1792043336864656751",
+    "coordinator_pid": 331412,
+    "must_not_restart_while_live": true,
+    "completed_proofs": [
+      "first",
+      "second"
+    ],
+    "first_seconds_including_fresh_verification": 907.1297746670025,
+    "current_stage": null,
+    "status": "complete",
+    "local_two_settlements_accepted": true,
+    "local_reorg_qualified": true
+  },
+  "final_source_qualification": {
+    "status_file": "artifacts/sp1-optimization-round3/final-source-progress.json",
+    "runner": "artifacts/sp1-optimization-round3/qualify-final-source.py",
+    "session_id": 71559,
+    "status": "full-real-proof-running"
+  },
+  "last_checked_unix": 1792043904.5056982,
+  "final_retained_measurement": {
+    "status_file": "artifacts/sp1-optimization-round3/final-retained-progress.json",
+    "session_id": 17112,
+    "runner": "artifacts/sp1-optimization-round3/prove-final-retained.py",
+    "status": "waiting_for_final_source",
+    "reason": "Answer original ~59-minute latency on the exact same nine-batch input with the final guest; only lab guest key changes."
+  }
+}

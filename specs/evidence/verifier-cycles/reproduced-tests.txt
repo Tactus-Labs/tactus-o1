@@ -1,0 +1,51 @@
+39 tests
+test arith::from_slice ... ok
+test arith::setting_bits ... ok
+test arith::testing_mul ... ok
+test arith::test_from_slice ... ok
+test arith::to_big_endian ... ok
+test arith::testing_mul2 ... ok
+test fields::fp::sqrt_fq ... ok
+test groups::affine_fail ... ok
+test groups::affine_ok ... ok
+test fields::test_str ... ok
+test groups::internals ... ok
+test groups::test_batch_bilinearity_empty ... ok
+test arith::testing_divrem ... ok
+test fields::fq2::sqrt_fq2 ... ok
+test fields::test_cyclotomic_exp ... ok
+test arith::ckb_mul::tests::canonical_edges_and_noncanonical_fallback_match_two_oracles ... ok
+test fields::fq12_test_vector ... ok
+test groups::test_y_at_point_at_infinity ... ok
+test tests::g1_from_compressed ... ok
+test groups::test_prepared_g2 ... ok
+test groups::test_miller_loop ... ok
+test tests::g2_from_compressed ... ok
+test groups::test_reduced_pairing ... ok
+test groups::predefined_pair ... ok
+test groups::test_batch_bilinearity_one ... ok
+test fields::fp::test_rsquared ... ok
+test fields::fq2::test_fq2_nqr ... ok
+test groups::test_to_from_affine ... ok
+test arith::ckb_mul::tests::seeded_products_match_upstream_and_biguint ... ok
+test fields::test_fq2 ... ok
+test groups::test_batch_bilinearity_fifty ... ok
+test fields::test_fq ... ok
+test fields::test_fr ... ok
+test fields::test_fq6 ... ok
+test groups::test_bilinearity ... ok
+test groups::test_g1 ... ok
+test groups::test_affine_jacobian_conversion ... ok
+test fields::test_fq12 ... ok
+test groups::test_g2 ... ok
+
+test result: ok. 39 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 4.38s
+
+
+1 test
+test groth16::verify::ckb_tests::projective_inputs_match_affine_for_release_key_and_scalar_edges ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.41s
+
+
+Test evidence: /home/arthur/RustRoverProjects/tactus-o1/artifacts/verifier-cycles/reproduced-tests

@@ -1,0 +1,14 @@
+tactus-o1/serial-execution/v1
+engine=revm-43.0.3;envelopes=alloy-consensus-2.1.1;primitives=alloy-primitives-1.6.0;trie=alloy-trie-0.9.8
+fork=SHANGHAI;gas-params=mainnet-SHANGHAI;validation=all-enabled
+transactions=canonical-eip2718-legacy-eip155-only,2930,1559;signature=low-s-secp256k1
+slot-status=1-malformed,2-unsupported-type,3-invalid-signature,4-wrong-chain,5-remaining-block-gas,6-evm-validation,7-success,8-revert,9-halt
+rejection-order=unsupported-prefix,decode-exact,canonical-encoding,supported-type,signature,chain,remaining-gas,evm-validation
+rejected-slots=no-state-change,no-gas,no-ethereum-transaction,no-receipt;revert-halt=commit-fees-and-nonce,failed-receipt,no-logs
+blocks=serial;gas-limit=1000000;timestamp=nondecreasing-from-anchor;difficulty=0;prevrandao=0;withdrawals=empty;rewards=none;issuance=none
+basefee=parent-eip1559-elasticity2-denominator8;genesis-basefee=1000000000;genesis-number=0;genesis-timestamp=0;genesis-total-supply-at-most=18446744073709551615
+roots=ethereum-keccak-rlp-mpt;zero-storage=absent;empty-accounts=absent;blockhash=last256-computed-header-hashes
+header-extra-data=slot-outcomes-v1;outcomes=rollupid32,rules32,chain-u64le,batch-input-hash32,block-u64le,count-u32le,(input-keccak32,status-u8,gas-u64le,eth-index-u32le-or-ffffffff,output-keccak32,created-flag-u8,created-address20)*
+genesis-extra-data=ckbhash-domain-tactus/o1/genesis/v1-of-rollupid32-chain-u64le-rules32
+fatal-engine-error=abort-entire-batch;malformed-batch=abort-before-effects
+genesis-allocation=TO1GEN01;bytes-max=262144;accounts-max=1024;code-bytes-max=24576;storage-slots-per-account-max=4096;addresses-and-storage-keys=strict-ascending;zero-storage=omitted;empty-accounts=rejected;balance=u256be-with-total-u64-cap

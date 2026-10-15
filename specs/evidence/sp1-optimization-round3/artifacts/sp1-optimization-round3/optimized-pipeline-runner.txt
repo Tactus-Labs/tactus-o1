@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/after-matrix-optimized.py", line 57, in <module>
+    run('sparse-tests',['cargo','+1.97.1','test','--locked','--offline','--manifest-path','proofs/incremental-sp1/Cargo.toml','-p','tactus-o1-sparse-state','-p','tactus-o1-sparse-journal'],{'CARGO_TARGET_DIR':str(ROOT/'proofs/sp1/target')})
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/after-matrix-optimized.py", line 47, in run
+    if result.returncode:raise RuntimeError(name+' failed; see '+entry['log'])
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: sparse-tests failed; see /home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/optimized-1792042620468551119/sparse-tests.txt

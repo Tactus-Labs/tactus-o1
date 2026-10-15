@@ -1,0 +1,31 @@
+{
+  "proof_generated": true,
+  "proof_directory": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimized-full-proof/resumed-proof",
+  "pipeline_seconds": 1190.607747107002,
+  "fresh_verification_seconds": 38.311117007993744,
+  "total_seconds_including_fresh_verification": 1228.9191755630018,
+  "preparation_and_build_excluded": true,
+  "fresh_verification": true,
+  "negative_controls": [
+    "profile",
+    "ckb-network",
+    "ordering-script",
+    "settlement-script",
+    "rollup",
+    "chain",
+    "allocation",
+    "predecessor",
+    "end-history",
+    "previous-state",
+    "next-state",
+    "previous-header",
+    "next-header",
+    "interval-data",
+    "wrong-guest-key"
+  ],
+  "public_values_unchanged": true,
+  "staged": true,
+  "ckb_settlement": false,
+  "deployment_authorized": false,
+  "production_ready": false
+}

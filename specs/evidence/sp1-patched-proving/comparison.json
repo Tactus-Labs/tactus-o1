@@ -1,0 +1,18 @@
+{
+  "historical_phase_sum_seconds": 4674.678617819008,
+  "patched_phase_sum_seconds": 3536.8628759609996,
+  "reduction_percent": 24.339977886840515,
+  "seconds_saved": 1137.815741858008,
+  "speedup": 1.3217019663361567,
+  "recursive_phase_reduction_percent": 25.099946837083642,
+  "historical_recursive_peak_rss_kib": 20975204,
+  "patched_recursive_peak_rss_kib": 19475648,
+  "patched_wrapping_peak_rss_kib": 17539916,
+  "patched_pipeline_seconds": 3537.6244316739976,
+  "patched_fresh_verification_seconds": 41.88384776600287,
+  "patched_total_including_fresh_verification_seconds": 3579.509468452001,
+  "historical_baseline_rerun": false,
+  "ckb_settlement": false,
+  "proof_generated": true,
+  "ci_run": false
+}

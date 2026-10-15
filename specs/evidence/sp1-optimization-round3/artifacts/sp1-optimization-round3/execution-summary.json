@@ -1,0 +1,25 @@
+{
+  "status": "execution qualified; complete proof matrix in progress",
+  "formal_root_guest_qualified": false,
+  "frozen_candidate": "adaptive/source",
+  "geth_cases": 25,
+  "geth_blocks": 93,
+  "guest_runs": 26,
+  "native": {
+    "native-full": {
+      "before_instructions": 21101594,
+      "after_instructions": 1659332,
+      "reduction_percent": 92.13646134979186,
+      "public_values_unchanged": true
+    },
+    "native-prefix": {
+      "before_instructions": 21102096,
+      "after_instructions": 1611839,
+      "reduction_percent": 92.36171136743951,
+      "public_values_unchanged": true
+    }
+  },
+  "ci_run": false,
+  "deployment_updated": false,
+  "incremental_profile_complete": false
+}

@@ -1,0 +1,91 @@
+   Compiling tactus-o1-execution v0.1.0 (/home/arthur/RustRoverProjects/tactus-o1/crates/tactus-o1-execution)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 2.53s
+     Running unittests src/lib.rs (target/debug/deps/tactus_o1_execution-e58e8b02b20d960b)
+
+running 3 tests
+test store::lock_release_tests::closing_writer_releases_lock_even_with_duplicated_descriptor ... ok
+test journal_db::tests::commit_matches_original_database_and_rollback_restores_all_boundaries ... ok
+test journal_db::tests::unwinding_rolls_back_and_reads_do_not_populate_unknown_state ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.04s
+
+     Running unittests src/bin/replay-execution.rs (target/debug/deps/replay_execution-257835fb31a7bfcf)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/execution.rs (target/debug/deps/execution-97da1a481a1d817f)
+
+running 13 tests
+test generated_rules_digest_matches_runtime_reference ... ok
+test rejected_slots_are_committed_even_when_ethereum_state_and_roots_match ... ok
+test basefee_rounding_supply_bound_and_genesis_domain_are_explicit ... ok
+test precompiles_use_real_sha256_and_identity ... ok
+test remaining_block_gas_checks_declared_limit_without_stalling_next_slot ... ok
+test deploy_then_write_storage_and_log_then_clear_slot ... ok
+test signature_chain_canonical_encoding_and_type_rejections_are_total ... ok
+test legacy_access_list_and_dynamic_fee_envelopes_make_matching_receipts ... ok
+test truncated_batch_wrong_domain_and_replay_do_not_leave_partial_execution ... ok
+test block_context_parent_hash_and_empty_blocks_are_executed ... ok
+test revert_and_exception_charge_nonce_and_gas_but_revert_storage_and_logs ... ok
+test malformed_nonce_and_balance_failures_do_not_poison_following_transfers ... ok
+test invalid_fee_intrinsic_gas_and_eoa_code_do_not_mutate_state ... ok
+
+test result: ok. 13 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.05s
+
+     Running tests/geth_vectors.rs (target/debug/deps/geth_vectors-5ccc02f8b3d31682)
+
+running 1 test
+test independent_geth_shanghai_roots_gas_and_rejections_match ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.10s
+
+     Running tests/native_bridge.rs (target/debug/deps/native_bridge-42a109c340768db0)
+
+running 7 tests
+test invalid_genesis_cannot_seed_tokens_or_impersonate_system_authority ... ok
+test generated_native_constants_match_original_artifact_expression ... ok
+test transcript_rejects_duplicates_gaps_wrong_domains_and_unbounded_data ... ok
+test invalid_deposit_or_late_credit_failure_rolls_back_the_entire_batch ... ok
+test actual_funded_records_preserve_domain_wire_and_credit_exact_balances ... ok
+test credited_tokens_transfer_and_burn_in_real_signed_user_transactions ... ok
+test maximum_credit_batch_precedes_all_user_blocks_and_cumulative_can_exceed_u64 ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.07s
+
+     Running tests/native_ckb.rs (target/debug/deps/native_ckb-eca33a64f537d1c4)
+
+running 6 tests
+test system_credit_contract_logic_requires_authenticated_hook_integration ... ok
+test exhausted_withdrawal_counter_reverts_before_any_persistent_burn ... ok
+test compiler_storage_positions_and_constructor_domain_are_fixed ... ok
+test ordinary_calls_cannot_credit_or_replace_permanent_burns ... ok
+test allowance_failure_rolls_back_and_transfers_preserve_supply ... ok
+test bounded_transfer_and_burn_sequence_preserves_independent_accounting_model ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.33s
+
+     Running tests/store.rs (target/debug/deps/store-c9f90888f3e780ac)
+
+running 11 tests
+test unicode_or_unknown_files_fail_without_panicking ... ok
+test empty_journal_still_pins_execution_rules_and_genesis_header ... ok
+test failed_publication_poison_requires_reopen_and_never_overwrites_record ... ok
+test wrong_genesis_or_missing_genesis_does_not_reinitialize_history ... ok
+test malformed_input_does_not_poison_writer_or_create_a_record ... ok
+test published_record_survives_crash_before_staging_unlink ... ok
+test exclusive_writer_and_restart_replay_match_independent_fixture ... ok
+test equivalent_zero_storage_encodings_share_one_canonical_genesis ... ok
+test cli_restarts_in_another_process_and_returns_identical_head ... ok
+test incomplete_staging_file_is_ignored_and_replaced ... ok
+test checksum_truncation_gap_and_wrong_derived_root_fail_closed ... ok
+
+test result: ok. 11 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.05s
+
+   Doc-tests tactus_o1_execution
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

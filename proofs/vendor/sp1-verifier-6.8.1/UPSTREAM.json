@@ -1,0 +1,9 @@
+{
+  "crate": "sp1-verifier",
+  "version": "6.8.1",
+  "crate_sha256": "aca7223cc7a77e42536c7229c8016672737aab07f6149097d9c7a26324b29814",
+  "modified_upstream_files": [
+    "src/groth16/verify.rs"
+  ],
+  "purpose": "CKB verifier public-input accumulation in projective coordinates; unchanged proof decoding, transcript and pairing equation"
+}

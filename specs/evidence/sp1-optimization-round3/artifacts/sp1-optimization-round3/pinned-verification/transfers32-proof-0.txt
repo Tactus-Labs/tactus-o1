@@ -1,0 +1,1 @@
+Pinned-key Groth16 wire proof verified against independently replayed journal; key 0x00a7ad2963b84eda9c585105ef920ead9051658981cf45f258bbebb9f1c555bb; cryptographic verification 203.457852ms

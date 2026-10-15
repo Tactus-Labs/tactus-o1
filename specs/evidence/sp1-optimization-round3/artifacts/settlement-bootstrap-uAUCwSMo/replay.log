@@ -1,0 +1,24 @@
+deploy immutable code and independent actor funds: committed 0x7f43b48b3f819d684e8e01b80e731bd5884d2c7e49d6a39d0d6e6e258c78142a
+settlement/deploy immutable programs: committed 0x9370de20d9cd917c5f90c4adea68d90750720f8b2713e6c2106e094c325e8402
+settlement/reserved: rejected (error code 3)
+settlement/unproved-initial-state: rejected (error code 3)
+settlement/unproved-initial-header: rejected (error code 3)
+settlement/initialized-before-proof: rejected (error code 3)
+settlement/short-tip: rejected (error code 3)
+settlement/wrong-allocation: rejected (error code 4)
+settlement/no-anchor-genesis: rejected (error code 4)
+settlement/duplicate-tip: rejected (error code 2)
+settlement/atomic Anchor and uninitialized Tip genesis: committed 0x3b1a077d5fb4108b204d4002e909c06b24a18ca7dc93b674606c93febd0addfb
+settlement/late-bootstrap-from-anchor-dependency: rejected (error code 4)
+settlement/canonical batch and ending checkpoint: committed 0x44ed65dee7f760912c8417801db01fc500b0a1b80a382b20dbaf7927c942782b
+settlement/missing-authenticated-checkpoint: rejected (error code 8)
+settlement/malformed-proof-rejected: rejected (error code 9)
+settlement/binding-network: rejected (error code 6)
+settlement/binding-ordering: rejected (error code 6)
+settlement/binding-settlement: rejected (error code 6)
+settlement/binding-allocation: rejected (error code 6)
+settlement/binding-predecessor: rejected (error code 7)
+settlement/binding-ending-history: rejected (error code 7)
+settlement/binding-state: rejected (error code 7)
+settlement/binding-header: rejected (error code 7)
+settlement/empty-proof: rejected (error code 5)

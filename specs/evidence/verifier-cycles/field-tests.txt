@@ -1,0 +1,133 @@
+   Compiling proc-macro2 v1.0.106
+   Compiling quote v1.0.44
+   Compiling unicode-ident v1.0.22
+   Compiling autocfg v1.5.0
+   Compiling num-traits v0.2.19
+   Compiling libc v0.2.180
+   Compiling zerocopy v0.8.62
+   Compiling syn v2.0.114
+   Compiling cfg-if v1.0.4
+   Compiling version_check v0.9.5
+   Compiling generic-array v0.14.7
+   Compiling getrandom v0.2.17
+   Compiling rand_core v0.6.4
+   Compiling ppv-lite86 v0.2.21
+   Compiling typenum v1.20.1
+   Compiling rand_chacha v0.3.1
+   Compiling syn v3.0.7
+   Compiling num-integer v0.1.46
+   Compiling crypto-common v0.1.7
+   Compiling rand v0.8.5
+   Compiling paste v1.0.15
+   Compiling num-bigint v0.4.6
+   Compiling enum-ordinalize-derive v4.4.2
+   Compiling enum-ordinalize v4.4.2
+   Compiling ark-std v0.5.0
+   Compiling digest v0.10.7
+   Compiling zeroize_derive v1.5.0
+   Compiling arrayvec v0.7.8
+   Compiling crunchy v0.2.4
+   Compiling either v1.19.0
+   Compiling itertools v0.13.0
+   Compiling ark-serialize v0.5.0
+   Compiling zeroize v1.9.1
+   Compiling ark-ff-macros v0.5.0
+   Compiling educe v0.6.0
+   Compiling ark-ff-asm v0.5.0
+   Compiling bytemuck_derive v1.10.2
+   Compiling spin v0.9.8
+   Compiling bytemuck v1.24.0
+   Compiling lazy_static v1.5.0
+   Compiling ark-ff v0.5.0
+   Compiling rustc-hex v2.1.0
+   Compiling byteorder v1.5.0
+   Compiling substrate-bn-succinct-rs v0.6.0 (/home/arthur/RustRoverProjects/tactus-o1/artifacts/verifier-cycles/reproduced-tests/substrate-bn-succinct-rs-0.6.0)
+warning: unexpected `cfg` condition value: `asm`
+ --> src/arith/ckb_mul.rs:7:10
+  |
+7 | #[derive(MontConfig)]
+  |          ^^^^^^^^^^
+  |
+  = note: expected values for `feature` are: `default`
+  = note: using a cfg inside a derive macro will use the cfgs from the destination crate and not the ones from the defining crate
+  = help: try referring to `MontConfig` crate for guidance on how handle this unexpected cfg
+  = help: the derive macro `MontConfig` may come from an old version of the `ark_ff_macros` crate, try updating your dependency with `cargo update -p ark_ff_macros`
+  = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+  = note: `#[warn(unexpected_cfgs)]` on by default
+  = note: this warning originates in the derive macro `MontConfig` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+warning: unexpected `cfg` condition value: `asm`
+  --> src/arith/ckb_mul.rs:13:10
+   |
+13 | #[derive(MontConfig)]
+   |          ^^^^^^^^^^
+   |
+   = note: expected values for `feature` are: `default`
+   = note: using a cfg inside a derive macro will use the cfgs from the destination crate and not the ones from the defining crate
+   = help: try referring to `MontConfig` crate for guidance on how handle this unexpected cfg
+   = help: the derive macro `MontConfig` may come from an old version of the `ark_ff_macros` crate, try updating your dependency with `cargo update -p ark_ff_macros`
+   = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+   = note: this warning originates in the derive macro `MontConfig` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+warning: hiding a lifetime that's elided elsewhere is confusing
+   --> src/arith.rs:411:17
+    |
+411 |     pub fn bits(&self) -> BitIterator {
+    |                 ^^^^^     ^^^^^^^^^^^ the same lifetime is hidden here
+    |                 |
+    |                 the lifetime is elided here
+    |
+    = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+    = note: `#[warn(mismatched_lifetime_syntaxes)]` on by default
+help: use `'_` for type paths
+    |
+411 |     pub fn bits(&self) -> BitIterator<'_> {
+    |                                      ++++
+
+warning: `substrate-bn-succinct-rs` (lib test) generated 3 warnings (run `cargo fix --lib -p substrate-bn-succinct-rs --tests` to apply 1 suggestion)
+    Finished `release` profile [optimized] target(s) in 14.16s
+     Running unittests src/lib.rs (artifacts/crypto-port-test-target/release/deps/substrate_bn_succinct_rs-9f481eedc4a1ba28)
+
+running 39 tests
+test arith::from_slice ... ok
+test arith::setting_bits ... ok
+test arith::testing_mul ... ok
+test arith::test_from_slice ... ok
+test arith::to_big_endian ... ok
+test arith::testing_mul2 ... ok
+test fields::fp::sqrt_fq ... ok
+test groups::affine_fail ... ok
+test groups::affine_ok ... ok
+test fields::test_str ... ok
+test groups::internals ... ok
+test groups::test_batch_bilinearity_empty ... ok
+test arith::testing_divrem ... ok
+test fields::fq2::sqrt_fq2 ... ok
+test fields::test_cyclotomic_exp ... ok
+test arith::ckb_mul::tests::canonical_edges_and_noncanonical_fallback_match_two_oracles ... ok
+test fields::fq12_test_vector ... ok
+test groups::test_y_at_point_at_infinity ... ok
+test tests::g1_from_compressed ... ok
+test groups::test_prepared_g2 ... ok
+test groups::test_miller_loop ... ok
+test tests::g2_from_compressed ... ok
+test groups::test_reduced_pairing ... ok
+test groups::predefined_pair ... ok
+test groups::test_batch_bilinearity_one ... ok
+test fields::fp::test_rsquared ... ok
+test fields::fq2::test_fq2_nqr ... ok
+test groups::test_to_from_affine ... ok
+test arith::ckb_mul::tests::seeded_products_match_upstream_and_biguint ... ok
+test fields::test_fq2 ... ok
+test groups::test_batch_bilinearity_fifty ... ok
+test fields::test_fq ... ok
+test fields::test_fr ... ok
+test fields::test_fq6 ... ok
+test groups::test_bilinearity ... ok
+test groups::test_g1 ... ok
+test groups::test_affine_jacobian_conversion ... ok
+test fields::test_fq12 ... ok
+test groups::test_g2 ... ok
+
+test result: ok. 39 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 4.38s
+

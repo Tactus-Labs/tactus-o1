@@ -1,0 +1,11 @@
+[package]
+name = "tactus-o1-head-lock"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+ckb-std = { version = "0.15", default-features = false, features = ["ckb-types", "allocator"] }
+
+[lib]
+crate-type = ["staticlib", "rlib"]

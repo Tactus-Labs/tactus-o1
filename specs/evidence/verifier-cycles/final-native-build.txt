@@ -1,0 +1,29 @@
+    Finished `release` profile [optimized] target(s) in 0.02s
+218b27d0effbf9e41f8950cc2c0f1ee08da88969dead746a68b2f580a166e877  artifacts/tactus_o1_native_vault_script.elf
+   Compiling tactus-o1-native-anchor-script v0.1.0 (/home/arthur/RustRoverProjects/tactus-o1/proofs/ckb-native-anchor)
+    Finished `release` profile [optimized] target(s) in 0.23s
+7ec26b5ab39c2622bc9215e0c7f5e1120396364f32d7a9111fb437e60858f89e  artifacts/tactus_o1_native_anchor_script.elf
+    Finished `release` profile [optimized] target(s) in 0.01s
+f936a2cac813694359acf22cc9899cb8bbe0a674e322764dfd33836c58eb307a  artifacts/tactus_o1_native_checkpoint_script.elf
+   Compiling substrate-bn-succinct-rs v0.6.0 (/home/arthur/RustRoverProjects/tactus-o1/proofs/vendor/substrate-bn-succinct-rs-0.6.0)
+   Compiling tactus-o1-native-anchor-script v0.1.0 (/home/arthur/RustRoverProjects/tactus-o1/proofs/ckb-native-anchor)
+warning: hiding a lifetime that's elided elsewhere is confusing
+   --> /home/arthur/RustRoverProjects/tactus-o1/proofs/vendor/substrate-bn-succinct-rs-0.6.0/src/arith.rs:411:17
+    |
+411 |     pub fn bits(&self) -> BitIterator {
+    |                 ^^^^^     ^^^^^^^^^^^ the same lifetime is hidden here
+    |                 |
+    |                 the lifetime is elided here
+    |
+    = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+    = note: `#[warn(mismatched_lifetime_syntaxes)]` on by default
+help: use `'_` for type paths
+    |
+411 |     pub fn bits(&self) -> BitIterator<'_> {
+    |                                      ++++
+
+   Compiling sp1-verifier v6.8.1 (/home/arthur/RustRoverProjects/tactus-o1/proofs/vendor/sp1-verifier-6.8.1)
+warning: `substrate-bn-succinct-rs` (lib) generated 1 warning (run `cargo fix --lib -p substrate-bn-succinct-rs` to apply 1 suggestion)
+   Compiling tactus-o1-native-settlement-script v0.1.0 (/home/arthur/RustRoverProjects/tactus-o1/proofs/ckb-native-settlement)
+    Finished `release` profile [optimized] target(s) in 2.16s
+b87a7cb1cbcce28ab8a54ec7cd2448f4686644d15fa1b3e1e784da25d0da2cdd  artifacts/tactus_o1_native_settlement_script.elf

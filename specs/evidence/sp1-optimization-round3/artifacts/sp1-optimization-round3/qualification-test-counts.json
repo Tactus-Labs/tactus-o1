@@ -1,0 +1,11 @@
+{
+  "execution-native": 44,
+  "checkpoint-journal": 4,
+  "sparse-state-journal": 8,
+  "replay-settlement": 5,
+  "sparse-settlement": 5,
+  "native-settlement": 4,
+  "devnet-driver": 22,
+  "devnet-bins": 0,
+  "sparse-host-check": 0
+}

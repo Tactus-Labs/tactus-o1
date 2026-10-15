@@ -1,0 +1,13 @@
+[package]
+name = "tactus-o1-protocol"
+description = "Tactus O1 protocol primitives — illustrative companions to the architecture specification"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+blake2b-ref = "0.3"
+
+[features]
+native-bridge = []

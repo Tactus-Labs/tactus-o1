@@ -172,7 +172,7 @@ pub fn execute(
     }
     let before = engine.anchor();
     let previous_state_root = engine.state_root().0;
-    let previous_header_hash = engine.head().hash_slow().0;
+    let previous_header_hash = engine.head_hash().0;
     let mut interval_digest = batch::hash(
         b"tactus/o1/native-proof-interval/v2",
         &interval_batches.to_le_bytes(),
@@ -193,7 +193,7 @@ pub fn execute(
         previous_state_root,
         next_state_root: engine.state_root().0,
         previous_header_hash,
-        next_header_hash: engine.head().hash_slow().0,
+        next_header_hash: engine.head_hash().0,
         interval_digest,
     };
     Journal::decode(&journal.encode())?;

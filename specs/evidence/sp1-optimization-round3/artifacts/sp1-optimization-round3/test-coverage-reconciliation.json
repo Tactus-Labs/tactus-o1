@@ -1,0 +1,94 @@
+{
+  "earlier_suite_status": "complete",
+  "earlier_rust_test_count": 92,
+  "latest_sparse_tests": 12,
+  "latest_sparse_tests_replace_earlier": 8,
+  "new_single_aggregate_test_run_claimed": false,
+  "changed_previously_hashed_files": [
+    {
+      "path": "proofs/incremental-sp1/host/src/bin/prepare-sparse.rs",
+      "current_sha256": "b09ec7755e0608ced69861bd6c976c13731ad19d1c9aed7e6f291698f3c06c58",
+      "covering_completed_checks": [
+        "optimized host release build",
+        "25-case actual guest qualification",
+        "two canonical sparse executions",
+        "two real proofs and SDK verification"
+      ]
+    },
+    {
+      "path": "proofs/incremental-sp1/host/src/bin/qualify-sparse.rs",
+      "current_sha256": "79b025e14669005a51cadefd1810442d22ca31b281b8ead8dd5b60c1fdce3920",
+      "covering_completed_checks": [
+        "optimized host release build",
+        "25-case actual guest qualification",
+        "two canonical sparse executions",
+        "two real proofs and SDK verification"
+      ]
+    },
+    {
+      "path": "proofs/incremental-sp1/host/src/bin/sparse-chain-proof.rs",
+      "current_sha256": "0e69899e8c49141015513620e60d5cfa6656649f2b0b1f2cd9bbac2f071b25a2",
+      "covering_completed_checks": [
+        "optimized host release build",
+        "25-case actual guest qualification",
+        "two canonical sparse executions",
+        "two real proofs and SDK verification"
+      ]
+    },
+    {
+      "path": "proofs/incremental-sp1/journal/tests/continuity.rs",
+      "current_sha256": "5f5449ec64e56e3174d63c68a6e4803c097cbca708c9f4ce403f03f9f1667727",
+      "covering_completed_checks": [
+        "12 state/journal tests",
+        "25 Geth cases / 93 blocks in actual guest",
+        "two real proofs and CKB acceptance"
+      ]
+    },
+    {
+      "path": "proofs/incremental-sp1/state/src/database.rs",
+      "current_sha256": "9ad0903539d1be0534534cb1463f0bb324184e29472f4a0561844f42c67bbc7a",
+      "covering_completed_checks": [
+        "12 state/journal tests",
+        "25 Geth cases / 93 blocks in actual guest",
+        "two real proofs and CKB acceptance"
+      ]
+    },
+    {
+      "path": "proofs/incremental-sp1/state/src/trie.rs",
+      "current_sha256": "33582228201c2d93b25346ec1a2027b744c9fb72f54d0f088642a35e0ab7ed89",
+      "covering_completed_checks": [
+        "12 state/journal tests",
+        "25 Geth cases / 93 blocks in actual guest",
+        "two real proofs and CKB acceptance"
+      ]
+    },
+    {
+      "path": "proofs/incremental-sp1/state/tests/execution.rs",
+      "current_sha256": "224cf84531d569011f70f409c1713b40f3804c083aff84d013959d47863d9775",
+      "covering_completed_checks": [
+        "12 state/journal tests",
+        "25 Geth cases / 93 blocks in actual guest",
+        "two real proofs and CKB acceptance"
+      ]
+    },
+    {
+      "path": "scripts/check-settlement-reorg.py",
+      "current_sha256": "38832a4048ce4063d845c86dcfd2ca1421b66b6ed3764b8e650f91a0e836b235",
+      "covering_completed_checks": [
+        "retained checker regression tests",
+        "actual sparse two-settlement and P2P reorg evidence reconciliation"
+      ]
+    },
+    {
+      "path": "scripts/check-sparse-settlements.py",
+      "current_sha256": "27ea13b18829f1b1ec8ce78f0ca670eb659b3aeb79ef4e2a0d39ee5a5f1b5b5d",
+      "covering_completed_checks": [
+        "retained checker regression tests",
+        "actual sparse two-settlement and P2P reorg evidence reconciliation"
+      ]
+    }
+  ],
+  "sparse_pipeline_complete": true,
+  "formal_build_and_execution_checks_passed": true,
+  "ci_run": false
+}

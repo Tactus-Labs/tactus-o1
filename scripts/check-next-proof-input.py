@@ -13,7 +13,7 @@ spec.loader.exec_module(bootstrap)
 require, raw, digest = bootstrap.require, bootstrap.raw, bootstrap.digest
 
 
-def check_document(evidence):
+def check_document(evidence, **profile):
     results = evidence['results']
     require(results['suite'] == 'settlement-next-input-v1' and results['complete']
             and results['error'] is None and results['settled'] is False
@@ -23,7 +23,7 @@ def check_document(evidence):
     projected = copy.deepcopy(evidence)
     projected['evidence'] = projected['evidence'][:24]
     projected['results']['suite'] = 'settlement-bootstrap-v1'
-    bootstrap.check_document(projected)
+    bootstrap.check_document(projected, **profile)
     first, second = results['proving_input'], results['next_proving_input']
     record = evidence['evidence'][-1]
     require(record['label'] == 'settlement/second canonical batch and ending checkpoint'

@@ -1,0 +1,8 @@
+{
+  "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/proof-tools/chain-proof": "0b82c9b90a2b9c3bed31fb753fda866a9dcedb249adbec2bdf5791695a0ecbb5",
+  "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/adaptive.elf": "c6cd7bfcf175dafd6c8c903e7c40d429640af64d73107ef1edf31491d87a3c02",
+  "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/sparse-proof-tools/sparse-chain-proof": "a4765cd7c786319177e2fa97adfc10e43d84d79f6af1c013c506e70aca4c852c",
+  "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/sparse-proof-tools/prepare-sparse": "7bb0ac24bc76950f2604458a21a9ffb1ea939197110b85a98fca3440dc7461f7",
+  "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/sparse-candidate/guest.elf": "d867dfdba7c8300ce0da2bd75050cd02f035294e4a6d7a18c030281294cff590",
+  "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/run-history-qualification.py": "016477116d1bcd3760905fddc91540d6344f6b29f62b71b6c7f3e719dc74ef78"
+}

@@ -1,0 +1,1 @@
+/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/proof-threads8/resumed-proof

@@ -1,0 +1,255 @@
+{
+  "status": "complete",
+  "matrix_pid": 278412,
+  "matrix_starttime": "16011753",
+  "ci_run": false,
+  "checks": [
+    {
+      "name": "sparse-tests",
+      "command": [
+        "cargo",
+        "+1.97.1",
+        "test",
+        "--locked",
+        "--offline",
+        "--manifest-path",
+        "proofs/incremental-sp1/Cargo.toml",
+        "-p",
+        "tactus-o1-sparse-state",
+        "-p",
+        "tactus-o1-sparse-journal"
+      ],
+      "status": "passed",
+      "started_unix": 1792042759.4045455,
+      "log": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/optimized-1792042759396978183/sparse-tests.txt",
+      "exit_code": 0,
+      "elapsed_seconds": 3.046917200088501
+    },
+    {
+      "name": "host-build",
+      "command": [
+        "cargo",
+        "+1.97.1",
+        "build",
+        "--locked",
+        "--offline",
+        "--release",
+        "--manifest-path",
+        "proofs/incremental-sp1/Cargo.toml",
+        "-p",
+        "tactus-o1-sparse-sp1-host",
+        "--features",
+        "native-gnark",
+        "--bins"
+      ],
+      "status": "passed",
+      "started_unix": 1792042762.4516447,
+      "log": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/optimized-1792042759396978183/host-build.txt",
+      "exit_code": 0,
+      "elapsed_seconds": 161.6896333694458
+    },
+    {
+      "name": "guest-build",
+      "command": [
+        "bash",
+        "scripts/build-sparse-proof-guest.sh"
+      ],
+      "status": "passed",
+      "started_unix": 1792042924.2083333,
+      "log": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/optimized-1792042759396978183/guest-build.txt",
+      "exit_code": 0,
+      "elapsed_seconds": 71.26614785194397
+    },
+    {
+      "name": "geth-guest-qualification",
+      "command": [
+        "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/optimized-1792042759396978183/host/qualify-sparse",
+        "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/qualification-fixtures.json",
+        "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/optimized-1792042759396978183/qualification",
+        "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/optimized-1792042759396978183/guest.elf"
+      ],
+      "status": "passed",
+      "started_unix": 1792042995.4768362,
+      "log": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/optimized-1792042759396978183/geth-guest-qualification.txt",
+      "exit_code": 0,
+      "elapsed_seconds": 33.845306396484375
+    },
+    {
+      "name": "vkey",
+      "command": [
+        "/home/arthur/RustRoverProjects/tactus-o1/artifacts/prover-tools/cargo-prove",
+        "prove",
+        "vkey",
+        "--elf",
+        "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/optimized-1792042759396978183/guest.elf"
+      ],
+      "status": "passed",
+      "started_unix": 1792043029.3261793,
+      "log": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/optimized-1792042759396978183/vkey.txt",
+      "exit_code": 0,
+      "elapsed_seconds": 31.02553939819336
+    },
+    {
+      "name": "bootstrap",
+      "command": [
+        "bash",
+        "scripts/run-devnet-experiments.sh"
+      ],
+      "status": "passed",
+      "started_unix": 1792043060.6288748,
+      "log": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/optimized-1792042759396978183/bootstrap.txt",
+      "exit_code": 0,
+      "elapsed_seconds": 35.78788471221924
+    },
+    {
+      "name": "bootstrap-check",
+      "command": [
+        "python3",
+        "-B",
+        "scripts/check-sparse-settlements.py",
+        "/home/arthur/RustRoverProjects/tactus-o1/artifacts/settlement-bootstrap-uAUCwSMo/evidence.json",
+        "/home/arthur/RustRoverProjects/tactus-o1/artifacts/tactus_o1_sparse_settlement_script.elf",
+        "0x0017cf9eee019ac2f5933907aa0cf7cc50746d7a50d82504e31dede2fc1681a4"
+      ],
+      "status": "passed",
+      "started_unix": 1792043096.417136,
+      "log": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/optimized-1792042759396978183/bootstrap-check.txt",
+      "exit_code": 0,
+      "elapsed_seconds": 0.02314615249633789
+    },
+    {
+      "name": "continuation",
+      "command": [
+        "cargo",
+        "+1.97.1",
+        "run",
+        "--locked",
+        "--offline",
+        "-p",
+        "tactus-o1-execution",
+        "--example",
+        "settlement-continuation",
+        "--",
+        "/home/arthur/RustRoverProjects/tactus-o1/artifacts/settlement-bootstrap-uAUCwSMo/proving-input.json",
+        "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/optimized-1792042759396978183/continuation"
+      ],
+      "status": "passed",
+      "started_unix": 1792043096.4406395,
+      "log": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/optimized-1792042759396978183/continuation.txt",
+      "exit_code": 0,
+      "elapsed_seconds": 1.938718318939209
+    },
+    {
+      "name": "continuation-geth",
+      "command": [
+        "python3",
+        "-B",
+        "scripts/check-execution-geth.py",
+        "/home/arthur/RustRoverProjects/tactus-o1/artifacts/evm-tools/evm",
+        "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/optimized-1792042759396978183/continuation"
+      ],
+      "status": "passed",
+      "started_unix": 1792043098.3796415,
+      "log": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/optimized-1792042759396978183/continuation-geth.txt",
+      "exit_code": 0,
+      "elapsed_seconds": 0.12171292304992676
+    },
+    {
+      "name": "two-inputs",
+      "command": [
+        "bash",
+        "scripts/run-devnet-experiments.sh"
+      ],
+      "status": "passed",
+      "started_unix": 1792043098.5016,
+      "log": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/optimized-1792042759396978183/two-inputs.txt",
+      "exit_code": 0,
+      "elapsed_seconds": 4.398279190063477
+    },
+    {
+      "name": "two-inputs-check",
+      "command": [
+        "python3",
+        "-B",
+        "scripts/check-sparse-settlements.py",
+        "/home/arthur/RustRoverProjects/tactus-o1/artifacts/settlement-bootstrap-p32KISZW/evidence.json",
+        "/home/arthur/RustRoverProjects/tactus-o1/artifacts/tactus_o1_sparse_settlement_script.elf",
+        "0x0017cf9eee019ac2f5933907aa0cf7cc50746d7a50d82504e31dede2fc1681a4"
+      ],
+      "status": "passed",
+      "started_unix": 1792043102.9002662,
+      "log": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/optimized-1792042759396978183/two-inputs-check.txt",
+      "exit_code": 0,
+      "elapsed_seconds": 0.0283658504486084
+    },
+    {
+      "name": "prepare-first",
+      "command": [
+        "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/optimized-1792042759396978183/host/prepare-sparse",
+        "/home/arthur/RustRoverProjects/tactus-o1/artifacts/settlement-bootstrap-p32KISZW/proving-input.json",
+        "0",
+        "1",
+        "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/optimized-1792042759396978183/first-sparse-input.json"
+      ],
+      "status": "passed",
+      "started_unix": 1792043102.9290993,
+      "log": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/optimized-1792042759396978183/prepare-first.txt",
+      "exit_code": 0,
+      "elapsed_seconds": 0.0026292800903320312
+    },
+    {
+      "name": "prepare-second",
+      "command": [
+        "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/optimized-1792042759396978183/host/prepare-sparse",
+        "/home/arthur/RustRoverProjects/tactus-o1/artifacts/settlement-bootstrap-p32KISZW/proving-input-next.json",
+        "1",
+        "1",
+        "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/optimized-1792042759396978183/second-sparse-input.json"
+      ],
+      "status": "passed",
+      "started_unix": 1792043102.9319751,
+      "log": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/optimized-1792042759396978183/prepare-second.txt",
+      "exit_code": 0,
+      "elapsed_seconds": 0.0041408538818359375
+    },
+    {
+      "name": "first-guest-execute",
+      "command": [
+        "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/optimized-1792042759396978183/host/sparse-chain-proof",
+        "execute",
+        "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/optimized-1792042759396978183/guest.elf",
+        "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/optimized-1792042759396978183/first-sparse-input.json",
+        "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/optimized-1792042759396978183/first-execution"
+      ],
+      "status": "passed",
+      "started_unix": 1792043102.936343,
+      "log": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/optimized-1792042759396978183/first-guest-execute.txt",
+      "exit_code": 0,
+      "elapsed_seconds": 31.57669711112976
+    },
+    {
+      "name": "second-guest-execute",
+      "command": [
+        "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/optimized-1792042759396978183/host/sparse-chain-proof",
+        "execute",
+        "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/optimized-1792042759396978183/guest.elf",
+        "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/optimized-1792042759396978183/second-sparse-input.json",
+        "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/optimized-1792042759396978183/second-execution"
+      ],
+      "status": "passed",
+      "started_unix": 1792043134.5134637,
+      "log": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/optimized-1792042759396978183/second-guest-execute.txt",
+      "exit_code": 0,
+      "elapsed_seconds": 29.344642639160156
+    }
+  ],
+  "output": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/optimized-1792042759396978183",
+  "started_unix": 1792042759.3970132,
+  "guest_key": "0x0017cf9eee019ac2f5933907aa0cf7cc50746d7a50d82504e31dede2fc1681a4",
+  "bootstrap_directory": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/settlement-bootstrap-uAUCwSMo",
+  "two-inputs_directory": "/home/arthur/RustRoverProjects/tactus-o1/artifacts/settlement-bootstrap-p32KISZW",
+  "proofs_generated": false,
+  "actual_sparse_proof_acceptance": false,
+  "source_unchanged": true,
+  "finished_unix": 1792043163.8655188
+}

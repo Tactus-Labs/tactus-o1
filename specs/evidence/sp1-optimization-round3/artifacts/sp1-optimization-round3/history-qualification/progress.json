@@ -1,0 +1,39 @@
+{
+  "status": "complete",
+  "proof_generated": false,
+  "ckb_settlement": false,
+  "adjusted_environment_geth_checked": false,
+  "rows": [
+    {
+      "prefix_batches": 1,
+      "status": "complete",
+      "replay_instructions": 4034783,
+      "sparse_instructions": 7567180,
+      "frozen_replay_guest_transition_match": true,
+      "sparse_guest_prefix_batches": 0,
+      "sparse_instruction_change_percent": 87.54862405239638
+    },
+    {
+      "prefix_batches": 256,
+      "status": "complete",
+      "replay_instructions": 19836071,
+      "sparse_instructions": 19310116,
+      "frozen_replay_guest_transition_match": true,
+      "sparse_guest_prefix_batches": 0,
+      "sparse_instruction_change_percent": -2.6515079523560914
+    },
+    {
+      "prefix_batches": 1024,
+      "status": "complete",
+      "replay_instructions": 75831975,
+      "sparse_instructions": 19351431,
+      "frozen_replay_guest_transition_match": true,
+      "sparse_guest_prefix_batches": 0,
+      "sparse_instruction_change_percent": -74.48117235506527
+    }
+  ],
+  "started_unix": 1792028487.8380325,
+  "resume_coordinator_when_finished": 278412,
+  "finished_unix": 1792028660.8035529,
+  "matrix_resumed_unix": 1792028660.803623
+}

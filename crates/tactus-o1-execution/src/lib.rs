@@ -1,4 +1,7 @@
 //! Pinned serial execution. See specs/EXECUTION_V1.md for the rollup rules.
+pub mod backend;
+pub mod checkpoint;
+mod journal_db;
 pub mod store;
 use alloy_consensus::{
     transaction::SignerRecoverable, Header, Receipt, ReceiptEnvelope, Transaction, TxEnvelope,
@@ -9,17 +12,20 @@ use alloy_trie::{
     root::{ordered_trie_root_encoded, state_root_unhashed, storage_root_unhashed},
     TrieAccount, EMPTY_ROOT_HASH,
 };
+use backend::StateBackend;
+use journal_db::ExecutionTransaction;
+pub use journal_db::JournalDb;
 use revm::{
     context::{BlockEnv, TxEnv},
     context_interface::result::{EVMError, ExecutionResult},
     database::{AccountState, InMemoryDB},
     primitives::hardfork::SpecId,
     state::{AccountInfo, Bytecode},
-    Context, DatabaseCommit, ExecuteEvm, MainBuilder, MainContext,
+    Context, ExecuteEvm, MainBuilder, MainContext,
 };
 use serde::{Deserialize, Serialize};
 use std::collections::BTreeMap;
-use tactus_o1_protocol::batch::{self, AnchorState, BatchInput, BLOCK_GAS_LIMIT};
+use tactus_o1_protocol::batch::{self, AnchorState, BatchView, BLOCK_GAS_LIMIT};
 
 /// Genesis is an explicit input. It must eventually be authenticated by settlement.
 #[derive(Clone, Debug, PartialEq, Eq, Serialize, Deserialize)]
@@ -150,14 +156,14 @@ impl std::error::Error for Error {}
 
 /// Changes to these bytes require a new execution domain and regression vectors.
 pub fn rules_hash() -> [u8; 32] {
-    let mut descriptor = include_bytes!("../rules-v1.txt").to_vec();
-    descriptor.extend_from_slice(include_bytes!("../../../Cargo.lock"));
-    batch::hash(b"tactus/o1/execution-rules/v1", &descriptor)
+    EXECUTION_RULES_HASH
 }
 
+include!(concat!(env!("OUT_DIR"), "/execution_rules.rs"));
+
 #[derive(Clone, Debug)]
-pub struct Executor {
-    db: InMemoryDB,
+pub struct Executor<D = JournalDb> {
+    db: D,
     anchor: AnchorState,
     head: Header,
 }
@@ -166,7 +172,7 @@ impl Executor {
     pub fn new(genesis: &Genesis) -> Result<Self, Error> {
         genesis.allocation_bytes()?;
         let anchor = AnchorState::genesis(genesis.rollup_id.0, rules_hash(), genesis.chain_id)?;
-        let mut db = InMemoryDB::default();
+        let mut db = JournalDb::default();
         // With no issuance, this supply bound keeps all reachable base fees in
         // u64. It is explicit in the experimental rules, not silent saturation.
         let mut supply = U256::ZERO;
@@ -207,15 +213,22 @@ impl Executor {
         Ok(Self { db, anchor, head })
     }
 
-    pub fn anchor(&self) -> &AnchorState {
-        &self.anchor
+    /// Switch a fully derived state to an authenticated backend with identical
+    /// roots and current header. In particular, bootstrap first derives genesis
+    /// from its committed allocation, then switches without trusting a snapshot.
+    pub fn with_backend<D: StateBackend>(self, mut db: D) -> Result<Executor<D>, Error> {
+        if db.calculate_state_root()? != self.state_root()
+            || db.cached_header_hash(self.head.number) != Some(self.head_hash())
+        {
+            return Err(Error::Rules);
+        }
+        Ok(Executor {
+            db,
+            anchor: self.anchor,
+            head: self.head,
+        })
     }
-    pub fn head(&self) -> &Header {
-        &self.head
-    }
-    pub fn state_root(&self) -> B256 {
-        state_root(&self.db)
-    }
+
     pub fn account(&self, address: Address) -> Option<GenesisAccount> {
         let account = self.db.cache.accounts.get(&address)?;
         if account.account_state == AccountState::NotExisting || account.info.is_empty() {
@@ -238,6 +251,43 @@ impl Executor {
                 .collect(),
         })
     }
+}
+
+impl<D: StateBackend> Executor<D> {
+    /// Construct a continuation from a state backend that authenticated all
+    /// readable data and the recent header chain. The enclosing proof/settlement
+    /// must bind this boundary to its accepted predecessor; this is not authority.
+    pub fn from_state(mut db: D, anchor: AnchorState, head: Header) -> Result<Self, Error> {
+        AnchorState::decode(&anchor.encode())?;
+        if anchor.execution_rules_hash != rules_hash()
+            || anchor.next_batch_number == 0
+            || anchor.last_block_number < anchor.next_batch_number
+            || head.number != anchor.last_block_number
+            || head.timestamp != anchor.last_timestamp
+            || db.calculate_state_root()? != head.state_root
+            || db.cached_header_hash(head.number) != Some(head.hash_slow())
+        {
+            return Err(Error::Rules);
+        }
+        Ok(Self { db, anchor, head })
+    }
+    pub fn anchor(&self) -> &AnchorState {
+        &self.anchor
+    }
+    pub fn head(&self) -> &Header {
+        &self.head
+    }
+    pub fn head_hash(&self) -> B256 {
+        self.db
+            .cached_header_hash(self.head.number)
+            .expect("authenticated current header")
+    }
+    pub fn state_root(&self) -> B256 {
+        self.head.state_root
+    }
+    pub fn backend(&self) -> &D {
+        &self.db
+    }
 
     /// Whole-batch atomicity: invalid bytes and fatal engine errors never leave
     /// partial state. Invalid *transaction slots* instead have total outcomes.
@@ -245,9 +295,9 @@ impl Executor {
         if self.anchor.execution_rules_hash != rules_hash() {
             return Err(Error::Rules);
         }
-        let summary = batch::validate_batch(bytes, &self.anchor)?;
-        let input = BatchInput::decode(bytes, &self.anchor)?;
-        let mut working = self.clone();
+        let (input, summary) = BatchView::decode_with_summary(bytes, &self.anchor)?;
+        let mut transaction = ExecutionTransaction::new(self);
+        let working = &mut *transaction;
         let mut blocks = Vec::with_capacity(input.blocks.len());
         for block in input.blocks {
             let number = working
@@ -277,7 +327,7 @@ impl Executor {
             let mut bloom = Bloom::ZERO;
             for raw in block.transactions {
                 let mut outcome = SlotOutcome {
-                    input_hash: keccak256(&raw),
+                    input_hash: keccak256(raw),
                     status: Status::Malformed,
                     gas_used: 0,
                     output: Bytes::new(),
@@ -285,7 +335,7 @@ impl Executor {
                     transaction_index: None,
                 };
                 let (envelope, tx) = match decode_transaction(
-                    &raw,
+                    raw,
                     working.anchor.chain_id,
                     BLOCK_GAS_LIMIT - gas_used,
                 ) {
@@ -343,9 +393,9 @@ impl Executor {
                     },
                 );
                 bloom |= *receipt.logs_bloom();
-                working.db.commit(result.state);
+                working.db.commit_changes(result.state)?;
                 receipts.push(receipt);
-                transactions.push(Bytes::from(raw));
+                transactions.push(Bytes::copy_from_slice(raw));
                 outcomes.push(outcome);
             }
             let outcome_root = outcomes_commitment(
@@ -355,9 +405,15 @@ impl Executor {
                 &outcomes,
             );
             let header = Header {
-                parent_hash: working.head.hash_slow(),
+                parent_hash: working.head_hash(),
                 beneficiary: env.beneficiary,
-                state_root: state_root(&working.db),
+                // Rejected slots and empty blocks cannot change EVM state. They
+                // still produce a new header, outcomes and base-fee transition.
+                state_root: if transactions.is_empty() {
+                    working.head.state_root
+                } else {
+                    working.db.calculate_state_root()?
+                },
                 transactions_root: ordered_trie_root_encoded(&transactions),
                 receipts_root: ordered_trie_root_encoded(
                     &receipts
@@ -376,16 +432,7 @@ impl Executor {
                 ..Default::default()
             };
             let hash = header.hash_slow();
-            working
-                .db
-                .cache
-                .block_hashes
-                .insert(U256::from(number), hash);
-            working
-                .db
-                .cache
-                .block_hashes
-                .retain(|n, _| *n >= U256::from(number.saturating_sub(255)));
+            working.db.record_header(number, hash);
             working.head = header.clone();
             blocks.push(ExecutedBlock {
                 header,
@@ -396,7 +443,7 @@ impl Executor {
             });
         }
         working.anchor = summary.next;
-        *self = working;
+        transaction.accept();
         Ok(blocks)
     }
 }

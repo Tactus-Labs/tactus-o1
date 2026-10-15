@@ -1,0 +1,12 @@
+{
+  "manifest_toml_parse": true,
+  "sparse_profile_python_reference": "92a14351b5537c7b6467995e5da38033a4f1ede99df6b874e4775bd00d4df2d8",
+  "rustfmt_parse": true,
+  "shell_syntax": true,
+  "rust_compilation": false,
+  "tests_run": false,
+  "proof_generated": false,
+  "incremental_lock_offline_resolution": true,
+  "root_lock_unchanged": true,
+  "guest_lazy_static_ckb_mode": false
+}

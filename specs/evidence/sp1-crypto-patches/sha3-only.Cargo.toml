@@ -1,0 +1,8 @@
+[workspace]
+resolver = "2"
+members = ["journal", "guest", "host", "wrong-guest"]
+[profile.release]
+debug = 0
+
+[patch.crates-io]
+sha3 = { package = "sha3", git = "https://github.com/sp1-patches/RustCrypto-hashes", rev = "540d99e46fbe7aab00caf83c4144cb4eaaf62a17" }

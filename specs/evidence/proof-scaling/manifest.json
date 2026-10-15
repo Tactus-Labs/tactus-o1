@@ -1,0 +1,18 @@
+{
+  "proof_generated": false,
+  "production_modified": false,
+  "elf_sha256": {
+    "baseline": "7ffaa9eb909684c15fee884aeccf815a856fff0feffb8108662041f926acd018",
+    "profiled": "8f87a6e996d1be76e537135afe8430a5c40ea518e65868be7c5d1103594bd76a",
+    "memoized": "cc3df4588b412635ee1105d7eb5d8f85d555489461c9657c298c4cc3e1afe60b"
+  },
+  "input_sha256": "18256003ea4042beabbb38e9c930550c0d17d64ace36732f5c45de4bd6865d93",
+  "profile_host_features": [
+    "sp1-sdk/profiling"
+  ],
+  "profile_host_sha256": "1aac5d769ade28479d13cca0bf424b055e5cb73e8c12ea7e27a5ab0d813f5224",
+  "geth_fixture_sha256": "dbdadec48daf8657b84b16c8d6ca0efd5653912e27939cf44450145cd7858232",
+  "profile_repeat_exact_instruction_gas_and_public_match": true,
+  "inputs": "specs/evidence/sealed-chain-proof/proving-input.json",
+  "baseline_elf": "specs/evidence/sp1-crypto-patches/combined.elf.gz"
+}

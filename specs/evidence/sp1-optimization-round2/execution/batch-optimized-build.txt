@@ -1,0 +1,6 @@
+cargo:warning=rustc +succinct --version: "rustc 1.96.0-dev\n"
+[sp1]     Compiling tactus-o1-execution v0.1.0 (/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round2/source/crates/tactus-o1-execution)
+[sp1]     Compiling tactus-o1-proof-journal v0.1.0 (/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round2/source/proofs/sp1/journal)
+[sp1]     Compiling tactus-o1-sp1-guest v0.1.0 (/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round2/source/proofs/sp1/guest)
+[sp1]      Finished `release` profile [optimized] target(s) in 2.64s
+cargo:rustc-env=SP1_ELF_tactus-o1-sp1-guest=/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round2/source/proofs/sp1/target/elf-compilation/riscv64im-succinct-zkvm-elf/release/tactus-o1-sp1-guest

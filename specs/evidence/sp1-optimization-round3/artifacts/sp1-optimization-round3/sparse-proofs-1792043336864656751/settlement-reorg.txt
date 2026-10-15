@@ -1,0 +1,79 @@
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.09s
+info: component rust-std for target riscv64imac-unknown-none-elf is up to date
+    Finished `release` profile [optimized + debuginfo] target(s) in 0.04s
+09089e98f1108895dd118d9cf34c6f253a6e24540b690e6e6eafff6b8ecd9ea5  artifacts/tactus_o1_ordering_script.elf
+b9965fdffd30639460644db75b3ac5104a50f4c56107396a4f353ac9eec565d6  artifacts/tactus_o1_head_lock.elf
+03d2bfe5fbd64ec943d948c1422fb804b3fd867591a9576a25b29f2aa577b0b6  artifacts/tactus_o1_anchor_script.elf
+99d9dc065c4fe59dc9c7d71fbed39aedb91fc089169c9b4c88b271b2e28d3724  artifacts/tactus_o1_priority_script.elf
+ea6e829534ec9c0bc0288952bf09df98d1dd6e686c359cb671956b3affaa3de9  artifacts/tactus_o1_sealed_script.elf
+    Finished `release` profile [optimized] target(s) in 0.00s
+a83425a3553bda4d6836c9a561e50be48b39852e029bc4f1c639a4e0533da6cc  artifacts/tactus_o1_history_checkpoint_script.elf
+warning: hiding a lifetime that's elided elsewhere is confusing
+   --> /home/arthur/RustRoverProjects/tactus-o1/proofs/vendor/substrate-bn-succinct-rs-0.6.0/src/arith.rs:411:17
+    |
+411 |     pub fn bits(&self) -> BitIterator {
+    |                 ^^^^^     ^^^^^^^^^^^ the same lifetime is hidden here
+    |                 |
+    |                 the lifetime is elided here
+    |
+    = help: the same lifetime is referred to in inconsistent ways, making the signature confusing
+    = note: `#[warn(mismatched_lifetime_syntaxes)]` on by default
+help: use `'_` for type paths
+    |
+411 |     pub fn bits(&self) -> BitIterator<'_> {
+    |                                      ++++
+
+warning: `substrate-bn-succinct-rs` (lib) generated 1 warning (run `cargo fix --lib -p substrate-bn-succinct-rs` to apply 1 suggestion)
+    Finished `release` profile [optimized] target(s) in 0.02s
+c8d0afe795225a0edebc969256f5e43920ac2b047f2159f636530fd6f22a0b36  artifacts/tactus_o1_sparse_settlement_script.elf
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.08s
+Evidence directory: /home/arthur/RustRoverProjects/tactus-o1/artifacts/settlement-bootstrap-IVPi3i2V
+deploy immutable code and independent actor funds: committed 0x7f43b48b3f819d684e8e01b80e731bd5884d2c7e49d6a39d0d6e6e258c78142a
+settlement/deploy immutable programs: committed 0x9370de20d9cd917c5f90c4adea68d90750720f8b2713e6c2106e094c325e8402
+settlement/reserved: rejected (error code 3)
+settlement/unproved-initial-state: rejected (error code 3)
+settlement/unproved-initial-header: rejected (error code 3)
+settlement/initialized-before-proof: rejected (error code 3)
+settlement/short-tip: rejected (error code 3)
+settlement/wrong-allocation: rejected (error code 4)
+settlement/no-anchor-genesis: rejected (error code 4)
+settlement/duplicate-tip: rejected (error code 2)
+settlement/atomic Anchor and uninitialized Tip genesis: committed 0x3b1a077d5fb4108b204d4002e909c06b24a18ca7dc93b674606c93febd0addfb
+settlement/late-bootstrap-from-anchor-dependency: rejected (error code 4)
+settlement/canonical batch and ending checkpoint: committed 0x44ed65dee7f760912c8417801db01fc500b0a1b80a382b20dbaf7927c942782b
+settlement/missing-authenticated-checkpoint: rejected (error code 8)
+settlement/malformed-proof-rejected: rejected (error code 9)
+settlement/binding-network: rejected (error code 6)
+settlement/binding-ordering: rejected (error code 6)
+settlement/binding-settlement: rejected (error code 6)
+settlement/binding-allocation: rejected (error code 6)
+settlement/binding-predecessor: rejected (error code 7)
+settlement/binding-ending-history: rejected (error code 7)
+settlement/binding-state: rejected (error code 7)
+settlement/binding-header: rejected (error code 7)
+settlement/empty-proof: rejected (error code 5)
+settlement/proved-profile-tamper: rejected (error code 6)
+settlement/proved-network-tamper: rejected (error code 6)
+settlement/proved-ordering-tamper: rejected (error code 6)
+settlement/proved-settlement-tamper: rejected (error code 6)
+settlement/proved-rollup-tamper: rejected (error code 6)
+settlement/proved-chain-tamper: rejected (error code 6)
+settlement/proved-allocation-tamper: rejected (error code 6)
+settlement/proved-predecessor-tamper: rejected (error code 7)
+settlement/proved-ending-history-tamper: rejected (error code 7)
+settlement/proved-previous-state-tamper: rejected (error code 9)
+settlement/proved-next-state-tamper: rejected (error code 7)
+settlement/proved-previous-header-tamper: rejected (error code 9)
+settlement/proved-next-header-tamper: rejected (error code 7)
+settlement/proved-interval-data-tamper: rejected (error code 9)
+settlement/proof-byte-0-tamper: rejected (error code 9)
+settlement/proof-byte-355-tamper: rejected (error code 9)
+settlement/coordinated-state-tamper: rejected (error code 9)
+settlement/coordinated-header-tamper: rejected (error code 9)
+settlement/first real proof transition: committed 0xc6abcc12f2aade32b2256ea4d448da1eb3b10ba7dcbc9fca22ae913bba7fcf76
+settlement/replay-on-live-successor: rejected (error code 7)
+settlement/rollback-to-genesis: rejected (error code 7)
+settlement-reorg/orphan transaction old funding: rejected (TransactionFailedToResolve)
+settlement-reorg/recovered proof with fresh funding: committed 0xa0a9d1ce0940dec71d66307cca2548bdc33a6d97dadf0394eee9e8f4092a77c2
+{"committed_evidence_records": 7, "rejected_records": 41}
+Complete: /home/arthur/RustRoverProjects/tactus-o1/artifacts/settlement-bootstrap-IVPi3i2V/summary.json

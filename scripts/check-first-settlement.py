@@ -38,7 +38,7 @@ def check_consumption(measured, predecessor, successor):
             and sum(i['previous_output'] == point for i in inputs) == 1, 'successor does not consume predecessor')
 
 
-def check_document(evidence, proof_dir):
+def check_document(evidence, proof_dir, **profile):
     results = evidence['results']
     require(results['suite'] == 'settlement-first-proof-v1' and results['complete']
             and results['error'] is None and results['settled'] is True,
@@ -54,7 +54,7 @@ def check_document(evidence, proof_dir):
     projected['evidence'] = projected['evidence'][:24]
     projected['results']['suite'] = 'settlement-bootstrap-v1'
     projected['results']['settled'] = False
-    bootstrap.check_document(projected)
+    bootstrap.check_document(projected, **profile)
     export = results['proving_input']
     journal = (proof_dir / 'public-values.bin').read_bytes()
     proof = (proof_dir / 'groth16-proof.bin').read_bytes()

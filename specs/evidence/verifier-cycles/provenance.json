@@ -1,0 +1,21 @@
+[
+  {
+    "crate": "sp1-verifier",
+    "version": "6.8.1",
+    "archive_sha256": "aca7223cc7a77e42536c7229c8016672737aab07f6149097d9c7a26324b29814",
+    "unchanged_upstream_files": 31,
+    "modified_files": [
+      "src/groth16/verify.rs"
+    ]
+  },
+  {
+    "crate": "substrate-bn-succinct-rs",
+    "version": "0.6.0",
+    "archive_sha256": "a241fd7c1016fb8ad30fcf5a20986c0c4538e8f15a1b41a1761516299e377ec1",
+    "unchanged_upstream_files": 23,
+    "modified_files": [
+      "Cargo.toml",
+      "src/arith.rs"
+    ]
+  }
+]

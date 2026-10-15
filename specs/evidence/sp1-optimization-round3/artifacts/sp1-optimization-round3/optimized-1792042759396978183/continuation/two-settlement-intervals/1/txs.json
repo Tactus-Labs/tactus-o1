@@ -1,0 +1,56 @@
+[
+  {
+    "accessList": [],
+    "chainId": "0x7a69",
+    "gas": "0x493e0",
+    "hash": "0xc50a64b8bacdc9be041cff61db07100d117e540a291623af17b5b93b36fd22ce",
+    "input": "0x",
+    "maxFeePerGas": "0x77359400",
+    "maxPriorityFeePerGas": "0x3b9aca00",
+    "nonce": "0x0",
+    "r": "0x898a258f443c459077879d663a191792694a74014ca9e5905ef3372f43addb3a",
+    "s": "0x52fb44b63c51c9e4385057d6dae03f198a62900d72c527ffcdef76482429b723",
+    "to": "0x1111111111111111111111111111111111111111",
+    "type": "0x2",
+    "v": "0x1",
+    "value": "0x7b",
+    "yParity": "0x1"
+  },
+  {
+    "chainId": "0x7a69",
+    "gas": "0x5208",
+    "gasPrice": "0x77359400",
+    "hash": "0x95f972313958228a44d7c0669adbe94f50c9e29fe5d6c0db157705597bb4048b",
+    "input": "0x",
+    "nonce": "0x1",
+    "r": "0x6d3cadb7d35855c2f9a9ac5bf29007dcea22239fddbb5eb4d7d9f479d689c552",
+    "s": "0x133ec974e0101ed3fc62090ea71e692fbe6560d4f8ffeb53b18bcc24f04efda",
+    "to": "0x1111111111111111111111111111111111111111",
+    "type": "0x0",
+    "v": "0xf4f5",
+    "value": "0x1c8"
+  },
+  {
+    "accessList": [
+      {
+        "address": "0x3333333333333333333333333333333333333333",
+        "storageKeys": [
+          "0x0000000000000000000000000000000000000000000000000000000000000000"
+        ]
+      }
+    ],
+    "chainId": "0x7a69",
+    "gas": "0xc350",
+    "gasPrice": "0x77359400",
+    "hash": "0xae0e9835688e2bb08cb2f6e8485ca3367e627839f3938dc2d058512495bfdad9",
+    "input": "0x",
+    "nonce": "0x2",
+    "r": "0x7fe7062f908d9fa37c3651f9829030046056249740c06c309c184b115bc079d9",
+    "s": "0x66812860c474a2df6630a6a439632cc67aafa2706800f61cd50d87b620cc6b3e",
+    "to": "0x1111111111111111111111111111111111111111",
+    "type": "0x1",
+    "v": "0x0",
+    "value": "0x315",
+    "yParity": "0x0"
+  }
+]

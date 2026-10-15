@@ -1,0 +1,5 @@
+INFO [10-15|13:44:58.447] Trie dumping started                     root=1afe4d..484698
+INFO [10-15|13:44:58.447] Trie dumping complete                    accounts=3 elapsed="128.422µs"
+INFO [10-15|13:44:58.447] Wrote file                               file=/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/optimized-1792042759396978183/continuation/two-settlement-intervals/2/post-alloc.json
+INFO [10-15|13:44:58.447] Wrote file                               file=/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/optimized-1792042759396978183/continuation/two-settlement-intervals/2/result.json
+INFO [10-15|13:44:58.447] Wrote file                               file=/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/optimized-1792042759396978183/continuation/two-settlement-intervals/2/body.rlp

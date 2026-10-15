@@ -1,0 +1,33 @@
+   Compiling serde_json v1.0.151
+   Compiling tactus-o1-protocol v0.1.0 (/home/arthur/RustRoverProjects/tactus-o1/crates/tactus-o1-protocol)
+   Compiling tactus-o1-execution v0.1.0 (/home/arthur/RustRoverProjects/tactus-o1/crates/tactus-o1-execution)
+   Compiling tactus-o1-proof-journal v0.1.0 (/home/arthur/RustRoverProjects/tactus-o1/proofs/sp1/journal)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 2.91s
+     Running unittests src/lib.rs (proofs/sp1/target/debug/deps/tactus_o1_proof_journal-48b80c957aef4faa)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/checkpoint.rs (proofs/sp1/target/debug/deps/checkpoint-45d07a3dbfba55a5)
+
+running 1 test
+test bootstrap_and_continuation_match_replay_with_distinct_profile ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+     Running tests/statement.rs (proofs/sp1/target/debug/deps/statement-aabe5c92cdb16ef5)
+
+running 3 tests
+test rejects_empty_overflow_wrong_domain_and_noncanonical_journal ... ok
+test prefix_is_executed_and_order_and_allocation_cannot_be_substituted ... ok
+test real_signed_fixtures_commit_exact_host_and_geth_results ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.08s
+
+   Doc-tests tactus_o1_proof_journal
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

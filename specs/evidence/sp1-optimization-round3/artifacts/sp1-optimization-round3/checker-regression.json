@@ -1,0 +1,12 @@
+[
+  {
+    "check": "test-first-settlement",
+    "exit_code": 0,
+    "seconds": 0.14291511000192259
+  },
+  {
+    "check": "test-two-settlements",
+    "exit_code": 0,
+    "seconds": 0.19923657100298442
+  }
+]

@@ -1,0 +1,28 @@
+{
+  "runs": [
+    {
+      "name": "threads4",
+      "comparable_seconds": 1600.402247274002,
+      "pipeline_seconds": 1601.043537685,
+      "total_including_fresh_verification_seconds": 1640.3048034130043,
+      "fresh_verification": true,
+      "negative_controls_count": 15,
+      "recursive_max_rss_kib": 20488400,
+      "sample_count": 1
+    },
+    {
+      "name": "threads8",
+      "comparable_seconds": 1156.604355816998,
+      "pipeline_seconds": 1157.2547682400036,
+      "total_including_fresh_verification_seconds": 1185.6198938190064,
+      "fresh_verification": true,
+      "negative_controls_count": 15,
+      "recursive_max_rss_kib": 20640392,
+      "sample_count": 1
+    }
+  ],
+  "comparable_reduction_percent": 27.730396668271005,
+  "same_input_and_frozen_elf": true,
+  "incremental_source_tested": false,
+  "single_sample_not_statistical_estimate": true
+}

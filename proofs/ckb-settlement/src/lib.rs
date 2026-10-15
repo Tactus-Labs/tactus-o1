@@ -10,6 +10,16 @@ pub const MAX_CELLS: usize = 64;
 pub const MAX_WITNESS_BYTES: usize = 8192;
 pub const MAX_PROOF_BYTES: usize = 4096;
 // Exact TO1PRF01 execution profile committed by the pinned guest.
+#[cfg(not(feature = "sparse-proof"))]
+pub const JOURNAL_MAGIC: &[u8; 8] = b"TO1PRF01";
+#[cfg(feature = "sparse-proof")]
+pub const JOURNAL_MAGIC: &[u8; 8] = b"TO1SPF01";
+#[cfg(feature = "sparse-proof")]
+pub const PROFILE: [u8; 32] = [
+    0x92, 0xa1, 0x43, 0x51, 0xb5, 0x53, 0x7c, 0x7b, 0x64, 0x67, 0x99, 0x5e, 0x5d, 0xa3, 0x80, 0x33,
+    0xa4, 0xf1, 0xed, 0xe9, 0x9d, 0xf6, 0xb8, 0x74, 0xe4, 0x77, 0x5b, 0xd0, 0x0d, 0x4d, 0xf2, 0xd8,
+];
+#[cfg(not(feature = "sparse-proof"))]
 pub const PROFILE: [u8; 32] = [
     0xf0, 0xb9, 0x90, 0x68, 0x40, 0xf2, 0xa4, 0x42, 0x6a, 0x84, 0x07, 0x58, 0x41, 0xa3, 0x9f, 0xcb,
     0xbd, 0x9d, 0x3f, 0xce, 0xc0, 0x61, 0x7d, 0x0e, 0x7e, 0xb1, 0x99, 0x7f, 0x74, 0xaf, 0x1f, 0x38,
@@ -142,7 +152,7 @@ pub fn transition(
 ) -> Result<(), i8> {
     Tip::decode(&before.encode())?;
     Tip::decode(&after.encode())?;
-    if &journal[..8] != b"TO1PRF01"
+    if &journal[..8] != JOURNAL_MAGIC
         || journal[8..40] != PROFILE
         || journal[40..72] != config.ckb_genesis
         || journal[72..104] != config.anchor_type_hash
@@ -165,7 +175,13 @@ pub fn transition(
         || before.anchor[96..] != after.anchor[96..]
         || number(&before.anchor[40..48]) >= number(&after.anchor[40..48])
         || number(&before.anchor[80..88]) >= number(&after.anchor[80..88])
-        || number(&before.anchor[88..96]) >= number(&after.anchor[88..96])
+        || if cfg!(feature = "sparse-proof") {
+            // Batch execution permits equal timestamps. Batch and block numbers
+            // still advance strictly; sparse settlement must preserve this rule.
+            number(&before.anchor[88..96]) > number(&after.anchor[88..96])
+        } else {
+            number(&before.anchor[88..96]) >= number(&after.anchor[88..96])
+        }
     {
         return Err(7);
     }
@@ -372,6 +388,10 @@ mod tests {
         for (i, out) in journal.iter_mut().enumerate() {
             *out = u8::from_str_radix(&text[i * 2..i * 2 + 2], 16).unwrap();
         }
+        // Structural fixture only. Translating identifiers does not produce a
+        // cryptographic proof and must never enter the retained-proof test above.
+        journal[..8].copy_from_slice(JOURNAL_MAGIC);
+        journal[8..40].copy_from_slice(&PROFILE);
         let config = Config {
             ckb_genesis: journal[40..72].try_into().unwrap(),
             anchor_type_hash: journal[72..104].try_into().unwrap(),
@@ -423,6 +443,17 @@ mod tests {
         assert!(transition(&config, &changed, &before, &after, &journal).is_err());
     }
     #[test]
+    fn other_execution_profile_is_not_accepted_by_this_script() {
+        let (config, own, before, after, mut journal) = fixture();
+        let other: &[u8; 8] = if JOURNAL_MAGIC == b"TO1SPF01" {
+            b"TO1PRF01"
+        } else {
+            b"TO1SPF01"
+        };
+        journal[..8].copy_from_slice(other);
+        assert!(transition(&config, &own, &before, &after, &journal).is_err());
+    }
+    #[test]
     fn later_intervals_require_both_predecessor_roots_and_strict_progress() {
         let (config, own, _, before, mut journal) = fixture();
         let mut after = before.clone();
@@ -449,8 +480,29 @@ mod tests {
             stale.anchor[range.clone()].copy_from_slice(&before.anchor[range]);
             let mut changed = journal;
             changed[408..608].copy_from_slice(&stale.anchor);
-            assert_eq!(transition(&config, &own, &before, &stale, &changed), Err(7));
+            let expected = if cfg!(feature = "sparse-proof")
+                && stale.anchor[88..96] == before.anchor[88..96]
+                && stale.anchor[40..48] != before.anchor[40..48]
+                && stale.anchor[80..88] != before.anchor[80..88]
+            {
+                Ok(())
+            } else {
+                Err(7)
+            };
+            assert_eq!(
+                transition(&config, &own, &before, &stale, &changed),
+                expected
+            );
         }
+        let mut backwards = after.clone();
+        backwards.anchor[88..96]
+            .copy_from_slice(&(number(&before.anchor[88..96]) - 1).to_le_bytes());
+        let mut changed = journal;
+        changed[408..608].copy_from_slice(&backwards.anchor);
+        assert_eq!(
+            transition(&config, &own, &before, &backwards, &changed),
+            Err(7)
+        );
         let mut changed = journal;
         changed[208..408].copy_from_slice(&after.anchor);
         assert_eq!(transition(&config, &own, &before, &after, &changed), Err(7));

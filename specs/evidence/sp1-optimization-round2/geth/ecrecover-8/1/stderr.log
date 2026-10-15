@@ -1,0 +1,5 @@
+INFO [10-15|01:28:23.579] Trie dumping started                     root=04f1b4..4c8826
+INFO [10-15|01:28:23.579] Trie dumping complete                    accounts=2 elapsed="68.489µs"
+INFO [10-15|01:28:23.579] Wrote file                               file=/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-workloads/ecrecover-8/1/post-alloc.json
+INFO [10-15|01:28:23.579] Wrote file                               file=/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-workloads/ecrecover-8/1/result.json
+INFO [10-15|01:28:23.579] Wrote file                               file=/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-workloads/ecrecover-8/1/body.rlp

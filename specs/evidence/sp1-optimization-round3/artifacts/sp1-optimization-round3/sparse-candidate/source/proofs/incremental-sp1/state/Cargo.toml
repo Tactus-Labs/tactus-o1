@@ -1,0 +1,19 @@
+[package]
+name = "tactus-o1-sparse-state"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tactus-o1-execution = { path = "../../../crates/tactus-o1-execution" }
+tactus-o1-protocol = { path = "../../../crates/tactus-o1-protocol" }
+alloy-primitives = { version = "=1.6.0", features = ["serde"] }
+alloy-consensus = { version = "=2.1.1", features = ["serde"] }
+alloy-rlp = "=0.3.16"
+alloy-trie = { version = "=0.9.8", features = ["ethereum"] }
+revm = { version = "=43.0.3", default-features = false, features = ["std", "portable"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+[dev-dependencies]
+alloy-eips = "=2.1.1"
+k256 = { version = "0.13", features = ["ecdsa"] }

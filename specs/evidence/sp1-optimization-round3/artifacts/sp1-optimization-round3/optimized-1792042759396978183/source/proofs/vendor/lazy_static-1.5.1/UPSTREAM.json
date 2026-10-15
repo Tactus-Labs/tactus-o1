@@ -1,0 +1,12 @@
+{
+  "crate": "lazy_static",
+  "version": "1.5.1",
+  "registry_source": "registry+https://github.com/rust-lang/crates.io-index",
+  "crate_sha256": "20870f649af7073d53e38067b2a84312175d56ea15217e1b15bc83506ec50afb",
+  "checksum_already_pinned_in": "cccce1c:proofs/ckb-proof-check/Cargo.lock",
+  "modified_upstream_files": [
+    "Cargo.toml",
+    "src/lib.rs"
+  ],
+  "added_runtime_file": "src/ckb_lazy.rs"
+}

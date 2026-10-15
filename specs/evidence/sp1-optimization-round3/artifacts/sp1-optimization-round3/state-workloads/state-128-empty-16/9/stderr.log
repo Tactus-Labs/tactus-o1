@@ -1,0 +1,5 @@
+INFO [10-15|08:33:19.315] Trie dumping started                     root=dc3c59..4b50ee
+INFO [10-15|08:33:19.316] Trie dumping complete                    accounts=129 elapsed="885.643µs"
+INFO [10-15|08:33:19.316] Wrote file                               file=/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/state-workloads/state-128-empty-16/9/post-alloc.json
+INFO [10-15|08:33:19.316] Wrote file                               file=/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/state-workloads/state-128-empty-16/9/result.json
+INFO [10-15|08:33:19.316] Wrote file                               file=/home/arthur/RustRoverProjects/tactus-o1/artifacts/sp1-optimization-round3/state-workloads/state-128-empty-16/9/body.rlp
