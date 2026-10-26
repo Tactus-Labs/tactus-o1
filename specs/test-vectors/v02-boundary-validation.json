@@ -1,0 +1,265 @@
+{
+  "schema": "tactus-v02-boundary-validation-v1",
+  "qualification": "partial original 0.02 acceptance; not release signoff or public-custody qualification",
+  "source_git_head": "c52a10388213e9881eba90e7eaa05c7a4c7a2922",
+  "working_tree_dirty": true,
+  "sources": {
+    "services/v02-lab/src/lib.rs": "7a59d5f1ecfc7b6998cd383661fae9493556432d70a2805ca906908ac9b1b1bb",
+    "services/v02-lab/src/build.rs": "ab294e2980201222cb293640d1e06e59a08e29829c7021cf38203887f5712fc4",
+    "services/v02-lab/src/recover.rs": "1be2da722c3d7244f2b30fb9b80b29a4636914009fd6dbde0139d7732ee0fcb6",
+    "services/v02-lab/src/nullifiers.rs": "cfb6bc05ebaf9a02a447bcba9ac8a23b9c6554a3b8e5f7773032afa23a9fdf38",
+    "services/v02-lab/src/state_proof.rs": "a5cad844d1b826164eda43de3853fa62a5693b32b99127539a7e25cd4e683f37",
+    "services/v02-lab/src/claim_export.rs": "66fe15c5b9ba47488ad5ed21cb0d95be6160ab4ef9464e1fea65f3b3378c9a25",
+    "services/v02-lab/src/observer.rs": "d1a3dddcbabdd777269f9c9e039d370c5a1fc2f260cd65575375cef774a2f01a",
+    "services/v02-lab/src/operations.rs": "f90e243e3b500aa06cfbbfa66051845cf0711d9b861348d78e1b8cd9ae4e12e5",
+    "services/v02-lab/src/contention.rs": "f292766504ab2484789a4860b2128e79ca3b1dbb699bf1f66e931bf94e0ae916",
+    "services/v02-lab/src/limits.rs": "648dd683f7224caa476ad3e674b941b53e50a058add14ae21b7a69bab59bd312",
+    "services/v02-lab/src/backpressure.rs": "ee829f35aca8161b70fd2c7c7e79445b7bed99ab6b95a9581bb9260dab8ea891",
+    "services/v02-lab/src/bin/recover-v02.rs": "d26c480d0713da88f360e9dc39f81235d6e3af8ee7deccd7e6f056da31581afd",
+    "services/v02-lab/src/bin/replay-v02.rs": "4fc0f25afbaa09169e0f48e6cf30571eeac1b433f5b99b3845943a83f9338eb0",
+    "services/v02-lab/src/bin/observe-v02.rs": "77d6a8f37fa2191a6e8a45d222410ccbef1a31cfccde9c4b1f9da2c195b6f9c5",
+    "services/v02-lab/src/bin/mixed-input-v02.rs": "6868b52d7e8b5d7c2054b5ce8bea93899717339848d8d5faae18ff9131615027",
+    "services/v02-lab/tests/claim_export.rs": "f51f923e4543a144917cd212325e93a9eec87eba6c1282d1a61bb225e9466874",
+    "services/v02-lab/tests/watch_status.rs": "c3fc891a6cf7269f69d1c493bd166e022f1c1e27716a1ffb8f7fa11ff870c44c",
+    "proofs/ckb-v02/src/lib.rs": "101812d63f563ebd28ff2709fb209fd394ea7a9a88d04ac4e607ac0eba148156",
+    "proofs/ckb-v02/src/claims.rs": "341f52044cfcec8d5119266d1d6b509d8e66e772ea0cd4ec505c2e2d05ba7e3b",
+    "proofs/ckb-v02/src/adapter.rs": "8403ca98e421a56fcf4ffc8792eed15804f5538dfd71229baae23bd48bc40894",
+    "proofs/ckb-v02/src/onchain.rs": "362e924ecdef8f157487c599cf21bf652fcd401f7d0314b30880a7bea58751b4",
+    "proofs/ckb-v02/tests/claims.rs": "26be4293b6bc35eec3277cd4c5c853689ebecbc863dd061e49729fd884bc4bd5",
+    "proofs/ckb-v02/tests/vm.rs": "73c8e3f7783e926e5ceff4e1e67e2fa74904f3c280abed6ba44524b14e2c954d",
+    "proofs/ckb-v02/tests/common/mod.rs": "06ad3abda02443eb3f58024d27d124ccf43feb7cda2d012eb0121f6d64f0c594",
+    "crates/tactus-o1-execution/tests/common/v02.rs": "4c4fa002014c117531135079b7364c12287e4448c7d2ff3c50d49b4f7c79c412",
+    "services/v02-lab/Cargo.toml": "01505d7220f1ca7f8f6054af29d48fd160829bbe47263974f1ba61498a694ce0",
+    "services/v02-lab/Cargo.lock": "243cd0dff6ae34613e346ab9934aef60962c8d55ae34f058145a28bc9aa28277",
+    "proofs/ckb-v02/Cargo.toml": "c1fb426ff489ca82407dba8dc36a59c79bb9fd366b122cb9cf7c52e20de7ff84",
+    "proofs/ckb-v02/Cargo.lock": "9f9e87f2986ea3f5301a8ad443281a7ac31ffe0dc718b1faa07c19f8d0a8c061",
+    "crates/tactus-o1-execution/tests/v02.rs": "a78adf46431cddaeabe87da4350080d9015eddda59c3032b06cedf38443db4d7",
+    "crates/tactus-o1-execution/src/v02.rs": "7af1f22fcf8096ebe95c0a6e6f2de6b09fb9b5a6b2d721a729cc12ef61000c0d",
+    "scripts/run-v02-devnet.sh": "e8723759d375d0c3ce439c4a947d36692281af8ef4d0797ae7966d1f9b5bbf4c",
+    "Cargo.lock": "d1e83ee7925c86276223c5b01a46cc25c9a1c81d811b713381dd9d3a4e835f92"
+  },
+  "artifacts": {
+    "artifacts/v02-negative-matrix-vm.log": "294169cda0eb4a7a86cdc3fab4d3404117b8b86117c61bbf045bca9e008425ca",
+    "artifacts/v02-deep-claims.log": "a98de04aa21b908a6ddbeaffe15e2379d616449994d7275122910c142a96c3c6",
+    "artifacts/v02-boundary-ckb-tests.log": "e8e2f24c98cc12e2a4ab3b9bd901c3ec6e8f850220caddaac162014a158add7b",
+    "artifacts/v02-boundary-lab-tests.log": "f651a3437ec4061fd3d4799943461e2e8da16af2474909474b65569504f20db2",
+    "artifacts/v02-boundary-ckb-clippy.log": "3243d99b149541a99adae3a8678bd674cf26e4a6a8e0529e6af92fad5d04f0bd",
+    "artifacts/v02-boundary-lab-clippy.log": "a683d6c6a6ca858125f26230abda4dbfd543b65b9764277d6f409cef51dd0a60",
+    "artifacts/v02-mixed-native-tests.log": "3c6b894057dee5934988e391444ccf5cdf076d5894bb42c60dcbe024109d3ec0",
+    "artifacts/v02-retention-observer.log": "8bf0e0057b36c5689eb28b8d3cd613eecd3ff730b71b8bbd77ba342b8835d5be",
+    "artifacts/v02-backpressure-run.log": "f89b49a6104f9d4d1ab8c35303de11518b5fb9190a2cf7d0bf4662897bd28127",
+    "artifacts/v02-canonical-pZiwqPGu/init.log": "72d914f8cb3e7b4a2ac737156b002981c1866e00690aaf31388873c4e71092e8",
+    "artifacts/v02-canonical-pZiwqPGu/node.log": "43b85c9d9011ffeb6107971e604276e888cabcbf945de148128974c865bcd8d9",
+    "artifacts/v02-canonical-pZiwqPGu/peer.log": "697245c2004be84f979b1ce0fac6828a58536f57c2b00bc0fa4035c0959a5882",
+    "artifacts/v02-canonical-pZiwqPGu/driver.log": "509e09f7b753d938dd0a520f11d4e2c30bfdc0612c430d5586493ffdea8c7797",
+    "artifacts/v02-canonical-pZiwqPGu/deployment.json": "a400897656470ff76e8a77d30d78834a700947bc90be867124d5e34c4b497098",
+    "artifacts/v02-canonical-pZiwqPGu/full-report.json": "8f6ddb754cef4de3b428ccf09b8c2f7ae3b8a8d2d3e4492722efb3c47614fbd6",
+    "artifacts/v02-canonical-pZiwqPGu/full-proof-input.json": "8734c079de9cb831583a2f4487cc9fa5722da9aee81cd08184aa0dea08bc523f",
+    "artifacts/v02-canonical-pZiwqPGu/refund-1.json": "910319ac56580e1211cefaaa696049f798059755e04c717a625ef473a2891475",
+    "artifacts/v02-canonical-pZiwqPGu/frozen-report.json": "e7ee8b154cc7d4f068015f9535a72ca411a01b4653a3b88645dc73108a4e6fe0",
+    "artifacts/v02-canonical-pZiwqPGu/backpressure-summary.json": "f413d1104d80712c3bf481c474f0e506235a4daa98d8176424e5793d99e6a95b",
+    "artifacts/v02-canonical-pZiwqPGu/evidence.json": "127ccef6791fee78a6973129ccce77790a2625e3ac55ba701c2928e1cde145e4",
+    "artifacts/v02-canonical-pZiwqPGu/full-guest-execution.log": "67052d82c5705c1b8c4c156cb4089fd876f58bd4feb2715fd2f44bd6c56b9de0",
+    "artifacts/v02-canonical-pZiwqPGu/full-guest-execution/public-values.bin": "8be3a9ecd09ea769723976555afd725608bf31b00f2b7e233d4242ea6a266482",
+    "artifacts/v02-canonical-pZiwqPGu/full-guest-execution/execution-report.txt": "cb7882597482832a4c3e046433dd55a9f99188ea3ed4914792ae9886b73c89ae",
+    "artifacts/v02-canonical-pZiwqPGu/full-guest-execution/result.json": "949545c5efc6706f08b6ede8e8e1e859b1f1eadef882e32d7314d006f92e96bd",
+    "artifacts/v02-mixed-guest/input.json": "be9c87eefe4508ccf0f3c6729ca591606b209a259f0c721fa4abb58f7c1521fc",
+    "artifacts/v02-mixed-guest/execute.log": "67052d82c5705c1b8c4c156cb4089fd876f58bd4feb2715fd2f44bd6c56b9de0",
+    "artifacts/v02-mixed-guest/wrong-key-record.json": "500f7d340aec86c3cac66828f99ef6f387f08c5cab764f78e1291945be6a7a3e",
+    "artifacts/v02-mixed-guest/wrong-key-input.json": "bb5aeced24f506865c5848bc3127e0b7ce90e8ac36bc19051a5d2da6f6955270",
+    "artifacts/v02-mixed-guest/wrong-key.log": "29b309d6a4672c8a0fafa69f9957288aba0de218faa6d4c7f48247bb71445482",
+    "artifacts/v02-mixed-guest/execution/public-values.bin": "099e62203ebacc0d532cb8274a58bcab66b72679b1ed6d411019a46366b3ad7f",
+    "artifacts/v02-mixed-guest/execution/execution-report.txt": "38a73da93ce4dbfb98cc8d6a2d957233458dedf66f18ec714f3e438b81cc4994",
+    "artifacts/v02-mixed-guest/execution/result.json": "5b389768e2407b7766e04cf9484b0f674617643c5d74803a2022644bf2519af1",
+    "artifacts/v02-settle-resource/legacy-00eb2677.json": "8468e11ec439ffe37aa1be7f779c05e3d5a58e0965fb43ca7279ebfe9b391e1d",
+    "artifacts/v02-settle-resource/legacy-0017cf9e.json": "0bc6db2fed64f7ab668a99cdbe906fc2fdfd1825baee90fb8f1c731d5616ff2d",
+    "artifacts/v02-settle-resource/legacy-00eb2677.debug.log": "41245abd36179e096482715a670d97876cb94e6534563bf69f35ad2b0a0aa4fe",
+    "artifacts/v02-settle-resource/legacy-0017cf9e.debug.log": "d874814d4fd015d1f305306197f68e24bd16aa7b9ee6eb07d0d41e9cbd5ed949",
+    "artifacts/v02-settle-resource/control-lock.debug.log": "5e9c12ad67371d17212c5fa3b00073a8469f98a301fce285491311387f11ee56",
+    "artifacts/v02-settle-resource/fee-lock.debug.log": "0516e580901a418ac751fcb2c7ab6804eddf7b90b7400bae1830463be89153fd",
+    "artifacts/v02-settle-resource/deep-claim-0.json": "bc06da36f0fc8157f4da9394db516a194763f92726fd336f82478ccdc0321f16",
+    "artifacts/v02-settle-resource/deep-claim-1.json": "e5b0f396da39af13e0121046ddbfbf914d35589a99e1a74a0d2d94aa9d728098",
+    "artifacts/v02-settle-resource/deep-claim-2.json": "4396fe708b197f333f7ff769459537e1eef667a8110dd9b7856530ac24f593af",
+    "artifacts/v02-canonical-pZiwqPGu/node/specs/dev.toml": "d1c2223339983cdd4972c1d9a921e1bc3bc07e083901a7a98f5462d52b5b99b0",
+    "artifacts/v02-canonical-pZiwqPGu/node/ckb.toml": "860e83a54eb0440827f519d26b2ef61c7e4189734e714f01973fe59824c16670",
+    "artifacts/v02-recovery-tools-1hmyqud3/result.json": "2a11d4cc54fe85b1b52d6eac9211f18c5f8fe5b00bf2833bca6637e505cb1e52"
+  },
+  "programs": {
+    "artifacts/tactus_v02_script.elf": "6eb225224ff2ed7d713a5bd72ef0dcd5237292ed64332cd8030b8a87a9d6cd25",
+    "proofs/v02-sp1/target/elf-compilation/riscv64im-succinct-zkvm-elf/release/tactus-v02-sp1-guest": "77bf8f4082a8e059ee07f734c906d0f2ad08dd2f1b68775f148de89c1b3c79fc"
+  },
+  "local_tests_passed": {
+    "artifacts/v02-boundary-ckb-tests.log": 17,
+    "artifacts/v02-boundary-lab-tests.log": 11
+  },
+  "guest_execution": {
+    "mixed": {
+      "result": {
+        "authenticated_publication": false,
+        "ckb_settlement": false,
+        "custody_release": false,
+        "guest_verifying_key": "0x000fcab5ecc9b6b3c2616ca0f8e76d9396876f26ea4fc0701997df7045acc0c6",
+        "interval_batches": 1,
+        "native_replay_match": true,
+        "prefix_batches": 0,
+        "proof_generated": false,
+        "schema": "tactus-v02-guest-execution-v1",
+        "sp1": "6.8.1"
+      },
+      "public_journal_bytes_matched": 866,
+      "input": "artifacts/v02-mixed-guest/input.json",
+      "input_sha256": "be9c87eefe4508ccf0f3c6729ca591606b209a259f0c721fa4abb58f7c1521fc",
+      "workload": {
+        "burned_shannons": "7",
+        "credited_shannons": "100",
+        "gas_used": 417228,
+        "priority_halt_gas": 250000,
+        "receipt_count": 5,
+        "sender_nonce": 5,
+        "statuses": [
+          "Halt",
+          "Success",
+          "PriorityGasLimit",
+          "Success",
+          "BlockGas",
+          "Malformed",
+          "InvalidTransaction",
+          "WrongChain",
+          "Success",
+          "Revert",
+          "InvalidSignature"
+        ],
+        "supply_shannons": "93"
+      }
+    },
+    "full_backlog": {
+      "result": {
+        "authenticated_publication": false,
+        "ckb_settlement": false,
+        "custody_release": false,
+        "guest_verifying_key": "0x000fcab5ecc9b6b3c2616ca0f8e76d9396876f26ea4fc0701997df7045acc0c6",
+        "interval_batches": 32,
+        "native_replay_match": true,
+        "prefix_batches": 0,
+        "proof_generated": false,
+        "schema": "tactus-v02-guest-execution-v1",
+        "sp1": "6.8.1"
+      },
+      "public_journal_bytes_matched": 866,
+      "input": "artifacts/v02-canonical-pZiwqPGu/full-proof-input.json",
+      "input_sha256": "8734c079de9cb831583a2f4487cc9fa5722da9aee81cd08184aa0dea08bc523f"
+    }
+  },
+  "actual_new_guest_rejects_historical_key": true,
+  "legacy_proofs": {
+    "own_statement_host_verification_passed": true,
+    "old_public_journal_rejected": true,
+    "new_journal_actual_vm_rejected": true,
+    "measurement_budget": 10000000000,
+    "ordinary_test_budget": 500000000,
+    "measurements": [
+      {
+        "fixture": "legacy-00eb2677",
+        "type_script_cycles": 658823445,
+        "control_lock_cycles": 11913,
+        "fee_lock_cycles": 2110,
+        "sum_of_measured_script_groups": 658837468,
+        "exit_code": 12
+      },
+      {
+        "fixture": "legacy-0017cf9e",
+        "type_script_cycles": 658813932,
+        "control_lock_cycles": 11913,
+        "fee_lock_cycles": 2110,
+        "sum_of_measured_script_groups": 658827955,
+        "exit_code": 12
+      }
+    ],
+    "scope": "well-formed genuine historical proofs under a mismatched new statement; SHA-256 then Blake3 fallback; not valid 0.02 settlement cost"
+  },
+  "deep_claim_envelopes": {
+    "measurements": [
+      {
+        "fixture": "release at deposit cap with 130 trie nodes and 256 nullifier siblings",
+        "ckb_vm_cycles": 25007192,
+        "transaction_bytes": 78079
+      },
+      {
+        "fixture": "refund with 256 nullifier siblings",
+        "ckb_vm_cycles": 7479916,
+        "transaction_bytes": 9329
+      },
+      {
+        "fixture": "escape with 194 trie nodes and 256 nullifier siblings",
+        "ckb_vm_cycles": 40381872,
+        "transaction_bytes": 112609
+      }
+    ],
+    "release_pending_deposits": 32,
+    "modified_last_nullifier_sibling_rejected": true,
+    "scope": "synthetic settled roots; engineered 64-level branch paths and 256 opaque non-default sibling roots; no claim of reachable history or canonical settlement"
+  },
+  "backpressure": {
+    "run": "artifacts/v02-canonical-pZiwqPGu",
+    "events": 78,
+    "checks": {
+      "canonical_deposits": 32,
+      "canonical_publications": 32,
+      "extra_deposit_script_rejected": true,
+      "extra_publication_script_rejected": true,
+      "fresh_process_refund_at_caps": true,
+      "permissionless_freeze_at_caps": true,
+      "production_ready": false,
+      "proof_generated": false,
+      "release_positive": "requires settled state; synthetic VM positive is separate",
+      "schema": "tactus-v02-backpressure-v1",
+      "seal_at_batch_cap": true,
+      "settlement_at_caps_reached_proof_verifier": true,
+      "spent_ticket_rejected": true,
+      "watch_at_caps": true,
+      "zk_settlement": false
+    },
+    "full_pin": "0x003fcb801fa2930356d56441679536d829b0fc99ed33ad8a5fc0a81734ac1af6",
+    "final_pin": "0xfbb1956e81946b7f38b7de0ddd6e0957a013c56827621e64501e74605554c2e1",
+    "limits": {
+      "maximum_claims_per_kind": 65536,
+      "maximum_execution_state_entries": 1000000,
+      "maximum_execution_state_payload_bytes": 134217728,
+      "maximum_frame_payload_bytes": 25165824,
+      "maximum_frames": 10000,
+      "maximum_height": 100000,
+      "maximum_live_cells": 100000,
+      "maximum_live_payload_bytes": 134217728,
+      "maximum_scanned_transactions": 1000000,
+      "maximum_transitions": 100000,
+      "on_limit": "abort refresh/export; never prune canonical rights or silently skip history",
+      "scope": "canonical cell/frame payload and visible live EVM state/count ceilings; deleted-account/code caches, allocator overhead, transient RPC/JSON buffers and execution working memory are additional"
+    },
+    "live_state_usage": {
+      "entries": 37,
+      "payload_bytes": 5465
+    }
+  },
+  "observer": {
+    "run": "artifacts/v02-recovery-tools-1hmyqud3",
+    "unsettled_claim_rejections": [
+      {
+        "mode": "release",
+        "exit": 1,
+        "error": "no settled state available for asset claims",
+        "old_output_unchanged": true
+      },
+      {
+        "mode": "escape",
+        "exit": 1,
+        "error": "no settled state available for asset claims",
+        "old_output_unchanged": true
+      }
+    ],
+    "note": "actual node outage/recovery with retention checks; final scope wording was clarified afterwards"
+  },
+  "ci_run": false,
+  "proof_generated": false,
+  "riscv_contract_experiment_executed": false,
+  "open_requirements": "specs/V0_02_ACCEPTANCE_AUDIT.md; complete original scope remains active"
+}

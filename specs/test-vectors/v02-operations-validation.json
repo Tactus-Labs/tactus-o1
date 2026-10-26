@@ -1,0 +1,213 @@
+{
+  "schema": "tactus-v02-operations-validation-v1",
+  "qualification": "partial 0.02 acceptance; not a release or production qualification",
+  "source_git_head": "c52a10388213e9881eba90e7eaa05c7a4c7a2922",
+  "working_tree_dirty": true,
+  "sources": {
+    "services/v02-lab/Cargo.toml": "01505d7220f1ca7f8f6054af29d48fd160829bbe47263974f1ba61498a694ce0",
+    "services/v02-lab/Cargo.lock": "243cd0dff6ae34613e346ab9934aef60962c8d55ae34f058145a28bc9aa28277",
+    "scripts/run-v02-devnet.sh": "e8723759d375d0c3ce439c4a947d36692281af8ef4d0797ae7966d1f9b5bbf4c",
+    "scripts/check-v02-recovery-tools.py": "f91f181e89ad6d4d6fe1dbc4f56a0ffb63bd3ca45fa038a462de2e43c1081623",
+    "crates/tactus-o1-execution/tests/v02.rs": "076edaf476748336a8a3269a0332ab13fbfa6ece0276bcfe13280aa1a9409a1a",
+    "crates/tactus-o1-execution/src/v02.rs": "7af1f22fcf8096ebe95c0a6e6f2de6b09fb9b5a6b2d721a729cc12ef61000c0d",
+    "crates/tactus-o1-execution/rules-v02.txt": "b2fe70334f0e55d80249cc70e4155d13c0a4d3227d0e82d8b5c78b980d2a5f0f",
+    "Cargo.lock": "d1e83ee7925c86276223c5b01a46cc25c9a1c81d811b713381dd9d3a4e835f92",
+    "services/v02-lab/src/bin/observe-v02.rs": "77d6a8f37fa2191a6e8a45d222410ccbef1a31cfccde9c4b1f9da2c195b6f9c5",
+    "services/v02-lab/src/bin/recover-v02.rs": "d26c480d0713da88f360e9dc39f81235d6e3af8ee7deccd7e6f056da31581afd",
+    "services/v02-lab/src/bin/replay-v02.rs": "296f3cdcaa3ddd7e430a6e2be1fbb910cc980c7d8bfe7ef9f242f8ea1ce770dc",
+    "services/v02-lab/src/build.rs": "ab294e2980201222cb293640d1e06e59a08e29829c7021cf38203887f5712fc4",
+    "services/v02-lab/src/claim_export.rs": "66fe15c5b9ba47488ad5ed21cb0d95be6160ab4ef9464e1fea65f3b3378c9a25",
+    "services/v02-lab/src/contention.rs": "f292766504ab2484789a4860b2128e79ca3b1dbb699bf1f66e931bf94e0ae916",
+    "services/v02-lab/src/lib.rs": "d790a46488fc75cf2732e1260ab5e1b8b144511165b3f825a678dff45d91a407",
+    "services/v02-lab/src/nullifiers.rs": "7459d2f00143024f57af7ce9942aed81f58ad59633a868863163f1787d54eb78",
+    "services/v02-lab/src/observer.rs": "d1a3dddcbabdd777269f9c9e039d370c5a1fc2f260cd65575375cef774a2f01a",
+    "services/v02-lab/src/operations.rs": "f90e243e3b500aa06cfbbfa66051845cf0711d9b861348d78e1b8cd9ae4e12e5",
+    "services/v02-lab/src/recover.rs": "fd1be09841434303ebca744bcff5261380d7ae9255e284c39f723344784b16ba",
+    "services/v02-lab/src/state_proof.rs": "a5cad844d1b826164eda43de3853fa62a5693b32b99127539a7e25cd4e683f37",
+    "services/v02-lab/tests/claim_export.rs": "f51f923e4543a144917cd212325e93a9eec87eba6c1282d1a61bb225e9466874",
+    "services/v02-lab/tests/watch_status.rs": "c3fc891a6cf7269f69d1c493bd166e022f1c1e27716a1ffb8f7fa11ff870c44c",
+    "proofs/ckb-v02/src/adapter.rs": "8403ca98e421a56fcf4ffc8792eed15804f5538dfd71229baae23bd48bc40894",
+    "proofs/ckb-v02/src/claims.rs": "341f52044cfcec8d5119266d1d6b509d8e66e772ea0cd4ec505c2e2d05ba7e3b",
+    "proofs/ckb-v02/src/lib.rs": "101812d63f563ebd28ff2709fb209fd394ea7a9a88d04ac4e607ac0eba148156",
+    "proofs/ckb-v02/src/onchain.rs": "362e924ecdef8f157487c599cf21bf652fcd401f7d0314b30880a7bea58751b4",
+    "proofs/ckb-v02/tests/claims.rs": "26be4293b6bc35eec3277cd4c5c853689ebecbc863dd061e49729fd884bc4bd5",
+    "proofs/ckb-v02/tests/common/mod.rs": "0490fd18091c867a8e4140383fc55bcfb84925180d7c5c2d882a5ae0270fa194",
+    "proofs/ckb-v02/tests/vm.rs": "62b2fa50fa61597b7967e6b0247c20604dd1e81659929bfe3b6899fe45a77215"
+  },
+  "artifacts": {
+    "artifacts/v02-operations-tests.log": "4dc2a01f4f99fbe13e52407a8de3ef9696c5524ae98c950d31b12c09519159d7",
+    "artifacts/v02-operations-clippy.log": "96e6f9d7dc703b312ac999bdac2b16991565aca88fe0b76ae8833001062c2c03",
+    "artifacts/v02-mode-gates-vm.log": "1fc5fdfaaba034335153b858dfee3d1e6d03df3d9a5f3370af86ea0957ba7d25",
+    "artifacts/v02-mode-gates-clippy.log": "3243d99b149541a99adae3a8678bd674cf26e4a6a8e0529e6af92fad5d04f0bd",
+    "artifacts/v02-mixed-outcomes-tests.log": "c6241c9fa164ce7dd6f1e8436909eb2d53f56dfa569f53800d5780c98cbf770f",
+    "artifacts/v02-contention-clippy.log": "98bcf5e33a2f91c025ad8e5c9289a5cb165aab9d7d71f340306158f2bdb3f431",
+    "artifacts/v02-operations-final-canonical.log": "2cb099b0d7d62f526e825f96abbe3b2f4eff7336a7e175457111cac88773b53d",
+    "artifacts/v02-contention-final-run.log": "61c7c47368ad241b9409edb8d4553e747a46a384c9ed0de8fc969e89115f086b",
+    "artifacts/v02-operations-final-observer.log": "b8c26e393ff60a81756d39b1448d05ee2d8eae55ccda9489857472725cc539e7",
+    "artifacts/v02-canonical-PbHWETqt/evidence.json": "fa306d6fb4619eb38b30419576d674503010af3d4e1bf5e5de56626ee16f4c31",
+    "artifacts/v02-canonical-PbHWETqt/deployment.json": "657efd66149b6011fb3408f0563208518945c028f363a608bed9dd7c4a28ce93",
+    "artifacts/v02-canonical-PbHWETqt/young-watch-report.json": "0d11549fb7fe66ee0c273c132555bdc37fe21668a6ac728015b0c2d0010009f6",
+    "artifacts/v02-canonical-PbHWETqt/mature-watch-report.json": "5ec3808b93a99dc1edc3cacf9da77a7b4cad7d1c0b2005270f92bbc4d052e2d1",
+    "artifacts/v02-canonical-PbHWETqt/funded-report.json": "dbffd7bf89f955d3020f8fc10bae52d360ba41ad5e577a75b9865c3e9b3a86e7",
+    "artifacts/v02-canonical-PbHWETqt/recovered-state.json": "76b4fe3167f3d59f339a558fc0caecef20a7af40b50bbcebfb880dbefb2061ac",
+    "artifacts/v02-canonical-PbHWETqt/canonical-proof-input.json": "5034021cc41bd4b36a6d80d0e87730cf648660d4081ecdb5ead2055c3cb7946f",
+    "artifacts/v02-canonical-PbHWETqt/guest-execution/result.json": "fb9724eee827394088e49686beb510869dfe50f6f1e27f88b3ddb524ba899663",
+    "artifacts/v02-canonical-PbHWETqt/guest-execution/public-values.bin": "7578e477e32e921c1e111cd09db03753bb62333928e0112250361cb4bd01ccd7",
+    "artifacts/v02-canonical-PbHWETqt/guest-execution.log": "67052d82c5705c1b8c4c156cb4089fd876f58bd4feb2715fd2f44bd6c56b9de0",
+    "artifacts/v02-canonical-V4ztU6kT/evidence.json": "63a36bd0b723e0203c8b5a01cc9c2c15e921effd2d2836d84302218738d99535",
+    "artifacts/v02-canonical-V4ztU6kT/deployment.json": "a400897656470ff76e8a77d30d78834a700947bc90be867124d5e34c4b497098",
+    "artifacts/v02-canonical-V4ztU6kT/contention-summary.json": "7ee1a38f75fbd65c37c10ad4b5411a7ed029cc7c5a10da3266d7821e1005ddfd",
+    "artifacts/v02-canonical-V4ztU6kT/contention-report.json": "69e87e86de46eba37c9f736720887a4fd04eb55465b327ad7f4f15bbab0a8a52",
+    "artifacts/v02-recovery-tools-3lckpgeh/result.json": "8d918103e1defaf2c124b0daa5ef255aa815b414082b119b1280d53710fe0076"
+  },
+  "tests_passed": {
+    "artifacts/v02-operations-tests.log": 9,
+    "artifacts/v02-mode-gates-vm.log": 8,
+    "artifacts/v02-mixed-outcomes-tests.log": 6
+  },
+  "programs": {
+    "artifacts/tactus_v02_script.elf": "6eb225224ff2ed7d713a5bd72ef0dcd5237292ed64332cd8030b8a87a9d6cd25",
+    "proofs/v02-sp1/target/elf-compilation/riscv64im-succinct-zkvm-elf/release/tactus-v02-sp1-guest": "77bf8f4082a8e059ee07f734c906d0f2ad08dd2f1b68775f148de89c1b3c79fc"
+  },
+  "canonical": {
+    "run": "artifacts/v02-canonical-PbHWETqt",
+    "events": 25,
+    "pin": "0x9395f9eb0d8c844d9868f54c37b50b5898561f291263ed63160c2b8d315551f8",
+    "young_watch_eligible": [
+      false,
+      false
+    ],
+    "mature_watch_eligible": [
+      true,
+      true
+    ],
+    "funding_before": {
+      "external_fees": {
+        "basis": "canonical untyped empty-data cells, preserving occupied capacity in each; target is operator supplied",
+        "eligible_cells": 1,
+        "inclusion_guaranteed": false,
+        "largest_single_cell_spare_shannons": "9977364150000000",
+        "lock_hash": "0x677f6202c21a3a5b6c586d382f56c1ce24cd5b6474ebea7f1b83d194b7f87b01",
+        "spend_authority_verified": false,
+        "status": "target_met",
+        "target_shannons": "100000000",
+        "total_spare_shannons": "9977364150000000"
+      },
+      "liveness_guaranteed": false,
+      "prover": {
+        "declared_budget_shannons": "0",
+        "provider_commitment_verified": false,
+        "quoted_cost_shannons": "100000000",
+        "source": "local operator declaration; not observed payment",
+        "status": "declared_budget_insufficient"
+      },
+      "vault_principal_or_reserve_available_for_fees": false
+    },
+    "funding_after": {
+      "external_fees": {
+        "basis": "canonical untyped empty-data cells, preserving occupied capacity in each; target is operator supplied",
+        "eligible_cells": 1,
+        "inclusion_guaranteed": false,
+        "largest_single_cell_spare_shannons": "0",
+        "lock_hash": "0x677f6202c21a3a5b6c586d382f56c1ce24cd5b6474ebea7f1b83d194b7f87b01",
+        "spend_authority_verified": false,
+        "status": "insufficient_for_target",
+        "target_shannons": "100000000",
+        "total_spare_shannons": "0"
+      },
+      "liveness_guaranteed": false,
+      "prover": {
+        "declared_budget_shannons": "0",
+        "provider_commitment_verified": false,
+        "quoted_cost_shannons": "100000000",
+        "source": "local operator declaration; not observed payment",
+        "status": "declared_budget_insufficient"
+      },
+      "vault_principal_or_reserve_available_for_fees": false
+    },
+    "vault_and_control_unchanged_by_fee_exhaustion": true,
+    "published_batches": 2,
+    "settled_batches": 0,
+    "guest_execution": {
+      "authenticated_publication": false,
+      "ckb_settlement": false,
+      "custody_release": false,
+      "guest_verifying_key": "0x000fcab5ecc9b6b3c2616ca0f8e76d9396876f26ea4fc0701997df7045acc0c6",
+      "interval_batches": 2,
+      "native_replay_match": true,
+      "prefix_batches": 0,
+      "proof_generated": false,
+      "schema": "tactus-v02-guest-execution-v1",
+      "sp1": "6.8.1"
+    },
+    "full_journal_bytes_matched": 866
+  },
+  "observer": {
+    "run": "artifacts/v02-recovery-tools-3lckpgeh",
+    "refresh_sequence": [
+      true,
+      false,
+      true
+    ],
+    "failed_refresh_marks_cached_state_historical": true
+  },
+  "contention": {
+    "run": "artifacts/v02-canonical-V4ztU6kT",
+    "events": 39,
+    "metrics": {
+      "admission_requests": 8,
+      "first_wave_committed": 4,
+      "first_wave_not_committed_fraction": 0.5,
+      "rebuilds_and_resignatures": 4,
+      "admission_wait_distribution": {
+        "max_ms": 762,
+        "median_ms": 498.5,
+        "min_ms": 234,
+        "p95_ms": 762,
+        "samples": 8,
+        "samples_ms": [
+          234,
+          333,
+          334,
+          339,
+          658,
+          756,
+          762,
+          762
+        ]
+      },
+      "full_lane_build_refused": true,
+      "g2_admission_fairness": "OPEN",
+      "scope": "two local actors, four same-lane races, fees 1/3 CKB, 0/100ms submission delays, default CKB template mining; small sample does not establish adversarial fairness or production latency",
+      "miner_policy": "CKB 0.210.0 default txpool and generate_block template, no custom fee selection"
+    },
+    "same_lane_winners": [
+      1,
+      0,
+      1,
+      1
+    ],
+    "seal_deposit_orders": [
+      {
+        "winner_actor": 0,
+        "sealed_tail": 2,
+        "deposits_after_retry": 3,
+        "eight_batch_publication_ms": 3534
+      },
+      {
+        "winner_actor": 1,
+        "sealed_tail": 4,
+        "deposits_after_retry": 4,
+        "eight_batch_publication_ms": 3519
+      }
+    ],
+    "canonical_published_batches": 16,
+    "canonical_settled_batches": 0,
+    "canonical_deposits": 4,
+    "earlier_failed_run": "artifacts/v02-canonical-fY5h4Pim: epoch-two seal builder omitted previous snapshot; fixed and new run passed"
+  },
+  "ci_run": false,
+  "proof_generated": false,
+  "riscv_contract_experiment_executed": false,
+  "open_requirements": "See specs/V0_02_ACCEPTANCE_AUDIT.md; all original work packages remain in scope."
+}

@@ -1,0 +1,88 @@
+{
+  "schema": "tactus-v02-recovery-validation-v1",
+  "scope": "partial 0.02 acceptance; no release qualification",
+  "source_git_head": "c52a10388213e9881eba90e7eaa05c7a4c7a2922",
+  "working_tree_dirty": true,
+  "sources": {
+    "crates/tactus-o1-execution/src/v02.rs": "7af1f22fcf8096ebe95c0a6e6f2de6b09fb9b5a6b2d721a729cc12ef61000c0d",
+    "services/v02-lab/Cargo.toml": "01505d7220f1ca7f8f6054af29d48fd160829bbe47263974f1ba61498a694ce0",
+    "services/v02-lab/Cargo.lock": "243cd0dff6ae34613e346ab9934aef60962c8d55ae34f058145a28bc9aa28277",
+    "scripts/check-v02-recovery-tools.py": "f91f181e89ad6d4d6fe1dbc4f56a0ffb63bd3ca45fa038a462de2e43c1081623",
+    "services/v02-lab/src/bin/observe-v02.rs": "77d6a8f37fa2191a6e8a45d222410ccbef1a31cfccde9c4b1f9da2c195b6f9c5",
+    "services/v02-lab/src/bin/recover-v02.rs": "d26c480d0713da88f360e9dc39f81235d6e3af8ee7deccd7e6f056da31581afd",
+    "services/v02-lab/src/bin/replay-v02.rs": "1509a5fa32b937c0e6fe4c71c86f4b18a8e8462f63fa979c8422547b7041b7a1",
+    "services/v02-lab/src/build.rs": "ecef37684c87fba9622ca32f27bdd3d755fd7fb7011dee3ea58ef0633eabe4a8",
+    "services/v02-lab/src/claim_export.rs": "66fe15c5b9ba47488ad5ed21cb0d95be6160ab4ef9464e1fea65f3b3378c9a25",
+    "services/v02-lab/src/lib.rs": "e818a5b1829a5754c9f4718e67f26cba1a02ded0fc438def93c1c5cf809dcf25",
+    "services/v02-lab/src/nullifiers.rs": "7459d2f00143024f57af7ce9942aed81f58ad59633a868863163f1787d54eb78",
+    "services/v02-lab/src/observer.rs": "d1a3dddcbabdd777269f9c9e039d370c5a1fc2f260cd65575375cef774a2f01a",
+    "services/v02-lab/src/recover.rs": "ef3688e97e8b99f06b3d3bfadf51f7e9ee9bb0912caf4af74ca7d2edfe555ff1",
+    "services/v02-lab/src/state_proof.rs": "a5cad844d1b826164eda43de3853fa62a5693b32b99127539a7e25cd4e683f37",
+    "services/v02-lab/tests/claim_export.rs": "b4460f76885cdd743c5b44c057e7e5173d60926d60ea8fc0a4deec29e0117fa8"
+  },
+  "logs": {
+    "artifacts/v02-claim-tests.log": "7ca3262639ebca73b11a7c1589688cf0352b225f7209b13f1f6b660d06c65f76",
+    "artifacts/v02-claim-clippy.log": "1aa171933f44fb373d2b9adff273e73322dc04a17f745ec6e9ec0cd82509a2a7",
+    "artifacts/v02-claim-execution-tests.log": "28d9ab383f3b9829cee97d506cb1b3750d98649c3b678f463bb6616dbdd7b601",
+    "artifacts/v02-claim-guest-build.log": "2f5bcdb47f75444395c2dd7a466420dd20d39ec5ce20aaea7e99a6f1a2eb2191",
+    "artifacts/v02-recovery-tool-check.log": "dd671989699ce67b37ee8fb64b0c0c56f6cb66353197c6ea259e38a5d4522732",
+    "artifacts/v02-recovery-tools-0b1bq3m3/result.json": "e79c44db44a0df73b78814e297080e54176f81167fae5713fcc62473f4ea3e7d",
+    "artifacts/v02-recovery-tools-0b1bq3m3/report.json": "8626dde48c657c148a8f851f851275f3a2eabada29c77d06856437359cad4b75",
+    "artifacts/v02-recovery-tools-0b1bq3m3/observer.json": "ac39004ce24a5be19cc71ee92ba89f432ea0e940e266962faaa2153b17451a33",
+    "artifacts/v02-recovery-tools-0b1bq3m3/observer.log": "6b6a3d8bc7cfedfae3edaef1ccd557889473b92d662d1cef0994a211fbd63d56"
+  },
+  "tests_passed": {
+    "artifacts/v02-claim-tests.log": 6,
+    "artifacts/v02-claim-execution-tests.log": 50
+  },
+  "guest_elf_sha256": "77bf8f4082a8e059ee07f734c906d0f2ad08dd2f1b68775f148de89c1b3c79fc",
+  "guest_identical_to_prior_canonical_execution": true,
+  "canonical_check": {
+    "run_dir": "artifacts/v02-recovery-tools-0b1bq3m3",
+    "pin": "0x9342c65661cb936bbcfaf673f4c4eccf2313afc5024e08dee5d5a757b560ab2e",
+    "unsettled_claim_rejections": [
+      {
+        "mode": "release",
+        "exit": 1,
+        "error": "no settled state available for asset claims",
+        "old_output_unchanged": true
+      },
+      {
+        "mode": "escape",
+        "exit": 1,
+        "error": "no settled state available for asset claims",
+        "old_output_unchanged": true
+      }
+    ],
+    "observer_snapshots": [
+      {
+        "refresh_succeeded": true,
+        "consecutive_failures": 0,
+        "snapshot_is_current_at_check": true,
+        "pin": "0x9342c65661cb936bbcfaf673f4c4eccf2313afc5024e08dee5d5a757b560ab2e"
+      },
+      {
+        "refresh_succeeded": false,
+        "consecutive_failures": 1,
+        "snapshot_is_current_at_check": false,
+        "pin": "0x9342c65661cb936bbcfaf673f4c4eccf2313afc5024e08dee5d5a757b560ab2e"
+      },
+      {
+        "refresh_succeeded": true,
+        "consecutive_failures": 0,
+        "snapshot_is_current_at_check": true,
+        "pin": "0x9342c65661cb936bbcfaf673f4c4eccf2313afc5024e08dee5d5a757b560ab2e"
+      }
+    ]
+  },
+  "positive_asset_claim_export_evidence": "synthetic settled fixtures with real MPT and ECDSA authorization; not actual ZK settlement",
+  "remaining": [
+    "Maximum valid claim/guest resource qualification",
+    "Full concurrency/contention and boundary audit",
+    "Funding-specific fee reports and Watch eligibility reporting",
+    "Actual proof settlement/release positive acceptance belongs to 0.03"
+  ],
+  "ci_run": false,
+  "proof_generated": false,
+  "riscv_contract_experiment_executed": false
+}

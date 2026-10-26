@@ -103,3 +103,7 @@ pub mod sealed;
 /// Candidate native custody profile; not enabled in the v1 proof guest.
 #[cfg(feature = "native-bridge")]
 pub mod native_bridge;
+
+/// Version 0.02 protocol. Independent wire domains; never an old-guest upgrade.
+#[cfg(feature = "v02")]
+pub mod v02;

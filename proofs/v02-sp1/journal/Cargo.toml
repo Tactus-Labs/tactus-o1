@@ -1,0 +1,11 @@
+[package]
+name = "tactus-v02-proof-journal"
+version = "0.2.0"
+edition = "2021"
+[dependencies]
+tactus-o1-protocol = { path = "../../../crates/tactus-o1-protocol", features = ["v02"] }
+tactus-o1-execution = { path = "../../../crates/tactus-o1-execution", features = ["v02"] }
+[dev-dependencies]
+serde_json = "1"
+hex = "0.4"
+alloy-primitives = "=1.6.0"

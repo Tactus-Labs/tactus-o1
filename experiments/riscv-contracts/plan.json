@@ -1,0 +1,109 @@
+{
+  "schema": "tactus-riscv-research-plan-v1",
+  "status": "prepared_not_executed",
+  "execution_authorized": false,
+  "scope": "isolated kernel comparison first; no change to 0.02 deployment or settlement",
+  "baseline": {
+    "sdk": "6.8.1",
+    "guest_target": "riscv64im-succinct-zkvm-elf",
+    "evm_fork": "Shanghai",
+    "existing_rollup_guest": "proofs/v02-sp1/target/elf-compilation/riscv64im-succinct-zkvm-elf/release/tactus-v02-sp1-guest",
+    "existing_rollup_guest_sha256": "77bf8f4082a8e059ee07f734c906d0f2ad08dd2f1b68775f148de89c1b3c79fc",
+    "existing_guest_is_matched_kernel_baseline": false,
+    "solc_pin": "contracts/bridge/compiler.json",
+    "crypto_patch_pin": "proofs/v02-sp1/Cargo.toml"
+  },
+  "arms": [
+    {
+      "id": "evm",
+      "path": "SP1 -> matched kernel guest -> revm -> Kernel.sol bytecode",
+      "implementation": "contract source prepared; matched minimal guest adapter must be implemented and qualified before execution"
+    },
+    {
+      "id": "native",
+      "path": "SP1 -> statically linked native kernel",
+      "implementation": "Rust model and guest source prepared, neither compiled nor executed",
+      "arbitrary_contract_sandbox": false
+    }
+  ],
+  "stages": [
+    {
+      "id": "A",
+      "name": "kernel equivalence and execution overhead",
+      "activation": [
+        "explicit authorization to run experiments",
+        "review compiler settings and lock dependencies",
+        "implement matched EVM guest and independent big-integer oracle",
+        "pin both ELF hashes and keys",
+        "set execution budget and exact host configuration"
+      ]
+    },
+    {
+      "id": "B",
+      "name": "shared state and authorization adapter",
+      "activation": [
+        "stage A exact equivalence",
+        "shared input/auth/state/witness rules reviewed",
+        "new research statement and domain, no old verifier reuse"
+      ]
+    },
+    {
+      "id": "C",
+      "name": "complete proof cost on fixed hardware",
+      "activation": [
+        "stage B correctness",
+        "same proof mode, wrapper and security settings",
+        "explicit proof budget",
+        "fixed measurement matrix before results"
+      ]
+    },
+    {
+      "id": "D",
+      "name": "possible product integration",
+      "activation": [
+        "0.03 genuine asset loop and 0.04 incremental baseline",
+        "measured end-to-end benefit",
+        "sandbox, metering, rollback and EVM/native call semantics qualified"
+      ]
+    }
+  ],
+  "run_matrix": {
+    "stage_a_steps": [
+      0,
+      16,
+      256,
+      4096
+    ],
+    "stage_a_calls": [
+      1,
+      16,
+      64
+    ],
+    "stage_b_batch_counts": [
+      1,
+      8,
+      32
+    ],
+    "stage_b_prefix_batches": [
+      0,
+      32,
+      256
+    ],
+    "warmups": 1,
+    "measured_repetitions": 5,
+    "execution_order": "alternate arms, record cold/warm cache and concurrent load",
+    "hardware": null,
+    "cpu_threads": null,
+    "gpu": null,
+    "proof_mode": null,
+    "wall_time_budget_seconds": null,
+    "maximum_rss_bytes": null
+  },
+  "do_not_combine": [
+    "ISA/runtime change with prover change",
+    "crypto patch effect with interpreter removal",
+    "state-tree change with native execution",
+    "full-prefix baseline with incremental variant"
+  ],
+  "result_status": "no execution, proof, throughput or speedup measurement exists for this experiment"
+}

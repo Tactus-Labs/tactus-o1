@@ -1,0 +1,43 @@
+[package]
+name = "tactus-v02-script"
+version = "0.2.0"
+edition = "2021"
+rust-version = "1.92"
+
+[workspace]
+
+[patch.crates-io]
+lazy_static = { path = "../vendor/lazy_static-1.5.1" }
+sp1-verifier = { path = "../vendor/sp1-verifier-6.8.1" }
+substrate-bn-succinct-rs = { path = "../vendor/substrate-bn-succinct-rs-0.6.0" }
+
+[target.'cfg(target_arch = "riscv64")'.dependencies]
+lazy_static = { version = "=1.5.1", features = ["ckb_single_thread"] }
+
+[dependencies]
+tactus-o1-protocol = { path = "../../crates/tactus-o1-protocol", features = ["v02"] }
+tactus-o1-state-proof-script = { path = "../ckb-state-proof", default-features = false }
+alloy-primitives = { version = "=1.6.0", default-features = false }
+k256 = { version = "=0.13.4", default-features = false, features = ["ecdsa", "alloc"] }
+ckb-std = { version = "=0.15.3", default-features = false, features = ["ckb-types", "allocator"] }
+sp1-verifier = { version = "=6.8.1", default-features = false }
+ckb-testtool = { version = "=1.1.1", optional = true }
+
+[dev-dependencies]
+serde_json = "=1.0.151"
+alloy-trie = { version = "=0.9.8", default-features = false, features = ["ethereum"] }
+alloy-rlp = { version = "=0.3.16", default-features = false }
+
+[features]
+default = ["entry"]
+entry = []
+vm-tests = ["dep:ckb-testtool"]
+
+[lib]
+crate-type = ["rlib"]
+
+[profile.release]
+debug = false
+panic = "abort"
+lto = true
+codegen-units = 1

@@ -30,6 +30,7 @@ k256 = { version = "0.13", features = ["ecdsa"] }
 
 [features]
 native-bridge = ["tactus-o1-protocol/native-bridge"]
+v02 = ["native-bridge", "tactus-o1-protocol/v02"]
 
 [[example]]
 name = "native-bridge-vectors"

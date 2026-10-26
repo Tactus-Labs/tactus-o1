@@ -30,3 +30,8 @@ artifacts/
 !/specs/evidence/sp1-optimization-round2/**/*.log
 !/specs/evidence/sp1-optimization-round3/artifacts/
 !/specs/evidence/sp1-optimization-round3/artifacts/**
+
+# Separate 0.02 protocol and EVM guest workspaces.
+/proofs/ckb-v02/target/
+/proofs/v02-sp1/target/
+/services/v02-lab/target/

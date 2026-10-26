@@ -11,6 +11,21 @@ fn main() {
     descriptor.extend_from_slice(&fs::read(lock).expect("root dependency lock"));
     let hash = tactus_o1_protocol::batch::hash(b"tactus/o1/execution-rules/v1", &descriptor);
     let mut generated = format!("const EXECUTION_RULES_HASH: [u8; 32] = {hash:?};\n");
+    if env::var_os("CARGO_FEATURE_V02").is_some() {
+        let v02_rules = root.join("rules-v02.txt");
+        let artifact = root.join("../../contracts/bridge/NativeCKB.json");
+        for input in [&v02_rules, &artifact] {
+            println!("cargo:rerun-if-changed={}", input.display());
+        }
+        let mut v02_descriptor = fs::read(v02_rules).expect("0.02 execution rules");
+        v02_descriptor.extend_from_slice(&descriptor);
+        v02_descriptor.extend_from_slice(&fs::read(artifact).expect("native bridge artifact"));
+        let v02_hash =
+            tactus_o1_protocol::batch::hash(b"tactus/0.02/execution-rules", &v02_descriptor);
+        generated.push_str(&format!(
+            "#[cfg(feature = \"v02\")]\nconst V02_EXECUTION_RULES_HASH: [u8; 32] = {v02_hash:?};\n"
+        ));
+    }
     if env::var_os("CARGO_FEATURE_NATIVE_BRIDGE").is_some() {
         let native_rules = root.join("rules-native-v2.txt");
         let artifact = root.join("../../contracts/bridge/NativeCKB.json");

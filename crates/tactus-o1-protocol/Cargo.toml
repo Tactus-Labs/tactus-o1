@@ -11,3 +11,4 @@ blake2b-ref = "0.3"
 
 [features]
 native-bridge = []
+v02 = []

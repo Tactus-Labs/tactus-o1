@@ -1,0 +1,504 @@
+{
+  "schema": "tactus-v02-canonical-validation-v1",
+  "created_utc": "2026-10-18T04:48:28.027285+00:00",
+  "status": "partial-v02-acceptance",
+  "node_version": "0.210.0 (2592ddf 2026-09-17)",
+  "consensus": "isolated two-node CKB Dummy development chain, not PoW security evidence",
+  "git_head": "c52a10388213e9881eba90e7eaa05c7a4c7a2922",
+  "working_tree_dirty": true,
+  "source_fingerprint": {
+    "algorithm": "sha256(sorted(path_length_u32le || utf8_path || sha256(file)))",
+    "sha256": "517410d4f9e06b362fbd2f63d85b1b071e2e876ec5c418f531d7f6c786242e4c",
+    "paths": [
+      "Cargo.lock",
+      "crates/tactus-o1-execution/Cargo.toml",
+      "crates/tactus-o1-execution/build.rs",
+      "crates/tactus-o1-execution/examples/execution-vectors.rs",
+      "crates/tactus-o1-execution/examples/native-bridge-vectors.rs",
+      "crates/tactus-o1-execution/examples/native-ckb-vectors.rs",
+      "crates/tactus-o1-execution/examples/optimization-vectors.rs",
+      "crates/tactus-o1-execution/examples/sealed-settlement-oracle.rs",
+      "crates/tactus-o1-execution/examples/settlement-continuation.rs",
+      "crates/tactus-o1-execution/examples/state-scaling-vectors.rs",
+      "crates/tactus-o1-execution/examples/support/native_bridge.rs",
+      "crates/tactus-o1-execution/examples/support/native_ckb.rs",
+      "crates/tactus-o1-execution/rules-native-v2.txt",
+      "crates/tactus-o1-execution/rules-v02.txt",
+      "crates/tactus-o1-execution/rules-v1.txt",
+      "crates/tactus-o1-execution/src/backend.rs",
+      "crates/tactus-o1-execution/src/bin/replay-execution.rs",
+      "crates/tactus-o1-execution/src/checkpoint.rs",
+      "crates/tactus-o1-execution/src/journal_db.rs",
+      "crates/tactus-o1-execution/src/lib.rs",
+      "crates/tactus-o1-execution/src/native_bridge.rs",
+      "crates/tactus-o1-execution/src/store.rs",
+      "crates/tactus-o1-execution/src/v02.rs",
+      "crates/tactus-o1-execution/tests/checkpoint.rs",
+      "crates/tactus-o1-execution/tests/execution.rs",
+      "crates/tactus-o1-execution/tests/geth_vectors.rs",
+      "crates/tactus-o1-execution/tests/native_bridge.rs",
+      "crates/tactus-o1-execution/tests/native_ckb.rs",
+      "crates/tactus-o1-execution/tests/store.rs",
+      "crates/tactus-o1-execution/tests/v02.rs",
+      "crates/tactus-o1-protocol/Cargo.toml",
+      "crates/tactus-o1-protocol/src/batch.rs",
+      "crates/tactus-o1-protocol/src/genesis.rs",
+      "crates/tactus-o1-protocol/src/lib.rs",
+      "crates/tactus-o1-protocol/src/native_bridge.rs",
+      "crates/tactus-o1-protocol/src/priority.rs",
+      "crates/tactus-o1-protocol/src/sealed.rs",
+      "crates/tactus-o1-protocol/src/v02/codec.rs",
+      "crates/tactus-o1-protocol/src/v02/control.rs",
+      "crates/tactus-o1-protocol/src/v02/custody.rs",
+      "crates/tactus-o1-protocol/src/v02/mod.rs",
+      "crates/tactus-o1-protocol/src/v02/nullifier.rs",
+      "crates/tactus-o1-protocol/src/v02/ordering.rs",
+      "crates/tactus-o1-protocol/src/v02/policy.rs",
+      "crates/tactus-o1-protocol/src/v02/shape.rs",
+      "crates/tactus-o1-protocol/src/v02/tests.rs",
+      "crates/tactus-o1-protocol/tests/batch_vectors.rs",
+      "crates/tactus-o1-protocol/tests/genesis.rs",
+      "crates/tactus-o1-protocol/tests/priority.rs",
+      "crates/tactus-o1-protocol/tests/sealed.rs",
+      "crates/tactus-o1-protocol/tests/v02_vectors.rs",
+      "proofs/ckb-v02/Cargo.lock",
+      "proofs/ckb-v02/Cargo.toml",
+      "proofs/ckb-v02/src/adapter.rs",
+      "proofs/ckb-v02/src/claims.rs",
+      "proofs/ckb-v02/src/lib.rs",
+      "proofs/ckb-v02/src/onchain.rs",
+      "proofs/ckb-v02/tests/claims.rs",
+      "proofs/ckb-v02/tests/common/mod.rs",
+      "proofs/ckb-v02/tests/vm.rs",
+      "proofs/v02-sp1/Cargo.lock",
+      "proofs/v02-sp1/Cargo.toml",
+      "proofs/v02-sp1/guest/Cargo.toml",
+      "proofs/v02-sp1/guest/src/main.rs",
+      "proofs/v02-sp1/host/Cargo.toml",
+      "proofs/v02-sp1/host/src/main.rs",
+      "proofs/v02-sp1/journal/Cargo.toml",
+      "proofs/v02-sp1/journal/examples/fixture-input.rs",
+      "proofs/v02-sp1/journal/src/lib.rs",
+      "proofs/v02-sp1/journal/tests/common/mod.rs",
+      "proofs/v02-sp1/journal/tests/statement.rs",
+      "scripts/build-v02-script.sh",
+      "scripts/run-v02-devnet.sh",
+      "services/v02-lab/Cargo.lock",
+      "services/v02-lab/Cargo.toml",
+      "services/v02-lab/src/bin/recover-v02.rs",
+      "services/v02-lab/src/bin/replay-v02.rs",
+      "services/v02-lab/src/build.rs",
+      "services/v02-lab/src/lib.rs",
+      "services/v02-lab/src/nullifiers.rs",
+      "services/v02-lab/src/recover.rs"
+    ]
+  },
+  "deployment": {
+    "adapter_sha256": "6eb225224ff2ed7d713a5bd72ef0dcd5237292ed64332cd8030b8a87a9d6cd25",
+    "code_dependencies": [
+      {
+        "index": "0x0",
+        "tx_hash": "0xa2d79a034b8dcb9508fb5047ce2a7f3ec02f60a9cc02369137f38cc6b7e06508"
+      },
+      {
+        "index": "0x1",
+        "tx_hash": "0xa2d79a034b8dcb9508fb5047ce2a7f3ec02f60a9cc02369137f38cc6b7e06508"
+      }
+    ],
+    "config_hex": "0x54303243464730315631e33bd149046f3f3a237a55bc7bdb6ac8bc2a4d7fc76fc665acf43d0bdd040b8766544fee71f65e408de972e1ff2ade186eeb357ad98f2c4b94b985aa432503f5d65709aa04ed47aece3ef83e25c1a815fd3eec813895c45ab8e7b68079563a5972dcd41cf58cd70955b5c01c0e25594153d4f5b360bd2123eaa0f268e2aeb1e1dc61e9a1904d42e2a2a4c20e29d51eb451422a4a5a862486f51a9d0b3ee35cf431d11989f8aa566b88c194e94a8bcbc89aa8be92c8c1636ca6c17e59b6c4ea160100000000000c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c0c",
+    "contract_escape_supported": false,
+    "genesis_cells": [
+      {
+        "index": "0x0",
+        "tx_hash": "0x2eb5e6018a952ce4639518688345fb56820b93f1433ec267bc0799a1a9d1cf48"
+      },
+      {
+        "index": "0x1",
+        "tx_hash": "0x2eb5e6018a952ce4639518688345fb56820b93f1433ec267bc0799a1a9d1cf48"
+      },
+      {
+        "index": "0x2",
+        "tx_hash": "0x2eb5e6018a952ce4639518688345fb56820b93f1433ec267bc0799a1a9d1cf48"
+      },
+      {
+        "index": "0x3",
+        "tx_hash": "0x2eb5e6018a952ce4639518688345fb56820b93f1433ec267bc0799a1a9d1cf48"
+      },
+      {
+        "index": "0x4",
+        "tx_hash": "0x2eb5e6018a952ce4639518688345fb56820b93f1433ec267bc0799a1a9d1cf48"
+      },
+      {
+        "index": "0x5",
+        "tx_hash": "0x2eb5e6018a952ce4639518688345fb56820b93f1433ec267bc0799a1a9d1cf48"
+      },
+      {
+        "index": "0x6",
+        "tx_hash": "0x2eb5e6018a952ce4639518688345fb56820b93f1433ec267bc0799a1a9d1cf48"
+      },
+      {
+        "index": "0x7",
+        "tx_hash": "0x2eb5e6018a952ce4639518688345fb56820b93f1433ec267bc0799a1a9d1cf48"
+      },
+      {
+        "index": "0x8",
+        "tx_hash": "0x2eb5e6018a952ce4639518688345fb56820b93f1433ec267bc0799a1a9d1cf48"
+      },
+      {
+        "index": "0x9",
+        "tx_hash": "0x2eb5e6018a952ce4639518688345fb56820b93f1433ec267bc0799a1a9d1cf48"
+      },
+      {
+        "index": "0xa",
+        "tx_hash": "0x2eb5e6018a952ce4639518688345fb56820b93f1433ec267bc0799a1a9d1cf48"
+      }
+    ],
+    "genesis_tx": "0x2eb5e6018a952ce4639518688345fb56820b93f1433ec267bc0799a1a9d1cf48",
+    "guest_elf_sha256": "77bf8f4082a8e059ee07f734c906d0f2ad08dd2f1b68775f148de89c1b3c79fc",
+    "guest_key": "0x000fcab5ecc9b6b3c2616ca0f8e76d9396876f26ea4fc0701997df7045acc0c6",
+    "head_lock_sha256": "b9965fdffd30639460644db75b3ac5104a50f4c56107396a4f353ac9eec565d6",
+    "policy_hex": "0x543032504f4c30310420000000000000002000000000000000780000000000000090d0030000000000400d03000000000010065fa6eef9885d36858c5db1f8812d19894c61198ab8736ea9d8a2e5823d7d63d48d5f3c3c17e441818c9d6557930d98ea53485f1d62ecf7b8532ece491c11000fcab5ecc9b6b3c2616ca0f8e76d9396876f26ea4fc0701997df7045acc0c6808ff6de29a3959bade97ed0e6e45888169f835b64c0bf162211fa496d2829bb296c7e4c306307bc986d8462c58cd7bbc1633ff3fb1d833f89a66018bc5923c6",
+    "production_ready": false,
+    "qualification": "isolated development instance; resource and acceptance audit incomplete",
+    "schema": "tactus-v02-devnet-manifest-v1"
+  },
+  "artifacts_sha256": {
+    "artifacts/v02-canonical-FYpANyan/deployment.json": "a400897656470ff76e8a77d30d78834a700947bc90be867124d5e34c4b497098",
+    "artifacts/v02-canonical-FYpANyan/evidence.json": "3cd6fafe6beb6ed9931bfa30c1f03b219832e6a78a4c4ea11b828e2566918322",
+    "artifacts/v02-canonical-FYpANyan/canonical-proof-input.json": "5fb7a049413c4ea3e43f5a3a696af7e9496840a3c3df235152f5c95a0bd40190",
+    "artifacts/v02-canonical-FYpANyan/running-report.json": "749873fc060f8f018dadd5d296e6326cd94f49b269419c86e7fc479438591655",
+    "artifacts/v02-canonical-FYpANyan/frozen-report.json": "f4e0dadb0bfedf52621936c058ff21f1d5027022929d7670f2faabae96acc878",
+    "artifacts/v02-canonical-FYpANyan/recovered-state.json": "ab4ef2af99c0772228d3989f4eb31c313722275b3a3ce9e3460c52f1827a84b9",
+    "artifacts/v02-canonical-FYpANyan/refund-1.json": "a4b3c3129a6dd043988f957f5c50088cd85751eb32248b0b6868c660fe41ff96",
+    "artifacts/v02-canonical-FYpANyan/refund-2.json": "cd8d50432fcb41f7075a1a8ae1cae3e970502e1626fc8ad8d6fe5392e67977da",
+    "artifacts/v02-canonical-FYpANyan/guest-execution/result.json": "fb9724eee827394088e49686beb510869dfe50f6f1e27f88b3ddb524ba899663",
+    "artifacts/v02-canonical-FYpANyan/guest-execution/public-values.bin": "7578e477e32e921c1e111cd09db03753bb62333928e0112250361cb4bd01ccd7",
+    "artifacts/v02-canonical-FYpANyan/guest-execution/execution-report.txt": "7fe071c12eb23755f5714103c09f4155544575eee9d88bc5875430f720149d12",
+    "artifacts/v02-canonical-FYpANyan/node/ckb.toml": "860e83a54eb0440827f519d26b2ef61c7e4189734e714f01973fe59824c16670",
+    "artifacts/v02-canonical-FYpANyan/node/specs/dev.toml": "d1c2223339983cdd4972c1d9a921e1bc3bc07e083901a7a98f5462d52b5b99b0",
+    "artifacts/v02-canonical-FYpANyan/peer/ckb.toml": "93eb21c52c32c060dd60a768767cc3e5ffcbd0d1de8cefd87f47c42c6e4fd893",
+    "artifacts/v02-canonical-FYpANyan/peer/specs/dev.toml": "d1c2223339983cdd4972c1d9a921e1bc3bc07e083901a7a98f5462d52b5b99b0"
+  },
+  "operations": [
+    {
+      "block_hash": "0x517f9a2678637deacae83ee747e52d847f39a2875fb31da6c4967815d7ac303c",
+      "block_number": "0x4",
+      "cycles": {
+        "cycles": "0x190405"
+      },
+      "hash": "0xa2d79a034b8dcb9508fb5047ce2a7f3ec02f60a9cc02369137f38cc6b7e06508",
+      "label": "deploy immutable code and independent actor funds",
+      "result": "committed"
+    },
+    {
+      "block_hash": "0xda4966e1d079914eeba8cf518fec8a8031bd5d4ca5a9d213d568200a98a95f21",
+      "block_number": "0x8",
+      "cycles": {
+        "cycles": "0x58559fc"
+      },
+      "hash": "0x2eb5e6018a952ce4639518688345fb56820b93f1433ec267bc0799a1a9d1cf48",
+      "label": "v02 joint genesis",
+      "result": "committed"
+    },
+    {
+      "block_hash": "0xc6881ca1b1b78e5a36cb3d31aa7d48d8a4717a30d90598eaa29b9f00cbc62d07",
+      "block_number": "0xc",
+      "cycles": {
+        "cycles": "0x2e6d2d"
+      },
+      "hash": "0xad0a65f1bc8e14d049445cf4caa2faabbd5e1f3c99d0ee2e905ad3c6434e81c6",
+      "label": "v02 deposit",
+      "result": "committed"
+    },
+    {
+      "block_hash": "0xb2383ead38f08aa0e0e035372a19d61d160463595f0dea62b08f7b8a4caad861",
+      "block_number": "0x10",
+      "cycles": {
+        "cycles": "0x2cb68a"
+      },
+      "hash": "0xe37f3be81ad5ef82cf938a39f136444e00e70b959e8a79ad475f52d0797c9032",
+      "label": "v02 enqueue",
+      "result": "committed"
+    },
+    {
+      "block_hash": "0xa715fbb3eeeda60d044036846b4f6c485a97bc6014ace2d8846f849c6786a00c",
+      "block_number": "0x14",
+      "cycles": {
+        "cycles": "0xb851a6"
+      },
+      "hash": "0x7d2a87ce52171535464cb244f5743679de3cbda7f585678d387e005e92b2da65",
+      "label": "v02 complete seal",
+      "result": "committed"
+    },
+    {
+      "block_hash": "0x7540935257219643c4b03610e47af3a524dc2383a8928f8d3a25749cb831d55b",
+      "block_number": "0x18",
+      "cycles": {
+        "cycles": "0x2e993c"
+      },
+      "hash": "0xaac5dd63ad64d2441663fac5eadcb1ec668db626b45fa621f6f008f9e0833fc3",
+      "label": "v02 deposit",
+      "result": "committed"
+    },
+    {
+      "error": "rpc error: {\"code\":-302,\"data\":\"Verification(Error { kind: Transaction, inner: Immature(Inputs[0]): the transaction is immature because of the since requirement })\",\"message\":\"TransactionFailedToVerify: Verification failed Transaction(Immature(Inputs[0]): the transaction is immature because of the since requirement)\"}",
+      "expected_reason": "Immature",
+      "label": "future L2 timestamp",
+      "result": "rejected"
+    },
+    {
+      "block_hash": "0xe036d77a0e6e43dee1e5541de50177dc09a5e35f0d46efc59cfd697b4271b9f3",
+      "block_number": "0x1c",
+      "cycles": {
+        "cycles": "0x6a16a3"
+      },
+      "hash": "0x7ce1740ed9dca9907578b251563d614a9839f660ac56e30aa4ca1a97db1b2b0c",
+      "label": "v02 first append",
+      "result": "committed"
+    },
+    {
+      "block_hash": "0x014114241a83677d10f57c6ef486bb8755dcd4489d1703c0bcd73d699d29b7a0",
+      "block_number": "0x20",
+      "cycles": {
+        "cycles": "0x5f1e2c"
+      },
+      "hash": "0x2a17077303cd706ff51a6b7f9b3f864f2272a171fd1432aee057dcc016aa94fe",
+      "label": "v02 equal-time append",
+      "result": "committed"
+    },
+    {
+      "block_hash": "0x813d20028754a812fbc58f21a0b02729464f9a4ad2daa867143e2d4661fe58be",
+      "block_number": "0x9d",
+      "cycles": {
+        "cycles": "0x21cda8"
+      },
+      "hash": "0xa91bb1ba23aba6a17dfe83c40795c90904168d4d9b1836bb647c2444de678933",
+      "label": "v02 permissionless watch",
+      "result": "committed"
+    },
+    {
+      "block_hash": "0x3d40ad10be48e410a01e5770b6e52e21cdd7ba142403245b5aeffd55086f8c28",
+      "block_number": "0xa1",
+      "cycles": {
+        "cycles": "0x21ce01"
+      },
+      "hash": "0xfa4b07fc90dd4bd058a31d8344b2be0df0ae5e88b77477017bf32eed284b5110",
+      "label": "v02 permissionless watch",
+      "result": "committed"
+    },
+    {
+      "error": "rpc error: {\"code\":-302,\"data\":\"Verification(Error { kind: Transaction, inner: Immature(Inputs[1]): the transaction is immature because of the since requirement })\",\"message\":\"TransactionFailedToVerify: Verification failed Transaction(Immature(Inputs[1]): the transaction is immature because of the since requirement)\"}",
+      "expected_reason": "Immature",
+      "label": "new ticket cannot freeze old Control",
+      "result": "rejected"
+    },
+    {
+      "error": "rpc error: {\"code\":-302,\"data\":\"Verification(Error { kind: Script, inner: TransactionScriptError { source: Inputs[1].Type, cause: ValidationFailure: see error code 9 on page https://nervosnetwork.github.io/ckb-script-error-codes/by-data-hash/03f5d65709aa04ed47aece3ef83e25c1a815fd3eec813895c45ab8e7b6807956.html#9 } })\",\"message\":\"TransactionFailedToVerify: Verification failed Script(TransactionScriptError { source: Inputs[1].Type, cause: ValidationFailure: see error code 9 on page https://nervosnetwork.github.io/ckb-script-error-codes/by-data-hash/03f5d65709aa04ed47aece3ef83e25c1a815fd3eec813895c45ab8e7b6807956.html#9 })\"}",
+      "expected_reason": "error code 9",
+      "label": "wrong freeze threshold",
+      "result": "rejected"
+    },
+    {
+      "cycles": {
+        "cycles": "0x5e974d"
+      },
+      "label": "pre-freeze RUNNING transaction is executable",
+      "result": "simulated"
+    },
+    {
+      "block_hash": "0x4bc15b7bacd86ec9d015236a558abcdac8e63d4dec5bdc17b261e84e51bf0027",
+      "block_number": "0x11e",
+      "cycles": {
+        "cycles": "0x2d20cf"
+      },
+      "hash": "0x115f2bf3152909199e43d6c7d1953a3c18c529cd82b343630c677f7a574261d3",
+      "label": "v02 mature permissionless freeze by another actor",
+      "result": "committed"
+    },
+    {
+      "error": "rpc error: {\"code\":-301,\"data\":\"Resolve(Unknown(OutPoint(0x2eb5e6018a952ce4639518688345fb56820b93f1433ec267bc0799a1a9d1cf4803000000)))\",\"message\":\"TransactionFailedToResolve: Resolve failed Unknown(OutPoint(0x2eb5e6018a952ce4639518688345fb56820b93f1433ec267bc0799a1a9d1cf4803000000))\"}",
+      "expected_reason": "Unknown(OutPoint(0x2eb5e6018a952ce4639518688345fb56820b93f1433ec267bc0799a1a9d1cf4803000000))",
+      "label": "spent RUNNING dependency",
+      "result": "rejected"
+    },
+    {
+      "block_hash": "0x7091e027e4f6ac1b6596ffdbcb4c967db60e097876fd3f8993ed4640d08d3cac",
+      "block_number": "0x122",
+      "cycles": {
+        "cycles": "0x210520"
+      },
+      "hash": "0x3180627bdecfb9e4835c8634358ce13a3a7c94a1dda847e7f1cd09086bcef6f3",
+      "label": "v02 close other ticket after freeze",
+      "result": "committed"
+    },
+    {
+      "block_hash": "0xf94610307f0896e38ae6e5e72f30a9757ef029350db430706633e199227bdcea",
+      "block_number": "0x126",
+      "cycles": {
+        "cycles": "0x855ab1"
+      },
+      "hash": "0xdab1a3fccc192c29011fc39fe07c0f6cc8db967c97f28ac8969c3296d634d287",
+      "label": "v02 refund reconstructed by fresh process",
+      "result": "committed"
+    },
+    {
+      "block_hash": "0x5d14dc9cbf52aa630f266beac046350c1d878e3cba1ca6d81dbc39d0de9618a0",
+      "block_number": "0x12a",
+      "cycles": {
+        "cycles": "0x85844f"
+      },
+      "hash": "0x3e6d2899634e2def5a5b17ccc0dc45d33916eccccac68c8ce097e98aa4c2dffc",
+      "label": "v02 refund reconstructed by fresh process",
+      "result": "committed"
+    },
+    {
+      "label": "P2P rollback of deposit/seal/publication/freeze/refunds",
+      "result": "reorganized"
+    },
+    {
+      "block_hash": "0xc6762f306169a5d1251d0de2852777fa95892076f58893f5c712979c482fc73c",
+      "block_number": "0x132",
+      "cycles": {
+        "cycles": "0x2cfdc6"
+      },
+      "hash": "0xfe1ff04f351958869a63e743538b8db914983f10f4fe5ba449d3336bb005301f",
+      "label": "v02 enqueue",
+      "result": "committed"
+    },
+    {
+      "block_hash": "0x58839f49154fbc1c173a086dadfa803426a57eb31db74a14505977f521bb3201",
+      "block_number": "0x136",
+      "cycles": {
+        "cycles": "0xb8829d"
+      },
+      "hash": "0x205605590ead6408bfc74a66c3fd65aee25a37072d51d94a5dd26a5b1b2bebdb",
+      "label": "v02 complete seal",
+      "result": "committed"
+    },
+    {
+      "block_hash": "0x809c0407f8117906ff7ffb7c93ac7a78f15f417480f33a17e40413f530e0d6f8",
+      "block_number": "0x13a",
+      "cycles": {
+        "cycles": "0x6a4565"
+      },
+      "hash": "0xc5ae49354e27cde4c16f9782aafe595705a99e6bf4cda439bfaabb127a067405",
+      "label": "v02 replacement first append",
+      "result": "committed"
+    },
+    {
+      "block_hash": "0x9342c65661cb936bbcfaf673f4c4eccf2313afc5024e08dee5d5a757b560ab2e",
+      "block_number": "0x13e",
+      "cycles": {
+        "cycles": "0x5eada0"
+      },
+      "hash": "0xec9a1bad61b80518c744d3f154024779ece2cbfc4c3dd43ab917beb28b33200c",
+      "label": "v02 replacement equal-time append",
+      "result": "committed"
+    }
+  ],
+  "reorg": {
+    "common": "0xda4966e1d079914eeba8cf518fec8a8031bd5d4ca5a9d213d568200a98a95f21",
+    "orphan": "0x5d14dc9cbf52aa630f266beac046350c1d878e3cba1ca6d81dbc39d0de9618a0",
+    "winning": "0xc6ee0d23821b5b619c0f762b17308523a0e60001ef5e82af1b5b88dd455f0319",
+    "orphaned_blocks": 290,
+    "truncate_used": false,
+    "submit_block_used": false
+  },
+  "recovery_states": [
+    {
+      "mode": "RUNNING",
+      "published_batches": 2,
+      "settled_batches": 0,
+      "deposited_count": 2,
+      "partitions_shannons": [
+        "1500000000",
+        "0",
+        "0"
+      ],
+      "execution_candidate": {
+        "authority": "execution replay, not custody authority",
+        "burned_shannons": "100000000",
+        "state_root": "0x9843cd24e38a2f54196b37df48461f324b808ba0c5f64a0c196a6127aed062e6",
+        "supply_shannons": "900000000"
+      },
+      "pinned_hash": "0x014114241a83677d10f57c6ef486bb8755dcd4489d1703c0bcd73d699d29b7a0"
+    },
+    {
+      "mode": "FROZEN",
+      "published_batches": 2,
+      "settled_batches": 0,
+      "deposited_count": 2,
+      "partitions_shannons": [
+        "0",
+        "0",
+        "0"
+      ],
+      "execution_candidate": {
+        "authority": "execution replay, not custody authority",
+        "burned_shannons": "100000000",
+        "state_root": "0x9843cd24e38a2f54196b37df48461f324b808ba0c5f64a0c196a6127aed062e6",
+        "supply_shannons": "900000000"
+      },
+      "pinned_hash": "0x5d14dc9cbf52aa630f266beac046350c1d878e3cba1ca6d81dbc39d0de9618a0"
+    },
+    {
+      "mode": "RUNNING",
+      "published_batches": 0,
+      "settled_batches": 0,
+      "deposited_count": 1,
+      "partitions_shannons": [
+        "300000000",
+        "0",
+        "0"
+      ],
+      "execution_candidate": {
+        "authority": "execution replay, not custody authority",
+        "burned_shannons": "0",
+        "state_root": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "supply_shannons": "0"
+      },
+      "pinned_hash": "0xc6ee0d23821b5b619c0f762b17308523a0e60001ef5e82af1b5b88dd455f0319"
+    },
+    {
+      "mode": "RUNNING",
+      "published_batches": 2,
+      "settled_batches": 0,
+      "deposited_count": 1,
+      "partitions_shannons": [
+        "300000000",
+        "0",
+        "0"
+      ],
+      "execution_candidate": {
+        "authority": "execution replay, not custody authority",
+        "burned_shannons": "100000000",
+        "state_root": "0x40b4389150fbc01e346cd9e6cb31c27c2ce789447c3a932b16b8c4d90738b42b",
+        "supply_shannons": "200000000"
+      },
+      "pinned_hash": "0x9342c65661cb936bbcfaf673f4c4eccf2313afc5024e08dee5d5a757b560ab2e"
+    }
+  ],
+  "guest_execution": {
+    "authenticated_publication": false,
+    "ckb_settlement": false,
+    "custody_release": false,
+    "guest_verifying_key": "0x000fcab5ecc9b6b3c2616ca0f8e76d9396876f26ea4fc0701997df7045acc0c6",
+    "interval_batches": 2,
+    "native_replay_match": true,
+    "prefix_batches": 0,
+    "proof_generated": false,
+    "schema": "tactus-v02-guest-execution-v1",
+    "sp1": "6.8.1"
+  },
+  "canonical_input_and_guest_public_values_match": true,
+  "limits": [
+    "Selected CKB node supplies consensus; recovery is not an independent light client.",
+    "Normal burn release and EOA escape on a real settled root remain the real-proof milestone.",
+    "The P2P test covers deposit/seal/publication/watch/freeze/refund rollback, not a real SETTLE/RELEASE rollback.",
+    "Maximum resource combinations, general fee/contention behavior, and complete observer/claim tooling remain unfinished."
+  ],
+  "full_proof_generated": false,
+  "riscv_contract_experiment_executed": false,
+  "ci_executed": false,
+  "production_ready": false
+}

@@ -112,6 +112,8 @@ pub enum Status {
     Success = 7,
     Revert = 8,
     Halt = 9,
+    #[cfg(feature = "v02")]
+    PriorityGasLimit = 10,
 }
 
 #[derive(Clone, Debug, PartialEq, Eq, Serialize, Deserialize)]
@@ -575,3 +577,7 @@ impl Executor {
 /// Separate candidate execution domain for authenticated native deposits.
 #[cfg(feature = "native-bridge")]
 pub mod native_bridge;
+
+/// Explicit 0.02 execution profile; never selected by a legacy guest.
+#[cfg(feature = "v02")]
+pub mod v02;

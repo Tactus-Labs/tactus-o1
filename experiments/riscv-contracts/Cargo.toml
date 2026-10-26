@@ -1,0 +1,7 @@
+# Preparation only. This workspace is deliberately outside the main build.
+[workspace]
+resolver = "2"
+members = ["model", "guest-native"]
+
+[profile.release]
+debug = 0

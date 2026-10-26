@@ -1,0 +1,316 @@
+{
+  "schema": "tactus-v02-computation-validation-v1",
+  "qualification": "selected maxima and original protocol attack cases; not an exhaustive opcode-cost bound or proving-time result",
+  "source_git_head": "c52a10388213e9881eba90e7eaa05c7a4c7a2922",
+  "working_tree_dirty": true,
+  "sources": {
+    "crates/tactus-o1-protocol/tests/v02_vectors.rs": "b91109d9a18cea5ae8b974048ed2bd9dc644dfa5011a59dcd1a85e4991f96259",
+    "crates/tactus-o1-execution/tests/common/v02.rs": "4c4fa002014c117531135079b7364c12287e4448c7d2ff3c50d49b4f7c79c412",
+    "services/v02-lab/src/bin/compute-input-v02.rs": "db76a65b0326d2d19078132f29ac5c8fdc1255d82f82a3f13bc63d83b9d22b1c",
+    "services/v02-lab/tests/claim_export.rs": "8843a428ebcdcb4f684d47bf74972a80d5669f18e820e06d37fe23ee3cee2c55",
+    "proofs/ckb-v02/tests/vm.rs": "7082061edb0d6f07edb56ae5e91631a982788ccd7516d15b5531d528dfbcc82c",
+    "proofs/ckb-v02/tests/common/mod.rs": "06ad3abda02443eb3f58024d27d124ccf43feb7cda2d012eb0121f6d64f0c594",
+    "Cargo.lock": "d1e83ee7925c86276223c5b01a46cc25c9a1c81d811b713381dd9d3a4e835f92",
+    "services/v02-lab/Cargo.lock": "243cd0dff6ae34613e346ab9934aef60962c8d55ae34f058145a28bc9aa28277",
+    "proofs/ckb-v02/Cargo.lock": "9f9e87f2986ea3f5301a8ad443281a7ac31ffe0dc718b1faa07c19f8d0a8c061",
+    "scripts/generate-v02-vectors.py": "1cdad2f9063e06f24df7d23180ce12ab3d461b9e12a633f270a520b43ef14d40",
+    "specs/test-vectors/v02.txt": "d6576b690ffa3e3e719a087b4097392ccfb7b3453e533dea4428b0ba3e8b4300",
+    "proofs/ckb-v02/tests/claims.rs": "e9d6ad4ecfcdf3d7e96514adb16220351573ed652e2875a0d0cba4c4fe140060",
+    "proofs/v02-sp1/journal/tests/statement.rs": "128e7eb69b3721f401d0e8f190152b5ca2cc8d05fa065fc5d9ebcc7f9ef3dbf1"
+  },
+  "artifacts": {
+    "artifacts/v02-compute-guest/loop-build.log": "68d59b1110a1c5788de400a9e9192d5be2e92b306ab8097fd91e7afbd742ddf9",
+    "artifacts/v02-compute-guest/loop-input.json": "3a18092a84321515e4ce9643898d60977eae452f74ad96213efe912d7cd8b240",
+    "artifacts/v02-compute-guest/loop-execution.log": "67052d82c5705c1b8c4c156cb4089fd876f58bd4feb2715fd2f44bd6c56b9de0",
+    "artifacts/v02-compute-guest/keccak-build.log": "2ad2196cac1b4cbb240c4c9be35fcff48051ce315a720c78b61b166735acaeae",
+    "artifacts/v02-compute-guest/keccak-input.json": "72b80bb162daa701fcedb67a8fcbb2b62182884d7754ec0674c862e62d92c8b2",
+    "artifacts/v02-compute-guest/signatures-build.log": "282360657d6e41fe63926548e4479fa38bc4a0761e0508677363aad5a17fbd6a",
+    "artifacts/v02-compute-guest/signatures-input.json": "2f00af348f43066cfc54f964d459108d69db3c91a14a69ee0fe32809167545c0",
+    "artifacts/v02-compute-guest/credits-build.log": "35c38e1b80347fa407b832782d235983f5a1e11e4bddd60b1c82b6a846057689",
+    "artifacts/v02-compute-guest/credits-input.json": "b7fd074a88c9d4e62b75d6d7feb9d6e76be354562ca57e3eac86dbb9303894da",
+    "artifacts/v02-compute-guest/credits-execution.log": "67052d82c5705c1b8c4c156cb4089fd876f58bd4feb2715fd2f44bd6c56b9de0",
+    "artifacts/v02-compute-guest/keccak-execution.log": "67052d82c5705c1b8c4c156cb4089fd876f58bd4feb2715fd2f44bd6c56b9de0",
+    "artifacts/v02-compute-guest/signatures-execution.log": "67052d82c5705c1b8c4c156cb4089fd876f58bd4feb2715fd2f44bd6c56b9de0",
+    "artifacts/v02-compute-guest/loop-execution/public-values.bin": "5badc03628d41b6bfe31aa0804240070811f076b1e8708d25e50f5a1c94421b8",
+    "artifacts/v02-compute-guest/loop-execution/execution-report.txt": "29e294ab35ab8148dcb9c669c7fa58b3186d9affb98e483b3866c9574a12e7b0",
+    "artifacts/v02-compute-guest/loop-execution/result.json": "5b389768e2407b7766e04cf9484b0f674617643c5d74803a2022644bf2519af1",
+    "artifacts/v02-compute-guest/credits-execution/public-values.bin": "e3c6a5c9fd109b3436f7c71d2f0adf8e9733496c7d2bbb56b2a9e6804da7a362",
+    "artifacts/v02-compute-guest/credits-execution/execution-report.txt": "a2428be8a49bdfab52adebf273060ab37f448799ed7defd6bcf8e2829ad1853b",
+    "artifacts/v02-compute-guest/credits-execution/result.json": "5b389768e2407b7766e04cf9484b0f674617643c5d74803a2022644bf2519af1",
+    "artifacts/v02-compute-guest/keccak-execution/public-values.bin": "5b1dfe608f0ba1d28230ee541365be89116cfd17b72f956610470b1d92701028",
+    "artifacts/v02-compute-guest/keccak-execution/execution-report.txt": "5b65b7a0fe516aeee7badbad5080f5520d53ad926b7e19920cb3673a4fc6e7c4",
+    "artifacts/v02-compute-guest/keccak-execution/result.json": "5b389768e2407b7766e04cf9484b0f674617643c5d74803a2022644bf2519af1",
+    "artifacts/v02-compute-guest/signatures-execution/public-values.bin": "d689cfedf342e3e4bb03798c92d2c4250d8c47c77850f6f0067ad561f50d790b",
+    "artifacts/v02-compute-guest/signatures-execution/execution-report.txt": "d09ecddddabf98d8744a02e827d556eccf90a39df32924ea174cd4fe2248a182",
+    "artifacts/v02-compute-guest/signatures-execution/result.json": "5b389768e2407b7766e04cf9484b0f674617643c5d74803a2022644bf2519af1",
+    "artifacts/v02-source-identity-vm.log": "360117fa410c3cfe69e6b90f726fd6201e2c481e7c521561cd22e68f6486ada3",
+    "artifacts/v02-domain-time-vm.log": "6fd51c8da470dd81d33de526ebad99b0ac9fbf47075391b8f1cedfa18221363f",
+    "artifacts/v02-proof-start-rebuild.log": "b47a90af989145b2909ed4d9f74a1bd6591319ed79459480b7acb7c2e9d31a66",
+    "artifacts/v02-wire-all-object-boundaries.log": "767ce8aec3a2b94af77e545b40c8a9f4150a8ae2a59c5722e073e30d3a9c981a",
+    "artifacts/v02-compute-input-build.log": "fbb45a6004fbc26f0952b9471b5dd39ca18850d17573e6c10b4f86ed4afe3e21",
+    "artifacts/v02-compute-clippy.log": "0f9f9d106b33c0873c2a1e83672cb1e070f5ceaf94eeca56a7ffe7a4ebceab41",
+    "artifacts/v02-final-vectors.log": "bb2f8cfa8a7368e3a60c994f234295a16f961457d4a5c711fbd14557ff45cdaa",
+    "artifacts/v02-final-root-tests.log": "a0795b04c91ba0266795ba3e4d181ffec6deb7f1784d65d4a95940f9b859248e",
+    "artifacts/v02-final-adapter-tests.log": "de79b90f32dff47241826b819e1611ca45ecce09372cd60cf93a6be33afe82d3",
+    "artifacts/v02-final-recovery-tests.log": "4a2b37c33dc9a3c8357efdd9f39a2a5303f301a7d3b70372b1d8497018801622",
+    "artifacts/v02-final-journal-tests.log": "4afe7b86a7ab53dd4ef3573efc48b3d7823fcb2d649ff093d204ea5f2e0aaf90",
+    "artifacts/v02-independent-claim-vectors.log": "6c274f1384f08c12f23c45175be9863f62d70ed64b1153e3830662e36c3592cb",
+    "artifacts/v02-independent-frame-vectors.log": "f79fdcb46aa4d7316218691c597e181bd9486d87bbdacf78021ddecf0405959b",
+    "artifacts/v02-closing-adapter-tests.log": "ddda89b395637d8a05a7d72cf7f51fd34f9ea93dbd961139cd6a2ca74ae2d479",
+    "artifacts/v02-closing-journal-tests.log": "e889d463f101d200f83b06e89714bf61735c71b1ac5e757a923c8446c81a5bd1",
+    "artifacts/v02-closing-vectors.log": "68547023900ca06290380b5892e3c155dfbfe552de1e66c2b73d30c732f18d6f",
+    "artifacts/v02-closing-protocol-vectors.log": "def1399fad012330cbf15db68d403720c1feb01ff2b852fae1321e5da398e60d",
+    "artifacts/v02-final-adapter-clippy.log": "63107b5bab2f5db42a0376842df08ef90e0c92d4f9d8dab54460eea0f6ef549c",
+    "artifacts/v02-final-recovery-clippy.log": "da2812f9539e7d4c08e49aa9ba828c421d20937c42e2b5bb4a183af86be4cda3",
+    "artifacts/v02-final-protocol-clippy.log": "810f0266242aaed945c5e54b367a2bdb2dd7dbf15d1ce03c060476a71f613926"
+  },
+  "guest_workloads": [
+    {
+      "workload": {
+        "blocks": 16,
+        "case": "loop",
+        "credit_gas": [
+          93749,
+          59549,
+          59549,
+          59549
+        ],
+        "credited_shannons": "18446744073709550612",
+        "encoded_batch_bytes": 4064,
+        "gas_per_block": [
+          1000000,
+          1000000,
+          1000000,
+          1000000,
+          1000000,
+          1000000,
+          1000000,
+          1000000,
+          1000000,
+          1000000,
+          1000000,
+          1000000,
+          1000000,
+          1000000,
+          1000000,
+          1000000
+        ],
+        "native_single_replay_ms": 244,
+        "receipts": 19,
+        "scope": "selected stress paths at explicit policy maxima, not an exhaustive upper bound for every EVM opcode/state; native timing excludes journal replay and proving",
+        "sender_nonce": 19,
+        "slots": 19
+      },
+      "result": {
+        "authenticated_publication": false,
+        "ckb_settlement": false,
+        "custody_release": false,
+        "guest_verifying_key": "0x000fcab5ecc9b6b3c2616ca0f8e76d9396876f26ea4fc0701997df7045acc0c6",
+        "interval_batches": 1,
+        "native_replay_match": true,
+        "prefix_batches": 0,
+        "proof_generated": false,
+        "schema": "tactus-v02-guest-execution-v1",
+        "sp1": "6.8.1"
+      },
+      "full_journal_bytes_matched": 866,
+      "sp1_report_execution_gas": 2499792854,
+      "syscalls": {
+        "KECCAK_PERMUTE": 1051,
+        "SECP256K1_ADD": 4834,
+        "SECP256K1_DOUBLE": 9728,
+        "SHA_COMPRESS": 14
+      }
+    },
+    {
+      "workload": {
+        "blocks": 16,
+        "case": "keccak",
+        "credit_gas": [
+          93749,
+          59549,
+          59549,
+          59549
+        ],
+        "credited_shannons": "18446744073709550612",
+        "encoded_batch_bytes": 4064,
+        "gas_per_block": [
+          1000000,
+          1000000,
+          1000000,
+          1000000,
+          1000000,
+          1000000,
+          1000000,
+          1000000,
+          1000000,
+          1000000,
+          1000000,
+          1000000,
+          1000000,
+          1000000,
+          1000000,
+          1000000
+        ],
+        "native_single_replay_ms": 8393,
+        "receipts": 19,
+        "scope": "selected stress paths at explicit policy maxima, not an exhaustive upper bound for every EVM opcode/state; native timing excludes journal replay and proving",
+        "sender_nonce": 19,
+        "slots": 19
+      },
+      "result": {
+        "authenticated_publication": false,
+        "ckb_settlement": false,
+        "custody_release": false,
+        "guest_verifying_key": "0x000fcab5ecc9b6b3c2616ca0f8e76d9396876f26ea4fc0701997df7045acc0c6",
+        "interval_batches": 1,
+        "native_replay_match": true,
+        "prefix_batches": 0,
+        "proof_generated": false,
+        "schema": "tactus-v02-guest-execution-v1",
+        "sp1": "6.8.1"
+      },
+      "full_journal_bytes_matched": 866,
+      "sp1_report_execution_gas": 14791875112,
+      "syscalls": {
+        "KECCAK_PERMUTE": 289962,
+        "SECP256K1_ADD": 4834,
+        "SECP256K1_DOUBLE": 9728,
+        "SHA_COMPRESS": 14
+      }
+    },
+    {
+      "workload": {
+        "blocks": 16,
+        "case": "signatures",
+        "credit_gas": [
+          93749,
+          59549,
+          59549,
+          59549
+        ],
+        "credited_shannons": "18446744073709550612",
+        "encoded_batch_bytes": 117118,
+        "gas_per_block": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "native_single_replay_ms": 2089,
+        "receipts": 0,
+        "scope": "selected stress paths at explicit policy maxima, not an exhaustive upper bound for every EVM opcode/state; native timing excludes journal replay and proving",
+        "sender_nonce": 0,
+        "slots": 1024
+      },
+      "result": {
+        "authenticated_publication": false,
+        "ckb_settlement": false,
+        "custody_release": false,
+        "guest_verifying_key": "0x000fcab5ecc9b6b3c2616ca0f8e76d9396876f26ea4fc0701997df7045acc0c6",
+        "interval_batches": 1,
+        "native_replay_match": true,
+        "prefix_batches": 0,
+        "proof_generated": false,
+        "schema": "tactus-v02-guest-execution-v1",
+        "sp1": "6.8.1"
+      },
+      "full_journal_bytes_matched": 866,
+      "sp1_report_execution_gas": 2132276750,
+      "syscalls": {
+        "KECCAK_PERMUTE": 4419,
+        "SECP256K1_ADD": 267264,
+        "SECP256K1_DOUBLE": 524288,
+        "SHA_COMPRESS": 14
+      }
+    },
+    {
+      "workload": {
+        "blocks": 1,
+        "case": "credits",
+        "credit_gas": [
+          93749,
+          59549,
+          59549,
+          59549
+        ],
+        "credited_shannons": "18446744073709550612",
+        "encoded_batch_bytes": 926,
+        "gas_per_block": [
+          0
+        ],
+        "native_single_replay_ms": 4,
+        "receipts": 0,
+        "scope": "selected stress paths at explicit policy maxima, not an exhaustive upper bound for every EVM opcode/state; native timing excludes journal replay and proving",
+        "sender_nonce": 0,
+        "slots": 0
+      },
+      "result": {
+        "authenticated_publication": false,
+        "ckb_settlement": false,
+        "custody_release": false,
+        "guest_verifying_key": "0x000fcab5ecc9b6b3c2616ca0f8e76d9396876f26ea4fc0701997df7045acc0c6",
+        "interval_batches": 1,
+        "native_replay_match": true,
+        "prefix_batches": 0,
+        "proof_generated": false,
+        "schema": "tactus-v02-guest-execution-v1",
+        "sp1": "6.8.1"
+      },
+      "full_journal_bytes_matched": 866,
+      "sp1_report_execution_gas": 40600673,
+      "syscalls": {
+        "KECCAK_PERMUTE": 248,
+        "SECP256K1_ADD": 0,
+        "SECP256K1_DOUBLE": 0,
+        "SHA_COMPRESS": 14
+      }
+    }
+  ],
+  "local_tests_passed": {
+    "root": 99,
+    "adapter": 19,
+    "recovery": 12,
+    "journal": 5
+  },
+  "total_rust_tests": 135,
+  "new_cases": [
+    "all independently encoded objects reject every truncation, suffix, duplicate object, unknown magic and oversized outer envelope",
+    "every claim operation rejects both other claim kinds",
+    "valid old-code, foreign-domain and untyped source substitutions rejected for both admission and deposit Watches",
+    "self-authored typed receipts without matching state transitions rejected",
+    "Config code-hash and policy/key substitution rejected",
+    "cross-instance Vault consumption rejected",
+    "validly signed foreign-domain escape rejected",
+    "equal-time second APPEND accepted and backwards-time APPEND rejected",
+    "later publication preserves a pinned proof interval; synthetic overlapping settlement rebuilds the starting Control and retains prefix replay",
+    "independent Python/Rust framing for all three ClaimWitness kinds and the private Frame",
+    "maximum 271110-byte claim framing and oversized proof length rejection before allocation",
+    "SEAL cannot omit an already accepted deposit tail"
+  ],
+  "scope_notes": [
+    "Selected native replay timings exclude journal/guest execution and are not controlled performance benchmarks.",
+    "SP1 report execution gas is neither EVM gas, CKB cycles nor wall-clock proving time.",
+    "Proving-start test injects a correctly replayed settled Control; actual overlapping proof settlement remains the 0.03 milestone."
+  ],
+  "programs": {
+    "artifacts/tactus_v02_script.elf": "6eb225224ff2ed7d713a5bd72ef0dcd5237292ed64332cd8030b8a87a9d6cd25",
+    "proofs/v02-sp1/target/elf-compilation/riscv64im-succinct-zkvm-elf/release/tactus-v02-sp1-guest": "77bf8f4082a8e059ee07f734c906d0f2ad08dd2f1b68775f148de89c1b3c79fc"
+  },
+  "ci_run": false,
+  "proof_generated": false,
+  "riscv_contract_experiment_executed": false,
+  "independent_vectors": 24
+}

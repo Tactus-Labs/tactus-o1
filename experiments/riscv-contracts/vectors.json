@@ -1,0 +1,49 @@
+{
+  "schema": "tactus-riscv-research-vectors-v1",
+  "semantics": "repeat x = (3*x+1) mod 2^256; steps > 4096 returns false and unchanged seed",
+  "encoding": "hex words are 32-byte big-endian; steps is u32",
+  "vectors": [
+    {
+      "id": "zero-steps",
+      "seed_hex": "0000000000000000000000000000000000000000000000000000000000000000",
+      "steps": 0,
+      "success": true,
+      "output_hex": "0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "id": "one-step",
+      "seed_hex": "0000000000000000000000000000000000000000000000000000000000000001",
+      "steps": 1,
+      "success": true,
+      "output_hex": "0000000000000000000000000000000000000000000000000000000000000004"
+    },
+    {
+      "id": "two-steps",
+      "seed_hex": "0000000000000000000000000000000000000000000000000000000000000001",
+      "steps": 2,
+      "success": true,
+      "output_hex": "000000000000000000000000000000000000000000000000000000000000000d"
+    },
+    {
+      "id": "wrap-full-word",
+      "seed_hex": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "steps": 1,
+      "success": true,
+      "output_hex": "fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe"
+    },
+    {
+      "id": "high-bit",
+      "seed_hex": "8000000000000000000000000000000000000000000000000000000000000000",
+      "steps": 1,
+      "success": true,
+      "output_hex": "8000000000000000000000000000000000000000000000000000000000000001"
+    },
+    {
+      "id": "bounded-rejection",
+      "seed_hex": "0000000000000000000000000000000000000000000000000000000000000007",
+      "steps": 4097,
+      "success": false,
+      "output_hex": "0000000000000000000000000000000000000000000000000000000000000007"
+    }
+  ]
+}

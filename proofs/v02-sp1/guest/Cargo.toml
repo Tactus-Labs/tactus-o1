@@ -1,0 +1,8 @@
+[package]
+name = "tactus-v02-sp1-guest"
+version = "0.2.0"
+edition = "2021"
+[dependencies]
+sp1-zkvm = "=6.8.1"
+tactus-v02-proof-journal = { path = "../journal" }
+tactus-o1-protocol = { path = "../../../crates/tactus-o1-protocol", features = ["v02"] }

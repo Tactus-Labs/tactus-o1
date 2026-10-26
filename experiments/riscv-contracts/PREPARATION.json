@@ -1,0 +1,31 @@
+{
+  "schema": "tactus-riscv-preparation-v1",
+  "status": "prepared_not_executed",
+  "sources": {
+    ".gitignore": "39e7c925a4bea7a89bd8f510d4115878d7a8fba775aae96ba20a4f14a6e9da44",
+    "Cargo.toml": "aaaecb9ff985bdd1b4f5f7e42a1338e91da90f569791bfc4be11563507ad99b3",
+    "README.md": "ae48530bf092eadcc4abd67c9b9dd5fe87842d4c0837ab4f6142528e282014fd",
+    "contracts/Kernel.sol": "68ae828491337686b50b6f275b467e9b7c4cac698f00a4e0cf5372237b2af703",
+    "guest-native/Cargo.toml": "814d6dbb71d5b92d7f062d074651dd7abb8edafd61389747e0859b780ad57279",
+    "guest-native/src/main.rs": "d751f2de2df84bc228de097e632ae4266168fbd45f66d35a547a7ec4b1c2970b",
+    "inspect.py": "78c60360d3ff3ed656238f23a5acf922d884261ca12e0695a857b4ac2cb6326f",
+    "model/Cargo.toml": "0e0112f95834655bb2c6b0809de988aa6ab54de42c9877326d8c9fa6d535dc90",
+    "model/src/lib.rs": "db151e47e8c31fbc89303961e36b033b414d46110ff791aa48ede3cdd62d9010",
+    "oracle.py": "ceb13223fb25f3a27fd1907b40e5df56aba273066c8f987c56ce0f3b32a829d1",
+    "plan.json": "26256fbd0226e69989209db679b0c66b867e8c6647263f3b6e7e917bceec5aa3",
+    "results/record-template.json": "b12cf41ef0608cdfe229d7f66815c4311515a927e775d6db870c444eb5d83e94",
+    "vectors.json": "460fb1061d5f6e5490110aa0c8ddfbbac160441123180009ff6878924008f22a"
+  },
+  "compiled": false,
+  "oracle_executed": false,
+  "guest_executed": false,
+  "proof_generated": false,
+  "measurement_results": 0,
+  "checks": [
+    "Python AST parse only",
+    "JSON and TOML parse only",
+    "Rust formatting/parser check only",
+    "local documentation links"
+  ],
+  "activation_prerequisite": "implement the matched minimal EVM kernel guest; fill budgets/hardware, pin dependencies/ELFs/keys, and obtain explicit execution instruction"
+}

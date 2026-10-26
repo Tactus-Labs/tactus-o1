@@ -15,7 +15,17 @@ experiments testing that goal under competition, censorship, and chain reorgs.
 > and test evidence. Production admission, custody and safe exits remain unfinished. Tactus O1 is **not ready
 > for production or user funds**. See the [readiness tracker](specs/PRODUCTION_READINESS.md).
 
+**Current development release: [0.02](https://github.com/Tactus-Labs/tactus-o1/releases/tag/v0.02).**
+Start with the [release notes](specs/RELEASE_NOTES_0_02.md) and
+[local setup guide](specs/V0_02_RELEASE_GUIDE.md). Version 0.02 unifies ordering,
+settlement boundaries, stall handling and supported claim rules. Real proofs
+driving the new native-asset settlement and release path are the 0.03 milestone;
+the earlier proof-verified SettlementTip experiments remain historical evidence.
+
 [Architecture](specs/TACTUS_O1_ARCHITECTURE_SPEC_v0.2.6.md) ·
+[Roadmap (中文)](specs/ROADMAP.md) ·
+[0.02 design (中文)](specs/V0_02_PROTOCOL_DESIGN.md) ·
+[0.02 implementation status](specs/V0_02_IMPLEMENTATION_STATUS.md) ·
 [Experiments](specs/EXPERIMENT_A_DESIGN.md) ·
 [Execution](specs/EXECUTION_V1.md) ·
 [Read-only RPC](specs/OBSERVER_RPC_REPORT.md) ·
